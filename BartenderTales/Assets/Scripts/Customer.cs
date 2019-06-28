@@ -18,7 +18,7 @@ public class Customer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, m_agent.destination) < 0.6f)
+        if (m_agent.remainingDistance < 0.6f)
         {
             // face player
             Vector3 v3Pos = Camera.main.transform.position;
