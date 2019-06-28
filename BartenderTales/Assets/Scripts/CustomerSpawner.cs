@@ -19,7 +19,7 @@ public class CustomerSpawner : MonoBehaviour
         m_customers = new List<GameObject>();
         // spawn customer at start
         m_customers.Add(Instantiate(m_customerPrefabs[Random.Range(0, m_customerPrefabs.Length)], m_spawnPoint.position, m_spawnPoint.rotation));
-        m_customers[m_customers.Count - 1].GetComponent<Customer>().SetDestination(m_servingPoints[Random.Range(0, m_servingPoints.Count - 1)]);
+        m_customers[m_customers.Count - 1].GetComponent<Customer>().SetDestination(m_servingPoints[Random.Range(0, m_servingPoints.Count)]);
     }
 
     // Update is called once per frame

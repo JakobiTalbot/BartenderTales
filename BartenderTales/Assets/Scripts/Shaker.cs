@@ -13,18 +13,17 @@ public enum Ingredient
     Count
 }
 
-public struct Combination
+public enum PotionName
 {
-    public List<Ingredient> m_ingredients;
-    public PotionEffect m_potionEffect;
-
-    public Combination(Ingredient a, Ingredient b, PotionEffect potionEffect)
-    {
-        m_ingredients = new List<Ingredient>();
-        m_ingredients.Add(a);
-        m_ingredients.Add(b);
-        m_potionEffect = potionEffect;
-    }
+    FantasticTeleport = 0,
+    QuickEnd,
+    Mundane,
+    AssassinsSpecial,
+    SmokeyTeleport,
+    PixieDust,
+    Beer,
+    CosyFire,
+    Count
 }
 
 public class Shaker : MonoBehaviour
@@ -33,8 +32,10 @@ public class Shaker : MonoBehaviour
     public float m_radiansShakeThreshold = 2f;
     public float m_velocityShakeThreshold = 1.5f;
 
+    [HideInInspector]
+    public List<Potion> m_potions;
+
     private ParticleSystem m_particleSystem;
-    private List<Combination> m_combinations;
     private List<Ingredient> m_contents;
     private Rigidbody m_rb;
     private float m_fCurrentShakeTime = 0f;
@@ -44,7 +45,7 @@ public class Shaker : MonoBehaviour
     void Start()
     {
         m_contents = new List<Ingredient>();
-        m_combinations = new List<Combination>();
+        m_potions = new List<Potion>();
         m_rb = GetComponent<Rigidbody>();
         m_particleSystem = GetComponent<ParticleSystem>();
         m_v3LastVelocity = m_rb.velocity;
@@ -66,6 +67,7 @@ public class Shaker : MonoBehaviour
                 if (m_fCurrentShakeTime > m_shakeTime)
                 {
                     Debug.Log("done");
+                    CreatePotion();
                 }
             }
         }
@@ -79,6 +81,8 @@ public class Shaker : MonoBehaviour
 
     private void CreateCombinations()
     {
+        //// fantastic teleport
+        //m_combinations.Add(new Combination(Ingredient.PixiePear, Ingredient.ElvenMagicBox));
         //// quick end
         //m_combinations.Add(new Combination(Ingredient.WhiskeyWatermelon, Ingredient.ElvenMagicBox));
         //// assassin's special
@@ -87,26 +91,44 @@ public class Shaker : MonoBehaviour
         //m_combinations.Add(new Combination(Ingredient.PixiePear, Ingredient.DragonChilli));
         //// pixie dust
         //m_combinations.Add(new Combination(Ingredient.WhiskeyWatermelon, Ingredient.UnicornFeathers));
-        //// cosy fire
-        //m_combinations.Add(new Combination(Ingredient.EmuElderberry, Ingredient.DragonChilli));
+        // cosy fire
+        m_potions.Add(new Potion(Ingredient.EmuElderberry, Ingredient.DragonChilli, new CosyFire(), PotionName.CosyFire));
+        // belch fire
+        //m_combinations.Add(new Combination(Ingredient.WhiskeyWatermelon, Ingredient.DragonChilli));
         //// honest policy
         //m_combinations.Add(new Combination(Ingredient.PixiePear, Ingredient.UnicornFeathers));
     }
 
-    private void CheckIngredients()
+    private Potion CreatePotion()
     {
+        // if potion doesn't contain valid amount of ingredients
         if (m_contents.Count != 2)
-            return;
+            return null;
 
         // loop through each possible combination
-        foreach (Combination combo in m_combinations)
+        foreach (Potion potion in m_potions)
         {
-            // if combination matches
-            if (combo.m_ingredients.Contains(m_contents[0])
-                && combo.m_ingredients.Contains(m_contents[1]))
+            // if combination is valid
+            if (potion.m_ingredients.Contains(m_contents[0])
+                && potion.m_ingredients.Contains(m_contents[1]))
             {
-                // create bottles with potion effect
+                return potion;
             }
+        }
+
+        // potion doesn't match any combinations
+        // TODO: return mundane potion
+        return null;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        string tag = collision.collider.tag;
+        // ingredient tag should be ingredient name immediately followed by "-Ingredient"
+        if (tag.Contains("-Ingredient"))
+        {
+            m_contents.Add((Ingredient)System.Enum.Parse(typeof(Ingredient), tag.Replace("-Ingredient", ""), true));
+            Destroy(collision.gameObject);
         }
     }
 }
