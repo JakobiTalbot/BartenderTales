@@ -5,21 +5,10 @@ using UnityEngine;
 public class CosyFire : PotionEffect
 {
     public GameObject m_fireParticlesPrefab;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public override void ActivateEffect()
+    public override void ActivateEffect(GameObject target)
     {
         // create fire particles
-        GameObject fire = Instantiate(m_fireParticlesPrefab, transform);
+        GameObject fire = Instantiate(m_fireParticlesPrefab, target.transform);
     }
 }

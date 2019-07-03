@@ -7,7 +7,7 @@ public class Customer : MonoBehaviour
 {
     public float m_rotationSpeed = 0.02f;
 
-    private Potion m_order;
+    private PotionName m_order;
     private NavMeshAgent m_agent;
     private Transform m_point;
     private bool m_bBadPerson = false;
@@ -15,8 +15,9 @@ public class Customer : MonoBehaviour
     void Start()
     {
         m_agent = GetComponent<NavMeshAgent>();
-        Shaker s = FindObjectOfType<Shaker>();
-        m_order = s.m_potions[Random.Range(0, s.m_potions.Count)];
+        // order random potion
+        // TODO: only order good potions
+        m_order = (PotionName)Random.Range(0, (int)PotionName.Count - 1);
     }
 
     // Update is called once per frame
@@ -43,11 +44,12 @@ public class Customer : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.CompareTag("Potion"))
+        if (collision.gameObject.GetComponent<Potion>())
         {
-            Potion p = collision.collider.GetComponent<Potion>();
+            PotionEffect p = collision.gameObject.GetComponent<PotionEffect>();
+            // TODO: reactions to potions
             // if correct potion given
-            if (m_order.m_potionName == p.m_potionName)
+            if (m_order == p.m_potionName)
             {
                 // happy reaction
             }
@@ -62,6 +64,10 @@ public class Customer : MonoBehaviour
                     // sad reaction
                 }
             }
+
+            // drink potion
+            p.ActivateEffect(gameObject);
+            Destroy(collision.gameObject);
         }
     }
 }

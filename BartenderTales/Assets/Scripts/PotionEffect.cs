@@ -4,5 +4,7 @@ using UnityEngine;
 
 public abstract class PotionEffect : MonoBehaviour
 {
-    public abstract void ActivateEffect();
+    [HideInInspector]
+    public PotionName m_potionName;
+    public abstract void ActivateEffect(GameObject target);
 }
