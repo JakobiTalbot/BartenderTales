@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Customer : MonoBehaviour
 {
     public float m_rotationSpeed = 0.02f;
+    public float m_timeUntilExitingBarAfterDrinking = 2f;
 
     private PotionName m_order;
     private CustomerSpawner m_spawner;
@@ -13,6 +14,7 @@ public class Customer : MonoBehaviour
     private Transform m_point;
     private bool m_bWaiting = true;
     private bool m_bBadPerson = false;
+    private bool m_bExitingBar = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -76,8 +78,16 @@ public class Customer : MonoBehaviour
             System.Type type = FindObjectOfType<Shaker>().m_potionFunc[p.m_potionName].GetType();
             // drink potion
             gameObject.AddComponent(type);
-            GetComponent(type);
             Destroy(collision.gameObject);
+            Invoke("ExitBar", m_timeUntilExitingBarAfterDrinking);
         }
+    }
+
+    private void ExitBar()
+    {
+        //m_bExitingBar = true;
+        //m_agent.isStopped = false;
+        //m_point = dest;
+        //m_agent.SetDestination(dest.position);
     }
 }

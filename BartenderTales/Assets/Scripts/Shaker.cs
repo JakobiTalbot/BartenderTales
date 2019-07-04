@@ -18,7 +18,7 @@ public enum PotionName
 public class Shaker : MonoBehaviour
 {
     public float m_shakeTime = 0.2f;
-    public float m_deltaPosShakeThreshold = 1.5f;
+    public float m_accelShakeThreshold = 1f;
     public List<Transform> m_potionSpawnPoints;
     public GameObject[] m_potionPrefabs;
     public int m_potionsToSpawn = 3;
@@ -31,6 +31,7 @@ public class Shaker : MonoBehaviour
     private Rigidbody m_rb;
     private float m_fCurrentShakeTime = 0f;
     private Vector3 m_v3LastPos;
+    private Vector3 m_v3LastDeltaPos;
 
     // Start is called before the first frame update
     void Start()
@@ -51,12 +52,11 @@ public class Shaker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (m_contents.Count >= 2)
         {
             // if player is shaking drink
-            if ((transform.parent
-                && (transform.parent.position - m_v3LastPos).magnitude > m_deltaPosShakeThreshold)
-                || (transform.position - m_v3LastPos).magnitude > m_deltaPosShakeThreshold)
+            if (((transform.position - m_v3LastPos) - m_v3LastDeltaPos).magnitude > m_accelShakeThreshold)
             {
                 m_fCurrentShakeTime += Time.deltaTime;
                 Debug.Log(m_fCurrentShakeTime);
@@ -102,6 +102,8 @@ public class Shaker : MonoBehaviour
                 }
             }
         }
+
+        m_v3LastDeltaPos = (transform.position - m_v3LastPos);
         m_v3LastPos = transform.position;
     }
 

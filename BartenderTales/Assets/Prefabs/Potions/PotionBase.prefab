@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 4776476626544267997}
   - component: {fileID: 3526345059780699972}
   - component: {fileID: 778915008722935532}
-  - component: {fileID: 7324996243237995057}
   - component: {fileID: 4406030753060389351}
   - component: {fileID: 73856103415350005}
   - component: {fileID: 1220423648557679018}
   - component: {fileID: 3419333530437432696}
   - component: {fileID: 3191130799654953404}
   - component: {fileID: 2428535416130232483}
+  - component: {fileID: 4214099197606956138}
   m_Layer: 0
   m_Name: PotionBase
   m_TagString: Untagged
@@ -84,20 +84,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &7324996243237995057
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958523389841282216}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4406030753060389351
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -261,3 +247,17 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
+--- !u!64 &4214099197606956138
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958523389841282216}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}

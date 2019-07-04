@@ -339,6 +339,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6951216053909456601, guid: dfe1ff7bfc48eb84a9297dcd28a558e5,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe1ff7bfc48eb84a9297dcd28a558e5, type: 3}
 --- !u!1 &489568371
@@ -712,6 +717,7 @@ GameObject:
   m_Component:
   - component: {fileID: 817260306}
   - component: {fileID: 817260305}
+  - component: {fileID: 817260307}
   m_Layer: 0
   m_Name: Singletons
   m_TagString: Untagged
@@ -757,6 +763,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &817260307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817260304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0260c24198154d3449f84c28cc2504ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_cosyFireParticles: {fileID: 1688973191102343754, guid: d35b6660f00603f42bc111ae0031eed6,
+    type: 3}
 --- !u!1 &941700947
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,6 +1560,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6951216053909456601, guid: 57a387cdc3a386a40bade26a2c6a9a02,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57a387cdc3a386a40bade26a2c6a9a02, type: 3}
