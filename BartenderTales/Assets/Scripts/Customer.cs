@@ -30,6 +30,11 @@ public class Customer : MonoBehaviour
     {
         if (m_agent.remainingDistance < 0.6f)
         {
+            if (m_bExitingBar)
+            {
+                Destroy(gameObject);
+                return;
+            }
             // face player
             Vector3 v3Pos = Camera.main.transform.position;
             v3Pos.y = transform.position.y;
@@ -85,9 +90,9 @@ public class Customer : MonoBehaviour
 
     private void ExitBar()
     {
-        //m_bExitingBar = true;
-        //m_agent.isStopped = false;
-        //m_point = dest;
-        //m_agent.SetDestination(dest.position);
+        m_bExitingBar = true;
+        m_agent.isStopped = false;
+        m_point = FindObjectOfType<CustomerSpawner>().m_spawnPoint;
+        m_agent.SetDestination(m_point.position);
     }
 }
