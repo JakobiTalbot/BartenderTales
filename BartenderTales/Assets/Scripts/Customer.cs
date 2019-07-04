@@ -8,8 +8,10 @@ public class Customer : MonoBehaviour
     public float m_rotationSpeed = 0.02f;
 
     private PotionName m_order;
+    private CustomerSpawner m_spawner;
     private NavMeshAgent m_agent;
     private Transform m_point;
+    private bool m_bWaiting = true;
     private bool m_bBadPerson = false;
     // Start is called before the first frame update
     void Start()
@@ -17,7 +19,8 @@ public class Customer : MonoBehaviour
         m_agent = GetComponent<NavMeshAgent>();
         // order random potion
         // TODO: only order good potions
-        m_order = (PotionName)Random.Range(0, (int)PotionName.Count - 1);
+        m_order = (PotionName)Random.Range(0, (int)PotionName.Count);
+        m_spawner = FindObjectOfType<CustomerSpawner>();
     }
 
     // Update is called once per frame
@@ -31,6 +34,11 @@ public class Customer : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(v3Pos - transform.position), m_rotationSpeed);
             // stop moving
             m_agent.isStopped = true;
+            if (m_bWaiting && m_spawner.m_servingPoints.Count > 0)
+            {
+                SetDestination(m_spawner.m_servingPoints[Random.Range(0, m_spawner.m_servingPoints.Count)]);
+                m_bWaiting = false;
+            }
         }
     }
 
@@ -38,6 +46,7 @@ public class Customer : MonoBehaviour
     {
         if (!m_agent)
             m_agent = GetComponent<NavMeshAgent>();
+        m_agent.isStopped = false;
         m_point = dest;
         m_agent.SetDestination(dest.position);
     }
@@ -64,9 +73,10 @@ public class Customer : MonoBehaviour
                     // sad reaction
                 }
             }
-
+            System.Type type = FindObjectOfType<Shaker>().m_potionFunc[p.m_potionName].GetType();
             // drink potion
-            p.ActivateEffect(gameObject);
+            gameObject.AddComponent(type);
+            GetComponent(type);
             Destroy(collision.gameObject);
         }
     }

@@ -6,9 +6,21 @@ public class CosyFire : PotionEffect
 {
     public GameObject m_fireParticlesPrefab;
 
-    public override void ActivateEffect(GameObject target)
+    [HideInInspector]
+    public bool m_bFireMade = false;
+    private void Start()
     {
-        // create fire particles
-        GameObject fire = Instantiate(m_fireParticlesPrefab, target.transform);
+        m_potionName = PotionName.CosyFire;
+    }
+
+    private void Update()
+    {
+        // do fire if not on potion
+        if (!GetComponent<Potion>()
+            && m_bFireMade)
+        {
+            Instantiate(m_fireParticlesPrefab, transform);
+            m_bFireMade = true;
+        }
     }
 }

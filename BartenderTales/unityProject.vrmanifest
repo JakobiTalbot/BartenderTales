@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.bartendertales.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\s181714\\Desktop\\BartenderTales\\BartenderTales\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "BartenderTales [Testing]"
+        }
+      }
+    }
+  ]
+}

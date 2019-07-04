@@ -15,6 +15,7 @@ MonoBehaviour:
   m_potionName: 0
   m_fireParticlesPrefab: {fileID: 1688973191102343754, guid: d35b6660f00603f42bc111ae0031eed6,
     type: 3}
+  m_bUpdate: 0
 --- !u!1001 &6601865024353070005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26,6 +27,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CosyFirePotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958523389841282216, guid: 6bf262d78d51d79489f6ce81c5345b4f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4776476626544267997, guid: 6bf262d78d51d79489f6ce81c5345b4f,
         type: 3}
