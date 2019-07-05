@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1798779832}
   - component: {fileID: 1798779831}
   m_Layer: 0
-  m_Name: EmuElderberry
+  m_Name: UnicornFeathers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b5ba9d6e7944a4284a3045f4af8f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ingredientType: 1
+  m_ingredientType: 5
 --- !u!114 &1798779833
 MonoBehaviour:
   m_ObjectHideFlags: 0

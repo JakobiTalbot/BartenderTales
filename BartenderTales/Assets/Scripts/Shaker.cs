@@ -12,6 +12,8 @@ public enum PotionName
     PixieDust,
     Beer,
     CosyFire,
+    BelchFire,
+    HonestPolicy,
     Count
 }
 
@@ -47,6 +49,7 @@ public class Shaker : MonoBehaviour
     {
         m_potionFunc = new Dictionary<PotionName, PotionEffect>();
         m_potionFunc.Add(PotionName.CosyFire, m_potionPrefabs[0].GetComponent<CosyFire>());
+        m_potionFunc.Add(PotionName.QuickEnd, m_potionPrefabs[1].GetComponent<QuickEnd>());
     }
 
     // Update is called once per frame

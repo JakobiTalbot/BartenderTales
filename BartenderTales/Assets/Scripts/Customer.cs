@@ -2,11 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
+using TMPro;
 
 public class Customer : MonoBehaviour
 {
+    public GameObject m_speechBubbleCanvas;
+    public TextMeshProUGUI m_text;
+    public Image m_bubble;
+    [Tooltip("The speed of the lerp for the customer to rotate to face the player")]
     public float m_rotationSpeed = 0.02f;
+    [Tooltip("The time to wait after drinking until the customer leaves the bar")]
     public float m_timeUntilExitingBarAfterDrinking = 2f;
+    public int m_reputationOnCorrectOrder = 1;
+    public int m_reputationOnWrongOrder = -1;
 
     private PotionName m_order;
     private CustomerSpawner m_spawner;
@@ -35,6 +44,8 @@ public class Customer : MonoBehaviour
                 Destroy(gameObject);
                 return;
             }
+            else if (!m_agent.isStopped)
+                Speak("drink plz");
             // face player
             Vector3 v3Pos = Camera.main.transform.position;
             v3Pos.y = transform.position.y;
@@ -47,6 +58,8 @@ public class Customer : MonoBehaviour
                 m_bWaiting = false;
             }
         }
+        else if (m_agent.isStopped)
+            SetDestination(m_point);
     }
 
     public void SetDestination(Transform dest)
@@ -67,16 +80,18 @@ public class Customer : MonoBehaviour
             // if correct potion given
             if (m_order == p.m_potionName)
             {
+                FindObjectOfType<ReputationManager>().AddToReputation(m_reputationOnCorrectOrder);
                 // happy reaction
             }
             else // if wrong potion given
             {
                 if (m_bBadPerson)
                 {
-
+                    FindObjectOfType<ReputationManager>().AddToReputation(m_reputationOnCorrectOrder);
                 }
                 else
                 {
+                    FindObjectOfType<ReputationManager>().AddToReputation(m_reputationOnCorrectOrder);
                     // sad reaction
                 }
             }
@@ -94,5 +109,20 @@ public class Customer : MonoBehaviour
         m_agent.isStopped = false;
         m_point = FindObjectOfType<CustomerSpawner>().m_spawnPoint;
         m_agent.SetDestination(m_point.position);
+    }
+
+    public void Speak(string text)
+    {
+        m_speechBubbleCanvas.SetActive(true);
+        m_text.text = text;
+        m_text.rectTransform.sizeDelta = m_text.GetPreferredValues() * m_text.fontSize;
+        m_bubble.rectTransform.sizeDelta = m_text.GetPreferredValues() * m_text.fontSize;
+        StartCoroutine(BubbleTimer(5f));
+    }
+
+    IEnumerator BubbleTimer(float fTime)
+    {
+        yield return new WaitForSeconds(fTime);
+        m_speechBubbleCanvas.SetActive(false);
     }
 }

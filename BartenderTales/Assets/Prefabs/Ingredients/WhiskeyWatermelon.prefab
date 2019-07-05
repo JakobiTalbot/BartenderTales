@@ -14,11 +14,11 @@ GameObject:
   - component: {fileID: 1077280278233749921}
   - component: {fileID: 6951216053909456601}
   - component: {fileID: 9199937724124658340}
-  - component: {fileID: 1798779833}
-  - component: {fileID: 1798779832}
-  - component: {fileID: 1798779831}
+  - component: {fileID: 1598460449}
+  - component: {fileID: 1598460448}
+  - component: {fileID: 1598460447}
   m_Layer: 0
-  m_Name: EmuElderberry
+  m_Name: WhiskeyWatermelon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b5ba9d6e7944a4284a3045f4af8f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ingredientType: 1
---- !u!114 &1798779833
+  m_ingredientType: 0
+--- !u!114 &1598460449
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,7 +176,7 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
---- !u!114 &1798779832
+--- !u!114 &1598460448
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,7 +191,7 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
---- !u!114 &1798779831
+--- !u!114 &1598460447
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
