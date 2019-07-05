@@ -6,4 +6,6 @@ public abstract class PotionEffect : MonoBehaviour
 {
     [HideInInspector]
     public PotionName m_potionName;
+
+    public PotionName potionName { get; }
 }

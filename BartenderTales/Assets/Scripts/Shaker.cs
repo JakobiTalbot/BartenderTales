@@ -144,6 +144,11 @@ public class Shaker : MonoBehaviour
         {
             // TODO: feedback for putting ingredient in potion
             m_contents.Add(collision.gameObject.GetComponent<Ingredient>().m_ingredientType);
+
+            // dirty way to fix errors from object being destroyed when still on hand
+            collision.transform.parent = null;
+            collision.gameObject.SetActive(false);
+
             Destroy(collision.gameObject);
         }
     }

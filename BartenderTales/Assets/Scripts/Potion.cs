@@ -12,9 +12,4 @@ public class Potion : MonoBehaviour
     {
         m_point = point;
     }
-
-    private void OnDestroy()
-    {
-        
-    }
 }

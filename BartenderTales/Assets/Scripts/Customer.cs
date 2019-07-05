@@ -16,6 +16,7 @@ public class Customer : MonoBehaviour
     public float m_timeUntilExitingBarAfterDrinking = 2f;
     public int m_reputationOnCorrectOrder = 1;
     public int m_reputationOnWrongOrder = -1;
+    public Vector2 m_speechBubbleBuffer = new Vector2(1, 1);
 
     private PotionName m_order;
     private CustomerSpawner m_spawner;
@@ -44,7 +45,8 @@ public class Customer : MonoBehaviour
                 Destroy(gameObject);
                 return;
             }
-            else if (!m_agent.isStopped)
+            else if (!m_agent.isStopped
+                && !m_bWaiting)
                 Speak("drink plz");
             // face player
             Vector3 v3Pos = Camera.main.transform.position;
@@ -98,6 +100,11 @@ public class Customer : MonoBehaviour
             System.Type type = FindObjectOfType<Shaker>().m_potionFunc[p.m_potionName].GetType();
             // drink potion
             gameObject.AddComponent(type);
+
+            // dirty way to fix errors from object being destroyed when still on hand
+            collision.transform.parent = null;
+            collision.gameObject.SetActive(false);
+
             Destroy(collision.gameObject);
             Invoke("ExitBar", m_timeUntilExitingBarAfterDrinking);
         }
@@ -115,8 +122,8 @@ public class Customer : MonoBehaviour
     {
         m_speechBubbleCanvas.SetActive(true);
         m_text.text = text;
-        m_text.rectTransform.sizeDelta = m_text.GetPreferredValues() * m_text.fontSize;
-        m_bubble.rectTransform.sizeDelta = m_text.GetPreferredValues() * m_text.fontSize;
+        m_text.rectTransform.sizeDelta = m_text.GetPreferredValues();
+        m_bubble.rectTransform.sizeDelta = (m_text.rectTransform.sizeDelta + m_speechBubbleBuffer) * m_text.fontSize;
         StartCoroutine(BubbleTimer(5f));
     }
 

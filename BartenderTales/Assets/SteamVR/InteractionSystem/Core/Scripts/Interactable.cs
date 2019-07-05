@@ -320,7 +320,7 @@ namespace Valve.VR.InteractionSystem
         {
             isDestroying = true;
 
-            if (attachedToHand != null)
+            if (attachedToHand)
             {
                 attachedToHand.DetachObject(this.gameObject, false);
                 attachedToHand.skeleton.BlendToSkeleton(0.1f);
