@@ -41,34 +41,46 @@ public class Customer : MonoBehaviour
     {
         if (m_agent.remainingDistance < 0.6f)
         {
+            // if reached the exit point of the bar
             if (m_bExitingBar)
             {
+                m_spawner.m_customers.Remove(gameObject);
                 Destroy(gameObject);
                 return;
             }
+            Debug.Log(m_spawner.m_servingPoints.Count);
+            // if waiting and there is free spots at the front of bar
+            if (m_bWaiting && m_spawner.m_servingPoints.Count > 0)
+            {
+                int i = Random.Range(0, m_spawner.m_servingPoints.Count);
+                m_spawner.m_waitingPoints.Add(m_point);
+                SetDestination(m_spawner.m_servingPoints[i], false);
+                m_spawner.m_servingPoints.RemoveAt(i);
+                m_bWaiting = false;
+            }
+
+            // display speech bubble order
             else if (!m_agent.isStopped
                 && !m_bWaiting)
                 Speak(Regex.Replace(m_order.ToString(), "([A-Z])", " $1").Trim() + " please!");
+
             // face player
             Vector3 v3Pos = Camera.main.transform.position;
             v3Pos.y = transform.position.y;
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(v3Pos - transform.position), m_rotationSpeed);
+
             // stop moving
             m_agent.isStopped = true;
-            if (m_bWaiting && m_spawner.m_servingPoints.Count > 0)
-            {
-                SetDestination(m_spawner.m_servingPoints[Random.Range(0, m_spawner.m_servingPoints.Count)]);
-                m_bWaiting = false;
-            }
         }
         else if (m_agent.isStopped)
-            SetDestination(m_point);
+            SetDestination(m_point, m_bWaiting);
     }
 
-    public void SetDestination(Transform dest)
+    public void SetDestination(Transform dest, bool bWait)
     {
         if (!m_agent)
             m_agent = GetComponent<NavMeshAgent>();
+        m_bWaiting = bWait;
         m_agent.isStopped = false;
         m_point = dest;
         m_agent.SetDestination(dest.position);
@@ -107,11 +119,10 @@ public class Customer : MonoBehaviour
             collision.gameObject.SetActive(false);
 
             Destroy(collision.gameObject);
-            Invoke("ExitBar", m_timeUntilExitingBarAfterDrinking);
         }
     }
 
-    private void ExitBar()
+    public void ExitBar()
     {
         m_bExitingBar = true;
         m_agent.isStopped = false;

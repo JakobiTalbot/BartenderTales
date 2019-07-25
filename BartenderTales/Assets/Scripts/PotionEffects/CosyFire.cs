@@ -7,7 +7,11 @@ public class CosyFire : PotionEffect
     private void Start()
     {
         m_potionName = PotionName.CosyFire;
-        if (!GetComponent<Potion>())
+        Customer c = GetComponent<Customer>();
+        if (c)
+        {
             Instantiate(FindObjectOfType<PotionAssets>().m_cosyFireParticles, transform);
+            c.ExitBar();
+        }
     }
 }

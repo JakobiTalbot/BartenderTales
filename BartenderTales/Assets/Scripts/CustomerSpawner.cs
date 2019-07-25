@@ -10,7 +10,8 @@ public class CustomerSpawner : MonoBehaviour
     public List<Transform> m_waitingPoints;
     public float m_timeBetweenCustomers = 60f;
 
-    private List<GameObject> m_customers;
+    [HideInInspector]
+    public List<GameObject> m_customers;
     private float m_fCustomerSpawnTimer = 0f;
 
     // Start is called before the first frame update
@@ -20,7 +21,7 @@ public class CustomerSpawner : MonoBehaviour
         // spawn customer at start
         m_customers.Add(Instantiate(m_customerPrefabs[Random.Range(0, m_customerPrefabs.Length)], m_spawnPoint.position, m_spawnPoint.rotation));
         int i = Random.Range(0, m_servingPoints.Count);
-        m_customers[m_customers.Count - 1].GetComponent<Customer>().SetDestination(m_servingPoints[i]);
+        m_customers[m_customers.Count - 1].GetComponent<Customer>().SetDestination(m_servingPoints[i], false);
         m_servingPoints.RemoveAt(i);
     }
 
@@ -35,19 +36,13 @@ public class CustomerSpawner : MonoBehaviour
             && (m_servingPoints.Count > 0 || m_waitingPoints.Count > 0))
         {
             Transform destPoint;
+            bool bWait = false;
             // if no free serving points
             if (m_servingPoints.Count <= 0)
             {
-                // if no free waiting points
-                if (m_waitingPoints.Count <= 0)
-                {
-                    return;
-                }
-                else // if there are free waiting points
-                {
-                    destPoint = m_waitingPoints[m_waitingPoints.Count - 1];
-                    m_waitingPoints.RemoveAt(m_waitingPoints.Count - 1);
-                }
+                destPoint = m_waitingPoints[m_waitingPoints.Count - 1];
+                m_waitingPoints.RemoveAt(m_waitingPoints.Count - 1);
+                bWait = true;
             }
             else // if there are free serving points
             {
@@ -58,7 +53,7 @@ public class CustomerSpawner : MonoBehaviour
             m_fCustomerSpawnTimer -= m_timeBetweenCustomers;
             // spawn customer
             m_customers.Add(Instantiate(m_customerPrefabs[Random.Range(0, m_customerPrefabs.Length)], m_spawnPoint.position, m_spawnPoint.rotation));
-            m_customers[m_customers.Count - 1].GetComponent<Customer>().SetDestination(destPoint);
+            m_customers[m_customers.Count - 1].GetComponent<Customer>().SetDestination(destPoint, bWait);
         }
     }
 }

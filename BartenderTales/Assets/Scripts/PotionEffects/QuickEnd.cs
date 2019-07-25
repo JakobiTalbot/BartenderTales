@@ -9,8 +9,10 @@ public class QuickEnd : PotionEffect
     void Start()
     {
         m_potionName = PotionName.QuickEnd;
-        if (!GetComponent<Potion>())
+        if (GetComponent<Customer>())
+        {
             Invoke("Explode", m_timeToWaitBeforeExploding);
+        }
     }
 
     private void Explode()
