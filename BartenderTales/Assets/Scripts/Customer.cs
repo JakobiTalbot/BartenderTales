@@ -93,7 +93,7 @@ public class Customer : MonoBehaviour
                 }
                 else
                 {
-                    FindObjectOfType<ReputationManager>().AddToReputation(m_reputationOnCorrectOrder);
+                    FindObjectOfType<ReputationManager>().AddToReputation(m_reputationOnWrongOrder);
                     // sad reaction
                 }
             }
@@ -123,7 +123,7 @@ public class Customer : MonoBehaviour
         m_speechBubbleCanvas.SetActive(true);
         m_text.text = text;
         m_text.rectTransform.sizeDelta = m_text.GetPreferredValues();
-        m_bubble.rectTransform.sizeDelta = (m_text.rectTransform.sizeDelta + m_speechBubbleBuffer) * m_text.fontSize;
+        m_bubble.rectTransform.sizeDelta = (m_text.rectTransform.sizeDelta + m_speechBubbleBuffer);
         StartCoroutine(BubbleTimer(5f));
     }
 
