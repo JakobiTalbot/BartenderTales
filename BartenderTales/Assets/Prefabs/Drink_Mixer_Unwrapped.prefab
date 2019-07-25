@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4321847784814561257}
   - component: {fileID: 4321847784814173542}
+  - component: {fileID: 7829290496063203911}
   - component: {fileID: 4321847784814173543}
   - component: {fileID: 4321847784814173540}
   - component: {fileID: 4321847784814173541}
@@ -51,6 +52,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.043489218, y: 0.05588891, z: 0.03573222}
   m_Center: {x: 0.00027081967, y: 0.01470857, z: 0.000121045116}
+--- !u!136 &7829290496063203911
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4321847784814271433}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.03
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4321847784814173543
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -79,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee2298b084734b45835d53f8ec0c713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_shakeTime: 3
+  m_shakeTime: 2
   m_accelShakeThreshold: 0.02
   m_potionSpawnPoints:
   - {fileID: 0}
