@@ -78,6 +78,7 @@ MonoBehaviour:
   m_potionPrefabs:
   - {fileID: 4661397033325395741, guid: e6490cc02fe98324aafa4e4592a8c77a, type: 3}
   - {fileID: 3352617677956273045, guid: 4db3446bcf691d64495eea3825220a6c, type: 3}
+  - {fileID: 5514788207697548510, guid: 980da04582a0c95448028bc1ae2e9b50, type: 3}
   m_potionsToSpawn: 3
 --- !u!114 &4321847784814173541
 MonoBehaviour:
