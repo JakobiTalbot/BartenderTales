@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4321847784814561257}
-  - component: {fileID: 4321847784814173542}
-  - component: {fileID: 7829290496063203911}
   - component: {fileID: 4321847784814173543}
   - component: {fileID: 4321847784814173540}
   - component: {fileID: 4321847784814173541}
   - component: {fileID: 4321847784814173546}
   - component: {fileID: 4321847784814173547}
+  - component: {fileID: 458980343615862379}
+  - component: {fileID: 9145488045359861457}
   m_Layer: 0
   m_Name: Drink_Mixer_Unwrapped
   m_TagString: Untagged
@@ -39,33 +39,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4321847784814173542
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4321847784814271433}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.043489218, y: 0.05588891, z: 0.03573222}
-  m_Center: {x: 0.00027081967, y: 0.01470857, z: 0.000121045116}
---- !u!136 &7829290496063203911
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4321847784814271433}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.03
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4321847784814173543
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -207,6 +180,33 @@ MonoBehaviour:
     m_TypeName: Valve.VR.InteractionSystem.HandEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   interactable: {fileID: 0}
+--- !u!136 &458980343615862379
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4321847784814271433}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.012
+  m_Height: 0.048221897
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.013228941, z: 0}
+--- !u!65 &9145488045359861457
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4321847784814271433}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.001, z: 0.02}
+  m_Center: {x: 0, y: -0.01, z: 0}
 --- !u!1 &4321847784814271435
 GameObject:
   m_ObjectHideFlags: 0

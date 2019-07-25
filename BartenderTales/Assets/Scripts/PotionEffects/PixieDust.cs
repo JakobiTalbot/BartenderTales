@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PixieDust : MonoBehaviour
+public class PixieDust : PotionEffect
 {
     public float m_hoverHeight = 1f;
     public float m_hoverHeightVariance = 0.4f;
@@ -19,6 +19,7 @@ public class PixieDust : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_potionName = PotionName.PixieDust;
         if (GetComponent<Potion>())
             return;
 
