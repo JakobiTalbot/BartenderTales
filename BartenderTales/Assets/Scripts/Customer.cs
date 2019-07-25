@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using TMPro;
+using System.Text.RegularExpressions;
 
 public class Customer : MonoBehaviour
 {
@@ -47,7 +48,7 @@ public class Customer : MonoBehaviour
             }
             else if (!m_agent.isStopped
                 && !m_bWaiting)
-                Speak("drink plz");
+                Speak(Regex.Replace(m_order.ToString(), "([A-Z])", " $1").Trim() + " please!");
             // face player
             Vector3 v3Pos = Camera.main.transform.position;
             v3Pos.y = transform.position.y;

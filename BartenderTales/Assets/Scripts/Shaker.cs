@@ -6,7 +6,6 @@ public enum PotionName
 {
     FantasticTeleport = 0,
     QuickEnd,
-    Mundane,
     AssassinsSpecial,
     SmokeyTeleport,
     PixieDust,
@@ -14,7 +13,8 @@ public enum PotionName
     CosyFire,
     BelchFire,
     HonestPolicy,
-    Count
+    Count,
+    Mundane
 }
 
 public class Shaker : MonoBehaviour
