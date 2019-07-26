@@ -48,7 +48,7 @@ public class Customer : MonoBehaviour
                 Destroy(gameObject);
                 return;
             }
-            Debug.Log(m_spawner.m_servingPoints.Count);
+
             // if waiting and there is free spots at the front of bar
             if (m_bWaiting && m_spawner.m_servingPoints.Count > 0)
             {
