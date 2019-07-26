@@ -1,16 +1,15 @@
 fileFormatVersion: 2
-guid: f5733f628354df546940ef5102582dc4
+guid: 2ec72f89ed7bfe24483dd5a3323356b2
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: polySurface16
     400000: //RootNode
-    400002: polySurface16
-    2100000: blinn1
-    2300000: polySurface16
-    3300000: polySurface16
-    4300000: polySurface16
+    2100000: Drink_Mixer_Unwrapped_lambert9
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Drink_Mixer_Unwrapped:polySurface3
+    4300002: Drink_Mixer_Unwrapped:DrinkMixer_Cup_002
   externalObjects: {}
   materials:
     importMaterials: 1

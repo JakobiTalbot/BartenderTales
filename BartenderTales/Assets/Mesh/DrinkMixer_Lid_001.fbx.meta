@@ -1,14 +1,15 @@
 fileFormatVersion: 2
-guid: eb46cb4171b588044a7cbf8d66063680
+guid: a8c0faa668cd12848b1f4b8bd867295b
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert1
+    2100000: Drink_Mixer_Unwrapped_lambert9
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pCube93
+    4300000: Drink_Mixer_Unwrapped:polySurface4
+    4300002: Drink_Mixer_Unwrapped:DrinkMixer_Lid_001
   externalObjects: {}
   materials:
     importMaterials: 1
