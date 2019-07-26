@@ -15,8 +15,7 @@ GameObject:
   - component: {fileID: 4965955078432017557}
   - component: {fileID: 8648844381192350750}
   - component: {fileID: 3642947750572860173}
-  - component: {fileID: 6777135487498212754}
-  - component: {fileID: 6362689619457343006}
+  - component: {fileID: 6566479387854921548}
   m_Layer: 0
   m_Name: DrinkMixer_Lid_001
   m_TagString: Untagged
@@ -187,7 +186,7 @@ MonoBehaviour:
   onPickUp:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6362689619457343006}
+      - m_Target: {fileID: 0}
         m_MethodName: EnableHeld
         m_Mode: 1
         m_Arguments:
@@ -203,7 +202,7 @@ MonoBehaviour:
   onDetachFromHand:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6362689619457343006}
+      - m_Target: {fileID: 0}
         m_MethodName: DisableHeld
         m_Mode: 1
         m_Arguments:
@@ -222,8 +221,8 @@ MonoBehaviour:
     m_TypeName: Valve.VR.InteractionSystem.HandEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   interactable: {fileID: 0}
---- !u!65 &6777135487498212754
-BoxCollider:
+--- !u!64 &6566479387854921548
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -232,6 +231,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.17634666, y: 0.19967663, z: 0.17408568}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300002, guid: a8c0faa668cd12848b1f4b8bd867295b, type: 3}

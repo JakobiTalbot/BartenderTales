@@ -143,21 +143,6 @@ public class Shaker : MonoBehaviour
         return null;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.GetComponent<Ingredient>())
-        {
-            // TODO: feedback for putting ingredient in potion
-            m_contents.Add(collision.gameObject.GetComponent<Ingredient>().m_ingredientType);
-
-            // dirty way to fix errors from object being destroyed when still on hand
-            collision.transform.parent = null;
-            collision.gameObject.SetActive(false);
-
-            Destroy(collision.gameObject);
-        }
-    }
-
     public void PlaceCap(GameObject cap)
     {
         if (!m_cap)
@@ -165,6 +150,7 @@ public class Shaker : MonoBehaviour
         // move to place
         cap.transform.SetPositionAndRotation(m_capPlacedTransform.position, m_capPlacedTransform.rotation);
         cap.transform.parent = transform;
+        cap.GetComponent<Rigidbody>().isKinematic = true;
         m_bCapOn = true;
     }
 

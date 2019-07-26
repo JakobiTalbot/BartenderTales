@@ -16,4 +16,13 @@ public enum IngredientType
 public class Ingredient : MonoBehaviour
 {
     public IngredientType m_ingredientType;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Shaker>())
+        {
+            other.GetComponent<Shaker>().AddIngredient(m_ingredientType);
+            Destroy(gameObject);
+        }
+    }
 }

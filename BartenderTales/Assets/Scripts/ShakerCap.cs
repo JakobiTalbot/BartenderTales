@@ -10,7 +10,8 @@ public class ShakerCap : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!m_bOnShaker
-            && other.GetComponent<Shaker>())
+            && other.GetComponent<Shaker>()
+            && !m_bHeld)
         {
             if (!m_shaker)
                 m_shaker = other.GetComponent<Shaker>();
@@ -28,5 +29,9 @@ public class ShakerCap : MonoBehaviour
             m_shaker.RemoveCap();
         }
     }
-    public void DisableHeld() => m_bHeld = false;
+    public void DisableHeld()
+    {
+        m_bHeld = false;
+        GetComponent<Rigidbody>().isKinematic = false;
+    }
 }
