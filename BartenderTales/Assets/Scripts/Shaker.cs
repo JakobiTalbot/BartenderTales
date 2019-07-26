@@ -23,17 +23,20 @@ public class Shaker : MonoBehaviour
     public float m_accelShakeThreshold = 1f;
     public List<Transform> m_potionSpawnPoints;
     public GameObject[] m_potionPrefabs;
+    public Transform m_capPlacedTransform;
     public int m_potionsToSpawn = 3;
 
     [HideInInspector]
     public Dictionary<PotionName, PotionEffect> m_potionFunc;
 
     private ParticleSystem m_particleSystem;
+    private GameObject m_cap;
     private List<IngredientType> m_contents;
     private Rigidbody m_rb;
     private float m_fCurrentShakeTime = 0f;
     private Vector3 m_v3LastPos;
     private Vector3 m_v3LastDeltaPos;
+    private bool m_bCapOn = false;
 
     // Start is called before the first frame update
     void Start()
@@ -56,8 +59,9 @@ public class Shaker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (m_contents.Count >= 2)
+        // if contains enough contents and the cap is on
+        if (m_contents.Count >= 2
+            && m_bCapOn)
         {
             // if player is shaking drink
             if (((transform.position - m_v3LastPos) - m_v3LastDeltaPos).magnitude > m_accelShakeThreshold)
@@ -152,5 +156,21 @@ public class Shaker : MonoBehaviour
 
             Destroy(collision.gameObject);
         }
+    }
+
+    public void PlaceCap(GameObject cap)
+    {
+        if (!m_cap)
+            m_cap = cap;
+        // move to place
+        cap.transform.SetPositionAndRotation(m_capPlacedTransform.position, m_capPlacedTransform.rotation);
+        cap.transform.parent = transform;
+        m_bCapOn = true;
+    }
+
+    public void RemoveCap()
+    {
+        m_bCapOn = false;
+        m_cap.transform.parent = null;
     }
 }
