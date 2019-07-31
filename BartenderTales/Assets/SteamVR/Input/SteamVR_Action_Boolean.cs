@@ -348,9 +348,9 @@ namespace Valve.VR
             lastActionData = actionData;
             lastActive = active;
 
-            //EVRInputError err = OpenVR.Input.GetDigitalActionData(action.handle, ref actionData, actionData_size, inputSourceHandle);
-            //if (err != EVRInputError.None)
-            //    Debug.LogError("<b>[SteamVR]</b> GetDigitalActionData error (" + action.fullPath + "): " + err.ToString() + " handle: " + action.handle.ToString());
+            EVRInputError err = OpenVR.Input.GetDigitalActionData(action.handle, ref actionData, actionData_size, inputSourceHandle);
+            if (err != EVRInputError.None)
+                Debug.LogError("<b>[SteamVR]</b> GetDigitalActionData error (" + action.fullPath + "): " + err.ToString() + " handle: " + action.handle.ToString());
 
             if (changed)
                 changedTime = Time.realtimeSinceStartup + actionData.fUpdateTime;
