@@ -17,7 +17,9 @@ public class Customer : MonoBehaviour
     public float m_timeUntilExitingBarAfterDrinking = 2f;
     public int m_reputationOnCorrectOrder = 1;
     public int m_reputationOnWrongOrder = -1;
+    public int m_coinsGivenOnCorrectOrder = 1;
     public Vector2 m_speechBubbleBuffer = new Vector2(1, 1);
+    public GameObject m_moneyPrefab;
 
     private PotionName m_order;
     private CustomerSpawner m_spawner;
@@ -26,6 +28,7 @@ public class Customer : MonoBehaviour
     private bool m_bWaiting = true;
     private bool m_bBadPerson = false;
     private bool m_bExitingBar = false;
+    private Vector3 m_v3CoinDropPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -90,7 +93,7 @@ public class Customer : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Potion>())
         {
-            // add back point to spawner
+            // add point to spawner points
             if (m_bWaiting)
                 m_spawner.m_waitingPoints.Add(m_point);
             else
@@ -102,6 +105,8 @@ public class Customer : MonoBehaviour
             if (m_order == p.m_potionName)
             {
                 FindObjectOfType<ReputationManager>().AddToReputation(m_reputationOnCorrectOrder);
+                // give money
+                Instantiate(m_moneyPrefab, m_v3CoinDropPos, Quaternion.Euler(Vector3.zero));
                 // happy reaction
             }
             else // if wrong potion given
@@ -134,6 +139,11 @@ public class Customer : MonoBehaviour
         m_agent.isStopped = false;
         m_point = FindObjectOfType<CustomerSpawner>().m_spawnPoint;
         m_agent.SetDestination(m_point.position);
+    }
+
+    public void SetCoinDropPos(Vector3 v3DropPos)
+    {
+        m_v3CoinDropPos = v3DropPos;
     }
 
     public void Speak(string text)

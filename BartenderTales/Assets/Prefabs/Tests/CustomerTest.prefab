@@ -229,7 +229,10 @@ MonoBehaviour:
   m_timeUntilExitingBarAfterDrinking: 2
   m_reputationOnCorrectOrder: 1
   m_reputationOnWrongOrder: -1
+  m_coinsGivenOnCorrectOrder: 1
   m_speechBubbleBuffer: {x: 0.1, y: 0.1}
+  m_moneyPrefab: {fileID: 6324821836455372774, guid: 376fd99151b508842b77c710c794f5e1,
+    type: 3}
 --- !u!195 &6389857576596921280
 NavMeshAgent:
   m_ObjectHideFlags: 0

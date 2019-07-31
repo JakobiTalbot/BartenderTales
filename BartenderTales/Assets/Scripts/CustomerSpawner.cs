@@ -9,6 +9,7 @@ public class CustomerSpawner : MonoBehaviour
     public List<Transform> m_servingPoints;
     public List<Transform> m_waitingPoints;
     public float m_timeBetweenCustomers = 60f;
+    public Transform m_coinDropPoint;
 
     [HideInInspector]
     public List<GameObject> m_customers;
@@ -21,7 +22,9 @@ public class CustomerSpawner : MonoBehaviour
         // spawn customer at start
         m_customers.Add(Instantiate(m_customerPrefabs[Random.Range(0, m_customerPrefabs.Length)], m_spawnPoint.position, m_spawnPoint.rotation));
         int i = Random.Range(0, m_servingPoints.Count);
-        m_customers[m_customers.Count - 1].GetComponent<Customer>().SetDestination(m_servingPoints[i], false);
+        Customer cust = m_customers[m_customers.Count - 1].GetComponent<Customer>();
+        cust.SetDestination(m_servingPoints[i], false);
+        cust.SetCoinDropPos(m_coinDropPoint.position);
         m_servingPoints.RemoveAt(i);
     }
 
@@ -53,7 +56,9 @@ public class CustomerSpawner : MonoBehaviour
             m_fCustomerSpawnTimer -= m_timeBetweenCustomers;
             // spawn customer
             m_customers.Add(Instantiate(m_customerPrefabs[Random.Range(0, m_customerPrefabs.Length)], m_spawnPoint.position, m_spawnPoint.rotation));
-            m_customers[m_customers.Count - 1].GetComponent<Customer>().SetDestination(destPoint, bWait);
+            Customer cust = m_customers[m_customers.Count - 1].GetComponent<Customer>();
+            cust.SetDestination(destPoint, bWait);
+            cust.SetCoinDropPos(m_coinDropPoint.position);
         }
     }
 }
