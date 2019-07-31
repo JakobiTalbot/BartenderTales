@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shaker
+  - projectile
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
