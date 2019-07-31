@@ -37,10 +37,12 @@ public class Shaker : MonoBehaviour
     private Vector3 m_v3LastPos;
     private Vector3 m_v3LastDeltaPos;
     private bool m_bCapOn = false;
+    private Collider m_collider;
 
     // Start is called before the first frame update
     void Start()
     {
+        m_collider = GetComponent<Collider>();
         m_contents = new List<IngredientType>();
         m_rb = GetComponent<Rigidbody>();
         m_particleSystem = GetComponent<ParticleSystem>();
@@ -147,6 +149,7 @@ public class Shaker : MonoBehaviour
     {
         if (!m_cap)
             m_cap = cap;
+        Physics.IgnoreCollision(m_collider, cap.GetComponent<Collider>(), true);
         // move to place
         cap.transform.SetPositionAndRotation(m_capPlacedTransform.position, m_capPlacedTransform.rotation);
         cap.transform.parent = transform;
@@ -156,6 +159,7 @@ public class Shaker : MonoBehaviour
 
     public void RemoveCap()
     {
+        Physics.IgnoreCollision(m_collider, m_cap.GetComponent<Collider>(), false);
         m_bCapOn = false;
         m_cap.transform.parent = null;
     }

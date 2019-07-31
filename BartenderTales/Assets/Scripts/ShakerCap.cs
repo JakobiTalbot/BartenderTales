@@ -7,7 +7,8 @@ public class ShakerCap : MonoBehaviour
     private bool m_bHeld = false;
     private bool m_bOnShaker = false;
     private Shaker m_shaker;
-    private void OnTriggerEnter(Collider other)
+
+    private void OnTriggerStay(Collider other)
     {
         if (!m_bOnShaker
             && other.GetComponent<Shaker>()
