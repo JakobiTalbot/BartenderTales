@@ -22,7 +22,9 @@ public class Money : MonoBehaviour
         {
             // put money in jar
             other.GetComponent<MoneyJar>().AddMoney(1);
-            Destroy(gameObject);
+            transform.parent = null;
+            gameObject.SetActive(false);
+            Destroy(gameObject, 1f);
         }
     }
 }

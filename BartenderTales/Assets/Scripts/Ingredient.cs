@@ -22,7 +22,9 @@ public class Ingredient : MonoBehaviour
         if (other.GetComponent<Shaker>())
         {
             other.GetComponent<Shaker>().AddIngredient(m_ingredientType);
-            Destroy(gameObject);
+            transform.parent = null;
+            gameObject.SetActive(false);
+            Destroy(gameObject, 1f);
         }
     }
 }

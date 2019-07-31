@@ -63,8 +63,10 @@
 				c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
 
 			float distanceToLine = (IN.vertexPos.y + 1) / 2 - _MoneyAmount;
+
 			if (distanceToLine < 0.01 && distanceToLine > 0)
 				o.Emission = _LineColour;
+
 			o.Albedo = c.rgb;
             // Metallic and smoothness come from slider variables
             o.Metallic = _Metallic;
