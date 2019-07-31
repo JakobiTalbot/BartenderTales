@@ -21,6 +21,8 @@ public class Money : MonoBehaviour
         if (other.GetComponent<MoneyJar>())
         {
             // put money in jar
+            other.GetComponent<MoneyJar>().AddMoney(1);
+            Destroy(gameObject);
         }
     }
 }
