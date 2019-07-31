@@ -121,9 +121,15 @@ public class Customer : MonoBehaviour
                     // sad reaction
                 }
             }
-            System.Type type = FindObjectOfType<Shaker>().m_potionFunc[p.m_potionName].GetType();
-            // drink potion
-            gameObject.AddComponent(type);
+
+            if (p.m_potionName == PotionName.Mundane)
+                gameObject.AddComponent<Mundane>();
+            else
+            {
+                System.Type type = FindObjectOfType<Shaker>().m_potionFunc[p.m_potionName].GetType();
+                // drink potion
+                gameObject.AddComponent(type);
+            }
 
             // dirty way to fix errors from object being destroyed when still on hand
             collision.transform.parent = null;

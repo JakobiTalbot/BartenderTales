@@ -23,6 +23,7 @@ public class Shaker : MonoBehaviour
     public float m_accelShakeThreshold = 1f;
     public List<Transform> m_potionSpawnPoints;
     public GameObject[] m_potionPrefabs;
+    public GameObject m_mundanePotion;
     public Transform m_capPlacedTransform;
     public int m_potionsToSpawn = 3;
 
@@ -75,7 +76,12 @@ public class Shaker : MonoBehaviour
                 {
                     Debug.Log("done");
                     GameObject potion = GetPotion();
-                    int nPotionsToSpawn = m_potionsToSpawn;
+
+                    int nPotionsToSpawn;
+                    if (potion.GetComponent<Mundane>())
+                        nPotionsToSpawn = 1;
+                    else
+                        nPotionsToSpawn = m_potionsToSpawn;
 
                     // store taken points beforehand in case not enough points to spawn potions on
                     List<Transform> takenPoints = m_potionSpawnPoints;
@@ -126,7 +132,7 @@ public class Shaker : MonoBehaviour
     {
         // if potion doesn't contain valid amount of ingredients
         if (m_contents.Count != 2)
-            return null;
+            return m_mundanePotion;
 
         // loop through each possible combination
         foreach (GameObject potion in m_potionPrefabs)
@@ -142,7 +148,7 @@ public class Shaker : MonoBehaviour
 
         // potion doesn't match any combinations
         // TODO: return mundane potion
-        return null;
+        return m_mundanePotion;
     }
 
     public void PlaceCap(GameObject cap)
