@@ -90,6 +90,12 @@ public class Customer : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Potion>())
         {
+            // add back point to spawner
+            if (m_bWaiting)
+                m_spawner.m_waitingPoints.Add(m_point);
+            else
+                m_spawner.m_servingPoints.Add(m_point);
+
             PotionEffect p = collision.gameObject.GetComponent<PotionEffect>();
             // TODO: reactions to potions
             // if correct potion given

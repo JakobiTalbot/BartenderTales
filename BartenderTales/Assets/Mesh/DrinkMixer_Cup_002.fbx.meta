@@ -10,6 +10,7 @@ ModelImporter:
     3300000: //RootNode
     4300000: Drink_Mixer_Unwrapped:polySurface3
     4300002: Drink_Mixer_Unwrapped:DrinkMixer_Cup_002
+    4300004: DrinkMixer_Cup_002
   externalObjects: {}
   materials:
     importMaterials: 1
