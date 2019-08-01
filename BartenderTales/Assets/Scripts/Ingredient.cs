@@ -24,7 +24,6 @@ public class Ingredient : MonoBehaviour
             other.GetComponent<Shaker>().AddIngredient(m_ingredientType);
             transform.parent = null;
             gameObject.SetActive(false);
-            Destroy(gameObject, 1f);
         }
     }
 }
