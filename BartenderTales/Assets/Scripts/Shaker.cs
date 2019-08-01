@@ -139,8 +139,8 @@ public class Shaker : MonoBehaviour
         {
             Potion p = potion.GetComponent<Potion>();
             // if combination is valid
-            if (p.m_ingredients.Contains(m_contents[0])
-                && p.m_ingredients.Contains(m_contents[1]))
+            if (m_contents.Contains(p.m_ingredients[0])
+                && m_contents.Contains(p.m_ingredients[1]))
             {
                 return potion;
             }
