@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public enum IngredientType
 {
@@ -22,7 +23,9 @@ public class Ingredient : MonoBehaviour
         if (other.GetComponent<Shaker>())
         {
             other.GetComponent<Shaker>().AddIngredient(m_ingredientType);
-            transform.parent = null;
+            // detach from hand
+            GetComponentInParent<Hand>()?.DetachObject(gameObject, true);
+            GetComponent<Interactable>().attachedToHand = null;
             gameObject.SetActive(false);
         }
     }

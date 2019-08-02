@@ -70,7 +70,6 @@ public class Shaker : MonoBehaviour
             if (((transform.position - m_v3LastPos) - m_v3LastDeltaPos).magnitude > m_accelShakeThreshold)
             {
                 m_fCurrentShakeTime += Time.deltaTime;
-                Debug.Log(m_fCurrentShakeTime);
                 // if drink shaken
                 if (m_fCurrentShakeTime > m_shakeTime)
                 {

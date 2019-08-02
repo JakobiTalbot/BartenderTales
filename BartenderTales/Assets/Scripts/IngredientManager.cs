@@ -49,8 +49,8 @@ public class IngredientManager : MonoBehaviour
                 // reset ingredient if its not active
                 if (!point.m_spawnedIngredients[i].activeSelf)
                 {
-                    point.m_spawnedIngredients[i].transform.SetPositionAndRotation(point.m_ingredientTypeSpawnPoint.position, point.m_ingredientTypeSpawnPoint.rotation);
                     point.m_spawnedIngredients[i].SetActive(true); // activate ingredient
+                    point.m_spawnedIngredients[i].transform.SetPositionAndRotation(point.m_ingredientTypeSpawnPoint.position, point.m_ingredientTypeSpawnPoint.rotation);
                 }
             }
         }
