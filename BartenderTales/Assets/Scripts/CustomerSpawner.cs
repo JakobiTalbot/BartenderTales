@@ -13,6 +13,8 @@ public class CustomerSpawner : MonoBehaviour
 
     [HideInInspector]
     public List<GameObject> m_customers;
+    [HideInInspector]
+    public bool m_spawnCustomers = true;
     private float m_fCustomerSpawnTimer = 0f;
 
     // Start is called before the first frame update
@@ -31,6 +33,8 @@ public class CustomerSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!m_spawnCustomers)
+            return;
         // increment timer
         m_fCustomerSpawnTimer += Time.deltaTime;
 

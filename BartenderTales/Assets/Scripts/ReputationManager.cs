@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ReputationManager : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class ReputationManager : MonoBehaviour
     public Color m_maxRepColour = Color.green;
     [Tooltip("The colour for the lantern to be when at minimum reputation")]
     public Color m_minRepColour = Color.red;
+
+    [SerializeField]
+    private GameObject m_gameOverCanvas;
+    [SerializeField]
+    private float m_timeToWaitAfterGameOverUntilRestarting = 10f;
 
     private Renderer m_renderer;
     private int m_nCurrentRep;
@@ -26,6 +32,12 @@ public class ReputationManager : MonoBehaviour
         m_renderer.material.color = Color.Lerp(m_minRepColour, m_maxRepColour, ((float)m_nCurrentRep / m_maxReputation)) * 2;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+            AddToReputation(-1);
+    }
+
     public void AddToReputation(int nReputationToAdd)
     {
         m_nCurrentRep += nReputationToAdd;
@@ -35,7 +47,7 @@ public class ReputationManager : MonoBehaviour
         if (m_nCurrentRep <= 0)
         {
             // end game
-            Application.Quit();
+            StartCoroutine(GameOver());
         }
     }
 
@@ -50,5 +62,29 @@ public class ReputationManager : MonoBehaviour
 
         m_renderer.material.color = targetColour;
         m_fLerpTimer = 0f;
+    }
+
+    private IEnumerator GameOver()
+    {
+        // stop spawning customers
+        FindObjectOfType<CustomerSpawner>().m_spawnCustomers = false;
+
+        // get reference to all customers in scene
+        List<GameObject> customers = FindObjectOfType<CustomerSpawner>().m_customers;
+        // loop through customers
+        foreach (GameObject c in customers)
+        {
+            // get reference to customer component
+            Customer cust = c.GetComponent<Customer>();
+            // make all customers leave
+            cust.Speak("this bar sucks!");
+            cust.Invoke("ExitBar", Random.Range(0.5f, 3f));
+        }
+        // activate game over canvas
+        m_gameOverCanvas.SetActive(true);
+
+        // wait then load scene
+        yield return new WaitForSeconds(m_timeToWaitAfterGameOverUntilRestarting);
+        SceneManager.LoadSceneAsync(0);
     }
 }
