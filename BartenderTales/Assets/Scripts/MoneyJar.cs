@@ -8,7 +8,8 @@ public class MoneyJar : MonoBehaviour
     private int m_maxMoney = 10;
 
     private Renderer m_renderer;
-    private int m_nCurrentMoney = 0;
+    [HideInInspector]
+    public int m_nCurrentMoney = 0;
 
     // Start is called before the first frame update
     void Start()

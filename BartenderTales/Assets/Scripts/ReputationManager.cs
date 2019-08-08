@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class ReputationManager : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class ReputationManager : MonoBehaviour
 
     [SerializeField]
     private GameObject m_gameOverCanvas;
+    [SerializeField]
+    private TextMeshPro m_finalMoneyText;
     [SerializeField]
     private float m_timeToWaitAfterGameOverUntilRestarting = 10f;
 
@@ -34,12 +37,16 @@ public class ReputationManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.P))
             AddToReputation(-1);
     }
 
     public void AddToReputation(int nReputationToAdd)
     {
+        // game already over, exit function
+        if (m_gameOverCanvas.activeSelf)
+            return;
+
         m_nCurrentRep += nReputationToAdd;
         // set colour (multiply by 2 to colourise)
         Color targetColour = Color.Lerp(m_minRepColour, m_maxRepColour, ((float)m_nCurrentRep / m_maxReputation)) * 2;
@@ -82,7 +89,7 @@ public class ReputationManager : MonoBehaviour
         }
         // activate game over canvas
         m_gameOverCanvas.SetActive(true);
-
+        m_finalMoneyText.text += FindObjectOfType<MoneyJar>().m_nCurrentMoney;
         // wait then load scene
         yield return new WaitForSeconds(m_timeToWaitAfterGameOverUntilRestarting);
         SceneManager.LoadSceneAsync(0);
