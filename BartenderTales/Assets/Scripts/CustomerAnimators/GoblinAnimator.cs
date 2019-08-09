@@ -11,13 +11,15 @@ public class GoblinAnimator : CustomerAnimator
 
     override public IEnumerator IdleLoop()
     {
+        // wait for random time before first animation
+        yield return new WaitForSeconds(Random.Range(m_minMaxSecondsForRandomIdleAnimation.x, m_minMaxSecondsForRandomIdleAnimation.y));
         // while idle
         while (m_animator.GetBool("StoppedMoving"))
         {
-            // wait for random time
-            yield return new WaitForSeconds(Random.Range(m_minMaxSecondsForRandomIdleAnimation.x, m_minMaxSecondsForRandomIdleAnimation.y));
-            // then play random idle animation
+            // play random idle animation
             m_animator.SetTrigger(m_randomIdleAnimationTriggerNames[Random.Range(0, m_randomIdleAnimationTriggerNames.Length)]);
+            // then wait for random time until next random animation
+            yield return new WaitForSeconds(Random.Range(m_minMaxSecondsForRandomIdleAnimation.x, m_minMaxSecondsForRandomIdleAnimation.y));
         }
     }
 }
