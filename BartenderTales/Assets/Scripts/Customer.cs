@@ -29,12 +29,14 @@ public class Customer : MonoBehaviour
     private bool m_bBadPerson = false;
     private bool m_bExitingBar = false;
     private Vector3 m_v3CoinDropPos;
+    private CustomerAnimator m_customerAnimator;
 
     public Animator m_Animator;
     // Start is called before the first frame update
     void Start()
     {
-        m_Animator = this.gameObject.GetComponent<Animator>();
+        m_Animator = GetComponent<Animator>();
+        m_customerAnimator = GetComponent<CustomerAnimator>();
         m_agent = GetComponent<NavMeshAgent>();
         // order random potion
         // TODO: only order good potions
@@ -79,6 +81,7 @@ public class Customer : MonoBehaviour
             // stop moving
             m_agent.isStopped = true;
             m_Animator.SetBool("StoppedMoving", true);
+            m_customerAnimator.StartCoroutine("IdleLoop");
         }
         else if (m_agent.isStopped)
             SetDestination(m_point, m_bWaiting);
