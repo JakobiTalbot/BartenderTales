@@ -17126,8 +17126,18 @@ PrefabInstance:
     - target: {fileID: 2009480775788938878, guid: 48cd4b872c76e484ea5f2f522518ee2e,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 3.9999962
+      value: 4.000002
       objectReference: {fileID: 0}
+    - target: {fileID: 2009480774333362085, guid: 48cd4b872c76e484ea5f2f522518ee2e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 173936c5335f1e44f9f2e58435496d4d, type: 2}
+    - target: {fileID: 2009480775788938864, guid: 48cd4b872c76e484ea5f2f522518ee2e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fc10cf8719aeb4a44a9bac9063702adb, type: 2}
     - target: {fileID: 2009480775788938866, guid: 48cd4b872c76e484ea5f2f522518ee2e,
         type: 3}
       propertyPath: m_onButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
