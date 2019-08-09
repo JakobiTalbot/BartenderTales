@@ -17,6 +17,7 @@ public class CustomerSpawner : MonoBehaviour
     public bool m_spawnCustomers = true;
     private float m_fCustomerSpawnTimer = 0f;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,7 @@ public class CustomerSpawner : MonoBehaviour
         cust.SetDestination(m_servingPoints[i], false);
         cust.SetCoinDropPos(m_coinDropPoint.position);
         m_servingPoints.RemoveAt(i);
+
     }
 
     // Update is called once per frame
