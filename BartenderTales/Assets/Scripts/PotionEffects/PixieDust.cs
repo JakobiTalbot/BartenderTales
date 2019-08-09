@@ -17,6 +17,7 @@ public class PixieDust : PotionEffect
     private float m_fHoverLerpTime = 0f;
     private float m_fTimeReachedHover = 0f;
 
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +40,7 @@ public class PixieDust : PotionEffect
         // if haven't reached hover height yet
         if (!m_bReachedHoverHeight)
         {
+            gameObject.GetComponent<Customer>().m_Animator.SetBool("HasDrunkFairyDust", true);
             // increase lerp timer
             m_fHoverLerpTime += Time.deltaTime / m_startHoverUpTime;
 

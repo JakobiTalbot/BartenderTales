@@ -29,9 +29,12 @@ public class Customer : MonoBehaviour
     private bool m_bBadPerson = false;
     private bool m_bExitingBar = false;
     private Vector3 m_v3CoinDropPos;
+
+    public Animator m_Animator;
     // Start is called before the first frame update
     void Start()
     {
+        m_Animator = this.gameObject.GetComponent<Animator>();
         m_agent = GetComponent<NavMeshAgent>();
         // order random potion
         // TODO: only order good potions
@@ -60,6 +63,7 @@ public class Customer : MonoBehaviour
                 SetDestination(m_spawner.m_servingPoints[i], false);
                 m_spawner.m_servingPoints.RemoveAt(i);
                 m_bWaiting = false;
+                //m_Animator.SetBool("WalkAgain", true);
             }
 
             // display speech bubble order
@@ -74,6 +78,7 @@ public class Customer : MonoBehaviour
 
             // stop moving
             m_agent.isStopped = true;
+            m_Animator.SetBool("StoppedMoving", true);
         }
         else if (m_agent.isStopped)
             SetDestination(m_point, m_bWaiting);
@@ -87,6 +92,8 @@ public class Customer : MonoBehaviour
         m_agent.isStopped = false;
         m_point = dest;
         m_agent.SetDestination(dest.position);
+        //m_Animator.SetBool("WalkAgain", true);
+
     }
 
     private void OnCollisionEnter(Collision collision)
