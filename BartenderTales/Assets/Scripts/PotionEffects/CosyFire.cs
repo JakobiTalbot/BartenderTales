@@ -10,6 +10,7 @@ public class CosyFire : PotionEffect
         Customer c = GetComponent<Customer>();
         if (c)
         {
+            gameObject.GetComponent<Customer>().m_Animator.SetBool("HasDrunkCosyFire", true);
             Instantiate(FindObjectOfType<PotionAssets>().m_cosyFireParticles, transform);
             c.ExitBar();
         }
