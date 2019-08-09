@@ -1785,6 +1785,7 @@ GameObject:
   - component: {fileID: 3314541297584633279}
   - component: {fileID: 3236969146727712539}
   - component: {fileID: 4204582709937106507}
+  - component: {fileID: 2604002719977167483}
   m_Layer: 0
   m_Name: Goblin_Walk_Test
   m_TagString: Untagged
@@ -1867,6 +1868,7 @@ MonoBehaviour:
   m_speechBubbleBuffer: {x: 0.1, y: 0.1}
   m_moneyPrefab: {fileID: 6324821836455372774, guid: 376fd99151b508842b77c710c794f5e1,
     type: 3}
+  m_Animator: {fileID: 0}
 --- !u!195 &3236969146727712539
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1902,6 +1904,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.040616084, y: 0.07558105, z: 0.040560927}
   m_Center: {x: -0.00093220914, y: 0.03721365, z: 0.005782061}
+--- !u!114 &2604002719977167483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328621850311045836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c4fac76bcb78f345b37b5a37d721452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_minMaxSecondsForRandomIdleAnimation: {x: 4, y: 8}
+  m_randomIdleAnimationTriggerNames:
+  - ButtTrigger
+  - BellyTrigger
 --- !u!1 &1328621850311045838
 GameObject:
   m_ObjectHideFlags: 0

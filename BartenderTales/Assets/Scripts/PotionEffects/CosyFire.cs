@@ -5,7 +5,7 @@ using UnityEngine;
 public class CosyFire : PotionEffect
 {
     [SerializeField]
-    private float m_secondsToWaitBeforeLeavingBar = 2f;
+    private float m_secondsToWaitBeforeLeavingBar = 3.2f;
     private void Start()
     {
         m_potionName = PotionName.CosyFire;

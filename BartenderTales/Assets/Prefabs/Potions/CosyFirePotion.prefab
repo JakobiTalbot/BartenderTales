@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_potionName: 0
+  m_secondsToWaitBeforeLeavingBar: 2.5
 --- !u!1001 &6601865024353070005
 PrefabInstance:
   m_ObjectHideFlags: 0
