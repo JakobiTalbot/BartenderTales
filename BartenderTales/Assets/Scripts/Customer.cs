@@ -29,12 +29,14 @@ public class Customer : MonoBehaviour
     private bool m_bBadPerson = false;
     private bool m_bExitingBar = false;
     private Vector3 m_v3CoinDropPos;
+    private Rigidbody m_rigidbody;
     private CustomerAnimator m_customerAnimator;
 
     public Animator m_Animator;
     // Start is called before the first frame update
     void Start()
     {
+        m_rigidbody = GetComponent<Rigidbody>();
         m_Animator = GetComponent<Animator>();
         m_customerAnimator = GetComponent<CustomerAnimator>();
         m_agent = GetComponent<NavMeshAgent>();
@@ -80,6 +82,7 @@ public class Customer : MonoBehaviour
 
             // stop moving
             m_agent.isStopped = true;
+            m_rigidbody.isKinematic = true;
             m_Animator.SetBool("StoppedMoving", true);
             m_customerAnimator.StartCoroutine("IdleLoop");
         }
