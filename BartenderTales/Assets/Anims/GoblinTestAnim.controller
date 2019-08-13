@@ -27,12 +27,6 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: HasDrunkCosyFire
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
   - m_Name: ButtTrigger
     m_Type: 9
     m_DefaultFloat: 0
@@ -64,6 +58,12 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: ServedRightToWanted
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: CosyFireReaction
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -178,7 +178,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: HasDrunkCosyFire
+    m_ConditionEvent: CosyFireReaction
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102541409787255780}
@@ -469,7 +469,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: HasDrunkCosyFire
+    m_ConditionEvent: CosyFireReaction
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102541409787255780}
@@ -621,7 +621,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Goblin_Shocked_Blockout
+  m_Name: Shocked
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -647,7 +647,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Goblin_Cosy_Test
+  m_Name: Cosy Fire Reaction
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -842,7 +842,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102719829009446438}
-    m_Position: {x: 72, y: 276, z: 0}
+    m_Position: {x: 72, y: 264, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102561069156781364}
     m_Position: {x: 360, y: -48, z: 0}
