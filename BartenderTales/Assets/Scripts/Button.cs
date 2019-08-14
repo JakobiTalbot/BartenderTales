@@ -11,7 +11,10 @@ public class Button : MonoBehaviour
 
     private Rigidbody m_rb;
 
-
+    private void Awake()
+    {
+        m_rb = GetComponent<Rigidbody>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<ButtonBottom>())
