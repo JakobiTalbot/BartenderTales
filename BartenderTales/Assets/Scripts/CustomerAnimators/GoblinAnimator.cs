@@ -27,4 +27,9 @@ public class GoblinAnimator : CustomerAnimator
     {
         m_animator.SetTrigger("Shocked" + Random.Range(1, 4));
     }
+
+    public override void Cheer()
+    {
+        throw new System.NotImplementedException();
+    }
 }
