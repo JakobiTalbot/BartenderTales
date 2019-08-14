@@ -9,29 +9,24 @@ public class Button : MonoBehaviour
     [SerializeField]
     private UnityEvent m_onButtonPressed;
 
-    private Vector3 m_lastHandPos;
+    private Rigidbody m_rb;
     private GameObject m_activeHand;
+
+    private void Awake()
+    {
+        m_rb = GetComponent<Rigidbody>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Hand>())
         {
-            StartCoroutine(UpdateButtonPress());
             m_activeHand = other.gameObject;
-            m_lastHandPos = m_activeHand.transform.position;
         }
         else if (other.GetComponent<ButtonBottom>())
         {
             m_onButtonPressed.Invoke();
-            StopCoroutine(UpdateButtonPress());
-        }
-    }
-
-    private IEnumerator UpdateButtonPress()
-    {
-        while (true)
-        {
-            transform.position += -transform.up * (m_lastHandPos.y - m_activeHand.transform.position.y);
+            m_activeHand = null;
         }
     }
 
@@ -39,8 +34,18 @@ public class Button : MonoBehaviour
     {
         if (other.GetComponent<Hand>())
         {
-            StopCoroutine(UpdateButtonPress());
             m_activeHand = null;
+        }
+    }
+
+    private IEnumerator UpdateButton()
+    {
+        while (m_activeHand)
+        {
+            Vector3 newPos = m_rb.position;
+            newPos.y = m_activeHand.transform.position.y;
+            m_rb.MovePosition(newPos);
+            yield return new WaitForEndOfFrame();
         }
     }
 }
