@@ -40,7 +40,7 @@ public class PixieDust : PotionEffect
         // if haven't reached hover height yet
         if (!m_bReachedHoverHeight)
         {
-            gameObject.GetComponent<Customer>().m_Animator.SetBool("HasDrunkFairyDust", true);
+            gameObject.GetComponent<Customer>().m_animator.SetBool("HasDrunkFairyDust", true);
             // increase lerp timer
             m_fHoverLerpTime += Time.deltaTime / m_startHoverUpTime;
 

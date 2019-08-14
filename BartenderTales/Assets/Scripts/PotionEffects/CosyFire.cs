@@ -12,8 +12,8 @@ public class CosyFire : PotionEffect
         Customer c = GetComponent<Customer>();
         if (c)
         {
-            c.m_Animator.SetTrigger("CosyFireReaction");
-            c.m_Animator.SetBool("StoppedMoving", false);
+            c.m_animator.SetTrigger("CosyFireReaction");
+            c.m_animator.SetBool("StoppedMoving", false);
             Instantiate(FindObjectOfType<PotionAssets>().m_cosyFireParticles, transform);
             c.Invoke("ExitBar", m_secondsToWaitBeforeLeavingBar);
         }

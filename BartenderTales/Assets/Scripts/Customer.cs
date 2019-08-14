@@ -32,12 +32,12 @@ public class Customer : MonoBehaviour
     private Rigidbody m_rigidbody;
     private CustomerAnimator m_customerAnimator;
 
-    public Animator m_Animator;
+    public Animator m_animator;
     // Start is called before the first frame update
     void Start()
     {
         m_rigidbody = GetComponent<Rigidbody>();
-        m_Animator = GetComponent<Animator>();
+        m_animator = GetComponent<Animator>();
         m_customerAnimator = GetComponent<CustomerAnimator>();
         m_agent = GetComponent<NavMeshAgent>();
         // order random potion
@@ -83,7 +83,7 @@ public class Customer : MonoBehaviour
             // stop moving
             m_agent.isStopped = true;
             m_rigidbody.isKinematic = true;
-            m_Animator.SetBool("StoppedMoving", true);
+            m_animator.SetBool("StoppedMoving", true);
             m_customerAnimator.StartCoroutine("IdleLoop");
         }
         else if (m_agent.isStopped)
@@ -172,6 +172,12 @@ public class Customer : MonoBehaviour
         m_text.rectTransform.sizeDelta = m_text.GetPreferredValues();
         m_bubble.rectTransform.sizeDelta = (m_text.rectTransform.sizeDelta + m_speechBubbleBuffer);
         StartCoroutine(BubbleTimer(5f));
+    }
+
+    public void Shocked()
+    {
+        // do shocked animation
+        m_customerAnimator.Shocked();
     }
 
     IEnumerator BubbleTimer(float fTime)

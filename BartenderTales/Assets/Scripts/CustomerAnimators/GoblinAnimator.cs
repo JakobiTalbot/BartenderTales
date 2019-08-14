@@ -22,4 +22,9 @@ public class GoblinAnimator : CustomerAnimator
             yield return new WaitForSeconds(Random.Range(m_minMaxSecondsForRandomIdleAnimation.x, m_minMaxSecondsForRandomIdleAnimation.y));
         }
     }
+
+    public override void Shocked()
+    {
+        m_animator.SetTrigger("Shocked" + Random.Range(1, 4));
+    }
 }
