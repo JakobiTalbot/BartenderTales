@@ -10,43 +10,23 @@ public class Button : MonoBehaviour
     private UnityEvent m_onButtonPressed;
 
     private Rigidbody m_rb;
-    private GameObject m_activeHand;
 
-    private void Awake()
-    {
-        m_rb = GetComponent<Rigidbody>();
-    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Hand>())
-        {
-            m_activeHand = other.gameObject;
-        }
-        else if (other.GetComponent<ButtonBottom>())
+        if (other.GetComponent<ButtonBottom>())
         {
             m_onButtonPressed.Invoke();
-            m_activeHand = null;
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.GetComponent<Hand>())
         {
-            m_activeHand = null;
-        }
-        
-    }
-
-    private IEnumerator UpdateButton()
-    {
-        while (m_activeHand)
-        {
             Vector3 newPos = m_rb.position;
-            newPos.y = m_activeHand.transform.position.y;
+            newPos.y = other.transform.position.y;
             m_rb.MovePosition(newPos);
-            yield return new WaitForEndOfFrame();
         }
     }
 }
