@@ -4,13 +4,25 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: GlassLantern_001
+    100004: polySurface6
+    100006: Prop_002_Lantern
     400000: //RootNode
+    400002: GlassLantern_001
+    400004: polySurface6
+    400006: Prop_002_Lantern
     2100000: lambert1
     2100002: Lantern
     2100004: Glass
     2300000: //RootNode
+    2300002: GlassLantern_001
+    2300004: Prop_002_Lantern
     3300000: //RootNode
+    3300002: GlassLantern_001
+    3300004: Prop_002_Lantern
     4300000: polySurface6
+    4300002: Prop_002_Lantern
+    4300004: GlassLantern_001
   externalObjects: {}
   materials:
     importMaterials: 1
