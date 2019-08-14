@@ -81,6 +81,8 @@ public class ReputationManager : MonoBehaviour
         // loop through customers
         foreach (GameObject c in customers)
         {
+            if (!c)
+                continue;
             // get reference to customer component
             Customer cust = c.GetComponent<Customer>();
             // make all customers leave
