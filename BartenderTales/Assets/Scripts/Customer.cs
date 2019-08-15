@@ -21,6 +21,9 @@ public class Customer : MonoBehaviour
     public Vector2 m_speechBubbleBuffer = new Vector2(1, 1);
     public GameObject m_moneyPrefab;
 
+    [SerializeField]
+    private Transform m_dragonBreathParticlePoint;
+
     private PotionName m_order;
     private CustomerSpawner m_spawner;
     private NavMeshAgent m_agent;
@@ -171,7 +174,7 @@ public class Customer : MonoBehaviour
         m_text.text = text;
         m_text.rectTransform.sizeDelta = m_text.GetPreferredValues();
         m_bubble.rectTransform.sizeDelta = (m_text.rectTransform.sizeDelta + m_speechBubbleBuffer);
-        StartCoroutine(BubbleTimer(5f));
+        StartCoroutine(DeactiveSpeechBubbleAfterTime(5f));
     }
 
     public void Shocked()
@@ -185,11 +188,12 @@ public class Customer : MonoBehaviour
         m_customerAnimator.Cheer();
     }
 
-    IEnumerator BubbleTimer(float fTime)
+    IEnumerator DeactiveSpeechBubbleAfterTime(float fTime)
     {
         yield return new WaitForSeconds(fTime);
         m_speechBubbleCanvas.SetActive(false);
     }
 
     public bool IsEvil() => m_bBadPerson;
+    public Transform GetDragonBreathPoint() => m_dragonBreathParticlePoint;
 }

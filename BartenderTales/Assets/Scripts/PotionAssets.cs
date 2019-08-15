@@ -8,4 +8,6 @@ public class PotionAssets : MonoBehaviour
     public GameObject m_cosyFireParticles;
     [Header("Quick End")]
     public GameObject m_quickEndExplosionPrefab;
+    [Header("Dragon Breath")]
+    public GameObject m_dragonBreathParticlePrefab;
 }

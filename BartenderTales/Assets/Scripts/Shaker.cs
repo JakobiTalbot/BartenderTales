@@ -4,14 +4,14 @@ using UnityEngine;
 
 public enum PotionName
 {
-    //FantasticTeleport = 0,
+    //Skydive = 0,
     QuickEnd,
     //AssassinsSpecial,
     //SmokeyTeleport,
     PixieDust,
     //Beer,
     CosyFire,
-    //BelchFire,
+    DragonBreath,
     //HonestPolicy,
     Count,
     Mundane
