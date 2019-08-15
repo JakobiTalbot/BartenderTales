@@ -180,9 +180,16 @@ public class Customer : MonoBehaviour
         m_customerAnimator.Shocked();
     }
 
+    public void Cheer()
+    {
+        m_customerAnimator.Cheer();
+    }
+
     IEnumerator BubbleTimer(float fTime)
     {
         yield return new WaitForSeconds(fTime);
         m_speechBubbleCanvas.SetActive(false);
     }
+
+    public bool IsEvil() => m_bBadPerson;
 }
