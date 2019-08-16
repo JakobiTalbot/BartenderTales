@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 34652533434665233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.175, z: 0}
+  m_LocalPosition: {x: 0, y: 0.146, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7741737131026570645}
@@ -62,7 +62,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7741737131026792885}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.5121613, y: 0.9617697, z: -4.5585403}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -77,7 +77,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7741737131026792885}
-  m_Mesh: {fileID: 4300002, guid: 2ec72f89ed7bfe24483dd5a3323356b2, type: 3}
+  m_Mesh: {fileID: 4300004, guid: 2ec72f89ed7bfe24483dd5a3323356b2, type: 3}
 --- !u!23 &7741737131028995957
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -95,7 +95,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2ec72f89ed7bfe24483dd5a3323356b2, type: 3}
+  - {fileID: 2100000, guid: b1bcf3ef48926204eba9781629d88fd2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -174,8 +174,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7741737131026792885}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
+  m_Mass: 1.2
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -244,10 +244,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee2298b084734b45835d53f8ec0c713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_shakeTime: 0.2
-  m_accelShakeThreshold: 1
-  m_potionSpawnPoints: []
-  m_potionPrefabs: []
+  m_shakeTime: 1.3
+  m_accelShakeThreshold: 0.015
+  m_potionSpawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_potionPrefabs:
+  - {fileID: 4554718752582502801, guid: 10baa32807af8c74a9bb4988aed17978, type: 3}
+  - {fileID: 4920498647915840378, guid: 2cc8eba19c7b00242ab8d25cd25bce39, type: 3}
+  - {fileID: 5514788207697548510, guid: 980da04582a0c95448028bc1ae2e9b50, type: 3}
+  - {fileID: 5615359924849978284, guid: b61ddccb65acf944398b67740d054d42, type: 3}
+  m_mundanePotion: {fileID: 8510448873287620510, guid: a6860761528df2a4a8cb65c484a36ab0,
+    type: 3}
   m_capPlacedTransform: {fileID: 4884098308589175435}
   m_potionsToSpawn: 3
 --- !u!64 &5379624248553235427
@@ -261,9 +275,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
-  m_Mesh: {fileID: 4300002, guid: 2ec72f89ed7bfe24483dd5a3323356b2, type: 3}
+  m_Mesh: {fileID: 4300004, guid: 2ec72f89ed7bfe24483dd5a3323356b2, type: 3}
 --- !u!135 &6222167357969211786
 SphereCollider:
   m_ObjectHideFlags: 0

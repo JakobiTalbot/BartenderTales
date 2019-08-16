@@ -57,6 +57,7 @@ public class Shaker : MonoBehaviour
         m_potionFunc.Add(PotionName.CosyFire, m_potionPrefabs[0].GetComponent<CosyFire>());
         m_potionFunc.Add(PotionName.QuickEnd, m_potionPrefabs[1].GetComponent<QuickEnd>());
         m_potionFunc.Add(PotionName.PixieDust, m_potionPrefabs[2].GetComponent<PixieDust>());
+        m_potionFunc.Add(PotionName.DragonBreath, m_potionPrefabs[3].GetComponent<DragonBreath>());
     }
 
     // Update is called once per frame
