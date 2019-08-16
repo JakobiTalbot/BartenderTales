@@ -13,4 +13,5 @@ abstract public class CustomerAnimator : MonoBehaviour
 
     abstract public IEnumerator IdleLoop();
     abstract public void Shocked();
+    abstract public void Cheer();
 }

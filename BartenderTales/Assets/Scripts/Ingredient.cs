@@ -5,7 +5,7 @@ using Valve.VR.InteractionSystem;
 
 public enum IngredientType
 {
-    WhiskeyWatermelon = 0,
+    Mushroom = 0,
     EmuElderberry,
     PixiePear,
     ElvenMagicBox,

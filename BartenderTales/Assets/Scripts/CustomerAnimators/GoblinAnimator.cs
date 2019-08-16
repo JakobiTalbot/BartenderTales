@@ -8,6 +8,8 @@ public class GoblinAnimator : CustomerAnimator
     private Vector2 m_minMaxSecondsForRandomIdleAnimation = new Vector2(4f, 8f);
     [SerializeField]
     private string[] m_randomIdleAnimationTriggerNames;
+    [SerializeField]
+    private int m_shockedReactionTriggerCount = 3;
 
     override public IEnumerator IdleLoop()
     {
@@ -25,6 +27,11 @@ public class GoblinAnimator : CustomerAnimator
 
     public override void Shocked()
     {
-        m_animator.SetTrigger("Shocked" + Random.Range(1, 4));
+        m_animator.SetTrigger("Shocked" + Random.Range(1, m_shockedReactionTriggerCount + 1));
+    }
+
+    public override void Cheer()
+    {
+        m_animator.SetTrigger("Cheer");
     }
 }

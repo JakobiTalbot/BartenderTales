@@ -21,9 +21,22 @@ public class QuickEnd : PotionEffect
     private void Explode()
     {
         Collider[] affectedCustomers = Physics.OverlapSphere(transform.position, m_emoteRadius);
-        foreach (Collider c in affectedCustomers)
+        
+        // cheer if evil customer exploded
+        if (GetComponent<Customer>().IsEvil())
         {
-            c.GetComponent<Customer>()?.Shocked();
+            foreach (Collider c in affectedCustomers)
+            {
+                c.GetComponent<Customer>()?.Cheer();
+            }
+        }
+        // be shocked if good customer exploded
+        else
+        {
+            foreach (Collider c in affectedCustomers)
+            {
+                c.GetComponent<Customer>()?.Shocked();
+            }
         }
 
         Destroy(Instantiate(FindObjectOfType<PotionAssets>().m_quickEndExplosionPrefab, transform.position, transform.rotation), 5f);
