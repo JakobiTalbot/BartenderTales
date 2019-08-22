@@ -91,6 +91,8 @@ public class IngredientManager : MonoBehaviour
     /// </summary>
     public void RefillIngredients()
     {
+        if (!m_spawnedIngredients[0])
+            return;
         List<Transform> availablePoints = new List<Transform>(m_ingredientSpawnPoints);
 
         for (int i = 0; i < m_spawnedIngredients.Length; ++i)
