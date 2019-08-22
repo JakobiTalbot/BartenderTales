@@ -2,26 +2,67 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public struct IngredientPoint
-{
-    public GameObject m_ingredientTypePrefab;
-    public Transform m_ingredientTypeSpawnPoint;
-    [HideInInspector]
-    public List<GameObject> m_spawnedIngredients;
-}
-
 public class IngredientManager : MonoBehaviour
 {
     [SerializeField]
     private int m_maximumIngredientsPerType = 2;
+    [SerializeField]
+    [Tooltip("Ensure there is at least one point for each ingredient prefab, otherwise no ingredients will spawn")]
+    private Transform[] m_ingredientSpawnPoints;
+    [SerializeField]
+    private GameObject[] m_potionPrefabs;
+    [SerializeField]
+    private GameObject[] m_ingredientPrefabs;
 
-    public IngredientPoint[] m_ingredientPoints;
+    [HideInInspector]
+    public int[] m_recipes;
+    [HideInInspector]
+    public Dictionary<int, GameObject> m_potionRecipeDictionary;
+
+    private GameObject[] m_spawnedIngredients;
+    private int m_nPointsPerIngredientType;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        // TODO: only generate recipes on new game
+        GenerateRecipes();
         CreateIngredients();
+    }
+
+    private void GenerateRecipes()
+    {
+        // create new array
+        m_recipes = new int[(int)PotionName.Count];
+        m_potionRecipeDictionary = new Dictionary<int, GameObject>();
+
+        List<int> existingRecipes = new List<int>();
+
+        for (int i = 0; i < m_recipes.Length; ++i)
+        {
+            int ingredient1 = 1 << Random.Range(0, (int)IngredientType.Count);
+            int ingredient2 = 1 << Random.Range(0, (int)IngredientType.Count);
+
+            while ((ingredient1 & ingredient2) > 0)
+            {
+                // ingredient double up... get new ingredient2
+                ingredient2 = 1 << Random.Range(0, (int)IngredientType.Count);
+            }
+
+            int recipe = ingredient1 | ingredient2;
+
+            // recreate recipe if already exists
+            if (existingRecipes.Contains(recipe))
+                i -= 1;
+            else
+            {
+                m_recipes[i] = recipe;
+                existingRecipes.Add(m_recipes[i]);
+                // add recipe to dictionary
+                m_potionRecipeDictionary.Add(recipe, m_potionPrefabs[i]);
+            }
+        }
     }
 
     /// <summary>
@@ -29,30 +70,38 @@ public class IngredientManager : MonoBehaviour
     /// </summary>
     private void CreateIngredients()
     {
-        foreach (IngredientPoint point in m_ingredientPoints)
+        List<Transform> availablePoints = new List<Transform>(m_ingredientSpawnPoints);
+        m_spawnedIngredients = new GameObject[m_ingredientSpawnPoints.Length];
+        m_nPointsPerIngredientType = m_ingredientSpawnPoints.Length / m_ingredientPrefabs.Length;
+        // for each ingredient
+        for (int i = 0; i < m_ingredientPrefabs.Length; ++i)
         {
-            // spawn ingredient on point
-            for (int i = 0; i < m_maximumIngredientsPerType; ++i)
-                point.m_spawnedIngredients.Add(Instantiate(point.m_ingredientTypePrefab, point.m_ingredientTypeSpawnPoint.position, point.m_ingredientTypeSpawnPoint.rotation));
+            // spawn on number of points
+            for (int j = 0; j < m_nPointsPerIngredientType; ++j)
+            {
+                int randPoint = Random.Range(0, availablePoints.Count);
+                m_spawnedIngredients[i + j] = Instantiate(m_ingredientPrefabs[i], availablePoints[randPoint].transform.position, availablePoints[randPoint].transform.rotation);
+                availablePoints.RemoveAt(randPoint);
+            }
         }
     }
 
     /// <summary>
-    /// Resets all used ingredients to their spawn points and sets them to active
+    /// Respawn ingredients randomly
     /// </summary>
     public void RefillIngredients()
     {
-        foreach (IngredientPoint point in m_ingredientPoints)
+        List<Transform> availablePoints = new List<Transform>(m_ingredientSpawnPoints);
+
+        for (int i = 0; i < m_spawnedIngredients.Length; ++i)
         {
-            for (int i = 0; i < m_maximumIngredientsPerType; ++i)
-            {
-                // reset ingredient if its not active
-                if (!point.m_spawnedIngredients[i].activeSelf)
-                {
-                    point.m_spawnedIngredients[i].SetActive(true); // activate ingredient
-                    point.m_spawnedIngredients[i].transform.SetPositionAndRotation(point.m_ingredientTypeSpawnPoint.position, point.m_ingredientTypeSpawnPoint.rotation);
-                }
-            }
+            // move ingredient to random point
+            int randPoint = Random.Range(0, availablePoints.Count);
+            m_spawnedIngredients[i].transform.SetPositionAndRotation(availablePoints[randPoint].transform.position, availablePoints[randPoint].transform.rotation);
+            availablePoints.RemoveAt(randPoint);
+
+            // activate ingredient
+            m_spawnedIngredients[i].SetActive(true);
         }
     }
 }

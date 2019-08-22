@@ -39,10 +39,12 @@ public class Shaker : MonoBehaviour
     private Vector3 m_v3LastDeltaPos;
     private bool m_bCapOn = false;
     private Collider m_collider;
+    private IngredientManager m_manager;
 
     // Start is called before the first frame update
     void Start()
     {
+        m_manager = FindObjectOfType<IngredientManager>();
         m_collider = GetComponent<Collider>();
         m_contents = new List<IngredientType>();
         m_rb = GetComponent<Rigidbody>();
@@ -134,20 +136,14 @@ public class Shaker : MonoBehaviour
         if (m_contents.Count != 2)
             return m_mundanePotion;
 
-        // loop through each possible combination
-        foreach (GameObject potion in m_potionPrefabs)
+        int recipe = (int)m_contents[0] | (int)m_contents[1];
+        // if recipe is valid
+        if (m_manager.m_potionRecipeDictionary.ContainsKey(recipe))
         {
-            Potion p = potion.GetComponent<Potion>();
-            // if combination is valid
-            if (m_contents.Contains(p.m_ingredients[0])
-                && m_contents.Contains(p.m_ingredients[1]))
-            {
-                return potion;
-            }
+            return m_manager.m_potionRecipeDictionary[recipe];
         }
 
         // potion doesn't match any combinations
-        // TODO: return mundane potion
         return m_mundanePotion;
     }
 

@@ -5,13 +5,13 @@ using Valve.VR.InteractionSystem;
 
 public enum IngredientType
 {
-    Mushroom = 0,
-    EmuElderberry,
-    PixiePear,
-    ElvenMagicBox,
-    DragonChilli,
-    UnicornFeathers,
-    Count
+    Mushroom =          1,
+    EmuElderberry =     1 << 1,
+    PixiePear =         1 << 2,
+    ElvenMagicBox =     1 << 3,
+    DragonChilli =      1 << 4,
+    UnicornFeathers =   1 << 5,
+    Count =             6
 }
 
 public class Ingredient : MonoBehaviour

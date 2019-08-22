@@ -27,5 +27,9 @@ public class MoneyJar : MonoBehaviour
     {
         m_nCurrentMoney += nMoney;
         m_renderer.material.SetFloat("_MoneyAmount", (float)m_nCurrentMoney / m_maxMoney);
+        if (m_nCurrentMoney >= m_maxMoney)
+        {
+            // win game
+        }
     }
 }
