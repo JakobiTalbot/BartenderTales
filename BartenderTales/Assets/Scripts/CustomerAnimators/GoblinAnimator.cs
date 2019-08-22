@@ -18,10 +18,12 @@ public class GoblinAnimator : CustomerAnimator
         // while idle
         while (m_animator.GetBool("StoppedMoving"))
         {
+            int index = Random.Range(0, m_randomIdleAnimationTriggerNames.Length);
             // play random idle animation
-            m_animator.SetTrigger(m_randomIdleAnimationTriggerNames[Random.Range(0, m_randomIdleAnimationTriggerNames.Length)]);
+            m_animator.SetTrigger(m_randomIdleAnimationTriggerNames[index]);
             // then wait for random time until next random animation
             yield return new WaitForSeconds(Random.Range(m_minMaxSecondsForRandomIdleAnimation.x, m_minMaxSecondsForRandomIdleAnimation.y));
+            m_animator.ResetTrigger(m_randomIdleAnimationTriggerNames[index]);
         }
     }
 
