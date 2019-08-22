@@ -5,8 +5,6 @@ using UnityEngine;
 public class IngredientManager : MonoBehaviour
 {
     [SerializeField]
-    private int m_maximumIngredientsPerType = 2;
-    [SerializeField]
     [Tooltip("Ensure there is at least one point for each ingredient prefab, otherwise no ingredients will spawn")]
     private Transform[] m_ingredientSpawnPoints;
     [SerializeField]
@@ -21,7 +19,6 @@ public class IngredientManager : MonoBehaviour
 
     private GameObject[] m_spawnedIngredients;
     private int m_nPointsPerIngredientType;
-
 
     // Start is called before the first frame update
     void Start()
