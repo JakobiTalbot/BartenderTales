@@ -2,6 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct IngredientImages
+{
+    public IngredientType m_ingredientType;
+    public Texture m_ingredientImage;
+}
+
+[System.Serializable]
+public struct PotionImages
+{
+    public PotionName m_potionName;
+    public Texture m_potionImage;
+}
+
 public class IngredientManager : MonoBehaviour
 {
     [SerializeField]
@@ -11,26 +25,49 @@ public class IngredientManager : MonoBehaviour
     private GameObject[] m_potionPrefabs;
     [SerializeField]
     private GameObject[] m_ingredientPrefabs;
+    [SerializeField]
+    private IngredientImages[] m_ingredientImages;
+    [SerializeField]
+    private PotionImages[] m_potionImages;
+    [SerializeField]
+    private Page[] m_recipePages;
 
     [HideInInspector]
     public int[] m_recipes;
     [HideInInspector]
     public Dictionary<int, GameObject> m_potionRecipeDictionary;
 
+    private Dictionary<int, Texture> m_ingredientTextureDictionary;
+    private Dictionary<int, Texture> m_potionTextureDictionary;
     private GameObject[] m_spawnedIngredients;
     private int m_nPointsPerIngredientType;
 
     // Start is called before the first frame update
     void Start()
     {
+        CreateImageDictionaries();
         // TODO: only generate recipes on new game
         GenerateRecipes();
         CreateIngredients();
     }
 
+    private void CreateImageDictionaries()
+    {
+        // create ingredient images dictionary for easy indexing
+        foreach (IngredientImages i in m_ingredientImages)
+        {
+            m_ingredientTextureDictionary.Add((int)i.m_ingredientType, i.m_ingredientImage);
+        }
+
+        foreach (PotionImages p in m_potionImages)
+        {
+            m_potionTextureDictionary.Add((int)p.m_potionName, p.m_potionImage);
+        }
+    }
+
     private void GenerateRecipes()
     {
-        // create new array
+        // create new arrays
         m_recipes = new int[(int)PotionName.Count];
         m_potionRecipeDictionary = new Dictionary<int, GameObject>();
 
@@ -38,10 +75,12 @@ public class IngredientManager : MonoBehaviour
 
         for (int i = 0; i < m_recipes.Length; ++i)
         {
+            // get 2 random recipes
             int ingredient1 = 1 << Random.Range(0, (int)IngredientType.Count);
             int ingredient2 = 1 << Random.Range(0, (int)IngredientType.Count);
 
-            while ((ingredient1 & ingredient2) > 0)
+            // check if ingredient 1 is the same as ingredient 2
+            while (ingredient1 == ingredient2)
             {
                 // ingredient double up... get new ingredient2
                 ingredient2 = 1 << Random.Range(0, (int)IngredientType.Count);
@@ -58,6 +97,8 @@ public class IngredientManager : MonoBehaviour
                 existingRecipes.Add(m_recipes[i]);
                 // add recipe to dictionary
                 m_potionRecipeDictionary.Add(recipe, m_potionPrefabs[i]);
+                // create recipe page
+                m_recipePages[i].SetImages(m_ingredientTextureDictionary[ingredient1], m_ingredientTextureDictionary[ingredient2], m_potionTextureDictionary[i], i % 2);
             }
         }
     }
@@ -88,8 +129,6 @@ public class IngredientManager : MonoBehaviour
     /// </summary>
     public void RefillIngredients()
     {
-        if (!m_spawnedIngredients[0])
-            return;
         List<Transform> availablePoints = new List<Transform>(m_ingredientSpawnPoints);
 
         for (int i = 0; i < m_spawnedIngredients.Length; ++i)
