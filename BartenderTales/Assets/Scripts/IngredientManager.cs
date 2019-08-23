@@ -38,7 +38,6 @@ public class IngredientManager : MonoBehaviour
     public Dictionary<int, GameObject> m_potionRecipeDictionary;
 
     private Dictionary<int, Texture> m_ingredientTextureDictionary;
-    private Dictionary<int, Texture> m_potionTextureDictionary;
     private GameObject[] m_spawnedIngredients;
     private int m_nPointsPerIngredientType;
 
@@ -53,15 +52,11 @@ public class IngredientManager : MonoBehaviour
 
     private void CreateImageDictionaries()
     {
+        m_ingredientTextureDictionary = new Dictionary<int, Texture>();
         // create ingredient images dictionary for easy indexing
         foreach (IngredientImages i in m_ingredientImages)
         {
             m_ingredientTextureDictionary.Add((int)i.m_ingredientType, i.m_ingredientImage);
-        }
-
-        foreach (PotionImages p in m_potionImages)
-        {
-            m_potionTextureDictionary.Add((int)p.m_potionName, p.m_potionImage);
         }
     }
 
@@ -98,7 +93,7 @@ public class IngredientManager : MonoBehaviour
                 // add recipe to dictionary
                 m_potionRecipeDictionary.Add(recipe, m_potionPrefabs[i]);
                 // create recipe page
-                m_recipePages[i].SetImages(m_ingredientTextureDictionary[ingredient1], m_ingredientTextureDictionary[ingredient2], m_potionTextureDictionary[i], i % 2);
+                m_recipePages[i / 2].SetImages(m_ingredientTextureDictionary[ingredient1], m_ingredientTextureDictionary[ingredient2], m_potionImages[i].m_potionImage, i % 2);
             }
         }
     }
