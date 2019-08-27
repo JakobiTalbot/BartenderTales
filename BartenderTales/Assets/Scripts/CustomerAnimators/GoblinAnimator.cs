@@ -5,7 +5,7 @@ using UnityEngine;
 public class GoblinAnimator : CustomerAnimator
 {
     [SerializeField]
-    private Vector2 m_minMaxSecondsForRandomIdleAnimation = new Vector2(4f, 8f);\
+    private Vector2 m_minMaxSecondsForRandomIdleAnimation = new Vector2(4f, 8f);
     [SerializeField]
     private int m_idleAnimationsCount = 3;
     [SerializeField]
@@ -18,7 +18,7 @@ public class GoblinAnimator : CustomerAnimator
         // while idle
         while (m_animator.GetBool("StoppedMoving"))
         {
-            string anim = "IdleTrigger" + index.ToString();
+            string anim = "IdleTrigger" + Random.Range(0, m_idleAnimationsCount);
             // play random idle animation
             m_animator.SetTrigger(anim);
             // then wait for random time until next random animation
