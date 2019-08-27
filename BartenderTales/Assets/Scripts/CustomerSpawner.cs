@@ -55,7 +55,7 @@ public class CustomerSpawner : MonoBehaviour
 
             // spawn customer when available
             while (!SpawnCustomer())
-                yield return new WaitForEndOfFrame();
+                yield return null;
         }
     }
 

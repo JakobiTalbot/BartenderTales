@@ -42,7 +42,7 @@ public class Lever : MonoBehaviour
         while (transform.localRotation.eulerAngles.x > 1f)
         {
             m_rb.angularVelocity = new Vector3(-m_leverReturnSpeed, 0, 0);
-            yield return new WaitForEndOfFrame();
+            yield return new null;
         }
         m_rb.isKinematic = true;
         m_bLeverAlreadyPulled = false;
