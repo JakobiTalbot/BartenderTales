@@ -18,7 +18,7 @@ public class GoblinAnimator : CustomerAnimator
         // while idle
         while (m_animator.GetBool("StoppedMoving"))
         {
-            string anim = "IdleTrigger" + Random.Range(0, m_idleAnimationsCount);
+            string anim = "IdleTrigger" + (Random.Range(0, m_idleAnimationsCount) + 1);
             // play random idle animation
             m_animator.SetTrigger(anim);
             // then wait for random time until next random animation
