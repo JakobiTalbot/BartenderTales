@@ -22,6 +22,8 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeField]
     [Tooltip("The random range of time between a customer spawning not during happy hour")]
     private Vector2 m_randomRangeCustomerSpawnNotHappyHour;
+    [SerializeField]
+    private GameObject m_startLever;
 
     [HideInInspector]
     public List<GameObject> m_customers;
@@ -34,18 +36,11 @@ public class CustomerSpawner : MonoBehaviour
     void Start()
     {
         m_customers = new List<GameObject>();
-        // spawn customer at start
-        m_customers.Add(Instantiate(m_customerPrefabs[Random.Range(0, m_customerPrefabs.Length)], m_spawnPoint.position, m_spawnPoint.rotation));
-        int i = Random.Range(0, m_servingPoints.Count);
-        Customer cust = m_customers[m_customers.Count - 1].GetComponent<Customer>();
-        cust.SetDestination(m_servingPoints[i], false);
-        cust.SetCoinDropPos(m_coinDropPoint.position);
-        m_servingPoints.RemoveAt(i);
-        StartCoroutine(CustomerSpawnLoop());
     }
 
     private IEnumerator CustomerSpawnLoop()
     {
+        SpawnCustomer();
         while (true)
         {
             if (m_bHappyHour)
@@ -109,5 +104,12 @@ public class CustomerSpawner : MonoBehaviour
         cust.SetCoinDropPos(m_coinDropPoint.position);
 
         return true;
+    }
+
+    public void StartSpawning()
+    {
+        StartCoroutine(CustomerSpawnLoop());
+        StartCoroutine(HappyHourTimer());
+        Destroy(m_startLever);
     }
 }
