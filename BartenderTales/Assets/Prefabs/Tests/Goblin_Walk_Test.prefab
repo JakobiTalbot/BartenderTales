@@ -1900,7 +1900,7 @@ MonoBehaviour:
   m_moneyPrefab: {fileID: 6324821836455372774, guid: 376fd99151b508842b77c710c794f5e1,
     type: 3}
   m_coughUpParticlePoint: {fileID: 0}
-  m_impatienceTimer: 30
+  m_impatienceTimer: 50
   m_animator: {fileID: 1328621850301677834}
 --- !u!195 &3236969146727712539
 NavMeshAgent:
