@@ -22,7 +22,7 @@ public class Customer : MonoBehaviour
     public GameObject m_moneyPrefab;
 
     [SerializeField]
-    private Transform m_dragonBreathParticlePoint;
+    private Transform m_coughUpParticlePoint;
 
     private PotionName m_order;
     private CustomerSpawner m_spawner;
@@ -201,5 +201,5 @@ public class Customer : MonoBehaviour
     }
 
     public bool IsEvil() => m_bBadPerson;
-    public Transform GetDragonBreathPoint() => m_dragonBreathParticlePoint;
+    public Transform GetCoughUpPoint() => m_coughUpParticlePoint;
 }

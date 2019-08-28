@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ingredients: 0100000004000000
-  m_potionName: 7
+  m_potionName: 2
 --- !u!114 &1500738424914455522
 MonoBehaviour:
   m_ObjectHideFlags: 0

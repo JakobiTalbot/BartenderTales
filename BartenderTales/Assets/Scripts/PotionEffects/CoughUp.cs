@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DragonBreath : PotionEffect
+public class CoughUp : PotionEffect
 {
     // Start is called before the first frame update
     void Start()
     {
-        m_potionName = PotionName.DragonBreath;
+        m_potionName = PotionName.CoughUp;
 
         // activate dragon breath if on customer
         if (GetComponent<Customer>())
@@ -18,6 +18,6 @@ public class DragonBreath : PotionEffect
     {
         Customer c = GetComponent<Customer>();
         // create dragon breath particles at designated point
-        Instantiate(FindObjectOfType<PotionAssets>().m_dragonBreathParticlePrefab, c.GetDragonBreathPoint());
+        Instantiate(FindObjectOfType<PotionAssets>().m_coughUpParticlePrefab, c.GetCoughUpPoint());
     }
 }
