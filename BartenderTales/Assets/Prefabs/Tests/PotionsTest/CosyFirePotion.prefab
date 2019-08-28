@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_potionName: 0
-  m_secondsToWaitBeforeLeavingBar: 2.5
+  m_secondsToWaitBeforeLeavingBar: 3
 --- !u!64 &6830040286402898435
 MeshCollider:
   m_ObjectHideFlags: 0
