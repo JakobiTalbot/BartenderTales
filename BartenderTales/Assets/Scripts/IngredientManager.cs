@@ -93,7 +93,7 @@ public class IngredientManager : MonoBehaviour
                 // add recipe to dictionary
                 m_potionRecipeDictionary.Add(recipe, m_potionPrefabs[i]);
                 // create recipe page
-                m_recipePages[i / 2].SetImages(m_ingredientTextureDictionary[ingredient1], m_ingredientTextureDictionary[ingredient2], m_potionImages[i].m_potionImage, i % 2);
+                m_recipePages[i / 2].SetImages(m_ingredientTextureDictionary[ingredient1], m_ingredientTextureDictionary[ingredient2], m_potionImages[i].m_potionImage, System.Text.RegularExpressions.Regex.Replace(m_potionPrefabs[i].GetComponent<Potion>().m_potionName.ToString(), "([A-Z])", " $1").Trim(), i % 2);
             }
         }
     }

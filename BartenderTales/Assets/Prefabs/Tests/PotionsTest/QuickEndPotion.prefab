@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 8642298169968412036}
   - component: {fileID: 6070889476316338535}
   m_Layer: 0
-  m_Name: Potion_002_QuickEnd
+  m_Name: QuickEndPotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ingredients: 0000000003000000
-  m_potionName: 1
+  m_potionName: 0
 --- !u!114 &7636265089292887390
 MonoBehaviour:
   m_ObjectHideFlags: 0
