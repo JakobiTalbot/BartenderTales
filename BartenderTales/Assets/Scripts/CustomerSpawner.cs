@@ -54,8 +54,7 @@ public class CustomerSpawner : MonoBehaviour
                 yield return new WaitForSeconds(Random.Range(m_randomRangeCustomerSpawnNotHappyHour.x, m_randomRangeCustomerSpawnNotHappyHour.y));
 
             // spawn customer when available
-            while (!SpawnCustomer())
-                yield return null;
+            yield return new WaitUntil(SpawnCustomer);
         }
     }
 

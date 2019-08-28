@@ -23,7 +23,6 @@ public class Lever : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(transform.localRotation.eulerAngles.x);
         // if lever is pulled all the way
         if (transform.localRotation.eulerAngles.x > 85f
             && transform.localRotation.eulerAngles.x < 95f
