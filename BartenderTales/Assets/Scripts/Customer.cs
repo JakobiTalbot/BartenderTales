@@ -120,6 +120,7 @@ public class Customer : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Potion>())
         {
+            StopCoroutine(Impatience());
             // add point to spawner points
             if (m_bWaiting)
                 m_spawner.m_waitingPoints.Add(m_point);
