@@ -43,12 +43,12 @@ public class Lever : MonoBehaviour
     /// </summary>
     private IEnumerator ResetLever()
     {
-        Vector3 startPos = m_rb.position;
+        Vector3 moveDir = (m_originalPos - m_rb.position).normalized;
         // while lever is not at start position
         while (transform.localRotation.eulerAngles.x > 5f)
         {
             // move towards start position
-            m_rb.velocity = (m_originalPos - startPos) * m_leverReturnSpeed;
+            m_rb.velocity = moveDir * m_leverReturnSpeed;
             yield return null;
         }
         // lever has returned to start position
