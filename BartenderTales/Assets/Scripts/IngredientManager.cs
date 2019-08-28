@@ -109,11 +109,12 @@ public class IngredientManager : MonoBehaviour
         // for each ingredient
         for (int i = 0; i < m_ingredientPrefabs.Length; ++i)
         {
+            int baseindex = i * m_nPointsPerIngredientType;
             // spawn on number of points
             for (int j = 0; j < m_nPointsPerIngredientType; ++j)
             {
                 int randPoint = Random.Range(0, availablePoints.Count);
-                m_spawnedIngredients[i + j] = Instantiate(m_ingredientPrefabs[i], availablePoints[randPoint].transform.position, availablePoints[randPoint].transform.rotation);
+                m_spawnedIngredients[baseindex + j] = Instantiate(m_ingredientPrefabs[i], availablePoints[randPoint].transform.position, availablePoints[randPoint].transform.rotation);
                 availablePoints.RemoveAt(randPoint);
             }
         }
