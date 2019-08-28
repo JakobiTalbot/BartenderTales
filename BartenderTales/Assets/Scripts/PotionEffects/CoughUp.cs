@@ -7,7 +7,7 @@ public class CoughUp : PotionEffect
     // Start is called before the first frame update
     void Start()
     {
-        m_potionName = PotionName.CoughUp;
+        //m_potionName = PotionName.CoughUp;
 
         // activate dragon breath if on customer
         if (GetComponent<Customer>())

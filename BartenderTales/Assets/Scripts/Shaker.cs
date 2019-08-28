@@ -11,7 +11,7 @@ public enum PotionName
     PixieDust,
     //Beer,
     CosyFire,
-    CoughUp,
+    //CoughUp,
     //HonestPolicy,
     Count,
     Mundane
@@ -59,7 +59,7 @@ public class Shaker : MonoBehaviour
         m_potionFunc.Add(PotionName.CosyFire, m_potionPrefabs[0].GetComponent<CosyFire>());
         m_potionFunc.Add(PotionName.QuickEnd, m_potionPrefabs[1].GetComponent<QuickEnd>());
         m_potionFunc.Add(PotionName.PixieDust, m_potionPrefabs[2].GetComponent<PixieDust>());
-        m_potionFunc.Add(PotionName.CoughUp, m_potionPrefabs[3].GetComponent<CoughUp>());
+        //m_potionFunc.Add(PotionName.CoughUp, m_potionPrefabs[3].GetComponent<CoughUp>());
     }
 
     // Update is called once per frame
@@ -87,10 +87,10 @@ public class Shaker : MonoBehaviour
 
                     // store taken points beforehand in case not enough points to spawn potions on
                     List<Transform> takenPoints = m_potionSpawnPoints;
-                    foreach(Transform t in takenPoints)
+                    for (int i = takenPoints.Count - 1; i >= 0; --i)
                     {
-                        if (t.GetComponent<PotionPoint>().m_inhabitant)
-                            takenPoints.Remove(t);
+                        if (takenPoints[i].GetComponent<PotionPoint>().m_inhabitant)
+                            takenPoints.RemoveAt(i);
                     }
 
                     // create potions at spawn points
