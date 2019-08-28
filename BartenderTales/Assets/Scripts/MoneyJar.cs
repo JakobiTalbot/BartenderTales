@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MoneyJar : MonoBehaviour
 {
@@ -9,6 +10,12 @@ public class MoneyJar : MonoBehaviour
     private int m_maxMoney = 10;
     [SerializeField]
     private TextMeshProUGUI m_moneyCounter;
+    [SerializeField]
+    private GameObject m_winCanvas;
+    [SerializeField]
+    private TextMeshProUGUI m_moneyText;
+    [SerializeField]
+    private float m_timeToWaitAfterWinning = 5f;
 
     [HideInInspector]
     public int m_nCurrentMoney = 0;
@@ -20,7 +27,20 @@ public class MoneyJar : MonoBehaviour
         m_moneyCounter.text = m_nCurrentMoney.ToString();
         if (m_nCurrentMoney >= m_maxMoney)
         {
-            // win game
+            StartCoroutine(WinGame());
         }
+    }
+
+    private IEnumerator WinGame()
+    {
+        // activate win stuff
+        m_winCanvas.SetActive(true);
+        m_moneyText.text += m_nCurrentMoney;
+
+        // wait before resetting scene
+        yield return new WaitForSeconds(m_timeToWaitAfterWinning);
+
+        // reset scene
+        SceneManager.LoadSceneAsync(0);
     }
 }
