@@ -2,6 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum IngredientType
+{
+    Mushroom = 1,
+    EmuElderberry = 1 << 1,
+    PixiePear = 1 << 2,
+    ElvenMagicBox = 1 << 3,
+    DragonChilli = 1 << 4,
+    UnicornFeathers = 1 << 5,
+    Count = 6
+}
+
 [System.Serializable]
 public struct IngredientImages
 {

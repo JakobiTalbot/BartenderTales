@@ -1,38 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class ShakerCap : MonoBehaviour
 {
-    private bool m_bHeld = false;
-    private bool m_bOnShaker = false;
     private Shaker m_shaker;
 
-    private void OnTriggerStay(Collider other)
+    private void Awake()
     {
-        if (!m_bOnShaker
-            && other.GetComponent<Shaker>()
-            && !m_bHeld)
-        {
-            if (!m_shaker)
-                m_shaker = other.GetComponent<Shaker>();
-            m_bOnShaker = true;
-            m_shaker.PlaceCap(gameObject);
-        }
+        m_shaker = FindObjectOfType<Shaker>();
     }
 
     public void EnableHeld()
     {
-        m_bHeld = true;
-        if (m_bOnShaker)
-        {
-            m_bOnShaker = false;
-            m_shaker.RemoveCap();
-        }
+        m_shaker.RemoveCap();
     }
     public void DisableHeld()
     {
-        m_bHeld = false;
         GetComponent<Rigidbody>().isKinematic = false;
     }
 }

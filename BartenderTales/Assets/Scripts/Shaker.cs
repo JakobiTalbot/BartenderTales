@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public enum PotionName
 {
@@ -50,6 +51,7 @@ public class Shaker : MonoBehaviour
         m_rb = GetComponent<Rigidbody>();
         m_particleSystem = GetComponent<ParticleSystem>();
         m_v3LastPos = transform.position;
+        m_cap = FindObjectOfType<ShakerCap>().gameObject;
         CreatePotions();
     }
 
@@ -149,8 +151,6 @@ public class Shaker : MonoBehaviour
 
     public void PlaceCap(GameObject cap)
     {
-        if (!m_cap)
-            m_cap = cap;
         Physics.IgnoreCollision(m_collider, cap.GetComponent<Collider>(), true);
         // move to place
         cap.transform.SetPositionAndRotation(m_capPlacedTransform.position, m_capPlacedTransform.rotation);
@@ -163,6 +163,24 @@ public class Shaker : MonoBehaviour
     {
         Physics.IgnoreCollision(m_collider, m_cap.GetComponent<Collider>(), false);
         m_bCapOn = false;
-        m_cap.transform.parent = null;
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<ShakerCap>()
+            && !m_bCapOn)
+        {
+            Hand hand = m_cap.GetComponentInParent<Hand>();
+
+            // detach from hand if on hand
+            if (hand)
+            {
+                hand.DetachObject(m_cap);
+                m_cap.GetComponent<Interactable>().attachedToHand = null;
+            }
+
+            PlaceCap(m_cap);
+        }
+    }
+
+    public bool IsCapOn() => m_bCapOn;
 }
