@@ -20,6 +20,7 @@ public class Page : MonoBehaviour
     void Start()
     {
         m_collider = GetComponent<Collider>();
+        GetComponent<Rigidbody>().velocity += Vector3.forward;
     }
 
     // Update is called once per frame
