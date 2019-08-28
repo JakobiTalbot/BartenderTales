@@ -87,10 +87,13 @@ public class Customer : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(v3Pos - transform.position), m_rotationSpeed);
 
             // stop moving
-            m_agent.isStopped = true;
-            m_rigidbody.isKinematic = true;
-            m_animator.SetBool("StoppedMoving", true);
-            m_customerAnimator.StartCoroutine("IdleLoop");
+            if (!m_agent.isStopped)
+            {
+                m_agent.isStopped = true;
+                m_rigidbody.isKinematic = true;
+                m_animator.SetBool("StoppedMoving", true);
+                m_customerAnimator.StartCoroutine("IdleLoop");
+            }
         }
         else if (m_agent.isStopped)
             SetDestination(m_point, m_bWaiting);
