@@ -64,7 +64,7 @@ public class ReputationManager : MonoBehaviour
         {
             m_fLerpTimer += Time.deltaTime / m_colourLerpTime;
             m_renderer.material.color = Color.Lerp(startColour, targetColour, m_fLerpTimer);
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
 
         m_renderer.material.color = targetColour;

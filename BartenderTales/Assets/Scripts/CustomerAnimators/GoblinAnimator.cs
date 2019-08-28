@@ -7,7 +7,7 @@ public class GoblinAnimator : CustomerAnimator
     [SerializeField]
     private Vector2 m_minMaxSecondsForRandomIdleAnimation = new Vector2(4f, 8f);
     [SerializeField]
-    private string[] m_randomIdleAnimationTriggerNames;
+    private int m_idleAnimationsCount = 3;
     [SerializeField]
     private int m_shockedReactionTriggerCount = 3;
 
@@ -18,12 +18,12 @@ public class GoblinAnimator : CustomerAnimator
         // while idle
         while (m_animator.GetBool("StoppedMoving"))
         {
-            int index = Random.Range(0, m_randomIdleAnimationTriggerNames.Length);
+            string anim = "IdleTrigger" + (Random.Range(0, m_idleAnimationsCount) + 1);
             // play random idle animation
-            m_animator.SetTrigger(m_randomIdleAnimationTriggerNames[index]);
+            m_animator.SetTrigger(anim);
             // then wait for random time until next random animation
             yield return new WaitForSeconds(Random.Range(m_minMaxSecondsForRandomIdleAnimation.x, m_minMaxSecondsForRandomIdleAnimation.y));
-            m_animator.ResetTrigger(m_randomIdleAnimationTriggerNames[index]);
+            m_animator.ResetTrigger(anim);
         }
     }
 

@@ -11,18 +11,22 @@ public class Lever : MonoBehaviour
     private float m_leverReturnSpeed = 0.5f;
 
     private Rigidbody m_rb;
+    private Vector3 m_originalPos;
     private bool m_bLeverAlreadyPulled = false;
 
     void Awake()
     {
         m_rb = GetComponent<Rigidbody>();
+        m_originalPos = m_rb.position;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(transform.localRotation.eulerAngles.x);
         // if lever is pulled all the way
-        if (transform.localRotation.eulerAngles.x > 89f
+        if (transform.localRotation.eulerAngles.x > 85f
+            && transform.localRotation.eulerAngles.x < 95f
             && !m_bLeverAlreadyPulled)
         {
             // invoke callbacks
@@ -39,11 +43,15 @@ public class Lever : MonoBehaviour
     /// </summary>
     private IEnumerator ResetLever()
     {
-        while (transform.localRotation.eulerAngles.x > 1f)
+        Vector3 moveDir = (m_originalPos - m_rb.position).normalized;
+        // while lever is not at start position
+        while (transform.localRotation.eulerAngles.x > 5f)
         {
-            m_rb.angularVelocity = new Vector3(-m_leverReturnSpeed, 0, 0);
-            yield return new WaitForEndOfFrame();
+            // move towards start position
+            m_rb.velocity = moveDir * m_leverReturnSpeed;
+            yield return null;
         }
+        // lever has returned to start position
         m_rb.isKinematic = true;
         m_bLeverAlreadyPulled = false;
     }
