@@ -1899,7 +1899,8 @@ MonoBehaviour:
   m_speechBubbleBuffer: {x: 0.1, y: 0.1}
   m_moneyPrefab: {fileID: 6324821836455372774, guid: 376fd99151b508842b77c710c794f5e1,
     type: 3}
-  m_dragonBreathParticlePoint: {fileID: 3104100404362840863}
+  m_coughUpParticlePoint: {fileID: 0}
+  m_impatienceTimer: 30
   m_animator: {fileID: 1328621850301677834}
 --- !u!195 &3236969146727712539
 NavMeshAgent:
@@ -1949,9 +1950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_minMaxSecondsForRandomIdleAnimation: {x: 4, y: 8}
-  m_randomIdleAnimationTriggerNames:
-  - ButtTrigger
-  - BellyTrigger
+  m_idleAnimationsCount: 3
   m_shockedReactionTriggerCount: 3
 --- !u!1 &1328621850311045838
 GameObject:

@@ -23,6 +23,8 @@ public class Customer : MonoBehaviour
 
     [SerializeField]
     private Transform m_coughUpParticlePoint;
+    [SerializeField]
+    private float m_impatienceTimer = 30f;
 
     private PotionName m_order;
     private CustomerSpawner m_spawner;
@@ -34,11 +36,13 @@ public class Customer : MonoBehaviour
     private Vector3 m_v3CoinDropPos;
     private Rigidbody m_rigidbody;
     private CustomerAnimator m_customerAnimator;
+    private ReputationManager m_repManager;
 
     public Animator m_animator;
     // Start is called before the first frame update
     void Start()
     {
+        m_repManager = FindObjectOfType<ReputationManager>();
         m_rigidbody = GetComponent<Rigidbody>();
         m_animator = GetComponent<Animator>();
         m_customerAnimator = GetComponent<CustomerAnimator>();
@@ -47,6 +51,7 @@ public class Customer : MonoBehaviour
         // TODO: only order good potions
         m_order = (PotionName)Random.Range(0, (int)PotionName.Count);
         m_spawner = FindObjectOfType<CustomerSpawner>();
+        StartCoroutine(Impatience());
     }
 
     // Update is called once per frame
@@ -126,7 +131,7 @@ public class Customer : MonoBehaviour
             // if correct potion given
             if (m_order == p.m_potionName)
             {
-                FindObjectOfType<ReputationManager>().AddToReputation(m_reputationOnCorrectOrder);
+                m_repManager.AddToReputation(m_reputationOnCorrectOrder);
                 // give money
                 Instantiate(m_moneyPrefab, m_v3CoinDropPos, Quaternion.Euler(Vector3.zero));
                 // happy reaction
@@ -135,11 +140,11 @@ public class Customer : MonoBehaviour
             {
                 if (m_bBadPerson)
                 {
-                    FindObjectOfType<ReputationManager>().AddToReputation(m_reputationOnCorrectOrder);
+                    m_repManager.AddToReputation(m_reputationOnCorrectOrder);
                 }
                 else
                 {
-                    FindObjectOfType<ReputationManager>().AddToReputation(m_reputationOnWrongOrder);
+                    m_repManager.AddToReputation(m_reputationOnWrongOrder);
                     // sad reaction
                 }
             }
@@ -198,6 +203,16 @@ public class Customer : MonoBehaviour
     {
         yield return new WaitForSeconds(fTime);
         m_speechBubbleCanvas.SetActive(false);
+    }
+
+    private IEnumerator Impatience()
+    {
+        yield return new WaitForSeconds(m_impatienceTimer);
+        Speak("This is taking too long...");
+        m_repManager.AddToReputation(m_reputationOnWrongOrder);
+        yield return new WaitForSeconds(1f);
+        m_animator.SetBool("StoppedMoving", false);
+        ExitBar();
     }
 
     public bool IsEvil() => m_bBadPerson;
