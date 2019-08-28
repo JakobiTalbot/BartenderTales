@@ -73,10 +73,13 @@ public class Customer : MonoBehaviour
                 //m_Animator.SetBool("WalkAgain", true);
             }
 
-            // display speech bubble order
+            // customer orders
             else if (!m_agent.isStopped
                 && !m_bWaiting)
+            {
                 Speak(Regex.Replace(m_order.ToString(), "([A-Z])", " $1").Trim() + " please!");
+                m_customerAnimator.Order();
+            }
 
             // face player
             Vector3 v3Pos = Camera.main.transform.position;

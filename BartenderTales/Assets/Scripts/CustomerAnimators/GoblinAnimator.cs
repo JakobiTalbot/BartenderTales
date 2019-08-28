@@ -36,4 +36,9 @@ public class GoblinAnimator : CustomerAnimator
     {
         m_animator.SetTrigger("Cheer");
     }
+
+    public override void Order()
+    {
+        m_animator.SetTrigger("Order");
+    }
 }
