@@ -13,7 +13,7 @@ public class MoneyJar : MonoBehaviour
     [SerializeField]
     private GameObject m_winCanvas;
     [SerializeField]
-    private TextMeshProUGUI m_moneyText;
+    private TextMeshPro m_moneyText;
     [SerializeField]
     private float m_timeToWaitAfterWinning = 5f;
 
