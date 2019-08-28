@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 8402157512648071506}
   - component: {fileID: 6830040286402898435}
   m_Layer: 0
-  m_Name: Potion_003_CosyFire
+  m_Name: CosyFirePotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_potionName: 0
-  m_secondsToWaitBeforeLeavingBar: 2.5
+  m_secondsToWaitBeforeLeavingBar: 3
 --- !u!64 &6830040286402898435
 MeshCollider:
   m_ObjectHideFlags: 0
