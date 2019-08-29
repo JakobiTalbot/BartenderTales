@@ -41,10 +41,16 @@ public class Shaker : MonoBehaviour
     private bool m_bCapOn = false;
     private Collider m_collider;
     private IngredientManager m_manager;
+    private Transform m_startTransform;
 
     // Start is called before the first frame update
     void Start()
     {
+        // get default transform
+        m_startTransform = new GameObject().transform;
+        m_startTransform.position = transform.position;
+        m_startTransform.rotation = transform.rotation;
+
         m_manager = FindObjectOfType<IngredientManager>();
         m_collider = GetComponent<Collider>();
         m_contents = new List<IngredientType>();
@@ -180,6 +186,16 @@ public class Shaker : MonoBehaviour
 
             PlaceCap(m_cap);
         }
+        else if (other.GetComponent<Boundary>())
+            BoundaryReset();
+    }
+
+    public void BoundaryReset()
+    {
+        transform.position = m_startTransform.position;
+        transform.rotation = m_startTransform.rotation;
+        m_rb.velocity = Vector3.zero;
+        m_rb.angularVelocity = Vector3.zero;
     }
 
     public bool IsCapOn() => m_bCapOn;
