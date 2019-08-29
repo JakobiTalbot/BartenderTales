@@ -115,8 +115,8 @@ public class IngredientManager : MonoBehaviour
     private void CreateIngredients()
     {
         List<Transform> availablePoints = new List<Transform>(m_ingredientSpawnPoints);
-        m_spawnedIngredients = new GameObject[m_ingredientSpawnPoints.Length];
         m_nPointsPerIngredientType = m_ingredientSpawnPoints.Length / m_ingredientPrefabs.Length;
+        m_spawnedIngredients = new GameObject[m_ingredientPrefabs.Length * m_nPointsPerIngredientType];
         // for each ingredient
         for (int i = 0; i < m_ingredientPrefabs.Length; ++i)
         {
