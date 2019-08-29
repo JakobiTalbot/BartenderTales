@@ -79,7 +79,7 @@ public class IngredientManager : MonoBehaviour
 
         List<int> existingRecipes = new List<int>();
 
-        for (int i = 0; i < m_recipes.Length; ++i)
+        for (int i = 0; i < m_potionPrefabs.Length; ++i)
         {
             // get 2 random recipes
             int ingredient1 = 1 << Random.Range(0, (int)IngredientType.Count);
