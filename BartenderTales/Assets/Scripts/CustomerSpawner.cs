@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CustomerSpawner : MonoBehaviour
 {
@@ -24,6 +26,14 @@ public class CustomerSpawner : MonoBehaviour
     private Vector2 m_randomRangeCustomerSpawnNotHappyHour;
     [SerializeField]
     private GameObject m_startLever;
+    [SerializeField]
+    private float m_gameTimeSeconds = 300f;
+    [SerializeField]
+    private Transform m_clockHand;
+    [SerializeField]
+    private GameObject m_timeOverCanvas;
+    [SerializeField]
+    private TextMeshProUGUI m_finalMoneyText;
 
     [HideInInspector]
     public List<GameObject> m_customers;
@@ -31,6 +41,8 @@ public class CustomerSpawner : MonoBehaviour
     public bool m_spawnCustomers = true;
     private float m_fCustomerSpawnTimer = 0f;
     private bool m_bHappyHour = false;
+
+    private float m_fGameTimer = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -110,6 +122,25 @@ public class CustomerSpawner : MonoBehaviour
     {
         StartCoroutine(CustomerSpawnLoop());
         StartCoroutine(HappyHourTimer());
+        StartCoroutine(GameTimer());
         Destroy(m_startLever);
+    }
+
+    private IEnumerator GameTimer()
+    {
+        yield return new WaitUntil(CountDown);
+        // timer runs out
+        m_timeOverCanvas.SetActive(true);
+        m_finalMoneyText.text += FindObjectOfType<MoneyJar>().m_nCurrentMoney.ToString();
+        yield return new WaitForSeconds(10f);
+        SceneManager.LoadSceneAsync(0);
+    }
+
+    private bool CountDown()
+    {
+        m_fGameTimer += Time.deltaTime;
+        // rotate clock hand
+        m_clockHand.localRotation = Quaternion.Euler(m_clockHand.localRotation.x, m_clockHand.localRotation.y, (m_fGameTimer / m_gameTimeSeconds) * 360f);
+        return m_fGameTimer >= m_gameTimeSeconds;
     }
 }
