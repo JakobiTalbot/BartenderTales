@@ -41,5 +41,7 @@ public class ShakerCap : MonoBehaviour
         transform.rotation = m_startTransform.rotation;
         m_rb.velocity = Vector3.zero;
         m_rb.angularVelocity = Vector3.zero;
+        transform.parent = null;
+        m_shaker.RemoveCap();
     }
 }

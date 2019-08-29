@@ -41,4 +41,9 @@ public class GoblinAnimator : CustomerAnimator
     {
         m_animator.SetTrigger("Order");
     }
+
+    public override void CoughUp()
+    {
+        m_animator.SetTrigger("DrankCoughUp");
+    }
 }

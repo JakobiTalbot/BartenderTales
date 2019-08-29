@@ -15,4 +15,6 @@ abstract public class CustomerAnimator : MonoBehaviour
     abstract public void Shocked();
     abstract public void Cheer();
     abstract public void Order();
+
+    abstract public void CoughUp();
 }

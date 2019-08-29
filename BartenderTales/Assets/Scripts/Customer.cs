@@ -22,7 +22,7 @@ public class Customer : MonoBehaviour
     public GameObject m_moneyPrefab;
 
     [SerializeField]
-    private Transform m_coughUpParticlePoint;
+    private Transform m_coughUpSpawnPoint;
     [SerializeField]
     private float m_impatienceTimer = 30f;
 
@@ -173,6 +173,7 @@ public class Customer : MonoBehaviour
         m_agent.isStopped = false;
         m_point = FindObjectOfType<CustomerSpawner>().m_spawnPoint;
         m_agent.SetDestination(m_point.position);
+        m_animator.SetBool("StoppedMoving", false);
     }
 
     public void SetCoinDropPos(Vector3 v3DropPos)
@@ -189,15 +190,16 @@ public class Customer : MonoBehaviour
         StartCoroutine(DeactiveSpeechBubbleAfterTime(5f));
     }
 
-    public void Shocked()
+    public void Shocked() => m_customerAnimator.Shocked();
+    public void Cheer() => m_customerAnimator.Cheer();
+    public IEnumerator CoughUp(GameObject coughup, float timeUntilSpawnObject)
     {
-        // do shocked animation
-        m_customerAnimator.Shocked();
-    }
-
-    public void Cheer()
-    {
-        m_customerAnimator.Cheer();
+        m_customerAnimator.CoughUp();
+        yield return new WaitForSeconds(timeUntilSpawnObject);
+        // wait before spawning 
+        Destroy(Instantiate(coughup, m_coughUpSpawnPoint.position, m_coughUpSpawnPoint.rotation), 10f);
+        yield return new WaitForSeconds(2f);
+        ExitBar();
     }
 
     IEnumerator DeactiveSpeechBubbleAfterTime(float fTime)
@@ -217,5 +219,4 @@ public class Customer : MonoBehaviour
     }
 
     public bool IsEvil() => m_bBadPerson;
-    public Transform GetCoughUpPoint() => m_coughUpParticlePoint;
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3104100404362840863}
   m_Layer: 0
-  m_Name: DragonBreathSpawn
+  m_Name: CoughUpPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382539592571778352}
   m_LocalRotation: {x: -0, y: 0.999216, z: -0, w: -0.039591145}
-  m_LocalPosition: {x: 0.0015, y: 0.0615, z: 0.0187}
+  m_LocalPosition: {x: 0.00596, y: 0.06077, z: 0.01489}
   m_LocalScale: {x: 0.050000016, y: 0.05, z: 0.050000016}
   m_Children: []
   m_Father: {fileID: 1328621850310946540}
@@ -1899,7 +1899,7 @@ MonoBehaviour:
   m_speechBubbleBuffer: {x: 0.1, y: 0.1}
   m_moneyPrefab: {fileID: 6324821836455372774, guid: 376fd99151b508842b77c710c794f5e1,
     type: 3}
-  m_coughUpParticlePoint: {fileID: 0}
+  m_coughUpSpawnPoint: {fileID: 3104100404362840863}
   m_impatienceTimer: 50
   m_animator: {fileID: 1328621850301677834}
 --- !u!195 &3236969146727712539

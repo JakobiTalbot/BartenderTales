@@ -9,5 +9,5 @@ public class PotionAssets : MonoBehaviour
     [Header("Quick End")]
     public GameObject m_quickEndExplosionPrefab;
     [Header("Cough Up")]
-    public GameObject m_coughUpParticlePrefab;
+    public GameObject[] m_coughUpRandomObjectPrefabs;
 }
