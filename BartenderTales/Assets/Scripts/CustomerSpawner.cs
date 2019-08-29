@@ -33,7 +33,7 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeField]
     private GameObject m_timeOverCanvas;
     [SerializeField]
-    private TextMeshProUGUI m_finalMoneyText;
+    private TextMeshPro m_finalMoneyText;
 
     [HideInInspector]
     public List<GameObject> m_customers;
