@@ -44,10 +44,20 @@ public class CustomerSpawner : MonoBehaviour
 
     private float m_fGameTimer = 0f;
 
+    public AudioSource mainMenuMusic;
+    public AudioSource calmHourMusic;
+    public float fadeTime;
+
     // Start is called before the first frame update
     void Start()
     {
         m_customers = new List<GameObject>();
+    }
+
+    public void Fade()
+    {
+        StartCoroutine(AudioController.FadeOut(mainMenuMusic, fadeTime));
+        StartCoroutine(AudioController.FadeIn(calmHourMusic, fadeTime));
     }
 
     private IEnumerator CustomerSpawnLoop()

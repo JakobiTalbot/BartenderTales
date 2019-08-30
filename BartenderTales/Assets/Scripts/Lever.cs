@@ -14,6 +14,8 @@ public class Lever : MonoBehaviour
     private Vector3 m_originalPos;
     private bool m_bLeverAlreadyPulled = false;
 
+    public AudioSource levelPull;
+
     void Awake()
     {
         m_rb = GetComponent<Rigidbody>();
@@ -32,6 +34,11 @@ public class Lever : MonoBehaviour
             m_onLeverPulled.Invoke();
             // ensure the lever is not considered pulled until after it is reset
             m_bLeverAlreadyPulled = true;
+
+            if (levelPull != null)
+            {
+                levelPull.Play();
+            }
             // start moving lever back
             StartCoroutine(ResetLever());
         }

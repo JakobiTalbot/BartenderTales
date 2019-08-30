@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class MoneyJar : MonoBehaviour
 {
+    public AudioSource coinSound;
+
     [SerializeField]
     private TextMeshProUGUI m_moneyCounter;
 
@@ -17,5 +19,10 @@ public class MoneyJar : MonoBehaviour
         m_nCurrentMoney += nMoney;
         // set text on money counter
         m_moneyCounter.text = m_nCurrentMoney.ToString();
+
+        if (coinSound != null)
+        {
+            coinSound.Play();
+        }
     }
 }

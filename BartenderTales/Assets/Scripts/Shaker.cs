@@ -43,6 +43,9 @@ public class Shaker : MonoBehaviour
     private IngredientManager m_manager;
     private Transform m_startTransform;
 
+    public AudioSource ingredientsInSound;
+    public AudioSource potionMade;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -81,6 +84,11 @@ public class Shaker : MonoBehaviour
             if (((transform.position - m_v3LastPos) - m_v3LastDeltaPos).magnitude > m_accelShakeThreshold)
             {
                 m_fCurrentShakeTime += Time.deltaTime;
+
+                if (potionMade != null)
+                {
+                    potionMade.Play();
+                }
                 // if drink shaken
                 if (m_fCurrentShakeTime > m_shakeTime)
                 {
@@ -136,6 +144,10 @@ public class Shaker : MonoBehaviour
     public void AddIngredient(IngredientType ingredient)
     {
         m_contents.Add(ingredient);
+        if (ingredientsInSound != null)
+        {
+            ingredientsInSound.Play();
+        }
     }
 
     private GameObject GetPotion()
