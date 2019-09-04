@@ -10,7 +10,11 @@ public enum IngredientType
     ElvenMagicBox = 1 << 3,
     DragonChilli = 1 << 4,
     UnicornFeathers = 1 << 5,
-    Count = 6
+    StarFruit = 1 << 6,
+    //ingredient 7
+    GoblinToe = 1 << 8,
+    HairBall = 1 << 9,
+    Count = 9
 }
 
 [System.Serializable]
