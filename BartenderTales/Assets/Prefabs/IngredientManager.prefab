@@ -62,11 +62,30 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   m_potionPrefabs:
   - {fileID: 4554718752582502801, guid: 10baa32807af8c74a9bb4988aed17978, type: 3}
-  - {fileID: 5615359924849978284, guid: b61ddccb65acf944398b67740d054d42, type: 3}
+  - {fileID: 5962952628538493408, guid: f554989b2e2a0564e93e54a19b9b4010, type: 3}
   - {fileID: 5514788207697548510, guid: 980da04582a0c95448028bc1ae2e9b50, type: 3}
-  - {fileID: 4920498647915840378, guid: 2cc8eba19c7b00242ab8d25cd25bce39, type: 3}
   m_ingredientPrefabs:
   - {fileID: 6569432677204148055, guid: be4c5474818a4fa43b051b839325a03f, type: 3}
   - {fileID: 2576281481048802233, guid: ed47c14df61b50349b6d66d5970e6979, type: 3}
@@ -74,6 +93,9 @@ MonoBehaviour:
   - {fileID: 4786787099297365715, guid: 32b210d49afc67a4abdfb6a25accc570, type: 3}
   - {fileID: 5138384934780568051, guid: e815cf30d309f67409821041834133cb, type: 3}
   - {fileID: 6569432677204148055, guid: cf11fb92dad3d06449ffbc1b23c3ee01, type: 3}
+  - {fileID: 3000132399576254477, guid: d4a8a8c173503444e82f6aa2a7925297, type: 3}
+  - {fileID: 3623414696848053879, guid: f39f8199d43858145b3fd5f48204b626, type: 3}
+  - {fileID: 4839016121794017309, guid: 1f0fa5c546683ed4d827d38301037710, type: 3}
   m_ingredientImages:
   - m_ingredientType: 1
     m_ingredientImage: {fileID: 2800000, guid: 2c76f7393eabc4e48a98c9dd08bbb2be, type: 3}
@@ -87,15 +109,19 @@ MonoBehaviour:
     m_ingredientImage: {fileID: 2800000, guid: e30c1ab2c5387e045934641fa2cd4b3a, type: 3}
   - m_ingredientType: 32
     m_ingredientImage: {fileID: 2800000, guid: 34153775cf3deed46bf2a670dc5d7aa2, type: 3}
+  - m_ingredientType: 64
+    m_ingredientImage: {fileID: 2800000, guid: c0aac76721cba2a4c8533dcd0def2603, type: 3}
+  - m_ingredientType: 128
+    m_ingredientImage: {fileID: 2800000, guid: a323442a362257f48bbbd3e66dda6a09, type: 3}
+  - m_ingredientType: 256
+    m_ingredientImage: {fileID: 2800000, guid: 5979c4deedbd6684c8300308d597427a, type: 3}
   m_potionImages:
   - m_potionName: 2
     m_potionImage: {fileID: 2800000, guid: f6e08adbaee0a194ab6bce0b5b6b7891, type: 3}
   - m_potionName: 3
-    m_potionImage: {fileID: 2800000, guid: 7f3373044586a5741878af78d362d905, type: 3}
+    m_potionImage: {fileID: 2800000, guid: bbaba8e2ff43b9c4094ef6cfb3dc435f, type: 3}
   - m_potionName: 1
     m_potionImage: {fileID: 2800000, guid: ef1f5a9ce4c27d3429ac99ae2fd5314f, type: 3}
-  - m_potionName: 0
-    m_potionImage: {fileID: 2800000, guid: bc9f3b61c726a354498d8bdffaa52964, type: 3}
   m_recipePages:
   - {fileID: 0}
   - {fileID: 0}
