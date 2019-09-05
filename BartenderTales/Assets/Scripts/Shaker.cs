@@ -28,6 +28,9 @@ public class Shaker : MonoBehaviour
     public Transform m_capPlacedTransform;
     public int m_potionsToSpawn = 3;
 
+    [SerializeField]
+    private AudioClip[] m_audioClipsOnPotionCreation;
+
     [HideInInspector]
     public Dictionary<PotionName, PotionEffect> m_potionFunc;
 
@@ -42,9 +45,9 @@ public class Shaker : MonoBehaviour
     private Collider m_collider;
     private IngredientManager m_manager;
     private Transform m_startTransform;
+    private AudioSource m_audioSource;
 
     public AudioSource ingredientsInSound;
-    public AudioSource potionMade;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +58,7 @@ public class Shaker : MonoBehaviour
         m_startTransform.rotation = transform.rotation;
 
         m_manager = FindObjectOfType<IngredientManager>();
+        m_audioSource = GetComponent<AudioSource>();
         m_collider = GetComponent<Collider>();
         m_contents = new List<IngredientType>();
         m_rb = GetComponent<Rigidbody>();
@@ -85,16 +89,15 @@ public class Shaker : MonoBehaviour
             {
                 m_fCurrentShakeTime += Time.deltaTime;
 
-                if (potionMade != null)
-                {
-                    potionMade.Play();
-                }
                 // if drink shaken
                 if (m_fCurrentShakeTime > m_shakeTime)
                 {
-                    Debug.Log("done");
+                    // find potion type
                     GameObject potion = GetPotion();
+                    // play audio
+                    m_audioSource?.PlayOneShot(m_audioClipsOnPotionCreation[Random.Range(0, m_audioClipsOnPotionCreation.Length)]);
 
+                    // get number of potions to create
                     int nPotionsToSpawn;
                     if (potion.GetComponent<Mundane>())
                         nPotionsToSpawn = 1;
@@ -131,6 +134,7 @@ public class Shaker : MonoBehaviour
                         nPotionsToSpawn--;
                     }
 
+                    // reset stuff
                     m_fCurrentShakeTime = 0f;
                     m_contents.Clear();
                 }
@@ -141,6 +145,10 @@ public class Shaker : MonoBehaviour
         m_v3LastPos = transform.position;
     }
 
+    /// <summary>
+    /// Add an ingredient to the shaker
+    /// </summary>
+    /// <param name="ingredient"> The enum ingredient type to add </param>
     public void AddIngredient(IngredientType ingredient)
     {
         m_contents.Add(ingredient);
@@ -150,6 +158,10 @@ public class Shaker : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks if the ingredients in the shaker make a valid recipe and returns that potion, otherwise returns mundane potion
+    /// </summary>
+    /// <returns> The potion the recipe in the shaker matches, mundane potion if it doesn't match any </returns>
     private GameObject GetPotion()
     {
         // if potion doesn't contain valid amount of ingredients
@@ -167,6 +179,10 @@ public class Shaker : MonoBehaviour
         return m_mundanePotion;
     }
 
+    /// <summary>
+    /// Places the cap onto the shaker
+    /// </summary>
+    /// <param name="cap"> The shaker cap game object </param>
     public void PlaceCap(GameObject cap)
     {
         Physics.IgnoreCollision(m_collider, cap.GetComponent<Collider>(), true);
@@ -177,11 +193,15 @@ public class Shaker : MonoBehaviour
         m_bCapOn = true;
     }
 
+    /// <summary>
+    /// Removes the cap from the shaker
+    /// </summary>
     public void RemoveCap()
     {
         Physics.IgnoreCollision(m_collider, m_cap.GetComponent<Collider>(), false);
         m_bCapOn = false;
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<ShakerCap>()
@@ -202,6 +222,10 @@ public class Shaker : MonoBehaviour
             BoundaryReset();
     }
 
+    /// <summary>
+    /// Resets the position, rotation, velocity and angular velocity of the shaker.
+    /// Called upon entering boundary trigger.
+    /// </summary>
     public void BoundaryReset()
     {
         transform.position = m_startTransform.position;

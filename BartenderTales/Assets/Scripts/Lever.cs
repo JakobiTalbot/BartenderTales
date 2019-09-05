@@ -9,15 +9,17 @@ public class Lever : MonoBehaviour
     private UnityEvent m_onLeverPulled;
     [SerializeField]
     private float m_leverReturnSpeed = 0.5f;
+    [SerializeField]
+    private AudioClip[] m_audioClipsOnLeverPull;
 
     private Rigidbody m_rb;
     private Vector3 m_originalPos;
     private bool m_bLeverAlreadyPulled = false;
-
-    public AudioSource levelPull;
+    private AudioSource m_audioSource;
 
     void Awake()
     {
+        m_audioSource = GetComponent<AudioSource>();
         m_rb = GetComponent<Rigidbody>();
         m_originalPos = m_rb.position;
     }
@@ -34,11 +36,8 @@ public class Lever : MonoBehaviour
             m_onLeverPulled.Invoke();
             // ensure the lever is not considered pulled until after it is reset
             m_bLeverAlreadyPulled = true;
-
-            if (levelPull != null)
-            {
-                levelPull.Play();
-            }
+            // play audio
+            m_audioSource?.PlayOneShot(m_audioClipsOnLeverPull[Random.Range(0, m_audioClipsOnLeverPull.Length)]);
             // start moving lever back
             StartCoroutine(ResetLever());
         }
