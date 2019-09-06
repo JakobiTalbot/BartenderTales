@@ -118,7 +118,7 @@ PrefabInstance:
     - target: {fileID: 73856103415350005, guid: 6bf262d78d51d79489f6ce81c5345b4f,
         type: 3}
       propertyPath: m_potionName
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 73856103415350005, guid: 6bf262d78d51d79489f6ce81c5345b4f,
         type: 3}

@@ -6,7 +6,6 @@ using Valve.VR.InteractionSystem;
 public enum PotionName
 {
     //Skydive = 0,
-    QuickEnd,
     //AssassinsSpecial,
     //SmokeyTeleport,
     PixieDust,

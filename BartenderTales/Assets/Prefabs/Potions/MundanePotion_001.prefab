@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ingredients: 
-  m_potionName: 10
+  m_potionName: 4
 --- !u!114 &722513945840878454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,3 +343,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_potionName: 0
+  m_timeToWaitBeforeExploding: 2
+  m_reactionRadius: 5
+  m_reputationOnGoodCustomerExplosion: -1
