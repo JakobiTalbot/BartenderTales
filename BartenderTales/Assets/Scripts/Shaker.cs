@@ -94,7 +94,7 @@ public class Shaker : MonoBehaviour
                     // find potion type
                     GameObject potion = GetPotion();
                     // play audio
-                    m_audioSource?.PlayOneShot(m_audioClipsOnPotionCreation[Random.Range(0, m_audioClipsOnPotionCreation.Length)]);
+                    //m_audioSource?.PlayOneShot(m_audioClipsOnPotionCreation[Random.Range(0, m_audioClipsOnPotionCreation.Length)]);
 
                     // get number of potions to create
                     int nPotionsToSpawn;

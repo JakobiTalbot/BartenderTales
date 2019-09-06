@@ -37,7 +37,7 @@ public class Lever : MonoBehaviour
             // ensure the lever is not considered pulled until after it is reset
             m_bLeverAlreadyPulled = true;
             // play audio
-            m_audioSource?.PlayOneShot(m_audioClipsOnLeverPull[Random.Range(0, m_audioClipsOnLeverPull.Length)]);
+            //m_audioSource?.PlayOneShot(m_audioClipsOnLeverPull[Random.Range(0, m_audioClipsOnLeverPull.Length)]);
             // start moving lever back
             StartCoroutine(ResetLever());
         }
