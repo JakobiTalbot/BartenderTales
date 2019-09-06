@@ -795,7 +795,7 @@ MonoBehaviour:
   m_reputationOnCorrectOrder: 1
   m_reputationOnWrongOrder: -1
   m_coinsGivenOnCorrectOrder: 1
-  m_speechBubbleBuffer: {x: 1, y: 1}
+  m_speechBubbleBuffer: {x: 0.1, y: 0.1}
   m_moneyPrefab: {fileID: 6324821836455372774, guid: 376fd99151b508842b77c710c794f5e1,
     type: 3}
   m_coughUpSpawnPoint: {fileID: 4787110812158398526}
