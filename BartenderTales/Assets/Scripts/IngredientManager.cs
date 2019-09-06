@@ -46,6 +46,8 @@ public class IngredientManager : MonoBehaviour
     private PotionImages[] m_potionImages;
     [SerializeField]
     private Page[] m_recipePages;
+    [SerializeField]
+    private int m_moneyLossOnIngredientRefill = 1;
 
     [HideInInspector]
     public int[] m_recipes;
@@ -53,8 +55,14 @@ public class IngredientManager : MonoBehaviour
     public Dictionary<int, GameObject> m_potionRecipeDictionary;
 
     private Dictionary<int, Texture> m_ingredientTextureDictionary;
+    private MoneyJar m_moneyJar;
     private GameObject[] m_spawnedIngredients;
     private int m_nPointsPerIngredientType;
+
+    private void Awake()
+    {
+        m_moneyJar = FindObjectOfType<MoneyJar>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -152,5 +160,8 @@ public class IngredientManager : MonoBehaviour
             // activate ingredient
             m_spawnedIngredients[i].SetActive(true);
         }
+
+        // remove money from jar
+        m_moneyJar.AddMoney(-m_moneyLossOnIngredientRefill);
     }
 }

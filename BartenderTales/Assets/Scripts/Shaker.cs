@@ -82,8 +82,11 @@ public class Shaker : MonoBehaviour
         if (m_contents.Count >= 2
             && m_bCapOn)
         {
+            // get force of shaker movement
+            Vector3 force = ((transform.position - m_v3LastPos) - m_v3LastDeltaPos);
+            
             // if player is shaking drink
-            if (((transform.position - m_v3LastPos) - m_v3LastDeltaPos).magnitude > m_accelShakeThreshold)
+            if (force.magnitude > m_accelShakeThreshold)
             {
                 m_fCurrentShakeTime += Time.deltaTime;
 
