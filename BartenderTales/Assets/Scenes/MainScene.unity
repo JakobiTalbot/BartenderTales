@@ -4871,8 +4871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cosyFireParticles: {fileID: 1688973191102343754, guid: d35b6660f00603f42bc111ae0031eed6,
     type: 3}
-  m_quickEndExplosionPrefab: {fileID: 7046303712146212440, guid: 2cc2e562ff398a143af5f32e44e1dc11,
-    type: 3}
+  m_mundaneExplosionPrefab: {fileID: 0}
   m_coughUpRandomObjectPrefabs:
   - {fileID: 4554718752582502801, guid: 10baa32807af8c74a9bb4988aed17978, type: 3}
   - {fileID: 5514788207697548510, guid: 980da04582a0c95448028bc1ae2e9b50, type: 3}
@@ -18085,6 +18084,17 @@ PrefabInstance:
       propertyPath: m_ingredientSpawnPoints.Array.data[43]
       value: 
       objectReference: {fileID: 727289649}
+    - target: {fileID: 1627498804331027086, guid: f0e38b26e18bb44428e6fc5669873d4d,
+        type: 3}
+      propertyPath: m_ingredientPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 7815359149840196712, guid: 149d8fcc4a8313042933bb8295f51fca,
+        type: 3}
+    - target: {fileID: 1627498804331027086, guid: f0e38b26e18bb44428e6fc5669873d4d,
+        type: 3}
+      propertyPath: m_ingredientImages.Array.data[2].m_ingredientImage
+      value: 
+      objectReference: {fileID: 2800000, guid: ef4a9a54783714c4d9801d6a737bca5d, type: 3}
     - target: {fileID: 1627498804331027087, guid: f0e38b26e18bb44428e6fc5669873d4d,
         type: 3}
       propertyPath: m_LocalPosition.x
