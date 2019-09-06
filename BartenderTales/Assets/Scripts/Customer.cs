@@ -92,7 +92,8 @@ public class Customer : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(v3Pos - transform.position), m_rotationSpeed);
 
             // stop moving
-            if (!m_agent.isStopped)
+            if (!m_agent.isStopped
+                && m_agent.hasPath)
             {
                 m_agent.isStopped = true;
                 m_rigidbody.isKinematic = true;
