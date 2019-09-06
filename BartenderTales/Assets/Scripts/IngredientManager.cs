@@ -11,9 +11,9 @@ public enum IngredientType
     DragonChilli = 1 << 4,
     UnicornFeathers = 1 << 5,
     StarFruit = 1 << 6,
-    //ingredient 7
-    GoblinToe = 1 << 7,
-    HairBall = 1 << 8,
+    EyeBall = 1 << 7,
+    GoblinToe = 1 << 8,
+    HairBall = 1 << 9,
     Count = 9
 }
 
