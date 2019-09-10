@@ -188,7 +188,7 @@ public class Customer : MonoBehaviour
         m_text.text = text;
         m_text.rectTransform.sizeDelta = m_text.GetPreferredValues();
         m_bubble.rectTransform.sizeDelta = (m_text.rectTransform.sizeDelta + m_speechBubbleBuffer);
-        StartCoroutine(DeactiveSpeechBubbleAfterTime(5f));
+        //StartCoroutine(DeactiveSpeechBubbleAfterTime(5f));
     }
 
     public void Shocked() => m_customerAnimator.Shocked();

@@ -64,10 +64,10 @@ public class Shaker : MonoBehaviour
         m_particleSystem = GetComponent<ParticleSystem>();
         m_v3LastPos = transform.position;
         m_cap = FindObjectOfType<ShakerCap>().gameObject;
-        CreatePotions();
+        CreatePotionDictionary();
     }
 
-    private void CreatePotions()
+    private void CreatePotionDictionary()
     {
         m_potionFunc = new Dictionary<PotionName, PotionEffect>();
         m_potionFunc.Add(PotionName.CosyFire, m_potionPrefabs[0].GetComponent<CosyFire>());
@@ -78,72 +78,84 @@ public class Shaker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if contains enough contents and the cap is on
-        if (m_contents.Count >= 2
-            && m_bCapOn)
-        {
-            // get force of shaker movement
-            Vector3 force = ((transform.position - m_v3LastPos) - m_v3LastDeltaPos);
+        // get force of shaker movement
+        Vector3 force = ((transform.position - m_v3LastPos) - m_v3LastDeltaPos);
             
-            // if player is shaking drink
-            if (force.magnitude > m_accelShakeThreshold)
+        // if player is shaking drink
+        if (force.magnitude > m_accelShakeThreshold)
+        {
+            // recipe mixing
+            if (m_contents.Count >= 2
+                && m_bCapOn)
             {
                 m_fCurrentShakeTime += Time.deltaTime;
 
                 // if drink shaken
                 if (m_fCurrentShakeTime > m_shakeTime)
                 {
-                    // find potion type
-                    GameObject potion = GetPotion();
-                    // play audio
-                    //m_audioSource?.PlayOneShot(m_audioClipsOnPotionCreation[Random.Range(0, m_audioClipsOnPotionCreation.Length)]);
-
-                    // get number of potions to create
-                    int nPotionsToSpawn;
-                    if (potion.GetComponent<Mundane>())
-                        nPotionsToSpawn = 1;
-                    else
-                        nPotionsToSpawn = m_potionsToSpawn;
-
-                    // store taken points beforehand in case not enough points to spawn potions on
-                    List<Transform> takenPoints = m_potionSpawnPoints;
-                    for (int i = takenPoints.Count - 1; i >= 0; --i)
-                    {
-                        if (takenPoints[i].GetComponent<PotionPoint>().m_inhabitant)
-                            takenPoints.RemoveAt(i);
-                    }
-
-                    // create potions at spawn points
-                    for (int i = 0; i < m_potionsToSpawn; ++i)
-                    {
-                        // if spawn point is empty
-                        if (!m_potionSpawnPoints[i].GetComponent<PotionPoint>().m_inhabitant)
-                        {
-                            m_potionSpawnPoints[i].GetComponent<PotionPoint>().SetInhabitant(potion);
-                            nPotionsToSpawn--;
-
-                            if (nPotionsToSpawn == 0)
-                                break;
-                        }
-                    }
-
-                    // still have potions to spawn, spawn them in pre-inhabited spots
-                    while (nPotionsToSpawn > 0)
-                    {
-                        int iRand = Random.Range(0, takenPoints.Count - 1);
-                        m_potionSpawnPoints[iRand].GetComponent<PotionPoint>().SetInhabitant(potion);
-                        nPotionsToSpawn--;
-                    }
-
-                    // reset stuff
-                    m_fCurrentShakeTime = 0f;
-                    m_contents.Clear();
+                    CreatePotions();
                 }
+            }
+            // empty ingredients
+            else if (transform.up.y < 0f
+                     && !m_bCapOn)
+            {
+                Debug.Log("Shaker Emptied");
+                m_contents.Clear();
             }
         }
 
         m_v3LastDeltaPos = (transform.position - m_v3LastPos);
         m_v3LastPos = transform.position;
+    }
+
+    private void CreatePotions()
+    {
+        // find potion type
+        GameObject potion = GetPotion();
+        // play audio
+        //m_audioSource?.PlayOneShot(m_audioClipsOnPotionCreation[Random.Range(0, m_audioClipsOnPotionCreation.Length)]);
+
+        // get number of potions to create
+        int nPotionsToSpawn;
+        if (potion.GetComponent<Mundane>())
+            nPotionsToSpawn = 1;
+        else
+            nPotionsToSpawn = m_potionsToSpawn;
+
+        // store taken points beforehand in case not enough points to spawn potions on
+        List<Transform> takenPoints = m_potionSpawnPoints;
+        for (int i = takenPoints.Count - 1; i >= 0; --i)
+        {
+            if (takenPoints[i].GetComponent<PotionPoint>().m_inhabitant)
+                takenPoints.RemoveAt(i);
+        }
+
+        // create potions at spawn points
+        for (int i = 0; i < m_potionsToSpawn; ++i)
+        {
+            // if spawn point is empty
+            if (!m_potionSpawnPoints[i].GetComponent<PotionPoint>().m_inhabitant)
+            {
+                m_potionSpawnPoints[i].GetComponent<PotionPoint>().SetInhabitant(potion);
+                nPotionsToSpawn--;
+
+                if (nPotionsToSpawn == 0)
+                    break;
+            }
+        }
+
+        // still have potions to spawn, spawn them in pre-inhabited spots
+        while (nPotionsToSpawn > 0)
+        {
+            int iRand = Random.Range(0, takenPoints.Count - 1);
+            m_potionSpawnPoints[iRand].GetComponent<PotionPoint>().SetInhabitant(potion);
+            nPotionsToSpawn--;
+        }
+
+        // reset stuff
+        m_fCurrentShakeTime = 0f;
+        m_contents.Clear();
     }
 
     /// <summary>
