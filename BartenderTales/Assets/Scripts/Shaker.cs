@@ -98,7 +98,8 @@ public class Shaker : MonoBehaviour
             }
             // empty ingredients
             else if (transform.up.y < 0f
-                     && !m_bCapOn)
+                     && !m_bCapOn
+                     && m_contents.Count > 0)
             {
                 Debug.Log("Shaker Emptied");
                 m_contents.Clear();
