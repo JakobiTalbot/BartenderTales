@@ -117,8 +117,12 @@ public class Customer : MonoBehaviour
         m_agent.isStopped = false;
         m_bHadPath = true;
         m_point = dest;
-        m_rigidbody.velocity = Vector3.zero;
-        m_rigidbody.angularVelocity = Vector3.zero;
+        if (m_rigidbody)
+        {
+            m_rigidbody.velocity = Vector3.zero;
+            m_rigidbody.angularVelocity = Vector3.zero;
+        }
+
         m_agent.SetDestination(dest.position);
     }
 

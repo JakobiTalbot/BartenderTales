@@ -72,7 +72,7 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeField]
     private TextMeshPro m_finalMoneyText;
     [SerializeField]
-    private Renderer[] m_wantedPosters;
+    private Renderer[] m_wantedPosterImages;
     [SerializeField]
     private Vector2Int m_randomRangeSpawnsBetweenBadSpawns;
 
@@ -100,9 +100,9 @@ public class CustomerSpawner : MonoBehaviour
         m_wantedCustomers = new List<WantedCustomer>();
         m_spawnsUntilNextBadCustomer = Random.Range(m_randomRangeSpawnsBetweenBadSpawns.x, m_randomRangeSpawnsBetweenBadSpawns.y);
         // create wanted customers
-        for (int i = 0; i < m_wantedPosters.Length; ++i)
+        for (int i = 0; i < m_wantedPosterImages.Length; ++i)
         {
-            m_posters.Add(new WantedPoster(m_wantedPosters[i]));
+            m_posters.Add(new WantedPoster(m_wantedPosterImages[i]));
             StartCoroutine(CreateWantedCustomer(m_posters[i]));
         }
     }
