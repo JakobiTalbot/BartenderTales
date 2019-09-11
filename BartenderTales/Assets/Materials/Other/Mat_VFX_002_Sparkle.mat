@@ -5,8 +5,9 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: SparkParticle
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Mat_VFX_002_Sparkle
   m_Shader: {fileID: 4800000, guid: 008bbde947d8cef4cb02a79e23385e21, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
