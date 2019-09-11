@@ -5142,6 +5142,7 @@ MonoBehaviour:
   m_clockHand: {fileID: 1905721158}
   m_timeOverCanvas: {fileID: 952401875}
   m_finalMoneyText: {fileID: 2009477663}
+  m_wantedBoard: {fileID: 0}
   m_customers: []
   m_spawnCustomers: 1
   mainMenuMusic: {fileID: 817260308}

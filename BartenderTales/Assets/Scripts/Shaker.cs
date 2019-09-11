@@ -178,7 +178,7 @@ public class Shaker : MonoBehaviour
     /// <summary>
     /// Add an ingredient to the shaker
     /// </summary>
-    /// <param name="ingredient"> The enum ingredient type to add </param>
+    /// <param name="ingredient"> The ingredient to add </param>
     public void AddIngredient(Ingredient ingredient)
     {
         m_contents.Add(ingredient);

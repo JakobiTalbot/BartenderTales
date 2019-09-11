@@ -20,6 +20,7 @@ public class Customer : MonoBehaviour
     public int m_coinsGivenOnCorrectOrder = 1;
     public Vector2 m_speechBubbleBuffer = new Vector2(1, 1);
     public GameObject m_moneyPrefab;
+    public Camera m_mugshotCamera;
 
     [SerializeField]
     private Transform m_coughUpSpawnPoint;
@@ -37,6 +38,7 @@ public class Customer : MonoBehaviour
     private Rigidbody m_rigidbody;
     private CustomerAnimator m_customerAnimator;
     private ReputationManager m_repManager;
+    private bool m_bHadPath = false;
 
     public Animator m_animator;
     public GameObject m_sparkleEffect;
@@ -58,7 +60,8 @@ public class Customer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m_agent.remainingDistance < 0.6f)
+        if (m_agent.remainingDistance < 0.6f
+            && m_bHadPath)
         {
             // if reached the exit point of the bar
             if (m_bExitingBar)
@@ -112,10 +115,11 @@ public class Customer : MonoBehaviour
             m_agent = GetComponent<NavMeshAgent>();
         m_bWaiting = bWait;
         m_agent.isStopped = false;
+        m_bHadPath = true;
         m_point = dest;
+        m_rigidbody.velocity = Vector3.zero;
+        m_rigidbody.angularVelocity = Vector3.zero;
         m_agent.SetDestination(dest.position);
-        //m_Animator.SetBool("WalkAgain", true);
-
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -147,7 +151,7 @@ public class Customer : MonoBehaviour
                 }
                 else
                 {
-                    m_repManager.AddToReputation(m_reputationOnWrongOrder);
+                    m_repManager.AddToReputation(-m_reputationOnWrongOrder);
                     // sad reaction
                 }
             }
@@ -219,6 +223,8 @@ public class Customer : MonoBehaviour
         m_animator.SetBool("StoppedMoving", false);
         ExitBar();
     }
+
+    public void SetIsBad(bool bIsBad) => m_bBadPerson = bIsBad;
 
     public bool IsEvil() => m_bBadPerson;
 }
