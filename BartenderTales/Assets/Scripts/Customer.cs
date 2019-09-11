@@ -39,6 +39,7 @@ public class Customer : MonoBehaviour
     private ReputationManager m_repManager;
 
     public Animator m_animator;
+    public GameObject m_sparkleEffect;
     // Start is called before the first frame update
     void Start()
     {

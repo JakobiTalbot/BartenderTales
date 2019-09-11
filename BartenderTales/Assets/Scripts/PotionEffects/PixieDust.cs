@@ -41,12 +41,14 @@ public class PixieDust : PotionEffect
         if (!m_bReachedHoverHeight)
         {
             gameObject.GetComponent<Customer>().m_animator.SetTrigger("FairyDustTriggered");
+            gameObject.GetComponent<Customer>().m_sparkleEffect.SetActive(true);
             // increase lerp timer
             m_fHoverLerpTime += Time.deltaTime / m_startHoverUpTime;
 
             // if at end of lerp
             if (m_fHoverLerpTime >= 1f)
             {
+
                 m_bReachedHoverHeight = true;
                 transform.position = m_v3StartHoverPos;
                 m_fTimeReachedHover = Time.time;
