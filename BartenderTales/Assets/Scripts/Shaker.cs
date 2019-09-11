@@ -29,13 +29,15 @@ public class Shaker : MonoBehaviour
 
     [SerializeField]
     private AudioClip[] m_audioClipsOnPotionCreation;
+    [SerializeField]
+    private float m_emptyShakerForceThreshold = 1f;
 
     [HideInInspector]
     public Dictionary<PotionName, PotionEffect> m_potionFunc;
 
     private ParticleSystem m_particleSystem;
     private GameObject m_cap;
-    private List<IngredientType> m_contents;
+    private List<Ingredient> m_contents;
     private Rigidbody m_rb;
     private float m_fCurrentShakeTime = 0f;
     private Vector3 m_v3LastPos;
@@ -59,7 +61,7 @@ public class Shaker : MonoBehaviour
         m_manager = FindObjectOfType<IngredientManager>();
         m_audioSource = GetComponent<AudioSource>();
         m_collider = GetComponent<Collider>();
-        m_contents = new List<IngredientType>();
+        m_contents = new List<Ingredient>();
         m_rb = GetComponent<Rigidbody>();
         m_particleSystem = GetComponent<ParticleSystem>();
         m_v3LastPos = transform.position;
@@ -99,15 +101,29 @@ public class Shaker : MonoBehaviour
             // empty ingredients
             else if (transform.up.y < 0f
                      && !m_bCapOn
-                     && m_contents.Count > 0)
+                     && m_contents.Count > 0
+                     && force.magnitude > m_emptyShakerForceThreshold)
             {
-                Debug.Log("Shaker Emptied");
-                m_contents.Clear();
+                EmptyShaker();
             }
         }
 
         m_v3LastDeltaPos = (transform.position - m_v3LastPos);
         m_v3LastPos = transform.position;
+    }
+
+    private void EmptyShaker()
+    {
+        Debug.Log("Shaker Emptied");
+
+        foreach (Ingredient ingredient in m_contents)
+        {
+            ingredient.gameObject.SetActive(true);
+            ingredient.transform.position = m_capPlacedTransform.position;
+            StartCoroutine(ingredient.DisallowEnteringShakerForSeconds(1f));
+        }
+
+        m_contents.Clear();
     }
 
     private void CreatePotions()
@@ -163,7 +179,7 @@ public class Shaker : MonoBehaviour
     /// Add an ingredient to the shaker
     /// </summary>
     /// <param name="ingredient"> The enum ingredient type to add </param>
-    public void AddIngredient(IngredientType ingredient)
+    public void AddIngredient(Ingredient ingredient)
     {
         m_contents.Add(ingredient);
         if (ingredientsInSound != null)
@@ -182,7 +198,7 @@ public class Shaker : MonoBehaviour
         if (m_contents.Count != 2)
             return m_mundanePotion;
 
-        int recipe = (int)m_contents[0] | (int)m_contents[1];
+        int recipe = (int)m_contents[0].m_ingredientType | (int)m_contents[1].m_ingredientType;
         // if recipe is valid
         if (m_manager.m_potionRecipeDictionary.ContainsKey(recipe))
         {

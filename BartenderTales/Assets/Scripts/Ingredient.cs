@@ -7,20 +7,34 @@ public class Ingredient : MonoBehaviour
 {
     public IngredientType m_ingredientType;
 
-    private void OnTriggerEnter(Collider other)
+    private Shaker m_shaker;
+    private bool m_bCanEnterShaker = true;
+
+    private void OnTriggerStay(Collider other)
     {
-        if (other.GetComponent<Shaker>())
+        if (other.GetComponent<Shaker>()
+            && m_bCanEnterShaker)
         {
-            Shaker shaker = other.GetComponent<Shaker>();
+            // get reference to shaker
+            if (!m_shaker)
+                m_shaker = other.GetComponent<Shaker>();
+
             // don't add ingredient if the cap is on
-            if (shaker.IsCapOn())
+            if (m_shaker.IsCapOn())
                 return;
 
-            shaker.AddIngredient(m_ingredientType);
+            m_shaker.AddIngredient(this);
             // detach from hand
             GetComponentInParent<Hand>()?.DetachObject(gameObject, true);
             GetComponent<Interactable>().attachedToHand = null;
             gameObject.SetActive(false);
         }
+    }
+
+    public IEnumerator DisallowEnteringShakerForSeconds(float time)
+    {
+        m_bCanEnterShaker = false;
+        yield return new WaitForSeconds(time);
+        m_bCanEnterShaker = true;
     }
 }
