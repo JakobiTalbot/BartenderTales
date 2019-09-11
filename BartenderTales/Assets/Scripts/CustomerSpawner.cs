@@ -4,6 +4,43 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+struct WantedCustomer
+{
+    public GameObject customer;
+    public Texture2D mugshot;
+
+    public WantedCustomer(GameObject customer, Texture2D mugshot)
+    {
+        this.customer = customer;
+        this.mugshot = mugshot;
+    }
+}
+
+struct WantedPoster
+{
+    public Renderer poster;
+    public bool hasCustomer;
+
+    public WantedPoster(Renderer poster)
+    {
+        this.poster = poster;
+        hasCustomer = false;
+    }
+
+    public void SetTexture(WantedCustomer customer)
+    {
+        poster.material.mainTexture = customer.mugshot;
+        poster.transform.parent.gameObject.SetActive(true);
+        hasCustomer = true;
+    }
+
+    public void Disable()
+    {
+        poster.transform.parent.gameObject.SetActive(false);
+        hasCustomer = false;
+    }
+}
+
 public class CustomerSpawner : MonoBehaviour
 {
     // possible refactor: create array of points and sort by distance to bar, spawn customer at lowest distance
@@ -34,15 +71,22 @@ public class CustomerSpawner : MonoBehaviour
     private GameObject m_timeOverCanvas;
     [SerializeField]
     private TextMeshPro m_finalMoneyText;
+    [SerializeField]
+    private Renderer[] m_wantedPosterImages;
+    [SerializeField]
+    private Vector2Int m_randomRangeSpawnsBetweenBadSpawns;
 
     [HideInInspector]
     public List<GameObject> m_customers;
     [HideInInspector]
     public bool m_spawnCustomers = true;
+
+    private List<WantedPoster> m_posters;
+    private List<WantedCustomer> m_wantedCustomers;
     private float m_fCustomerSpawnTimer = 0f;
     private bool m_bHappyHour = false;
-
     private float m_fGameTimer = 0f;
+    private int m_spawnsUntilNextBadCustomer;
 
     public AudioSource mainMenuMusic;
     public AudioSource calmHourMusic;
@@ -52,12 +96,41 @@ public class CustomerSpawner : MonoBehaviour
     void Start()
     {
         m_customers = new List<GameObject>();
+        m_posters = new List<WantedPoster>();
+        m_wantedCustomers = new List<WantedCustomer>();
+        m_spawnsUntilNextBadCustomer = Random.Range(m_randomRangeSpawnsBetweenBadSpawns.x, m_randomRangeSpawnsBetweenBadSpawns.y);
+        // create wanted customers
+        for (int i = 0; i < m_wantedPosterImages.Length; ++i)
+        {
+            m_posters.Add(new WantedPoster(m_wantedPosterImages[i]));
+            StartCoroutine(CreateWantedCustomer(m_posters[i]));
+        }
     }
 
     public void Fade()
     {
         StartCoroutine(AudioController.FadeOut(mainMenuMusic, fadeTime));
         StartCoroutine(AudioController.FadeIn(calmHourMusic, fadeTime));
+    }
+
+    private IEnumerator CreateWantedCustomer(WantedPoster poster)
+    {
+        GameObject wantedCust = Instantiate(m_customerPrefabs[Random.Range(0, m_customerPrefabs.Length)], m_spawnPoint.position, m_spawnPoint.rotation);
+
+        yield return new WaitForEndOfFrame();
+
+        Customer cust = wantedCust.GetComponent<Customer>();
+        // create image for customer
+        RenderTexture.active = cust.m_mugshotCamera.targetTexture;
+        Texture2D mugshot = new Texture2D(cust.m_mugshotCamera.targetTexture.width, cust.m_mugshotCamera.targetTexture.height);
+        cust.m_mugshotCamera.Render();
+        mugshot.ReadPixels(new Rect(0, 0, cust.m_mugshotCamera.targetTexture.width, cust.m_mugshotCamera.targetTexture.height), 0, 0);
+        mugshot.Apply();
+
+        WantedCustomer wc = new WantedCustomer(wantedCust, mugshot);
+        m_wantedCustomers.Add(wc);
+        poster.SetTexture(wc);
+        wantedCust.SetActive(false);
     }
 
     private IEnumerator CustomerSpawnLoop()
@@ -119,15 +192,58 @@ public class CustomerSpawner : MonoBehaviour
             m_servingPoints.RemoveAt(m_servingPoints.Count - 1);
         }
 
-        // spawn customer
-        m_customers.Add(Instantiate(m_customerPrefabs[Random.Range(0, m_customerPrefabs.Length)], m_spawnPoint.position, m_spawnPoint.rotation));
-        Customer cust = m_customers[m_customers.Count - 1].GetComponent<Customer>();
-        cust.SetDestination(destPoint, bWait);
-        cust.SetCoinDropPos(m_coinDropPoint.position);
+        // if it's time to spawn a bad customer
+        if (m_spawnsUntilNextBadCustomer <= 0)
+        {
+            // get number of inactivate bad customers
+            List<WantedCustomer> inactiveWantedCustomers = new List<WantedCustomer>();
+            foreach (WantedCustomer wc in m_wantedCustomers)
+            {
+                if (!wc.customer.activeSelf)
+                    inactiveWantedCustomers.Add(wc);
+            }
+
+            // spawn bad customer if there are any to spawn
+            if (inactiveWantedCustomers.Count > 0)
+            {
+                GameObject customer = inactiveWantedCustomers[Random.Range(0, inactiveWantedCustomers.Count)].customer;
+                customer.SetActive(true);
+                Customer c = customer.GetComponent<Customer>();
+                c.SetIsBad(true);
+                c.SetDestination(destPoint, bWait);
+                c.SetCoinDropPos(m_coinDropPoint.position);
+                // set new wait until next bad customer spawns
+                m_spawnsUntilNextBadCustomer = Random.Range(m_randomRangeSpawnsBetweenBadSpawns.x, m_randomRangeSpawnsBetweenBadSpawns.y);
+            }
+            else
+            {
+                // spawn normal customer
+                m_customers.Add(Instantiate(m_customerPrefabs[Random.Range(0, m_customerPrefabs.Length)], m_spawnPoint.position, m_spawnPoint.rotation));
+
+                Customer cust = m_customers[m_customers.Count - 1].GetComponent<Customer>();
+                cust.SetDestination(destPoint, bWait);
+                cust.SetCoinDropPos(m_coinDropPoint.position);
+            }
+        }
+        else
+        {
+            // spawn customer
+            m_customers.Add(Instantiate(m_customerPrefabs[Random.Range(0, m_customerPrefabs.Length)], m_spawnPoint.position, m_spawnPoint.rotation));
+
+            Customer cust = m_customers[m_customers.Count - 1].GetComponent<Customer>();
+            cust.SetDestination(destPoint, bWait);
+            cust.SetCoinDropPos(m_coinDropPoint.position);
+
+            // decrement spawn count until next bad customer
+            --m_spawnsUntilNextBadCustomer;
+        }
 
         return true;
     }
 
+    /// <summary>
+    /// Start the coroutines for the game loop
+    /// </summary>
     public void StartSpawning()
     {
         StartCoroutine(CustomerSpawnLoop());
@@ -139,10 +255,13 @@ public class CustomerSpawner : MonoBehaviour
     private IEnumerator GameTimer()
     {
         yield return new WaitUntil(CountDown);
+
         // timer runs out
         m_timeOverCanvas.SetActive(true);
         m_finalMoneyText.text += FindObjectOfType<MoneyJar>().m_nCurrentMoney.ToString();
+
         yield return new WaitForSeconds(10f);
+
         SceneManager.LoadSceneAsync(0);
     }
 
