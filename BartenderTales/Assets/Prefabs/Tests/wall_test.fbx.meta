@@ -1,15 +1,14 @@
 fileFormatVersion: 2
-guid: ea6ab85c80c3ddc41a9eca680c6f63e9
+guid: 3920b5a5519f869459dae984273dd469
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert10
-    2100002: lambert11
+    2100000: drk_brwn
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Goblin_001_CowboyHat
+    4300000: pCube11
   externalObjects: {}
   materials:
     importMaterials: 1

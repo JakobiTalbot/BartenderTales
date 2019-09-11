@@ -1,15 +1,51 @@
 fileFormatVersion: 2
-guid: ea6ab85c80c3ddc41a9eca680c6f63e9
+guid: c4f93318a4842c140b1e06c169e2e774
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: lambert10
-    2100002: lambert11
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Goblin_001_CowboyHat
+    100000: Door_01
+    100002: Door_02
+    100004: Hinge_03
+    100006: Hinge_04
+    100008: Hinge_05
+    100010: Hinge_06
+    100012: Pillar_01
+    100014: Pillar_02
+    100016: //RootNode
+    400000: Door_01
+    400002: Door_02
+    400004: Hinge_03
+    400006: Hinge_04
+    400008: Hinge_05
+    400010: Hinge_06
+    400012: Pillar_01
+    400014: Pillar_02
+    400016: //RootNode
+    2100000: lambert1
+    2300000: Door_01
+    2300002: Door_02
+    2300004: Hinge_03
+    2300006: Hinge_04
+    2300008: Hinge_05
+    2300010: Hinge_06
+    2300012: Pillar_01
+    2300014: Pillar_02
+    3300000: Door_01
+    3300002: Door_02
+    3300004: Hinge_03
+    3300006: Hinge_04
+    3300008: Hinge_05
+    3300010: Hinge_06
+    3300012: Pillar_01
+    3300014: Pillar_02
+    4300000: Door_01
+    4300002: Door_02
+    4300004: Pillar_01
+    4300006: Pillar_02
+    4300008: Hinge_03
+    4300010: Hinge_04
+    4300012: Hinge_05
+    4300014: Hinge_06
   externalObjects: {}
   materials:
     importMaterials: 1
