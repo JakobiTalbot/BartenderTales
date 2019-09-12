@@ -129,6 +129,7 @@ ModelImporter:
     100246: Spine_03_CTRL
     100248: Spine_03_CTRL_GRP
     100250: Spine_03_JNT
+    100252: CowBoy_Hat_002
     400000: //RootNode
     400002: Chest_CTRL
     400004: Chest_CTRL_GRP
@@ -255,22 +256,27 @@ ModelImporter:
     400246: Spine_03_CTRL
     400248: Spine_03_CTRL_GRP
     400250: Spine_03_JNT
+    400252: CowBoy_Hat_002
     2100000: Mat_Body
     2100002: Mat_Vest
     2100004: L_EyeSG1
+    2100006: lambert1
     2300000: Horns_01
     2300002: Horns_02
     2300004: Horns_03
     2300006: Horns_04
+    2300008: CowBoy_Hat_002
     3300000: Horns_01
     3300002: Horns_02
     3300004: Horns_03
     3300006: Horns_04
+    3300008: CowBoy_Hat_002
     4300000: Minotaur_GEO
     4300002: Horns_04
     4300004: Horns_03
     4300006: Horns_02
     4300008: Horns_01
+    4300010: CowBoy_Hat_002
     7400000: Take 001
     9500000: //RootNode
     13700000: Minotaur_GEO
@@ -305,8 +311,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Take 001
       takeName: Take 001
-      firstFrame: 82
-      lastFrame: 110
+      firstFrame: 96
+      lastFrame: 124
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
