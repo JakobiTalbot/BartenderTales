@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class MoneyJar : MonoBehaviour
 {
     [SerializeField]
-    private AudioClip[] m_audioClipsOnLeverPull;
-    [SerializeField]
     private TextMeshProUGUI m_moneyCounter;
 
     [HideInInspector]
@@ -31,6 +29,5 @@ public class MoneyJar : MonoBehaviour
         // set text on money counter
         m_moneyCounter.text = m_nCurrentMoney.ToString();
         // play random audio clip
-        m_audioSource?.PlayOneShot(m_audioClipsOnLeverPull[Random.Range(0, m_audioClipsOnLeverPull.Length)]);
     }
 }

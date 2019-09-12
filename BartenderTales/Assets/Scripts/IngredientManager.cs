@@ -4,20 +4,20 @@ using UnityEngine;
 
 public enum IngredientType
 {
-    Mushroom = 1,
-    EmuElderberry = 1 << 1,
-    PixiePear = 1 << 2,
-    ElvenMagicBox = 1 << 3,
-    DragonChilli = 1 << 4,
-    UnicornFeathers = 1 << 5,
-    StarFruit = 1 << 6,
-    EyeBall = 1 << 7,
-    GoblinToe = 1 << 8,
-    HairBall = 1 << 9,
-    CoolCactus = 1 << 10,
-    ScorpionStinger = 1 << 11,
-    DragonEgg = 1 << 12,
-    Count = 12
+    Mushroom =          1 << 0,
+    EmuElderberry =     1 << 1,
+    PixiePear =         1 << 2,
+    ElvenMagicBox =     1 << 3,
+    DragonChilli =      1 << 4,
+    UnicornFeathers =   1 << 5,
+    StarFruit =         1 << 6,
+    EyeBall =           1 << 7,
+    GoblinToe =         1 << 8,
+    HairBall =          1 << 9,
+    CoolCactus =        1 << 10,
+    ScorpionStinger =   1 << 11,
+    DragonEgg =         1 << 12,
+    Count =             13
 }
 
 [System.Serializable]
