@@ -99,11 +99,17 @@ public class CustomerSpawner : MonoBehaviour
         m_posters = new List<WantedPoster>();
         m_wantedCustomers = new List<WantedCustomer>();
         m_spawnsUntilNextBadCustomer = Random.Range(m_randomRangeSpawnsBetweenBadSpawns.x, m_randomRangeSpawnsBetweenBadSpawns.y);
+        StartCoroutine(SpawnWantedCustomersOnStart());
+    }
+
+    private IEnumerator SpawnWantedCustomersOnStart()
+    {
         // create wanted customers
         for (int i = 0; i < m_wantedPosterImages.Length; ++i)
         {
             m_posters.Add(new WantedPoster(m_wantedPosterImages[i]));
             StartCoroutine(CreateWantedCustomer(m_posters[i]));
+            yield return new WaitForSeconds(0.5f);
         }
     }
 
