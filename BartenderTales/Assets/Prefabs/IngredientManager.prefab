@@ -82,39 +82,54 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   m_potionPrefabs:
   - {fileID: 4554718752582502801, guid: 10baa32807af8c74a9bb4988aed17978, type: 3}
   - {fileID: 5962952628538493408, guid: f554989b2e2a0564e93e54a19b9b4010, type: 3}
   - {fileID: 5514788207697548510, guid: 980da04582a0c95448028bc1ae2e9b50, type: 3}
   m_ingredientPrefabs:
-  - {fileID: 6569432677204148055, guid: be4c5474818a4fa43b051b839325a03f, type: 3}
   - {fileID: 2576281481048802233, guid: ed47c14df61b50349b6d66d5970e6979, type: 3}
   - {fileID: 3684010782014883881, guid: f8d95176271df0a42af797e174178c22, type: 3}
   - {fileID: 4786787099297365715, guid: 32b210d49afc67a4abdfb6a25accc570, type: 3}
   - {fileID: 5138384934780568051, guid: e815cf30d309f67409821041834133cb, type: 3}
-  - {fileID: 6569432677204148055, guid: cf11fb92dad3d06449ffbc1b23c3ee01, type: 3}
+  - {fileID: 7815359149840196712, guid: 149d8fcc4a8313042933bb8295f51fca, type: 3}
   - {fileID: 3000132399576254477, guid: d4a8a8c173503444e82f6aa2a7925297, type: 3}
+  - {fileID: 6830513208309244188, guid: 1a14bd2ec025d28419f0621a460a3da3, type: 3}
   - {fileID: 3623414696848053879, guid: f39f8199d43858145b3fd5f48204b626, type: 3}
   - {fileID: 4839016121794017309, guid: 1f0fa5c546683ed4d827d38301037710, type: 3}
+  - {fileID: 573927231681195620, guid: 7ff93b8601ce9cc42ad494db30c2885a, type: 3}
+  - {fileID: 6256472090682840756, guid: 3141431433d824d43a57932b24d0596b, type: 3}
+  - {fileID: 8577080466722440767, guid: 0fdc90f5e71bfcb4882ea0dfdee9d549, type: 3}
   m_ingredientImages:
   - m_ingredientType: 1
     m_ingredientImage: {fileID: 2800000, guid: 2c76f7393eabc4e48a98c9dd08bbb2be, type: 3}
   - m_ingredientType: 2
-    m_ingredientImage: {fileID: 2800000, guid: 2eb3f73d808489745a2e452af01c0dff, type: 3}
-  - m_ingredientType: 4
-    m_ingredientImage: {fileID: 2800000, guid: e02d52f83d766cc44836dc5f085fba57, type: 3}
-  - m_ingredientType: 8
-    m_ingredientImage: {fileID: 2800000, guid: cbef56fdf1a8eda4cbaebf707fc85745, type: 3}
-  - m_ingredientType: 16
-    m_ingredientImage: {fileID: 2800000, guid: e30c1ab2c5387e045934641fa2cd4b3a, type: 3}
-  - m_ingredientType: 32
     m_ingredientImage: {fileID: 2800000, guid: 34153775cf3deed46bf2a670dc5d7aa2, type: 3}
-  - m_ingredientType: 64
+  - m_ingredientType: 4
+    m_ingredientImage: {fileID: 2800000, guid: e30c1ab2c5387e045934641fa2cd4b3a, type: 3}
+  - m_ingredientType: 8
+    m_ingredientImage: {fileID: 2800000, guid: 2eb3f73d808489745a2e452af01c0dff, type: 3}
+  - m_ingredientType: 16
+    m_ingredientImage: {fileID: 2800000, guid: ef4a9a54783714c4d9801d6a737bca5d, type: 3}
+  - m_ingredientType: 32
     m_ingredientImage: {fileID: 2800000, guid: c0aac76721cba2a4c8533dcd0def2603, type: 3}
+  - m_ingredientType: 64
+    m_ingredientImage: {fileID: 2800000, guid: 0af973da0915a3a4caeebc9f67cfbb7b, type: 3}
   - m_ingredientType: 128
     m_ingredientImage: {fileID: 2800000, guid: a323442a362257f48bbbd3e66dda6a09, type: 3}
   - m_ingredientType: 256
     m_ingredientImage: {fileID: 2800000, guid: 5979c4deedbd6684c8300308d597427a, type: 3}
+  - m_ingredientType: 512
+    m_ingredientImage: {fileID: 2800000, guid: a74decd20b2cd4e4ebc28e6fddc77bee, type: 3}
+  - m_ingredientType: 1024
+    m_ingredientImage: {fileID: 2800000, guid: b646d097a95082543a220707d3c9fd63, type: 3}
+  - m_ingredientType: 2048
+    m_ingredientImage: {fileID: 2800000, guid: 899dfef7f10d19041b7b300c92e8b258, type: 3}
   m_potionImages:
   - m_potionName: 2
     m_potionImage: {fileID: 2800000, guid: f6e08adbaee0a194ab6bce0b5b6b7891, type: 3}
@@ -126,4 +141,5 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  m_moneyLossOnIngredientRefill: 1
   m_recipes: 

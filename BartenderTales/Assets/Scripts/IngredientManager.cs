@@ -5,19 +5,18 @@ using UnityEngine;
 public enum IngredientType
 {
     Mushroom =          1 << 0,
-    EmuElderberry =     1 << 1,
-    PixiePear =         1 << 2,
-    ElvenMagicBox =     1 << 3,
-    DragonChilli =      1 << 4,
-    UnicornFeathers =   1 << 5,
-    StarFruit =         1 << 6,
-    EyeBall =           1 << 7,
-    GoblinToe =         1 << 8,
-    HairBall =          1 << 9,
-    CoolCactus =        1 << 10,
-    ScorpionStinger =   1 << 11,
-    DragonEgg =         1 << 12,
-    Count =             13
+    Feather =           1 << 1,
+    DragonChili =       1 << 2,
+    Elderberry =        1 << 3,
+    PixiePear =         1 << 4,
+    StarFruit =         1 << 5,
+    Eyeball =           1 << 6,
+    GoblinToe =         1 << 7,
+    HairBall =          1 << 8,
+    CoolCactus =        1 << 9,
+    ScorpionStinger =   1 << 10,
+    DragonEgg =         1 << 11,
+    Count =                  12
 }
 
 [System.Serializable]
@@ -111,7 +110,7 @@ public class IngredientManager : MonoBehaviour
 
             // recreate recipe if already exists
             if (existingRecipes.Contains(recipe))
-                i -= 1;
+                --i;
             else
             {
                 m_recipes[i] = recipe;

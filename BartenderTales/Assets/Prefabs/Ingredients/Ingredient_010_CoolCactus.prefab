@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7716471933239600212}
   - component: {fileID: 6410932169099781557}
   m_Layer: 0
-  m_Name: Ingredient_10_CoolCactus
+  m_Name: Ingredient_010_CoolCactus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b5ba9d6e7944a4284a3045f4af8f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ingredientType: 1024
+  m_ingredientType: 512
 --- !u!114 &6739437712618307118
 MonoBehaviour:
   m_ObjectHideFlags: 0
