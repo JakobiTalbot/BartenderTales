@@ -15,7 +15,9 @@ public enum IngredientType
     GoblinToe = 1 << 8,
     HairBall = 1 << 9,
     CoolCactus = 1 << 10,
-    Count = 10
+    ScorpionStinger = 1 << 11,
+    DragonEgg = 1 << 12,
+    Count = 12
 }
 
 [System.Serializable]
