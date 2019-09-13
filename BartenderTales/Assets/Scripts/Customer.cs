@@ -20,6 +20,7 @@ public class Customer : MonoBehaviour
     public Vector2 m_speechBubbleBuffer = new Vector2(1, 1);
     public GameObject m_moneyPrefab;
     public Camera m_mugshotCamera;
+    public Rigidbody m_pickMeUpRigidbody;
 
     [SerializeField]
     private Transform m_coughUpSpawnPoint;

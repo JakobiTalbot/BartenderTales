@@ -5,7 +5,7 @@ using Valve.VR.InteractionSystem;
 
 public enum PotionName
 {
-    //Skydive = 0,
+    PickMeUp = 0,
     //AssassinsSpecial,
     SmokeyTeleport,
     PixieDust,
@@ -76,6 +76,7 @@ public class Shaker : MonoBehaviour
         m_potionFunc.Add(PotionName.PixieDust, m_potionPrefabs[1].GetComponent<PixieDust>());
         m_potionFunc.Add(PotionName.CoughUp, m_potionPrefabs[2].GetComponent<CoughUp>());
         m_potionFunc.Add(PotionName.SmokeyTeleport, m_potionPrefabs[3].GetComponent<SmokeyTeleport>());
+        m_potionFunc.Add(PotionName.PickMeUp, m_potionPrefabs[4].GetComponent<PickMeUp>());
     }
 
     // Update is called once per frame

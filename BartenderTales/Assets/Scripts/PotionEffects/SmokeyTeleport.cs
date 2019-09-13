@@ -42,11 +42,11 @@ public class SmokeyTeleport : PotionEffect
             yield return new WaitForSeconds(Random.Range(assets.m_randomRangeBetweenTeleports.x, assets.m_randomRangeBetweenTeleports.y));
 
             // get random point in sphere
-            Vector3 tpPoint = Random.insideUnitSphere * Random.Range(0f, assets.m_teleportSphereRadius);
+            Vector3 tpPoint = Random.insideUnitSphere * Random.Range(0f, assets.m_teleportAreaRadius);
             NavMeshHit hit;
 
             // if point on nav mesh found
-            if (NavMesh.SamplePosition(tpPoint, out hit, assets.m_teleportSphereRadius, NavMesh.AllAreas))
+            if (NavMesh.SamplePosition(tpPoint, out hit, assets.m_teleportAreaRadius, NavMesh.AllAreas))
             {
                 // create particles
                 Destroy(Instantiate(assets.m_smokeyTeleportParticlePrefab, transform.position, Quaternion.identity), 5f);
