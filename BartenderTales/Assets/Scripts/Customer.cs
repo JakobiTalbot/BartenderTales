@@ -95,9 +95,12 @@ public class Customer : MonoBehaviour
             }
 
             // face player
-            Vector3 v3Pos = Camera.main.transform.position;
-            v3Pos.y = transform.position.y;
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(v3Pos - transform.position), m_rotationSpeed);
+            if (!m_bIsRagdolling)
+            {
+                Vector3 v3Pos = Camera.main.transform.position;
+                v3Pos.y = transform.position.y;
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(v3Pos - transform.position), m_rotationSpeed);
+            }
 
             // stop moving
             if (!m_agent.isStopped
@@ -218,6 +221,10 @@ public class Customer : MonoBehaviour
             rb.isKinematic = !m_bIsRagdolling;
         m_animator.enabled = !m_bIsRagdolling;
         m_agent.isStopped = m_bIsRagdolling;
+
+        if (m_speechBubbleCanvas.activeSelf
+            && m_bIsRagdolling)
+            m_speechBubbleCanvas.SetActive(false);
     }
 
     public void Shocked() => m_customerAnimator.Shocked();
