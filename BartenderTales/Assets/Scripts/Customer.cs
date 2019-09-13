@@ -28,6 +28,8 @@ public class Customer : MonoBehaviour
     private float m_impatienceTimer = 30f;
     [SerializeField]
     private Rigidbody[] m_ragdollRigidbodies;
+    [SerializeField]
+    private Transform m_hatTransform;
 
     private PotionName m_order;
     private CustomerSpawner m_spawner;
@@ -260,4 +262,14 @@ public class Customer : MonoBehaviour
     public void SetIsBad(bool bIsBad) => m_bBadPerson = bIsBad;
 
     public bool IsEvil() => m_bBadPerson;
+
+    /// <summary>
+    /// Puts the specified hat on the customer's head
+    /// </summary>
+    /// <param name="hat"> The hat prefab to wear </param>
+    public void SetHat(GameObject hat)
+    {
+        GameObject newHat = Instantiate(hat, m_hatTransform.position, m_hatTransform.rotation);
+        newHat.transform.parent = m_hatTransform;
+    }
 }

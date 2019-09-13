@@ -52,6 +52,8 @@ public class CustomerSpawner : MonoBehaviour
     public Transform m_coinDropPoint;
 
     [SerializeField]
+    private GameObject[] m_hatPrefabs;
+    [SerializeField]
     private Vector2 m_randomRangeBetweenHappyHours;
     [SerializeField]
     private Vector2 m_randomLengthForHappyHour;
@@ -122,10 +124,18 @@ public class CustomerSpawner : MonoBehaviour
     private IEnumerator CreateWantedCustomer(WantedPoster poster)
     {
         GameObject wantedCust = Instantiate(m_customerPrefabs[Random.Range(0, m_customerPrefabs.Length)], m_spawnPoint.position, m_spawnPoint.rotation);
+        m_customers.Add(wantedCust);
+        Customer cust = wantedCust.GetComponent<Customer>();
+
+        // decide whether to wear hat or not
+        if (Random.Range(0, m_hatPrefabs.Length + 1) > 0)
+        {
+            // pick hat
+            cust.SetHat(m_hatPrefabs[Random.Range(0, m_hatPrefabs.Length)]);
+        }
 
         yield return new WaitForEndOfFrame();
 
-        Customer cust = wantedCust.GetComponent<Customer>();
         // create image for customer
         RenderTexture.active = cust.m_mugshotCamera.targetTexture;
         Texture2D mugshot = new Texture2D(cust.m_mugshotCamera.targetTexture.width, cust.m_mugshotCamera.targetTexture.height);
@@ -227,6 +237,14 @@ public class CustomerSpawner : MonoBehaviour
                 m_customers.Add(Instantiate(m_customerPrefabs[Random.Range(0, m_customerPrefabs.Length)], m_spawnPoint.position, m_spawnPoint.rotation));
 
                 Customer cust = m_customers[m_customers.Count - 1].GetComponent<Customer>();
+
+                // decide whether to wear hat or not
+                if (Random.Range(0, m_hatPrefabs.Length + 1) > 0)
+                {
+                    // pick hat
+                    cust.SetHat(m_hatPrefabs[Random.Range(0, m_hatPrefabs.Length)]);
+                }
+
                 cust.SetDestination(destPoint, bWait);
                 cust.SetCoinDropPos(m_coinDropPoint.position);
             }
@@ -237,6 +255,14 @@ public class CustomerSpawner : MonoBehaviour
             m_customers.Add(Instantiate(m_customerPrefabs[Random.Range(0, m_customerPrefabs.Length)], m_spawnPoint.position, m_spawnPoint.rotation));
 
             Customer cust = m_customers[m_customers.Count - 1].GetComponent<Customer>();
+
+            // decide whether to wear hat or not
+            if (Random.Range(0, m_hatPrefabs.Length + 1) > 0)
+            {
+                // pick hat
+                cust.SetHat(m_hatPrefabs[Random.Range(0, m_hatPrefabs.Length)]);
+            }
+
             cust.SetDestination(destPoint, bWait);
             cust.SetCoinDropPos(m_coinDropPoint.position);
 
