@@ -25,6 +25,14 @@ namespace Valve.VR
             }
         }
         
+        public virtual SteamVR_Action_Boolean Teleport
+        {
+            get
+            {
+                return SteamVR_Actions.default_Teleport;
+            }
+        }
+        
         public virtual SteamVR_Action_Boolean GrabPinch
         {
             get
@@ -65,11 +73,19 @@ namespace Valve.VR
             }
         }
         
-        public virtual SteamVR_Action_Boolean TouchpadOrder
+        public virtual SteamVR_Action_Single Squeeze
         {
             get
             {
-                return SteamVR_Actions.default_TouchpadOrder;
+                return SteamVR_Actions.default_Squeeze;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean HeadsetOnHead
+        {
+            get
+            {
+                return SteamVR_Actions.default_HeadsetOnHead;
             }
         }
         

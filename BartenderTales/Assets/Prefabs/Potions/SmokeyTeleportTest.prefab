@@ -111,10 +111,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_potionName: 0
-  m_teleportParticlePrefab: {fileID: 0}
-  m_randomRangeBetweenTeleports: {x: 0, y: 0}
-  m_teleportSphereRadius: 5
-  m_randomTimeToDoTeleporting: {x: 0, y: 0}
 --- !u!114 &5472105670983451806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ingredients: 
-  m_potionName: 0
+  m_potionName: 1
 --- !u!114 &1301414373177566606
 MonoBehaviour:
   m_ObjectHideFlags: 0
