@@ -131,47 +131,52 @@ public class Customer : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Potion>())
         {
-            // add point to spawner points
-            AddPointToSpawner();
 
-            PotionEffect p = collision.gameObject.GetComponent<PotionEffect>();
-            // TODO: reactions to potions
-            // if correct potion given
-            if (m_order == p.m_potionName)
+        }
+    }
+
+    public void DrinkPotion(Potion potion)
+    {
+        // add point to spawner points
+        AddPointToSpawner();
+
+        PotionEffect p = potion.GetComponent<PotionEffect>();
+        // TODO: reactions to potions
+        // if correct potion given
+        if (m_order == p.m_potionName)
+        {
+            m_repManager.AddToReputation(m_reputationOnCorrectOrder);
+            // give money
+            Instantiate(m_moneyPrefab, m_v3CoinDropPos, Quaternion.Euler(Vector3.zero));
+            // happy reaction
+        }
+        else // if wrong potion given
+        {
+            if (m_bBadPerson)
             {
                 m_repManager.AddToReputation(m_reputationOnCorrectOrder);
-                // give money
-                Instantiate(m_moneyPrefab, m_v3CoinDropPos, Quaternion.Euler(Vector3.zero));
-                // happy reaction
             }
-            else // if wrong potion given
-            {
-                if (m_bBadPerson)
-                {
-                    m_repManager.AddToReputation(m_reputationOnCorrectOrder);
-                }
-                else
-                {
-                    m_repManager.AddToReputation(-m_reputationOnWrongOrder);
-                    // sad reaction
-                }
-            }
-
-            if (p.m_potionName == PotionName.Mundane)
-                gameObject.AddComponent<Mundane>();
             else
             {
-                System.Type type = FindObjectOfType<Shaker>().m_potionFunc[p.m_potionName].GetType();
-                // drink potion
-                gameObject.AddComponent(type);
+                m_repManager.AddToReputation(-m_reputationOnWrongOrder);
+                // sad reaction
             }
-
-            // dirty way to fix errors from object being destroyed when still on hand
-            collision.transform.parent = null;
-            collision.gameObject.SetActive(false);
-
-            Destroy(collision.gameObject);
         }
+
+        if (p.m_potionName == PotionName.Mundane)
+            gameObject.AddComponent<Mundane>();
+        else
+        {
+            System.Type type = FindObjectOfType<Shaker>().m_potionFunc[p.m_potionName].GetType();
+            // drink potion
+            gameObject.AddComponent(type);
+        }
+
+        // dirty way to fix errors from object being destroyed when still on hand
+        potion.transform.parent = null;
+        potion.gameObject.SetActive(false);
+
+        Destroy(potion.gameObject);
     }
 
     public void ExitBar()

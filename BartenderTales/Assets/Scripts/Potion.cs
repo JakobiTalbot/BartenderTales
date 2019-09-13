@@ -12,4 +12,11 @@ public class Potion : MonoBehaviour
     {
         m_point = point;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Customer cust;
+        if (cust = collision.gameObject.GetComponentInParent<Customer>())
+            cust.DrinkPotion(this);
+    }
 }
