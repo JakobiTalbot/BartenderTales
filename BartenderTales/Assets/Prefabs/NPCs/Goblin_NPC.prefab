@@ -3428,7 +3428,7 @@ MonoBehaviour:
   m_mugshotCamera: {fileID: 6689572326348826472}
   m_pickMeUpRigidbody: {fileID: 735439146}
   m_coughUpSpawnPoint: {fileID: 42012697704631301}
-  m_impatienceTimer: 30
+  m_impatienceTimer: 45
   m_ragdollRigidbodies:
   - {fileID: 735439146}
   - {fileID: 491626628}
@@ -3455,7 +3455,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.025
-  m_Speed: 2.6
+  m_Speed: 1.3
   m_Acceleration: 15
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -5714,7 +5714,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2498075717396606948}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0063}
   m_LocalScale: {x: 0.054054074, y: 0.054054055, z: 0.054054074}
   m_Children:
   - {fileID: 2537955678110581301}
