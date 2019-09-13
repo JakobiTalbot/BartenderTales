@@ -4562,7 +4562,7 @@ GameObject:
   - component: {fileID: 4625292742078269836}
   - component: {fileID: 4626014769048565334}
   m_Layer: 0
-  m_Name: 10Explosion_BlackHole (1)
+  m_Name: TeleportEffect
   m_TagString: Untagged
   m_Icon: {fileID: 4660412927644837186, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

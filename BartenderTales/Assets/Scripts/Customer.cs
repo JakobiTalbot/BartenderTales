@@ -51,7 +51,6 @@ public class Customer : MonoBehaviour
         m_customerAnimator = GetComponent<CustomerAnimator>();
         m_agent = GetComponent<NavMeshAgent>();
         // order random potion
-        // TODO: only order good potions
         m_order = (PotionName)Random.Range(0, (int)PotionName.Count);
         m_spawner = FindObjectOfType<CustomerSpawner>();
         StartCoroutine(Impatience());
@@ -105,8 +104,8 @@ public class Customer : MonoBehaviour
                 m_customerAnimator.StartCoroutine("IdleLoop");
             }
         }
-        else if (m_agent.isStopped)
-            SetDestination(m_point, m_bWaiting);
+        //else if (m_agent.isStopped)
+            //SetDestination(m_point, m_bWaiting);
     }
 
     public void SetDestination(Transform dest, bool bWait)
@@ -132,10 +131,7 @@ public class Customer : MonoBehaviour
         {
             StopCoroutine(Impatience());
             // add point to spawner points
-            if (m_bWaiting)
-                m_spawner.m_waitingPoints.Add(m_point);
-            else
-                m_spawner.m_servingPoints.Add(m_point);
+            AddPointToSpawner();
 
             PotionEffect p = collision.gameObject.GetComponent<PotionEffect>();
             // TODO: reactions to potions
@@ -180,10 +176,25 @@ public class Customer : MonoBehaviour
     public void ExitBar()
     {
         m_bExitingBar = true;
+        AddPointToSpawner();
         m_agent.isStopped = false;
         m_point = FindObjectOfType<CustomerSpawner>().m_spawnPoint;
         m_agent.SetDestination(m_point.position);
         m_animator.SetBool("StoppedMoving", false);
+    }
+
+    public void AddPointToSpawner()
+    {
+        if (m_bWaiting)
+            m_spawner.m_waitingPoints.Add(m_point);
+        else
+            m_spawner.m_servingPoints.Add(m_point);
+    }
+
+    public void End()
+    {
+        m_spawner.m_customers.Remove(gameObject);
+        Destroy(gameObject);
     }
 
     public void SetCoinDropPos(Vector3 v3DropPos)
