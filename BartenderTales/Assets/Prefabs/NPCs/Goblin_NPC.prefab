@@ -2618,7 +2618,6 @@ GameObject:
   - component: {fileID: 1824453803642880088}
   - component: {fileID: 5937609685000063798}
   - component: {fileID: 7932229861305863593}
-  - component: {fileID: 5828899374382831752}
   - component: {fileID: 7548297974174311735}
   m_Layer: 0
   m_Name: Goblin_NPC
@@ -2735,19 +2734,6 @@ NavMeshAgent:
   m_BaseOffset: -0.0025
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!65 &5828899374382831752
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824453803650315166}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.046258096, y: 0.080171354, z: 0.032133117}
-  m_Center: {x: -0.00068902003, y: 0.03991434, z: 0.004261814}
 --- !u!114 &7548297974174311735
 MonoBehaviour:
   m_ObjectHideFlags: 0
