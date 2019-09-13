@@ -7639,10 +7639,11 @@ MonoBehaviour:
   - {fileID: 5514788207697548510, guid: 980da04582a0c95448028bc1ae2e9b50, type: 3}
   - {fileID: 5962952628538493408, guid: f554989b2e2a0564e93e54a19b9b4010, type: 3}
   - {fileID: 8510448873287620510, guid: a6860761528df2a4a8cb65c484a36ab0, type: 3}
-  m_randomRangeBetweenTeleports: {x: 0, y: 0}
+  m_randomRangeBetweenTeleports: {x: 1, y: 2}
   m_teleportSphereRadius: 8
-  m_randomTimeToDoTeleporting: {x: 0, y: 0}
-  m_smokeyTeleportParticlePrefab: {fileID: 0}
+  m_randomTimeToDoTeleporting: {x: 5, y: 10}
+  m_smokeyTeleportParticlePrefab: {fileID: 4824537555117915286, guid: ab5a045184031444cae336f3a831cf4e,
+    type: 3}
 --- !u!82 &817260308
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13960,7 +13961,7 @@ PrefabInstance:
     - target: {fileID: 1178597318887594714, guid: f4a1e4b21fea73f47b71f1c8d71fb48a,
         type: 3}
       propertyPath: m_potionPrefabs.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1178597318887594714, guid: f4a1e4b21fea73f47b71f1c8d71fb48a,
         type: 3}
@@ -14040,7 +14041,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_potionPrefabs.Array.data[3]
       value: 
-      objectReference: {fileID: 5962952628538493408, guid: f554989b2e2a0564e93e54a19b9b4010,
+      objectReference: {fileID: 8717501981468953781, guid: 8fb77fbd3e8671147afee32099cd159e,
         type: 3}
     - target: {fileID: 1178597318887594714, guid: f4a1e4b21fea73f47b71f1c8d71fb48a,
         type: 3}
