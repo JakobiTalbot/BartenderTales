@@ -2170,9 +2170,8 @@ Animator:
     Humanoid clips.\n\tTransform 'Hip_JNT'\n\tTransform 'R_Mid_Finger_01_JNT'\n\tTransform
     'R_Leg_JNT'\n\tTransform 'R_Knee_JNT'\n\tTransform 'L_Pinky_02_JNT'\n\tTransform
     'R_Mid_Finger_02_JNT'\n\tTransform 'L_Finger_01_JNT'\n\tTransform 'L_Pinky_01_JNT'\n\tTransform
-    'L_Wrist_JNT'\n\tTransform 'Head_JNT'\n\tand more ...\n\tFrom animation clip 'Take
-    001'\n\tFrom animation clip 'Goblin_Shocked_Weighting'\n\tFrom animation clip
-    'Goblin_Cheer_Variant_Blockout'\n\tFrom animation clip 'Goblin_Shocked_Variant_V2_Blockout'\n\tFrom
+    'L_Wrist_JNT'\n\tTransform 'Head_JNT'\n\tand more ...\n\tFrom animation clip 'Goblin_Shocked_Weighting'\n\tFrom
+    animation clip 'Goblin_Cheer_Variant_Blockout'\n\tFrom animation clip 'Goblin_Shocked_Variant_V2_Blockout'\n\tFrom
     animation clip 'Goblin_Shocked_Weighting'\n\tFrom animation clip 'Take 001'\n\tFrom
     animation clip 'Goblin_Cosy_Test'"
   m_HasTransformHierarchy: 1
@@ -2192,7 +2191,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 32
   m_CollisionDetection: 0
 --- !u!114 &5937609685000063798
 MonoBehaviour:

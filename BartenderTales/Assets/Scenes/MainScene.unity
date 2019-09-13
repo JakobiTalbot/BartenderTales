@@ -354,6 +354,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -502,6 +507,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_001 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2351593408146203582, guid: bf238f19bc34d604ab7c38415270f906,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2351593408146177950, guid: bf238f19bc34d604ab7c38415270f906,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -638,6 +648,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -712,6 +727,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_003 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463141926574512029, guid: f39ee5f35b06f0c499e03bf2382a5b82,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4463141926575000509, guid: f39ee5f35b06f0c499e03bf2382a5b82,
         type: 3}
@@ -1025,6 +1045,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_001 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 2351593408146203582, guid: bf238f19bc34d604ab7c38415270f906,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2351593408146177950, guid: bf238f19bc34d604ab7c38415270f906,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1160,6 +1185,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
@@ -1314,6 +1344,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_001 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351593408146203582, guid: bf238f19bc34d604ab7c38415270f906,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2351593408146177950, guid: bf238f19bc34d604ab7c38415270f906,
         type: 3}
@@ -1479,6 +1514,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_001 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351593408146203582, guid: bf238f19bc34d604ab7c38415270f906,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2351593408146177950, guid: bf238f19bc34d604ab7c38415270f906,
         type: 3}
@@ -1729,6 +1769,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_003
       objectReference: {fileID: 0}
+    - target: {fileID: 4463141926574512029, guid: f39ee5f35b06f0c499e03bf2382a5b82,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4463141926575000509, guid: f39ee5f35b06f0c499e03bf2382a5b82,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1969,6 +2014,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_003 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463141926574512029, guid: f39ee5f35b06f0c499e03bf2382a5b82,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4463141926575000509, guid: f39ee5f35b06f0c499e03bf2382a5b82,
         type: 3}
@@ -2605,6 +2655,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_003 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4463141926574512029, guid: f39ee5f35b06f0c499e03bf2382a5b82,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4463141926575000509, guid: f39ee5f35b06f0c499e03bf2382a5b82,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2680,6 +2735,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2749,6 +2809,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2817,6 +2882,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_001 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351593408146203582, guid: bf238f19bc34d604ab7c38415270f906,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2351593408146177950, guid: bf238f19bc34d604ab7c38415270f906,
         type: 3}
@@ -2978,6 +3048,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
@@ -3246,6 +3321,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3371,6 +3451,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_002 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4253251497573540203, guid: d1528b7fa5845054b98c9d24a75afdcf,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4253251497573449035, guid: d1528b7fa5845054b98c9d24a75afdcf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3446,6 +3531,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3520,6 +3610,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_001 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351593408146203582, guid: bf238f19bc34d604ab7c38415270f906,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2351593408146177950, guid: bf238f19bc34d604ab7c38415270f906,
         type: 3}
@@ -3631,6 +3726,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_001 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351593408146203582, guid: bf238f19bc34d604ab7c38415270f906,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2351593408146177950, guid: bf238f19bc34d604ab7c38415270f906,
         type: 3}
@@ -4394,6 +4494,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_003 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4463141926574512029, guid: f39ee5f35b06f0c499e03bf2382a5b82,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4463141926575000509, guid: f39ee5f35b06f0c499e03bf2382a5b82,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4474,6 +4579,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
@@ -5431,6 +5541,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5597,6 +5712,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5695,6 +5815,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_001 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351593408146203582, guid: bf238f19bc34d604ab7c38415270f906,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2351593408146177950, guid: bf238f19bc34d604ab7c38415270f906,
         type: 3}
@@ -5916,6 +6041,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_001 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351593408146203582, guid: bf238f19bc34d604ab7c38415270f906,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2351593408146177950, guid: bf238f19bc34d604ab7c38415270f906,
         type: 3}
@@ -6416,6 +6546,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_001 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2351593408146203582, guid: bf238f19bc34d604ab7c38415270f906,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2351593408146177950, guid: bf238f19bc34d604ab7c38415270f906,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6490,6 +6625,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
@@ -7511,6 +7651,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7958,6 +8103,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8161,6 +8311,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_003 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4463141926574512029, guid: f39ee5f35b06f0c499e03bf2382a5b82,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4463141926575000509, guid: f39ee5f35b06f0c499e03bf2382a5b82,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8242,6 +8397,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8310,6 +8470,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
@@ -8439,6 +8604,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_004
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
@@ -8608,6 +8778,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8743,6 +8918,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
@@ -9145,6 +9325,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9213,6 +9398,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_001 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351593408146203582, guid: bf238f19bc34d604ab7c38415270f906,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2351593408146177950, guid: bf238f19bc34d604ab7c38415270f906,
         type: 3}
@@ -9572,6 +9762,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9652,6 +9847,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351593408146203582, guid: bf238f19bc34d604ab7c38415270f906,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2351593408146177950, guid: bf238f19bc34d604ab7c38415270f906,
         type: 3}
@@ -9794,6 +9994,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_003 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4463141926574512029, guid: f39ee5f35b06f0c499e03bf2382a5b82,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4463141926575000509, guid: f39ee5f35b06f0c499e03bf2382a5b82,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9862,6 +10067,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
@@ -10382,6 +10592,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10711,7 +10926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 81aef8518cf537b4cbc19320598b8e69, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.56
+      value: 7.182
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 81aef8518cf537b4cbc19320598b8e69, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11057,6 +11272,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
@@ -11737,7 +11957,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1334467819
 Transform:
@@ -11922,7 +12142,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1359242889
 Transform:
@@ -12078,6 +12298,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
@@ -12378,6 +12603,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
@@ -12876,6 +13106,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_001 (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 2351593408146203582, guid: bf238f19bc34d604ab7c38415270f906,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2351593408146177950, guid: bf238f19bc34d604ab7c38415270f906,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12956,6 +13191,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
@@ -13338,7 +13578,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1534594896
 Transform:
@@ -13871,6 +14111,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
@@ -15872,6 +16117,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_001 (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 2351593408146203582, guid: bf238f19bc34d604ab7c38415270f906,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2351593408146177950, guid: bf238f19bc34d604ab7c38415270f906,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15940,6 +16190,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_001 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351593408146203582, guid: bf238f19bc34d604ab7c38415270f906,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2351593408146177950, guid: bf238f19bc34d604ab7c38415270f906,
         type: 3}
@@ -16240,6 +16495,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16443,6 +16703,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_001 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2351593408146203582, guid: bf238f19bc34d604ab7c38415270f906,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2351593408146177950, guid: bf238f19bc34d604ab7c38415270f906,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16520,7 +16785,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1737084162
 Transform:
@@ -16549,6 +16814,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
@@ -16618,6 +16888,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_001 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351593408146203582, guid: bf238f19bc34d604ab7c38415270f906,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2351593408146177950, guid: bf238f19bc34d604ab7c38415270f906,
         type: 3}
@@ -21833,6 +22108,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_002
       objectReference: {fileID: 0}
+    - target: {fileID: 4253251497573540203, guid: d1528b7fa5845054b98c9d24a75afdcf,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4253251497573449035, guid: d1528b7fa5845054b98c9d24a75afdcf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21907,6 +22187,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
@@ -22116,6 +22401,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_003 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4463141926574512029, guid: f39ee5f35b06f0c499e03bf2382a5b82,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4463141926575000509, guid: f39ee5f35b06f0c499e03bf2382a5b82,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22289,6 +22579,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_003 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463141926574512029, guid: f39ee5f35b06f0c499e03bf2382a5b82,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4463141926575000509, guid: f39ee5f35b06f0c499e03bf2382a5b82,
         type: 3}
@@ -22946,7 +23241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400024, guid: 19745eedbbce94541ab5ddb2a4a063ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.409
+      value: 1.047
       objectReference: {fileID: 0}
     - target: {fileID: 400024, guid: 19745eedbbce94541ab5ddb2a4a063ea, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22996,6 +23291,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300002, guid: 19745eedbbce94541ab5ddb2a4a063ea, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 482ef14f36a18ff47a5e6d6890c80f6b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19745eedbbce94541ab5ddb2a4a063ea, type: 3}
 --- !u!1001 &1999847352
@@ -23009,6 +23308,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_004 (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801448811463456016, guid: 07ceb6b78ad341943863b7548895a501,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8801448811463944496, guid: 07ceb6b78ad341943863b7548895a501,
         type: 3}
@@ -24422,6 +24726,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saloon_001_Wall_001 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 2351593408146203582, guid: bf238f19bc34d604ab7c38415270f906,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2351593408146177950, guid: bf238f19bc34d604ab7c38415270f906,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24732,6 +25041,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Saloon_001_Wall_005
+      objectReference: {fileID: 0}
+    - target: {fileID: 230896289240137921, guid: f22c0d1743625774c95d4d0bbe94f275,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 230896289239981281, guid: f22c0d1743625774c95d4d0bbe94f275,
         type: 3}
