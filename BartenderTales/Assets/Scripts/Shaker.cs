@@ -7,7 +7,7 @@ public enum PotionName
 {
     //Skydive = 0,
     //AssassinsSpecial,
-    //SmokeyTeleport,
+    SmokeyTeleport,
     PixieDust,
     //Beer,
     CosyFire,
@@ -75,6 +75,7 @@ public class Shaker : MonoBehaviour
         m_potionFunc.Add(PotionName.CosyFire, m_potionPrefabs[0].GetComponent<CosyFire>());
         m_potionFunc.Add(PotionName.PixieDust, m_potionPrefabs[1].GetComponent<PixieDust>());
         m_potionFunc.Add(PotionName.CoughUp, m_potionPrefabs[2].GetComponent<CoughUp>());
+        m_potionFunc.Add(PotionName.SmokeyTeleport, m_potionPrefabs[3].GetComponent<SmokeyTeleport>());
     }
 
     // Update is called once per frame
