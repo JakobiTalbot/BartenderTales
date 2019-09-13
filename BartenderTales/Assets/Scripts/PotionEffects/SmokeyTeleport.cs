@@ -28,9 +28,12 @@ public class SmokeyTeleport : PotionEffect
         // break out of loop after random time
         Invoke("StopTeleporting", Random.Range(assets.m_randomTimeToDoTeleporting.x, assets.m_randomTimeToDoTeleporting.y));
 
+        // go idle
+        m_customer.m_animator.SetBool("StoppedMoving", true);
+        
         // stop navigating
         m_navAgent.isStopped = true;
-        GetComponent<Rigidbody>().isKinematic = true;
+        m_customer.m_speechBubbleCanvas.SetActive(false);
 
         // teleport loop
         while (m_bDoTeleport)

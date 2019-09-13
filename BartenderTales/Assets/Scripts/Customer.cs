@@ -219,9 +219,11 @@ public class Customer : MonoBehaviour
         // switch kinematic state to match ragdoll state
         foreach (Rigidbody rb in m_ragdollRigidbodies)
             rb.isKinematic = !m_bIsRagdolling;
+
         m_animator.enabled = !m_bIsRagdolling;
         m_agent.isStopped = m_bIsRagdolling;
 
+        // deactivate speech bubble if starting ragdoll
         if (m_speechBubbleCanvas.activeSelf
             && m_bIsRagdolling)
             m_speechBubbleCanvas.SetActive(false);
