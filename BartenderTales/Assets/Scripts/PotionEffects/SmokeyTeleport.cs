@@ -14,7 +14,7 @@ public class SmokeyTeleport : PotionEffect
         // set potion name
         m_potionName = PotionName.SmokeyTeleport;
 
-        // activate effect if on customer
+        // activate teleport loop if on customer
         if (m_customer = GetComponent<Customer>())
             StartCoroutine(TeleportLoop());
     }
@@ -42,6 +42,7 @@ public class SmokeyTeleport : PotionEffect
             Vector3 tpPoint = Random.insideUnitSphere * Random.Range(0f, assets.m_teleportSphereRadius);
             NavMeshHit hit;
 
+            // if point on nav mesh found
             if (NavMesh.SamplePosition(tpPoint, out hit, assets.m_teleportSphereRadius, NavMesh.AllAreas))
             {
                 // create particles
@@ -55,6 +56,9 @@ public class SmokeyTeleport : PotionEffect
         m_customer.End();
     }
 
+    /// <summary>
+    /// Causes the teleporting coroutine to stop running
+    /// </summary>
     private void StopTeleporting()
     {
         m_bDoTeleport = false;
