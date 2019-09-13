@@ -222,6 +222,9 @@ public class Customer : MonoBehaviour
         m_animator.enabled = !m_bIsRagdolling;
         m_agent.isStopped = m_bIsRagdolling;
 
+        if (m_bIsRagdolling)
+            StopCoroutine(m_customerAnimator.IdleLoop());
+
         // deactivate speech bubble if starting ragdoll
         if (m_speechBubbleCanvas.activeSelf
             && m_bIsRagdolling)
