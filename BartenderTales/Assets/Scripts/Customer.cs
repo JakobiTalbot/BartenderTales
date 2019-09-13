@@ -26,6 +26,8 @@ public class Customer : MonoBehaviour
     private Transform m_coughUpSpawnPoint;
     [SerializeField]
     private float m_impatienceTimer = 30f;
+    [SerializeField]
+    private Rigidbody[] m_ragdollRigidbodies;
 
     private PotionName m_order;
     private CustomerSpawner m_spawner;
@@ -35,10 +37,10 @@ public class Customer : MonoBehaviour
     private bool m_bBadPerson = false;
     private bool m_bExitingBar = false;
     private Vector3 m_v3CoinDropPos;
-    private Rigidbody m_rigidbody;
     private CustomerAnimator m_customerAnimator;
     private ReputationManager m_repManager;
     private bool m_bHadPath = false;
+    private bool m_bIsRagdolling = false;
 
     public Animator m_animator;
     public GameObject m_sparkleEffect;
@@ -46,7 +48,6 @@ public class Customer : MonoBehaviour
     void Start()
     {
         m_repManager = FindObjectOfType<ReputationManager>();
-        m_rigidbody = GetComponent<Rigidbody>();
         m_animator = GetComponent<Animator>();
         m_customerAnimator = GetComponent<CustomerAnimator>();
         m_agent = GetComponent<NavMeshAgent>();
@@ -54,11 +55,15 @@ public class Customer : MonoBehaviour
         m_order = (PotionName)Random.Range(0, (int)PotionName.Count);
         m_spawner = FindObjectOfType<CustomerSpawner>();
         StartCoroutine(Impatience());
+        SetRagdoll(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+            SetRagdoll(!m_bIsRagdolling);
+
         if (m_agent.remainingDistance < 0.6f
             && m_bHadPath)
         {
@@ -99,7 +104,6 @@ public class Customer : MonoBehaviour
                 && m_agent.hasPath)
             {
                 m_agent.isStopped = true;
-                m_rigidbody.isKinematic = true;
                 m_animator.SetBool("StoppedMoving", true);
                 m_customerAnimator.StartCoroutine("IdleLoop");
             }
@@ -116,11 +120,6 @@ public class Customer : MonoBehaviour
         m_agent.isStopped = false;
         m_bHadPath = true;
         m_point = dest;
-        if (m_rigidbody)
-        {
-            m_rigidbody.velocity = Vector3.zero;
-            m_rigidbody.angularVelocity = Vector3.zero;
-        }
 
         m_agent.SetDestination(dest.position);
     }
@@ -209,6 +208,16 @@ public class Customer : MonoBehaviour
         m_text.rectTransform.sizeDelta = m_text.GetPreferredValues();
         m_bubble.rectTransform.sizeDelta = (m_text.rectTransform.sizeDelta + m_speechBubbleBuffer);
         //StartCoroutine(DeactiveSpeechBubbleAfterTime(5f));
+    }
+
+    public void SetRagdoll(bool bRagdoll)
+    {
+        m_bIsRagdolling = bRagdoll;
+        // switch kinematic state to match ragdoll state
+        foreach (Rigidbody rb in m_ragdollRigidbodies)
+            rb.isKinematic = !m_bIsRagdolling;
+        m_animator.enabled = !m_bIsRagdolling;
+        m_agent.isStopped = m_bIsRagdolling;
     }
 
     public void Shocked() => m_customerAnimator.Shocked();
