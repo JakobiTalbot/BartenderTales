@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -56,7 +55,6 @@ public class Customer : MonoBehaviour
         // order random potion
         m_order = (PotionName)Random.Range(0, (int)PotionName.Count);
         m_spawner = FindObjectOfType<CustomerSpawner>();
-        StartCoroutine(Impatience());
         SetRagdoll(false);
     }
 
@@ -133,7 +131,6 @@ public class Customer : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Potion>())
         {
-            StopCoroutine(Impatience());
             // add point to spawner points
             AddPointToSpawner();
 
@@ -247,16 +244,6 @@ public class Customer : MonoBehaviour
     {
         yield return new WaitForSeconds(fTime);
         m_speechBubbleCanvas.SetActive(false);
-    }
-
-    private IEnumerator Impatience()
-    {
-        yield return new WaitForSeconds(m_impatienceTimer);
-        Speak("This is taking too long...");
-        m_repManager.AddToReputation(m_reputationOnWrongOrder);
-        yield return new WaitForSeconds(1f);
-        m_animator.SetBool("StoppedMoving", false);
-        ExitBar();
     }
 
     public void SetIsBad(bool bIsBad) => m_bBadPerson = bIsBad;
