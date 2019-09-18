@@ -154,6 +154,11 @@ public class IngredientManager : MonoBehaviour
     /// </summary>
     public void RefillIngredients()
     {
+        if (!(m_moneyJar.m_nCurrentMoney >= m_moneyLossOnIngredientRefill))
+            return;
+
+        // remove money from jar
+        m_moneyJar.AddMoney(-m_moneyLossOnIngredientRefill);
         List<Transform> availablePoints = new List<Transform>(m_ingredientSpawnPoints);
 
         for (int i = 0; i < m_spawnedIngredients.Length; ++i)
@@ -166,8 +171,5 @@ public class IngredientManager : MonoBehaviour
             // activate ingredient
             m_spawnedIngredients[i].SetActive(true);
         }
-
-        // remove money from jar
-        m_moneyJar.AddMoney(-m_moneyLossOnIngredientRefill);
     }
 }
