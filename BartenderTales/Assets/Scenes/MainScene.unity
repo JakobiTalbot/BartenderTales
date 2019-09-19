@@ -1840,7 +1840,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 185822023}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.644, y: -1.9291313, z: 1.909}
+  m_LocalPosition: {x: -4.476, y: -1.9291313, z: 1.9090003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1426392956}
@@ -3787,7 +3787,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359280225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.304, y: -1.9291313, z: 1.887}
+  m_LocalPosition: {x: -3.1359997, y: -1.9291313, z: 1.8870002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1426392956}
@@ -8050,6 +8050,8 @@ MonoBehaviour:
   - {fileID: 5514788207697548510, guid: 980da04582a0c95448028bc1ae2e9b50, type: 3}
   - {fileID: 5962952628538493408, guid: f554989b2e2a0564e93e54a19b9b4010, type: 3}
   - {fileID: 8510448873287620510, guid: a6860761528df2a4a8cb65c484a36ab0, type: 3}
+  - {fileID: 1256939812036187108, guid: b6e49c51bd9952b47bfee5707dc860c2, type: 3}
+  - {fileID: 2031257111260438763, guid: ecdc9d0d99e9d384e9e013f359b05d43, type: 3}
   m_randomRangeBetweenTeleports: {x: 1, y: 2}
   m_teleportAreaRadius: 8
   m_randomTimeToDoTeleporting: {x: 5, y: 10}
@@ -11100,7 +11102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193233180}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.377, y: -1.9291313, z: 1.909}
+  m_LocalPosition: {x: -4.2089996, y: -1.9291313, z: 1.9090003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1426392956}
@@ -14776,7 +14778,7 @@ PrefabInstance:
     - target: {fileID: 1178597318887594714, guid: f4a1e4b21fea73f47b71f1c8d71fb48a,
         type: 3}
       propertyPath: m_potionPrefabs.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1178597318887594714, guid: f4a1e4b21fea73f47b71f1c8d71fb48a,
         type: 3}
@@ -14888,6 +14890,12 @@ PrefabInstance:
       propertyPath: m_potionPrefabs.Array.data[4]
       value: 
       objectReference: {fileID: 1256939812036187108, guid: b6e49c51bd9952b47bfee5707dc860c2,
+        type: 3}
+    - target: {fileID: 1178597318887594714, guid: f4a1e4b21fea73f47b71f1c8d71fb48a,
+        type: 3}
+      propertyPath: m_potionPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 2031257111260438763, guid: ecdc9d0d99e9d384e9e013f359b05d43,
         type: 3}
     - target: {fileID: 5379624248553235427, guid: f4a1e4b21fea73f47b71f1c8d71fb48a,
         type: 3}
@@ -15569,7 +15577,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638196887}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.109, y: -1.9291313, z: 1.909}
+  m_LocalPosition: {x: -3.941, y: -1.9291313, z: 1.909}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1426392956}
@@ -18169,6 +18177,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d4936c96b080fef48b8ee860c7e981f7, type: 3}
       propertyPath: m_Name
       value: Size_Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d4936c96b080fef48b8ee860c7e981f7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d4936c96b080fef48b8ee860c7e981f7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25208,12 +25220,12 @@ PrefabInstance:
     - target: {fileID: 1627498804331027086, guid: f0e38b26e18bb44428e6fc5669873d4d,
         type: 3}
       propertyPath: m_potionImages.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1627498804331027086, guid: f0e38b26e18bb44428e6fc5669873d4d,
         type: 3}
       propertyPath: m_potionPrefabs.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1627498804331027086, guid: f0e38b26e18bb44428e6fc5669873d4d,
         type: 3}
@@ -26001,6 +26013,22 @@ PrefabInstance:
       propertyPath: m_ingredientAreas.Array.data[11].m_points.Array.data[3]
       value: 
       objectReference: {fileID: 916966207}
+    - target: {fileID: 1627498804331027086, guid: f0e38b26e18bb44428e6fc5669873d4d,
+        type: 3}
+      propertyPath: m_potionImages.Array.data[5].m_potionImage
+      value: 
+      objectReference: {fileID: 2800000, guid: e344927f4910d11449495cee059820bb, type: 3}
+    - target: {fileID: 1627498804331027086, guid: f0e38b26e18bb44428e6fc5669873d4d,
+        type: 3}
+      propertyPath: m_potionImages.Array.data[5].m_potionName
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627498804331027086, guid: f0e38b26e18bb44428e6fc5669873d4d,
+        type: 3}
+      propertyPath: m_potionPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 2031257111260438763, guid: ecdc9d0d99e9d384e9e013f359b05d43,
+        type: 3}
     - target: {fileID: 1627498804331027087, guid: f0e38b26e18bb44428e6fc5669873d4d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26365,7 +26393,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113296524}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.78, y: -1.9291313, z: 1.887}
+  m_LocalPosition: {x: -3.6119998, y: -1.9291313, z: 1.8870002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1426392956}
@@ -26600,7 +26628,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2147373894}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.54, y: -1.9291313, z: 1.887}
+  m_LocalPosition: {x: -3.3719997, y: -1.9291313, z: 1.8870002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1426392956}
