@@ -235,8 +235,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Anim_Goblin_014_Levitation1
       takeName: Anim_Goblin_014_Levitation1
-      firstFrame: 1
-      lastFrame: 150
+      firstFrame: 76
+      lastFrame: 135
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
