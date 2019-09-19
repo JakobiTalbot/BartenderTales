@@ -239,10 +239,19 @@ public class Customer : MonoBehaviour
     {
         m_customerAnimator.CoughUp();
         yield return new WaitForSeconds(timeUntilSpawnObject);
-        // wait before spawning 
-        Destroy(Instantiate(coughup, m_coughUpSpawnPoint.position, m_coughUpSpawnPoint.rotation), 10f);
+        // wait before spawning
+        GameObject vomit = Instantiate(coughup, m_coughUpSpawnPoint.position, m_coughUpSpawnPoint.rotation);
+        DisableCollision(vomit.GetComponent<Collider>());
         yield return new WaitForSeconds(2f);
         ExitBar();
+    }
+
+    private void DisableCollision(Collider colliderToDisableAgainst)
+    {
+        foreach (Rigidbody rb in m_ragdollRigidbodies)
+        {
+            Physics.IgnoreCollision(rb.GetComponent<Collider>(), colliderToDisableAgainst);
+        }
     }
 
     IEnumerator DeactiveSpeechBubbleAfterTime(float fTime)
