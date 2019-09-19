@@ -128,14 +128,6 @@ public class Customer : MonoBehaviour
         m_agent.SetDestination(dest.position);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.GetComponent<Potion>())
-        {
-
-        }
-    }
-
     public void DrinkPotion(Potion potion)
     {
         // dont drink potion if ragdolled
