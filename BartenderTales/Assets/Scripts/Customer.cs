@@ -138,6 +138,10 @@ public class Customer : MonoBehaviour
 
     public void DrinkPotion(Potion potion)
     {
+        // dont drink potion if ragdolled
+        if (m_bIsRagdolling)
+            return;
+
         // add point to spawner points
         AddPointToSpawner();
 
