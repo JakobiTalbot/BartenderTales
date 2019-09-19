@@ -144,7 +144,7 @@ public class IngredientManager : MonoBehaviour
         for (int i = 0; i < m_ingredientAreas.Length; ++i)
         {
             // randomise ingredient for area
-            int prefabIndex = Random.Range(0, m_ingredientPrefabs.Length);
+            int prefabIndex = Random.Range(0, availableIngredientPrefabs.Count);
             GameObject ingredient = availableIngredientPrefabs[prefabIndex];
             m_ingredientAreas[i].m_spawnedIngredientPoints = new Dictionary<Transform, GameObject>();
             availableIngredientPrefabs.RemoveAt(prefabIndex);
