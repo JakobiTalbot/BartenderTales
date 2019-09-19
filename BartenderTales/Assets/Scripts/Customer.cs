@@ -246,6 +246,10 @@ public class Customer : MonoBehaviour
         ExitBar();
     }
 
+    /// <summary>
+    /// Disables collision between all the ragdoll colliders and the specified collider
+    /// </summary>
+    /// <param name="colliderToDisableAgainst"> The collider to disable collision against </param>
     private void DisableCollision(Collider colliderToDisableAgainst)
     {
         foreach (Rigidbody rb in m_ragdollRigidbodies)

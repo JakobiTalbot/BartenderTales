@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 4839016121794044989}
   - component: {fileID: 4839016121792750621}
   - component: {fileID: 4839016121791751901}
-  - component: {fileID: 3486433455117726258}
   - component: {fileID: 6537602784039469502}
   - component: {fileID: 856040253678318271}
   - component: {fileID: 5370511087955104126}
   - component: {fileID: 6529172496595660204}
   - component: {fileID: 2106777786832265796}
+  - component: {fileID: 2061618406607621545}
   m_Layer: 0
   m_Name: Ingredient_009_Hairball
   m_TagString: Untagged
@@ -83,19 +83,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &3486433455117726258
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4839016121794017309}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.040022194
-  m_Center: {x: 0.0026133396, y: 0.005483946, z: -0.00081715174}
 --- !u!114 &6537602784039469502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,3 +213,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ingredientType: 256
+--- !u!65 &2061618406607621545
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4839016121794017309}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08004439, y: 0.064946964, z: 0.07979134}
+  m_Center: {x: 0.0026133396, y: 0.005483946, z: -0.00081715174}

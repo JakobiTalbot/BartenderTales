@@ -17,6 +17,10 @@ GameObject:
   - component: {fileID: 7716471933239600212}
   - component: {fileID: 6410932169099781557}
   - component: {fileID: 6466023198833324881}
+  - component: {fileID: 743527719793731457}
+  - component: {fileID: 6764319514070831621}
+  - component: {fileID: 5275770769568247128}
+  - component: {fileID: 6936460892979156442}
   m_Layer: 0
   m_Name: Ingredient_010_CoolCactus
   m_TagString: Untagged
@@ -224,5 +228,57 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.07
+  m_Radius: 0.06
   m_Center: {x: -0.000000007450581, y: 0.0000000037252903, z: -0.0000000037252903}
+--- !u!65 &743527719793731457
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573927231681195620}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.034937367, y: 0.046870828, z: 0.027973175}
+  m_Center: {x: -0.07287978, y: -0.005858004, z: 0.00217247}
+--- !u!65 &6764319514070831621
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573927231681195620}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.034937367, y: 0.038996696, z: 0.023636743}
+  m_Center: {x: 0, y: -0.0043023825, z: 0.07783178}
+--- !u!65 &5275770769568247128
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573927231681195620}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.034937367, y: 0.046870828, z: 0.027973175}
+  m_Center: {x: 0.072879784, y: -0.005858004, z: 0.00217247}
+--- !u!65 &6936460892979156442
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573927231681195620}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.034937367, y: 0.038996696, z: 0.023636743}
+  m_Center: {x: 0, y: -0.0043023825, z: -0.07783178}
