@@ -33,6 +33,14 @@ public struct PotionImages
     public Texture m_potionImage;
 }
 
+[System.Serializable]
+public struct IngredientArea
+{
+    public Transform[] m_points;
+    [HideInInspector]
+    public Dictionary<Transform, GameObject> m_spawnedIngredientPoints;
+}
+
 public class IngredientManager : MonoBehaviour
 {
     [SerializeField]
@@ -50,6 +58,9 @@ public class IngredientManager : MonoBehaviour
     private Page[] m_recipePages;
     [SerializeField]
     private int m_moneyLossOnIngredientRefill = 1;
+    [SerializeField]
+    [Tooltip("There should be one area for each ingredient prefab")]
+    private IngredientArea[] m_ingredientAreas;
 
     [HideInInspector]
     public int[] m_recipes;
@@ -58,8 +69,6 @@ public class IngredientManager : MonoBehaviour
 
     private Dictionary<int, Texture> m_ingredientTextureDictionary;
     private MoneyJar m_moneyJar;
-    private GameObject[] m_spawnedIngredients;
-    private int m_nPointsPerIngredientType;
 
     private void Awake()
     {
@@ -132,19 +141,22 @@ public class IngredientManager : MonoBehaviour
     /// </summary>
     private void CreateIngredients()
     {
-        List<Transform> availablePoints = new List<Transform>(m_ingredientSpawnPoints);
-        m_nPointsPerIngredientType = m_ingredientSpawnPoints.Length / m_ingredientPrefabs.Length;
-        m_spawnedIngredients = new GameObject[m_ingredientPrefabs.Length * m_nPointsPerIngredientType];
-        // for each ingredient
-        for (int i = 0; i < m_ingredientPrefabs.Length; ++i)
+        List<GameObject> availableIngredientPrefabs = new List<GameObject>(m_ingredientPrefabs);
+
+        // for each ingredient area
+        for (int i = 0; i < m_ingredientAreas.Length; ++i)
         {
-            int baseindex = i * m_nPointsPerIngredientType;
-            // spawn on number of points
-            for (int j = 0; j < m_nPointsPerIngredientType; ++j)
+            // randomise ingredient for area
+            int prefabIndex = Random.Range(0, m_ingredientPrefabs.Length);
+            GameObject ingredient = availableIngredientPrefabs[prefabIndex];
+            availableIngredientPrefabs.RemoveAt(prefabIndex);
+
+            // spawn ingredients on area points
+            for (int j = 0; j < m_ingredientAreas[i].m_points.Length; ++j)
             {
-                int randPoint = Random.Range(0, availablePoints.Count);
-                m_spawnedIngredients[baseindex + j] = Instantiate(m_ingredientPrefabs[i], availablePoints[randPoint].transform.position, availablePoints[randPoint].transform.rotation);
-                availablePoints.RemoveAt(randPoint);
+                // create ingredient
+                GameObject spawnedIngredient = Instantiate(ingredient, m_ingredientAreas[i].m_points[j].transform.position, Quaternion.identity);
+                m_ingredientAreas[i].m_spawnedIngredientPoints.Add(m_ingredientAreas[i].m_points[j].transform, spawnedIngredient);
             }
         }
     }
@@ -159,17 +171,23 @@ public class IngredientManager : MonoBehaviour
 
         // remove money from jar
         m_moneyJar.AddMoney(-m_moneyLossOnIngredientRefill);
-        List<Transform> availablePoints = new List<Transform>(m_ingredientSpawnPoints);
 
-        for (int i = 0; i < m_spawnedIngredients.Length; ++i)
+        for (int i = 0; i < m_ingredientAreas.Length; ++i)
         {
-            // move ingredient to random point
-            int randPoint = Random.Range(0, availablePoints.Count);
-            m_spawnedIngredients[i].transform.SetPositionAndRotation(availablePoints[randPoint].transform.position, availablePoints[randPoint].transform.rotation);
-            availablePoints.RemoveAt(randPoint);
+            for (int j = 0; j < m_ingredientAreas[i].m_points.Length; ++j)
+            {
+                // get values
+                Transform point = m_ingredientAreas[i].m_points[j];
+                GameObject ingredient = m_ingredientAreas[i].m_spawnedIngredientPoints[point];
 
-            // activate ingredient
-            m_spawnedIngredients[i].SetActive(true);
+                // don't reset if still active
+                if (ingredient.activeSelf)
+                    continue;
+
+                // move back to point then enable
+                ingredient.transform.SetPositionAndRotation(point.position, point.rotation);
+                ingredient.SetActive(true);
+            }
         }
     }
 }
