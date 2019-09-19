@@ -12,6 +12,7 @@ public enum PotionName
     //Beer,
     CosyFire,
     CoughUp,
+    CupidsKiss,
     //HonestPolicy,
     Count,
     Mundane
@@ -77,6 +78,7 @@ public class Shaker : MonoBehaviour
         m_potionFunc.Add(PotionName.CoughUp, m_potionPrefabs[2].GetComponent<CoughUp>());
         m_potionFunc.Add(PotionName.SmokeyTeleport, m_potionPrefabs[3].GetComponent<SmokeyTeleport>());
         m_potionFunc.Add(PotionName.PickMeUp, m_potionPrefabs[4].GetComponent<PickMeUp>());
+        m_potionFunc.Add(PotionName.CupidsKiss, m_potionPrefabs[5].GetComponent<CupidsKiss>());
     }
 
     // Update is called once per frame

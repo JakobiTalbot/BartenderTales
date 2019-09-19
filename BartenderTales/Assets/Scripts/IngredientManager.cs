@@ -156,7 +156,6 @@ public class IngredientManager : MonoBehaviour
                 GameObject spawnedIngredient = Instantiate(ingredient, m_ingredientAreas[i].m_points[j].transform.position, Quaternion.identity);
                 m_ingredientAreas[i].m_spawnedIngredientPoints.Add(m_ingredientAreas[i].m_points[j].transform, spawnedIngredient);
             }
-
         }
     }
 
