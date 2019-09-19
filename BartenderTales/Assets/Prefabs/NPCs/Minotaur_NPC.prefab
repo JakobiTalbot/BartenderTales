@@ -233,6 +233,36 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &2936774121835860675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5502440011706645706}
+  m_Layer: 0
+  m_Name: HatSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5502440011706645706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2936774121835860675}
+  m_LocalRotation: {x: 0.106618285, y: -0, z: -0, w: 0.99430007}
+  m_LocalPosition: {x: 0, y: 2.202, z: 0.154}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6788278349431632602}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 12.241, y: 0, z: 0}
 --- !u!1 &4412569732713542258
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,6 +767,7 @@ Transform:
   - {fileID: 512589079516370723}
   - {fileID: 4353077728008473896}
   - {fileID: 6046218566367500760}
+  - {fileID: 5502440011706645706}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -783,10 +814,11 @@ MonoBehaviour:
   m_moneyPrefab: {fileID: 6324821836455372774, guid: 376fd99151b508842b77c710c794f5e1,
     type: 3}
   m_mugshotCamera: {fileID: 1410232653241092647}
+  m_pickMeUpRigidbody: {fileID: 0}
   m_coughUpSpawnPoint: {fileID: 4353077728008473896}
   m_impatienceTimer: 30
   m_ragdollRigidbodies: []
-  m_hatTransform: {fileID: 0}
+  m_hatTransform: {fileID: 5502440011706645706}
   m_animator: {fileID: 6788278349439311066}
   m_sparkleEffect: {fileID: 0}
 --- !u!195 &6705445505521283863

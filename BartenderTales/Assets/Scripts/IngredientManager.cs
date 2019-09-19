@@ -44,9 +44,6 @@ public struct IngredientArea
 public class IngredientManager : MonoBehaviour
 {
     [SerializeField]
-    [Tooltip("Ensure there is at least one point for each ingredient prefab, otherwise no ingredients will spawn")]
-    private Transform[] m_ingredientSpawnPoints;
-    [SerializeField]
     private GameObject[] m_potionPrefabs;
     [SerializeField]
     private GameObject[] m_ingredientPrefabs;
@@ -149,6 +146,7 @@ public class IngredientManager : MonoBehaviour
             // randomise ingredient for area
             int prefabIndex = Random.Range(0, m_ingredientPrefabs.Length);
             GameObject ingredient = availableIngredientPrefabs[prefabIndex];
+            m_ingredientAreas[i].m_spawnedIngredientPoints = new Dictionary<Transform, GameObject>();
             availableIngredientPrefabs.RemoveAt(prefabIndex);
 
             // spawn ingredients on area points
@@ -158,6 +156,7 @@ public class IngredientManager : MonoBehaviour
                 GameObject spawnedIngredient = Instantiate(ingredient, m_ingredientAreas[i].m_points[j].transform.position, Quaternion.identity);
                 m_ingredientAreas[i].m_spawnedIngredientPoints.Add(m_ingredientAreas[i].m_points[j].transform, spawnedIngredient);
             }
+
         }
     }
 
