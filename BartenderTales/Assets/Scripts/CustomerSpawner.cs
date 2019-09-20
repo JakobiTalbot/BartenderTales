@@ -304,4 +304,16 @@ public class CustomerSpawner : MonoBehaviour
         m_clockHand.localRotation = Quaternion.Euler(m_clockHand.localRotation.x, m_clockHand.localRotation.y, (m_fGameTimer / m_gameTimeSeconds) * 360f);
         return m_fGameTimer >= m_gameTimeSeconds;
     }
+
+    public void RemoveWantedCustomer(GameObject wantedCustomer)
+    {
+        // find customer in array and remove
+        for (int i = 0; i < m_wantedCustomers.Count; ++i)
+        {
+            if (m_wantedCustomers[i].customer == wantedCustomer)
+            {
+                m_wantedCustomers.RemoveAt(i);
+            }
+        }
+    }
 }
