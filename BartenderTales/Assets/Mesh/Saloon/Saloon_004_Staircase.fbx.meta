@@ -51,6 +51,7 @@ ModelImporter:
     2300024: Rail5
     2300026: Rail6
     2300028: Stairs
+    2300030: //RootNode
     3300000: Bannister1
     3300002: Bannister2
     3300004: Bannister3
@@ -66,6 +67,7 @@ ModelImporter:
     3300024: Rail5
     3300026: Rail6
     3300028: Stairs
+    3300030: //RootNode
     4300000: Stairs
     4300002: Bannister1
     4300004: Bannister2
@@ -81,6 +83,7 @@ ModelImporter:
     4300024: Rail4
     4300026: Rail5
     4300028: Rail6
+    4300030: Staircase
   externalObjects: {}
   materials:
     importMaterials: 1
