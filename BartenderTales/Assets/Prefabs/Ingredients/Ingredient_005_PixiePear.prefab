@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 7815359149840365640}
   - component: {fileID: 7815359149841135720}
   - component: {fileID: 7815359149842135720}
-  - component: {fileID: 6069668847264788426}
   - component: {fileID: 3973782055320948516}
   - component: {fileID: 2654581436978186799}
   - component: {fileID: 71121527369748658}
   - component: {fileID: 7870691661392466151}
   - component: {fileID: 6922390381143612816}
+  - component: {fileID: 1946836657036039408}
   m_Layer: 0
   m_Name: Ingredient_005_PixiePear
   m_TagString: Untagged
@@ -83,20 +83,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &6069668847264788426
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7815359149840196712}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.05216881
-  m_Height: 0.15474793
-  m_Direction: 1
-  m_Center: {x: 0.0000000018626451, y: -0.002257567, z: -0.0000000037252903}
 --- !u!54 &3973782055320948516
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -227,3 +213,16 @@ MonoBehaviour:
     m_TypeName: Valve.VR.InteractionSystem.HandEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   interactable: {fileID: 0}
+--- !u!65 &1946836657036039408
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7815359149840196712}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.10433759, y: 0.15474793, z: 0.10433762}
+  m_Center: {x: 0.0000000018626451, y: -0.002257567, z: -0.0000000037252903}

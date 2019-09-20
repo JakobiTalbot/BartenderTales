@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6830513208742266027}
   - component: {fileID: 6830513208742266026}
   - component: {fileID: 6830513208742266025}
+  - component: {fileID: 7824224718775338558}
   m_Layer: 0
   m_Name: Ingredient_007_EyeBall
   m_TagString: Untagged
@@ -226,3 +227,16 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
+--- !u!65 &7824224718775338558
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6830513208309244188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.033703804, y: 0.025693059, z: 0.059951186}
+  m_Center: {x: 0.006520033, y: -0.004622817, z: -0.035399616}

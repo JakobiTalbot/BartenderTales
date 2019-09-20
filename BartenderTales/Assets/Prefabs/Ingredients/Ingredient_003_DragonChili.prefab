@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 4786787099297522419}
   - component: {fileID: 4786787099300422355}
   - component: {fileID: 4786787099299291155}
-  - component: {fileID: 7590583619260587944}
   - component: {fileID: 7638438531499023334}
   - component: {fileID: 2052597326547191324}
   - component: {fileID: 5790429470444824042}
   - component: {fileID: 6629427015031745220}
   - component: {fileID: 8820603469929681101}
+  - component: {fileID: 5403677621977125797}
   m_Layer: 0
   m_Name: Ingredient_003_DragonChili
   m_TagString: Untagged
@@ -83,20 +83,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7590583619260587944
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4786787099297365715}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: cff8ce029e9cd9648b7f44e52fd00300, type: 3}
 --- !u!54 &7638438531499023334
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -227,3 +213,16 @@ MonoBehaviour:
     m_TypeName: Valve.VR.InteractionSystem.HandEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   interactable: {fileID: 0}
+--- !u!65 &5403677621977125797
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4786787099297365715}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.16965975, y: 0.19270754, z: 0.0738903}
+  m_Center: {x: 0, y: 0.000000011175871, z: -0.0000000018626451}
