@@ -19,6 +19,9 @@ public class SmokeyTeleport : PotionEffect
             StartCoroutine(TeleportLoop());
     }
 
+    /// <summary>
+    /// The coroutine to keep teleporting the customer around the bar
+    /// </summary>
     private IEnumerator TeleportLoop()
     {
         PotionAssets assets = FindObjectOfType<PotionAssets>();
@@ -56,7 +59,7 @@ public class SmokeyTeleport : PotionEffect
         }
 
         // make customer disappear
-        m_customer.End();
+        Destroy(m_customer.gameObject);
     }
 
     /// <summary>

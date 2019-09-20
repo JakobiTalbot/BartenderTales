@@ -94,7 +94,6 @@ public class CustomerSpawner : MonoBehaviour
     public AudioSource calmHourMusic;
     public float fadeTime;
 
-    // Start is called before the first frame update
     void Start()
     {
         m_customers = new List<GameObject>();
@@ -104,6 +103,9 @@ public class CustomerSpawner : MonoBehaviour
         StartCoroutine(SpawnWantedCustomersOnStart());
     }
 
+    /// <summary>
+    /// Spawn starting wanted customers with a short delay between them to prevent showing up together in same photo
+    /// </summary>
     private IEnumerator SpawnWantedCustomersOnStart()
     {
         // create wanted customers
@@ -121,6 +123,10 @@ public class CustomerSpawner : MonoBehaviour
         StartCoroutine(AudioController.FadeIn(calmHourMusic, fadeTime));
     }
 
+    /// <summary>
+    /// Create a wanted customer and takes a mugshot of them
+    /// </summary>
+    /// <param name="poster"> The poster to display the mugshot picture on </param>
     private IEnumerator CreateWantedCustomer(WantedPoster poster)
     {
         GameObject wantedCust = Instantiate(m_customerPrefabs[Random.Range(0, m_customerPrefabs.Length)], m_spawnPoint.position, m_spawnPoint.rotation);
@@ -149,6 +155,9 @@ public class CustomerSpawner : MonoBehaviour
         wantedCust.SetActive(false);
     }
 
+    /// <summary>
+    /// Coroutine to spawn customers with specified time intervals
+    /// </summary>
     private IEnumerator CustomerSpawnLoop()
     {
         SpawnCustomer();
@@ -164,6 +173,9 @@ public class CustomerSpawner : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Coroutine to switch states between happy hour and not happy hour
+    /// </summary>
     private IEnumerator HappyHourTimer()
     {
         while (true)
@@ -185,6 +197,10 @@ public class CustomerSpawner : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Attempt to spawn a customer
+    /// </summary>
+    /// <returns> Whether a customer was spawned or not </returns>
     private bool SpawnCustomer()
     {
         // dont spawn if there is no spaces
@@ -225,7 +241,7 @@ public class CustomerSpawner : MonoBehaviour
                 GameObject customer = inactiveWantedCustomers[Random.Range(0, inactiveWantedCustomers.Count)].customer;
                 customer.SetActive(true);
                 Customer c = customer.GetComponent<Customer>();
-                c.SetIsBad(true);
+                c.SetIsWanted(true);
                 c.SetDestination(destPoint, bWait);
                 c.SetCoinDropPos(m_coinDropPoint.position);
                 // set new wait until next bad customer spawns
@@ -284,6 +300,9 @@ public class CustomerSpawner : MonoBehaviour
         Destroy(m_startLever);
     }
 
+    /// <summary>
+    /// The coroutine to track game state
+    /// </summary>
     private IEnumerator GameTimer()
     {
         yield return new WaitUntil(CountDown);
@@ -297,6 +316,10 @@ public class CustomerSpawner : MonoBehaviour
         SceneManager.LoadSceneAsync(0);
     }
 
+    /// <summary>
+    /// Counts the remaining game time and rotates the clock hand to match how much time is left
+    /// </summary>
+    /// <returns> Returns whether the game timer has ran out or not </returns>
     private bool CountDown()
     {
         m_fGameTimer += Time.deltaTime;
@@ -305,6 +328,10 @@ public class CustomerSpawner : MonoBehaviour
         return m_fGameTimer >= m_gameTimeSeconds;
     }
 
+    /// <summary>
+    /// Removes the specified wanted customer from the list of wanted customers
+    /// </summary>
+    /// <param name="wantedCustomer"> The GameObject of the wanted customer to remove </param>
     public void RemoveWantedCustomer(GameObject wantedCustomer)
     {
         // find customer in array and remove

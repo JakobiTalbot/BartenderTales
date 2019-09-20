@@ -26,7 +26,7 @@ public class Mundane : PotionEffect
         Collider[] affectedCustomers = Physics.OverlapSphere(transform.position, m_reactionRadius);
 
         // cheer if evil customer exploded
-        if (GetComponent<Customer>().IsEvil())
+        if (GetComponent<Customer>().IsWanted())
         {
             foreach (Collider c in affectedCustomers)
             {

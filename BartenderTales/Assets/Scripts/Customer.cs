@@ -36,7 +36,7 @@ public class Customer : MonoBehaviour
     private NavMeshAgent m_agent;
     private Transform m_point;
     private bool m_bWaiting = true;
-    private bool m_bBadPerson = false;
+    private bool m_bWanted = false;
     private bool m_bExitingBar = false;
     private Vector3 m_v3CoinDropPos;
     private CustomerAnimator m_customerAnimator;
@@ -46,7 +46,7 @@ public class Customer : MonoBehaviour
 
     public Animator m_animator;
     public GameObject m_sparkleEffect;
-    // Start is called before the first frame update
+
     void Start()
     {
         m_repManager = FindObjectOfType<ReputationManager>();
@@ -59,7 +59,6 @@ public class Customer : MonoBehaviour
         SetRagdoll(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -149,7 +148,7 @@ public class Customer : MonoBehaviour
         }
         else // if wrong potion given
         {
-            if (m_bBadPerson)
+            if (m_bWanted)
             {
                 m_repManager.AddToReputation(m_reputationOnCorrectOrder);
             }
@@ -176,6 +175,9 @@ public class Customer : MonoBehaviour
         Destroy(potion.gameObject);
     }
 
+    /// <summary>
+    /// Makes the customer start exiting the bar
+    /// </summary>
     public void ExitBar()
     {
         m_bExitingBar = true;
@@ -186,6 +188,9 @@ public class Customer : MonoBehaviour
         m_animator.SetBool("StoppedMoving", false);
     }
 
+    /// <summary>
+    /// Adds the customer's waiting/serving point back to the list of them in the customer spawner
+    /// </summary>
     public void AddPointToSpawner()
     {
         if (m_bWaiting)
@@ -194,26 +199,31 @@ public class Customer : MonoBehaviour
             m_spawner.m_servingPoints.Add(m_point);
     }
 
-    public void End()
-    {
-        m_spawner.m_customers.Remove(gameObject);
-        Destroy(gameObject);
-    }
-
+    /// <summary>
+    /// Sets the position to spawn a coin when the customer pays
+    /// </summary>
+    /// <param name="v3DropPos"></param>
     public void SetCoinDropPos(Vector3 v3DropPos)
     {
         m_v3CoinDropPos = v3DropPos;
     }
 
+    /// <summary>
+    /// Activates the customer's speech bubble and displays specified text inside it
+    /// </summary>
+    /// <param name="text"> The string to display inside the speech bubble </param>
     public void Speak(string text)
     {
         m_speechBubbleCanvas.SetActive(true);
         m_text.text = text;
         m_text.rectTransform.sizeDelta = m_text.GetPreferredValues();
         m_bubble.rectTransform.sizeDelta = (m_text.rectTransform.sizeDelta + m_speechBubbleBuffer);
-        //StartCoroutine(DeactiveSpeechBubbleAfterTime(5f));
     }
 
+    /// <summary>
+    /// Sets the ragdoll state of the customer
+    /// </summary>
+    /// <param name="bRagdoll"> Whether to set the customer to ragdoll or not </param>
     public void SetRagdoll(bool bRagdoll)
     {
         m_bIsRagdolling = bRagdoll;
@@ -233,8 +243,21 @@ public class Customer : MonoBehaviour
             m_speechBubbleCanvas.SetActive(false);
     }
 
+    /// <summary>
+    /// Plays the customer's shocked animation
+    /// </summary>
     public void Shocked() => m_customerAnimator.Shocked();
+
+    /// <summary>
+    /// Plays the customer's cheer animation
+    /// </summary>
     public void Cheer() => m_customerAnimator.Cheer();
+
+    /// <summary>
+    /// The coroutine for cough up animation and item spawning
+    /// </summary>
+    /// <param name="coughup"> The prefab of the GameObject to cough up </param>
+    /// <param name="timeUntilSpawnObject"> Time between starting the cough up animation and spawning the cough up GameObject </param>
     public IEnumerator CoughUp(GameObject coughup, float timeUntilSpawnObject)
     {
         m_customerAnimator.CoughUp();
@@ -258,15 +281,17 @@ public class Customer : MonoBehaviour
         }
     }
 
-    IEnumerator DeactiveSpeechBubbleAfterTime(float fTime)
-    {
-        yield return new WaitForSeconds(fTime);
-        m_speechBubbleCanvas.SetActive(false);
-    }
+    /// <summary>
+    /// Sets the customer's wanted state
+    /// </summary>
+    /// <param name="bIsWanted"> Whether the customer should be wanted or not </param>
+    public void SetIsWanted(bool bIsWanted) => m_bWanted = bIsWanted;
 
-    public void SetIsBad(bool bIsBad) => m_bBadPerson = bIsBad;
-
-    public bool IsEvil() => m_bBadPerson;
+    /// <summary>
+    /// Returns whether the customer is wanted or not
+    /// </summary>
+    /// <returns> Whether the customer is wanted or not </returns>
+    public bool IsWanted() => m_bWanted;
 
     /// <summary>
     /// Puts the specified hat on the customer's head
@@ -281,7 +306,9 @@ public class Customer : MonoBehaviour
     private void OnDestroy()
     {
         // remove from array if wanted customer
-        if (m_bBadPerson)
+        if (m_bWanted)
             m_spawner.RemoveWantedCustomer(gameObject);
+        else
+            m_spawner.m_customers.Remove(gameObject);
     }
 }
