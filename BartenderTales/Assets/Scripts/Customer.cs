@@ -277,4 +277,11 @@ public class Customer : MonoBehaviour
         GameObject newHat = Instantiate(hat, m_hatTransform.position, m_hatTransform.rotation);
         newHat.transform.parent = m_hatTransform;
     }
+
+    private void OnDestroy()
+    {
+        // remove from array if wanted customer
+        if (m_bBadPerson)
+            m_spawner.RemoveWantedCustomer(gameObject);
+    }
 }
