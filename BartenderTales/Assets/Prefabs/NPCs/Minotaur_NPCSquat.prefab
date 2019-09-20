@@ -822,7 +822,7 @@ GameObject:
   - component: {fileID: 6705445505521283863}
   - component: {fileID: 7454400155371081125}
   m_Layer: 0
-  m_Name: Minotaur_NPC
+  m_Name: Minotaur_NPCSquat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1747,7 +1747,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1923f9dba94c03e45a6be194ff345abc, type: 2}
+  - {fileID: 2100000, guid: 14b135c9a09150a4faa36fdd41933971, type: 2}
   - {fileID: 2100000, guid: 70f5dacd3f238c64c86ac31fe4db140c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
