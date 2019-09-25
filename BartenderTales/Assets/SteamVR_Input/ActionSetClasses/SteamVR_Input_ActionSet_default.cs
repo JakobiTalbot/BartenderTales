@@ -89,6 +89,14 @@ namespace Valve.VR
             }
         }
         
+        public virtual SteamVR_Action_Boolean TriggerDown
+        {
+            get
+            {
+                return SteamVR_Actions.default_TriggerDown;
+            }
+        }
+        
         public virtual SteamVR_Action_Vibration Haptic
         {
             get

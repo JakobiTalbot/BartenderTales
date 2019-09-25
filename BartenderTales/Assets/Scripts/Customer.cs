@@ -4,6 +4,7 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 using TMPro;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 public class Customer : MonoBehaviour
 {
@@ -46,6 +47,7 @@ public class Customer : MonoBehaviour
 
     public Animator m_animator;
     public GameObject m_sparkleEffect;
+    public List<GameObject> m_trailEffects = new List<GameObject>();
 
     void Start()
     {

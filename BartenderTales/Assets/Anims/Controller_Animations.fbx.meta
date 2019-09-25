@@ -55,6 +55,25 @@ ModelImporter:
     100098: Wrist_CTRL
     100100: Wrist_CTRL_GRP
     100102: Wrist_JNT
+    100104: L_Hand_JNT
+    100106: L_Index_01_JNT
+    100108: L_Index_02_JNT
+    100110: L_Index_03_JNT
+    100112: L_Index_Tip_JNT
+    100114: L_Mid_Finger_01_JNT
+    100116: L_Mid_Finger_02_JNT
+    100118: L_Mid_Finger_03_JNT
+    100120: L_Mid_Finger_Tip_JNT
+    100122: L_Pinky_01_JNT
+    100124: L_Pinky_02_JNT
+    100126: L_Pinky_03_JNT
+    100128: L_Pinky_Tip_JNT
+    100130: L_Root_JNT
+    100132: L_Thumb_01_JNT
+    100134: L_Thumb_02_JNT
+    100136: L_Thumb_03_JNT
+    100138: L_Thumb_Tip_JNT
+    100140: L_Wrist_JNT
     400000: Controller_01
     400002: //RootNode
     400004: Hand_JNT
@@ -107,6 +126,25 @@ ModelImporter:
     400098: Wrist_CTRL
     400100: Wrist_CTRL_GRP
     400102: Wrist_JNT
+    400104: L_Hand_JNT
+    400106: L_Index_01_JNT
+    400108: L_Index_02_JNT
+    400110: L_Index_03_JNT
+    400112: L_Index_Tip_JNT
+    400114: L_Mid_Finger_01_JNT
+    400116: L_Mid_Finger_02_JNT
+    400118: L_Mid_Finger_03_JNT
+    400120: L_Mid_Finger_Tip_JNT
+    400122: L_Pinky_01_JNT
+    400124: L_Pinky_02_JNT
+    400126: L_Pinky_03_JNT
+    400128: L_Pinky_Tip_JNT
+    400130: L_Root_JNT
+    400132: L_Thumb_01_JNT
+    400134: L_Thumb_02_JNT
+    400136: L_Thumb_03_JNT
+    400138: L_Thumb_Tip_JNT
+    400140: L_Wrist_JNT
     2000000: left1
     2000002: right1
     2000004: right2
@@ -116,6 +154,7 @@ ModelImporter:
     7400002: Grab
     7400004: Gun_Pointer
     7400006: Page_Turn
+    7400008: Grab
     9500000: //RootNode
     13700000: Controller_01
   externalObjects: {}
@@ -145,7 +184,119 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Grab
+      takeName: Grab
+      firstFrame: 2
+      lastFrame: 21
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Bind_Pose
+      takeName: Bind_Pose
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Page_Turn
+      takeName: Page_Turn
+      firstFrame: 26
+      lastFrame: 36
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Gun_Pointer
+      takeName: Gun_Pointer
+      firstFrame: 23
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

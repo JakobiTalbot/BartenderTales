@@ -31,6 +31,10 @@ public class PickMeUp : PotionEffect
         // ragdoll
         m_cust.SetRagdoll(true);
 
+        foreach (GameObject trails in m_cust.GetComponent<Customer>().m_trailEffects)
+        {
+            trails.SetActive(true);
+        }
         m_rb = m_cust.m_pickMeUpRigidbody;
 
         // stop loop after set amount of seconds
