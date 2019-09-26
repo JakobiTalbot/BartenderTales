@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1763465676742437998}
+  mTrackedObject: {fileID: 0}
 --- !u!1 &3802242196541904855
 GameObject:
   m_ObjectHideFlags: 0
@@ -22,6 +23,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4396482788177395007}
+  - component: {fileID: 413824873}
   m_Layer: 0
   m_Name: ControllerRightPivot
   m_TagString: Untagged
@@ -44,6 +46,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.00001}
+--- !u!114 &413824873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3802242196541904855}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00f6c0d7b5a00aa4a8d38a09a0480032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletonAction:
+    actionPath: 
+    needsReinit: 0
+  inputSource: 2
+  rangeOfMotion: 0
+  skeletonRoot: {fileID: 1763465676733105090}
+  origin: {fileID: 0}
+  updatePose: 1
+  onlySetRotations: 0
+  skeletonBlend: 1
+  onBoneTransformsUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Valve.VR.SteamVR_Behaviour_SkeletonEvent, SteamVR, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onTransformUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Valve.VR.SteamVR_Behaviour_SkeletonEvent, SteamVR, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onTransformChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Valve.VR.SteamVR_Behaviour_SkeletonEvent, SteamVR, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onConnectedChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Valve.VR.SteamVR_Behaviour_Skeleton_ConnectedChangedEvent, SteamVR,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onTrackingChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Valve.VR.SteamVR_Behaviour_Skeleton_TrackingChangedEvent, SteamVR,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  mirroring: 1
+  fallbackPoser: {fileID: 0}
+  fallbackCurlAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1001 &1763465676732979470
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -106,7 +160,7 @@ PrefabInstance:
     - target: {fileID: 9500000, guid: dbaf9e4a67b435a4fb39ecb55085d8c8, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 91a5bd042b27cd8488737fc545dfdf62, type: 2}
+      objectReference: {fileID: 9100000, guid: 13e66d18663672548bc99e583bfef516, type: 2}
     - target: {fileID: 13700000, guid: dbaf9e4a67b435a4fb39ecb55085d8c8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -128,6 +182,12 @@ Transform:
 --- !u!95 &1763465676742437998 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9500000, guid: dbaf9e4a67b435a4fb39ecb55085d8c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1763465676732979470}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1763465676733105090 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400076, guid: dbaf9e4a67b435a4fb39ecb55085d8c8,
     type: 3}
   m_PrefabInstance: {fileID: 1763465676732979470}
   m_PrefabAsset: {fileID: 0}
