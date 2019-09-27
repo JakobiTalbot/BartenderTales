@@ -1,15 +1,16 @@
 fileFormatVersion: 2
-guid: 83171a090cd056440adedc446d719e5f
+guid: 19012e3b7310c4944ba44792b8ff50bf
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: feather3_defaultMat1
+    2100000: Txt_Ingredient_008_GoblinToe
     2300000: //RootNode
     3300000: //RootNode
-    4300000: feather3:featherHP
-    4300002: featherHP
+    4300000: Ingredient_008_GoblineToe_HP
+    4300002: Ingredient_008_GoblinToe
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1

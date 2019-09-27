@@ -1,14 +1,16 @@
 fileFormatVersion: 2
-guid: cff8ce029e9cd9648b7f44e52fd00300
+guid: 83171a090cd056440adedc446d719e5f
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert1
+    2100000: feather3_defaultMat1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: polySurface7
+    4300000: feather3:featherHP
+    4300002: featherHP
+    4300004: Ingredient_002_UnicornFeather
   externalObjects: {}
   materials:
     importMaterials: 1

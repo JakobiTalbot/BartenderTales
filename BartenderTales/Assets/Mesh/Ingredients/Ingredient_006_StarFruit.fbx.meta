@@ -6,9 +6,11 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: Ingredient_006_StarFruit_Txt
+    2100002: lambert1
     2300000: //RootNode
     3300000: //RootNode
     4300000: Ingedient_006_StarFruit
+    4300002: Ingredient_006_StarFruit
   externalObjects: {}
   materials:
     importMaterials: 1

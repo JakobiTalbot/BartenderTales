@@ -1,15 +1,16 @@
 fileFormatVersion: 2
-guid: 19012e3b7310c4944ba44792b8ff50bf
+guid: cff8ce029e9cd9648b7f44e52fd00300
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Txt_Ingredient_008_GoblinToe
+    2100000: lambert1
+    2100002: lambert2
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Ingredient_008_GoblineToe_HP
-    2186277476908879412: ImportLogs
+    4300000: polySurface7
+    4300002: Ingredient_003_DragonChilli
   externalObjects: {}
   materials:
     importMaterials: 1
