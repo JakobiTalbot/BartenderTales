@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PixieDust : PotionEffect
 {
@@ -10,64 +11,74 @@ public class PixieDust : PotionEffect
     public float m_startHoverUpTime = 1f;
     public float m_timeToHoverBeforeLeaving = 2f;
 
-    private bool m_bReachedHoverHeight = false;
+    [SerializeField]
+    AudioClip m_activationSound;
+
     private Rigidbody m_rb;
     private Vector3 m_v3StartPos;
     private Vector3 m_v3StartHoverPos;
     private float m_fHoverLerpTime = 0f;
-    private float m_fTimeReachedHover = 0f;
-
+    private Customer m_customer;
     
     // Start is called before the first frame update
     void Start()
     {
         m_potionName = PotionName.PixieDust;
-        if (!GetComponent<Customer>())
+        if (!(m_customer = GetComponent<Customer>()))
             return;
 
         m_rb = GetComponent<Rigidbody>();
         m_v3StartPos = transform.position;
         m_v3StartHoverPos = m_v3StartPos;
         m_v3StartHoverPos.y += m_hoverHeight;
+
+        StartCoroutine(HoverEffect());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator HoverEffect()
     {
-        if (!GetComponent<Customer>())
-            return;
+        // play audio
+        GetComponent<AudioSource>().PlayOneShot(m_activationSound);
 
-        // if haven't reached hover height yet
-        if (!m_bReachedHoverHeight)
+        // stop moving on nav mesh
+        m_customer.GetComponent<NavMeshAgent>().isStopped = true;
+
+        // play animation
+        m_customer.m_animator.SetTrigger("Levitate");
+        // activate particles
+        m_customer.m_sparkleEffect.SetActive(true);
+
+        // hover to starting height
+        while (m_fHoverLerpTime < 1f)
         {
-            gameObject.GetComponent<Customer>().m_animator.SetTrigger("Levitate");
-            gameObject.GetComponent<Customer>().m_sparkleEffect.SetActive(true);
+            transform.position = Vector3.Lerp(m_v3StartPos, m_v3StartHoverPos, m_fHoverLerpTime);
             // increase lerp timer
             m_fHoverLerpTime += Time.deltaTime / m_startHoverUpTime;
 
-            // if at end of lerp
-            if (m_fHoverLerpTime >= 1f)
-            {
-
-                m_bReachedHoverHeight = true;
-                transform.position = m_v3StartHoverPos;
-                m_fTimeReachedHover = Time.time;
-                Invoke("Leave", m_timeToHoverBeforeLeaving);
-            }
-            else // lerp position to hover height
-                transform.position = Vector3.Lerp(m_v3StartPos, m_v3StartHoverPos, m_fHoverLerpTime);
+            yield return null;
         }
-        else // bob up and down
+        
+        // get time of reaching hover height so transition is less janky
+        float fTimeReachedBaseHoverHeight = Time.time;
+        // set position to start hover position, in case lerp went over 1
+        transform.position = m_v3StartHoverPos;
+        // start leaving after set time
+        Invoke("Leave", m_timeToHoverBeforeLeaving);
+
+        // bob up and down for the rest of eternity
+        while (true)
         {
             Vector3 newPos = transform.position;
-            newPos.y = m_v3StartHoverPos.y + (Mathf.Sin((Time.time - m_fTimeReachedHover) * m_bobSpeed) * m_hoverHeightVariance);
+            newPos.y = m_v3StartHoverPos.y + (Mathf.Sin((Time.time - fTimeReachedBaseHoverHeight) * m_bobSpeed) * m_hoverHeightVariance);
             transform.position = newPos;
+
+            yield return null;
         }
     }
 
     private void Leave()
     {
         // customer starts leaving bar
-        GetComponent<Customer>().ExitBar();
+        m_customer.ExitBar();
     }
 }
