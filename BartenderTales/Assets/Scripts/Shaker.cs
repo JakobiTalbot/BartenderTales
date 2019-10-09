@@ -31,6 +31,10 @@ public class Shaker : MonoBehaviour
     [SerializeField]
     private AudioClip[] m_audioClipsOnPotionCreation;
     [SerializeField]
+    private AudioClip[] m_shakerCapRemoveAudio;
+    [SerializeField]
+    private AudioClip[] m_shakerCapPlaceAudio;
+    [SerializeField]
     private float m_emptyShakerForceThreshold = 1f;
 
     [HideInInspector]
@@ -219,10 +223,16 @@ public class Shaker : MonoBehaviour
     /// <param name="cap"> The shaker cap game object </param>
     public void PlaceCap(GameObject cap)
     {
+        // ignore collision to prevent buggy physics
         Physics.IgnoreCollision(m_collider, cap.GetComponent<Collider>(), true);
+
+        // play audio
+        m_audioSource.PlayOneShot(m_shakerCapPlaceAudio[Random.Range(0, m_shakerCapPlaceAudio.Length)]);
+
         // move to place
         cap.transform.SetPositionAndRotation(m_capPlacedTransform.position, m_capPlacedTransform.rotation);
         cap.transform.parent = transform;
+
         cap.GetComponent<Rigidbody>().isKinematic = true;
         m_bCapOn = true;
     }
@@ -232,7 +242,11 @@ public class Shaker : MonoBehaviour
     /// </summary>
     public void RemoveCap()
     {
+        // reenable collision
         Physics.IgnoreCollision(m_collider, m_cap.GetComponent<Collider>(), false);
+
+        // play audio
+        m_audioSource.PlayOneShot(m_shakerCapRemoveAudio[Random.Range(0, m_shakerCapRemoveAudio.Length)]);
         m_bCapOn = false;
     }
 
