@@ -24,6 +24,8 @@ public class PixieDust : PotionEffect
     void Start()
     {
         m_potionName = PotionName.PixieDust;
+
+        // get reference and check if not null
         if (!(m_customer = GetComponent<Customer>()))
             return;
 

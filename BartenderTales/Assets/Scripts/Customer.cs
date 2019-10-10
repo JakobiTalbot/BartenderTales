@@ -44,6 +44,7 @@ public class Customer : MonoBehaviour
     private ReputationManager m_repManager;
     private bool m_bHadPath = false;
     private bool m_bIsRagdolling = false;
+    private bool m_bIsTutorialNPC = false;
 
     public Animator m_animator;
     public GameObject m_sparkleEffect;
@@ -66,8 +67,8 @@ public class Customer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
             SetRagdoll(!m_bIsRagdolling);
 
-        if (m_agent.remainingDistance < 0.6f
-            && m_bHadPath)
+        if (m_bHadPath
+            && m_agent.remainingDistance < 0.6f)
         {
             // if reached the exit point of the bar
             if (m_bExitingBar)
@@ -129,6 +130,11 @@ public class Customer : MonoBehaviour
         m_agent.SetDestination(dest.position);
     }
 
+    public void SetTutorialCustomer(bool bTutorialCustomer)
+    {
+        m_bIsTutorialNPC = bTutorialCustomer;
+    }
+
     public void DrinkPotion(Potion potion)
     {
         // dont drink potion if ragdolled
@@ -169,6 +175,10 @@ public class Customer : MonoBehaviour
             // drink potion
             gameObject.AddComponent(type);
         }
+
+        // spawn new tutorial customer if this customer is tutorial customer
+        if (m_bIsTutorialNPC)
+            m_spawner.SpawnTutorialCustomer();
 
         // dirty way to fix errors from object being destroyed when still on hand
         potion.transform.parent = null;
@@ -229,12 +239,15 @@ public class Customer : MonoBehaviour
     public void SetRagdoll(bool bRagdoll)
     {
         m_bIsRagdolling = bRagdoll;
+
         // switch kinematic state to match ragdoll state
         foreach (Rigidbody rb in m_ragdollRigidbodies)
             rb.isKinematic = !m_bIsRagdolling;
 
         m_animator.enabled = !m_bIsRagdolling;
-        m_agent.isStopped = m_bIsRagdolling;
+
+        if (m_bHadPath)
+            m_agent.isStopped = m_bIsRagdolling;
 
         if (m_bIsRagdolling)
             StopCoroutine(m_customerAnimator.IdleLoop());
