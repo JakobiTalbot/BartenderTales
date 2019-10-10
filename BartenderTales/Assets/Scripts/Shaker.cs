@@ -120,17 +120,20 @@ public class Shaker : MonoBehaviour
         m_v3LastPos = transform.position;
     }
 
+    /// <summary>
+    /// Empties all the ingredients from the shaker, setting ingredient positions to outside the shaker
+    /// </summary>
     private void EmptyShaker()
     {
-        Debug.Log("Shaker Emptied");
-
         foreach (Ingredient ingredient in m_contents)
         {
             ingredient.gameObject.SetActive(true);
             ingredient.transform.position = m_capPlacedTransform.position;
+            // make sure the ingredients don't instantly re-enter the shaker
             StartCoroutine(ingredient.DisallowEnteringShakerForSeconds(1f));
         }
 
+        // clear list of ingredients
         m_contents.Clear();
     }
 
