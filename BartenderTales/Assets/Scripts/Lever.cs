@@ -28,7 +28,7 @@ public class Lever : MonoBehaviour
     void Update()
     {
         // if lever is pulled all the way
-        if (transform.localRotation.eulerAngles.x > 85f
+        if (transform.localRotation.eulerAngles.x > 80f
             && transform.localRotation.eulerAngles.x < 95f
             && !m_bLeverAlreadyPulled)
         {
