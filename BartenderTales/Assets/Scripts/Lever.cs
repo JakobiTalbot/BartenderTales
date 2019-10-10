@@ -65,4 +65,9 @@ public class Lever : MonoBehaviour
     {
         m_rb.isKinematic = false;
     }
+
+    public void DetachHand()
+    {
+        StartCoroutine(ResetLever());
+    }
 }
