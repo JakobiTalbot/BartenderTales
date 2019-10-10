@@ -52,6 +52,8 @@ public class CustomerSpawner : MonoBehaviour
     public Transform m_coinDropPoint;
 
     [SerializeField]
+    private int m_numberOfTutorialCustomers = 3;
+    [SerializeField]
     private GameObject[] m_hatPrefabs;
     [SerializeField]
     private Vector2 m_randomRangeBetweenHappyHours;
@@ -160,7 +162,8 @@ public class CustomerSpawner : MonoBehaviour
     /// </summary>
     private IEnumerator CustomerSpawnLoop()
     {
-        SpawnCustomer();
+        SpawnCustomer(false);
+
         while (true)
         {
             if (m_bHappyHour)
@@ -169,8 +172,17 @@ public class CustomerSpawner : MonoBehaviour
                 yield return new WaitForSeconds(Random.Range(m_randomRangeCustomerSpawnNotHappyHour.x, m_randomRangeCustomerSpawnNotHappyHour.y));
 
             // spawn customer when available
-            yield return new WaitUntil(SpawnCustomer);
+            yield return new WaitUntil(() => SpawnCustomer(false));
         }
+    }
+
+    public void SpawnTutorialCustomer()
+    {
+        // if still spawning tutorial customers
+        if (m_numberOfTutorialCustomers-- > 0)
+            SpawnCustomer(true);
+        else
+            StartCoroutine(CustomerSpawnLoop());
     }
 
     /// <summary>
@@ -201,7 +213,7 @@ public class CustomerSpawner : MonoBehaviour
     /// Attempt to spawn a customer
     /// </summary>
     /// <returns> Whether a customer was spawned or not </returns>
-    private bool SpawnCustomer()
+    private bool SpawnCustomer(bool bTutorialCustomer)
     {
         // dont spawn if there is no spaces
         if (!(m_servingPoints.Count > 0 || m_waitingPoints.Count > 0))
@@ -240,10 +252,13 @@ public class CustomerSpawner : MonoBehaviour
             {
                 GameObject customer = inactiveWantedCustomers[Random.Range(0, inactiveWantedCustomers.Count)].customer;
                 customer.SetActive(true);
-                Customer c = customer.GetComponent<Customer>();
-                c.SetIsWanted(true);
-                c.SetDestination(destPoint, bWait);
-                c.SetCoinDropPos(m_coinDropPoint.position);
+                Customer cust = customer.GetComponent<Customer>();
+
+                cust.SetIsWanted(true);
+                cust.SetDestination(destPoint, bWait);
+                cust.SetCoinDropPos(m_coinDropPoint.position);
+                cust.SetTutorialCustomer(bTutorialCustomer);
+
                 // set new wait until next bad customer spawns
                 m_spawnsUntilNextBadCustomer = Random.Range(m_randomRangeSpawnsBetweenBadSpawns.x, m_randomRangeSpawnsBetweenBadSpawns.y);
             }
@@ -263,11 +278,12 @@ public class CustomerSpawner : MonoBehaviour
 
                 cust.SetDestination(destPoint, bWait);
                 cust.SetCoinDropPos(m_coinDropPoint.position);
+                cust.SetTutorialCustomer(bTutorialCustomer);
             }
         }
         else
         {
-            // spawn customer
+            // spawn normal customer
             m_customers.Add(Instantiate(m_customerPrefabs[Random.Range(0, m_customerPrefabs.Length)], m_spawnPoint.position, m_spawnPoint.rotation));
 
             Customer cust = m_customers[m_customers.Count - 1].GetComponent<Customer>();
@@ -281,6 +297,7 @@ public class CustomerSpawner : MonoBehaviour
 
             cust.SetDestination(destPoint, bWait);
             cust.SetCoinDropPos(m_coinDropPoint.position);
+            cust.SetTutorialCustomer(bTutorialCustomer);
 
             // decrement spawn count until next bad customer
             --m_spawnsUntilNextBadCustomer;
@@ -294,7 +311,7 @@ public class CustomerSpawner : MonoBehaviour
     /// </summary>
     public void StartSpawning()
     {
-        StartCoroutine(CustomerSpawnLoop());
+        SpawnTutorialCustomer();
         StartCoroutine(HappyHourTimer());
         StartCoroutine(GameTimer());
         Destroy(m_startLever);

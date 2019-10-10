@@ -8,6 +8,8 @@ public class MoneyJar : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI m_moneyCounter;
+    [SerializeField]
+    private AudioClip[] m_coinDropSounds;
 
     [HideInInspector]
     public int m_nCurrentMoney = 0;
@@ -29,5 +31,6 @@ public class MoneyJar : MonoBehaviour
         // set text on money counter
         m_moneyCounter.text = m_nCurrentMoney.ToString();
         // play random audio clip
+        m_audioSource.PlayOneShot(m_coinDropSounds[Random.Range(0, m_coinDropSounds.Length)]);
     }
 }
