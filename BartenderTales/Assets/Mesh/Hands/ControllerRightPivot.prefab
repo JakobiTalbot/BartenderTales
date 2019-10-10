@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &6770174783817196749
+--- !u!114 &7753613821001360918
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1763465676732948396}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c019b30f494c3d4a84b8d6a6a58e644, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a1f95b8fbf1d1a43862bb14cbd8839b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 1763465676742437998}
-  mTrackedObject: {fileID: 0}
+  m_inputSource: 2
 --- !u!1 &3802242196541904855
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,7 +61,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   inputSource: 2
-  rangeOfMotion: 0
+  rangeOfMotion: 1
   skeletonRoot: {fileID: 1763465676733105090}
   origin: {fileID: 0}
   updatePose: 1
@@ -96,7 +95,7 @@ MonoBehaviour:
   mirroring: 1
   fallbackPoser: {fileID: 0}
   fallbackCurlAction:
-    actionPath: 
+    actionPath: /actions/default/in/Squeeze
     needsReinit: 0
 --- !u!1001 &1763465676732979470
 PrefabInstance:
@@ -176,12 +175,6 @@ GameObject:
 --- !u!4 &1763465676733105036 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: dbaf9e4a67b435a4fb39ecb55085d8c8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1763465676732979470}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1763465676742437998 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9500000, guid: dbaf9e4a67b435a4fb39ecb55085d8c8,
     type: 3}
   m_PrefabInstance: {fileID: 1763465676732979470}
   m_PrefabAsset: {fileID: 0}
