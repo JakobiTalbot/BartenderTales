@@ -1,61 +1,14 @@
 fileFormatVersion: 2
-guid: d16c327b4e3117143b247bf7a9371918
+guid: 93c259e7551d58a419ee1c16e10558af
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: polySurface22
-    100004: polySurface24
-    100006: polySurface25
-    100008: polySurface26
-    100010: polySurface26 1
-    100012: Saloon_012_Shelf
-    100014: transform2
-    100016: transform3
-    100018: transform4
-    100020: transform5
-    100022: polySurface27
-    100024: polySurface28
-    100026: polySurface28 1
-    100028: polySurface30
-    100030: transform6
-    100032: transform7
-    100034: transform8
-    100036: transform9
-    100038: Saloon_016_SideShelf
     400000: //RootNode
-    400002: polySurface22
-    400004: polySurface24
-    400006: polySurface25
-    400008: polySurface26
-    400010: polySurface26 1
-    400012: Saloon_012_Shelf
-    400014: transform2
-    400016: transform3
-    400018: transform4
-    400020: transform5
-    400022: polySurface27
-    400024: polySurface28
-    400026: polySurface28 1
-    400028: polySurface30
-    400030: transform6
-    400032: transform7
-    400034: transform8
-    400036: transform9
-    400038: Saloon_016_SideShelf
-    2100000: lambert2
-    2100002: lambert3
-    2300000: polySurface26
-    2300002: polySurface28
-    2300004: Saloon_016_SideShelf
-    2300006: //RootNode
-    3300000: polySurface26
-    3300002: polySurface28
-    3300004: Saloon_016_SideShelf
-    3300006: //RootNode
-    4300000: polySurface26
-    4300002: polySurface28
-    4300004: Saloon_016_SideShelf
+    2100000: lambert1
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Tip_Jar_002:Tip_Jar_001:Tip_Jar_001
   externalObjects: {}
   materials:
     importMaterials: 1
