@@ -6,7 +6,7 @@ using Valve.VR;
 public class HandBlending : MonoBehaviour
 {
     [SerializeField]
-    private SteamVR_Input_Sources m_inputSource;
+    private string m_axisName;
 
     private Animator m_animator;
 
@@ -17,6 +17,6 @@ public class HandBlending : MonoBehaviour
 
     void Update()
     {
-        m_animator.SetFloat("BlendHandFloat", SteamVR_Actions._default.Squeeze.GetAxis(m_inputSource));
+        m_animator.SetFloat("BlendHandFloat", Input.GetAxis(m_axisName));
     }
 }
