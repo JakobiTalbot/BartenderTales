@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a1f95b8fbf1d1a43862bb14cbd8839b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_inputSource: 1
+  anim: {fileID: 1966021065310526997}
+  mTrackedObject: {fileID: 0}
 --- !u!1 &3568078925642344685
 GameObject:
   m_ObjectHideFlags: 0
@@ -52,7 +53,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3568078925642344685}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00f6c0d7b5a00aa4a8d38a09a0480032, type: 3}
   m_Name: 
@@ -61,7 +62,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   inputSource: 1
-  rangeOfMotion: 0
+  rangeOfMotion: 1
   skeletonRoot: {fileID: 1966021065303011769}
   origin: {fileID: 0}
   updatePose: 1
@@ -95,7 +96,7 @@ MonoBehaviour:
   mirroring: 2
   fallbackPoser: {fileID: 0}
   fallbackCurlAction:
-    actionPath: 
+    actionPath: /actions/default/in/Squeeze
     needsReinit: 0
 --- !u!1001 &1966021065303141237
 PrefabInstance:
