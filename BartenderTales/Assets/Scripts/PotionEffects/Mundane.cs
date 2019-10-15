@@ -25,24 +25,12 @@ public class Mundane : PotionEffect
         // get all customers within range
         Collider[] affectedCustomers = Physics.OverlapSphere(transform.position, m_reactionRadius);
 
-        // cheer if evil customer exploded
-        if (GetComponent<Customer>().IsWanted())
-        {
-            foreach (Collider c in affectedCustomers)
-            {
-                c.GetComponent<Customer>()?.Cheer();
-            }
-            FindObjectOfType<ReputationManager>().AddToReputation(-m_reputationOnGoodCustomerExplosion);
-        }
         // be shocked if good customer exploded
-        else
+        foreach (Collider c in affectedCustomers)
         {
-            foreach (Collider c in affectedCustomers)
-            {
-                c.GetComponent<Customer>()?.Shocked();
-            }
-            FindObjectOfType<ReputationManager>().AddToReputation(m_reputationOnGoodCustomerExplosion);
+            c.GetComponent<Customer>()?.Shocked();
         }
+        FindObjectOfType<ReputationManager>().AddToReputation(m_reputationOnGoodCustomerExplosion);
 
         Destroy(Instantiate(FindObjectOfType<PotionAssets>().m_mundaneExplosionPrefab, transform.position, transform.rotation), 5f);
         Destroy(gameObject);

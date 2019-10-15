@@ -4,43 +4,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-struct WantedCustomer
-{
-    public GameObject customer;
-    public Texture2D mugshot;
-
-    public WantedCustomer(GameObject customer, Texture2D mugshot)
-    {
-        this.customer = customer;
-        this.mugshot = mugshot;
-    }
-}
-
-struct WantedPoster
-{
-    public Renderer poster;
-    public bool hasCustomer;
-
-    public WantedPoster(Renderer poster)
-    {
-        this.poster = poster;
-        hasCustomer = false;
-    }
-
-    public void SetTexture(WantedCustomer customer)
-    {
-        poster.material.mainTexture = customer.mugshot;
-        poster.transform.parent.gameObject.SetActive(true);
-        hasCustomer = true;
-    }
-
-    public void Disable()
-    {
-        poster.transform.parent.gameObject.SetActive(false);
-        hasCustomer = false;
-    }
-}
-
 public class CustomerSpawner : MonoBehaviour
 {
     // possible refactor: create array of points and sort by distance to bar, spawn customer at lowest distance
@@ -75,22 +38,15 @@ public class CustomerSpawner : MonoBehaviour
     private GameObject m_timeOverCanvas;
     [SerializeField]
     private TextMeshPro m_finalMoneyText;
-    [SerializeField]
-    private Renderer[] m_wantedPosterImages;
-    [SerializeField]
-    private Vector2Int m_randomRangeSpawnsBetweenBadSpawns;
 
     [HideInInspector]
     public List<GameObject> m_customers;
     [HideInInspector]
     public bool m_spawnCustomers = true;
 
-    private List<WantedPoster> m_posters;
-    private List<WantedCustomer> m_wantedCustomers;
     private float m_fCustomerSpawnTimer = 0f;
     private bool m_bHappyHour = false;
     private float m_fGameTimer = 0f;
-    private int m_spawnsUntilNextBadCustomer;
 
     public AudioSource mainMenuMusic;
     public AudioSource calmHourMusic;
@@ -99,62 +55,12 @@ public class CustomerSpawner : MonoBehaviour
     void Start()
     {
         m_customers = new List<GameObject>();
-        m_posters = new List<WantedPoster>();
-        m_wantedCustomers = new List<WantedCustomer>();
-        m_spawnsUntilNextBadCustomer = Random.Range(m_randomRangeSpawnsBetweenBadSpawns.x, m_randomRangeSpawnsBetweenBadSpawns.y);
-        StartCoroutine(SpawnWantedCustomersOnStart());
-    }
-
-    /// <summary>
-    /// Spawn starting wanted customers with a short delay between them to prevent showing up together in same photo
-    /// </summary>
-    private IEnumerator SpawnWantedCustomersOnStart()
-    {
-        // create wanted customers
-        for (int i = 0; i < m_wantedPosterImages.Length; ++i)
-        {
-            m_posters.Add(new WantedPoster(m_wantedPosterImages[i]));
-            StartCoroutine(CreateWantedCustomer(m_posters[i]));
-            yield return new WaitForSeconds(0.5f);
-        }
     }
 
     public void Fade()
     {
         StartCoroutine(AudioController.FadeOut(mainMenuMusic, fadeTime));
         StartCoroutine(AudioController.FadeIn(calmHourMusic, fadeTime));
-    }
-
-    /// <summary>
-    /// Create a wanted customer and takes a mugshot of them
-    /// </summary>
-    /// <param name="poster"> The poster to display the mugshot picture on </param>
-    private IEnumerator CreateWantedCustomer(WantedPoster poster)
-    {
-        GameObject wantedCust = Instantiate(m_customerPrefabs[Random.Range(0, m_customerPrefabs.Length)], m_spawnPoint.position, m_spawnPoint.rotation);
-        m_customers.Add(wantedCust);
-        Customer cust = wantedCust.GetComponent<Customer>();
-
-        // decide whether to wear hat or not
-        if (Random.Range(0, m_hatPrefabs.Length + 1) > 0)
-        {
-            // pick hat
-            cust.SetHat(m_hatPrefabs[Random.Range(0, m_hatPrefabs.Length)]);
-        }
-
-        yield return new WaitForEndOfFrame();
-
-        // create image for customer
-        RenderTexture.active = cust.m_mugshotCamera.targetTexture;
-        Texture2D mugshot = new Texture2D(cust.m_mugshotCamera.targetTexture.width, cust.m_mugshotCamera.targetTexture.height);
-        cust.m_mugshotCamera.Render();
-        mugshot.ReadPixels(new Rect(0, 0, cust.m_mugshotCamera.targetTexture.width, cust.m_mugshotCamera.targetTexture.height), 0, 0);
-        mugshot.Apply();
-
-        WantedCustomer wc = new WantedCustomer(wantedCust, mugshot);
-        m_wantedCustomers.Add(wc);
-        poster.SetTexture(wc);
-        wantedCust.SetActive(false);
     }
 
     /// <summary>
@@ -236,72 +142,22 @@ public class CustomerSpawner : MonoBehaviour
             m_servingPoints.RemoveAt(m_servingPoints.Count - 1);
         }
 
-        // if it's time to spawn a bad customer
-        if (m_spawnsUntilNextBadCustomer <= 0)
+
+        // spawn customer
+        m_customers.Add(Instantiate(m_customerPrefabs[Random.Range(0, m_customerPrefabs.Length)], m_spawnPoint.position, m_spawnPoint.rotation));
+
+        Customer cust = m_customers[m_customers.Count - 1].GetComponent<Customer>();
+
+        // decide whether to wear hat or not
+        if (Random.Range(0, m_hatPrefabs.Length + 1) > 0)
         {
-            // get number of inactivate bad customers
-            List<WantedCustomer> inactiveWantedCustomers = new List<WantedCustomer>();
-            foreach (WantedCustomer wc in m_wantedCustomers)
-            {
-                if (!wc.customer.activeSelf)
-                    inactiveWantedCustomers.Add(wc);
-            }
-
-            // spawn bad customer if there are any to spawn
-            if (inactiveWantedCustomers.Count > 0)
-            {
-                GameObject customer = inactiveWantedCustomers[Random.Range(0, inactiveWantedCustomers.Count)].customer;
-                customer.SetActive(true);
-                Customer cust = customer.GetComponent<Customer>();
-
-                cust.SetIsWanted(true);
-                cust.SetDestination(destPoint, bWait);
-                cust.SetCoinDropPos(m_coinDropPoint.position);
-                cust.SetTutorialCustomer(bTutorialCustomer);
-
-                // set new wait until next bad customer spawns
-                m_spawnsUntilNextBadCustomer = Random.Range(m_randomRangeSpawnsBetweenBadSpawns.x, m_randomRangeSpawnsBetweenBadSpawns.y);
-            }
-            else
-            {
-                // spawn normal customer
-                m_customers.Add(Instantiate(m_customerPrefabs[Random.Range(0, m_customerPrefabs.Length)], m_spawnPoint.position, m_spawnPoint.rotation));
-
-                Customer cust = m_customers[m_customers.Count - 1].GetComponent<Customer>();
-
-                // decide whether to wear hat or not
-                if (Random.Range(0, m_hatPrefabs.Length + 1) > 0)
-                {
-                    // pick hat
-                    cust.SetHat(m_hatPrefabs[Random.Range(0, m_hatPrefabs.Length)]);
-                }
-
-                cust.SetDestination(destPoint, bWait);
-                cust.SetCoinDropPos(m_coinDropPoint.position);
-                cust.SetTutorialCustomer(bTutorialCustomer);
-            }
+            // pick hat
+            cust.SetHat(m_hatPrefabs[Random.Range(0, m_hatPrefabs.Length)]);
         }
-        else
-        {
-            // spawn normal customer
-            m_customers.Add(Instantiate(m_customerPrefabs[Random.Range(0, m_customerPrefabs.Length)], m_spawnPoint.position, m_spawnPoint.rotation));
 
-            Customer cust = m_customers[m_customers.Count - 1].GetComponent<Customer>();
-
-            // decide whether to wear hat or not
-            if (Random.Range(0, m_hatPrefabs.Length + 1) > 0)
-            {
-                // pick hat
-                cust.SetHat(m_hatPrefabs[Random.Range(0, m_hatPrefabs.Length)]);
-            }
-
-            cust.SetDestination(destPoint, bWait);
-            cust.SetCoinDropPos(m_coinDropPoint.position);
-            cust.SetTutorialCustomer(bTutorialCustomer);
-
-            // decrement spawn count until next bad customer
-            --m_spawnsUntilNextBadCustomer;
-        }
+        cust.SetDestination(destPoint, bWait);
+        cust.SetCoinDropPos(m_coinDropPoint.position);
+        cust.SetTutorialCustomer(bTutorialCustomer);
 
         return true;
     }
@@ -343,21 +199,5 @@ public class CustomerSpawner : MonoBehaviour
         // rotate clock hand
         m_clockHand.localRotation = Quaternion.Euler(m_clockHand.localRotation.x, m_clockHand.localRotation.y, (m_fGameTimer / m_gameTimeSeconds) * 360f);
         return m_fGameTimer >= m_gameTimeSeconds;
-    }
-
-    /// <summary>
-    /// Removes the specified wanted customer from the list of wanted customers
-    /// </summary>
-    /// <param name="wantedCustomer"> The GameObject of the wanted customer to remove </param>
-    public void RemoveWantedCustomer(GameObject wantedCustomer)
-    {
-        // find customer in array and remove
-        for (int i = 0; i < m_wantedCustomers.Count; ++i)
-        {
-            if (m_wantedCustomers[i].customer == wantedCustomer)
-            {
-                m_wantedCustomers.RemoveAt(i);
-            }
-        }
     }
 }
