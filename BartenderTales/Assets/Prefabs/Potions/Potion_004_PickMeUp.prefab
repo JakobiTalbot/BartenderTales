@@ -11,13 +11,11 @@ GameObject:
   - component: {fileID: 6419887197156462590}
   - component: {fileID: 6419887197157232606}
   - component: {fileID: 6419887197158362398}
-  - component: {fileID: 473659062752811415}
-  - component: {fileID: 1432979286970880428}
-  - component: {fileID: 3050451037163851762}
   - component: {fileID: 7926801294276190874}
   - component: {fileID: 8623302894639808851}
   - component: {fileID: 163868156997659480}
   - component: {fileID: 7056915840398698214}
+  - component: {fileID: 6262583042383253660}
   m_Layer: 0
   m_Name: Potion_004_PickMeUp
   m_TagString: Untagged
@@ -46,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6419887197156103134}
-  m_Mesh: {fileID: 4300000, guid: ed05ea139375ac3479551bbad59bb904, type: 3}
+  m_Mesh: {fileID: 4300002, guid: ed05ea139375ac3479551bbad59bb904, type: 3}
 --- !u!23 &6419887197158362398
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -84,49 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &473659062752811415
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6419887197156103134}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0721889, y: 0.15559295, z: 0.07648963}
-  m_Center: {x: -0.0000000018626451, y: 0.0026533455, z: -0.0000000037252903}
---- !u!114 &1432979286970880428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6419887197156103134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 271cc34dd7bda22489a7d2eed4888c4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ingredients: 
-  m_potionName: 0
---- !u!114 &3050451037163851762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6419887197156103134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f422dc650ef0814abaab8bdd7b09e68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_potionName: 0
-  m_timeBeforeChangingDirection: 3
-  m_movementForce: 10
-  m_timeForEffectToBeActive: 10
 --- !u!114 &7926801294276190874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,3 +199,16 @@ MonoBehaviour:
     m_TypeName: Valve.VR.InteractionSystem.HandEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   interactable: {fileID: 0}
+--- !u!65 &6262583042383253660
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6419887197156103134}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15005943, y: 0.21978319, z: 0.10307769}
+  m_Center: {x: 0.0000000037252903, y: 0.0000000037252903, z: 0}

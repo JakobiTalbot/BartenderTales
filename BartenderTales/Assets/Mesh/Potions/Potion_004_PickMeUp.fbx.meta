@@ -6,9 +6,11 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: Potion_004_PickMeUp
+    2100002: TXT_Potion_004_PickMeUp
     2300000: //RootNode
     3300000: //RootNode
     4300000: Potion_004_PickMeUP
+    4300002: Potion_004_PickMeUp
   externalObjects: {}
   materials:
     importMaterials: 1
