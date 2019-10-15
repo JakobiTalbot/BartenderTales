@@ -43,7 +43,7 @@ public class PixieDust : PotionEffect
         GetComponent<AudioSource>().PlayOneShot(m_activationSound);
 
         // stop moving on nav mesh
-        m_customer.GetComponent<NavMeshAgent>().isStopped = true;
+        m_customer.StopMovement();
 
         // play animation
         m_customer.m_animator.SetTrigger("Levitate");

@@ -318,6 +318,11 @@ public class Customer : MonoBehaviour
         newHat.transform.parent = m_hatTransform;
     }
 
+    public void StopMovement()
+    {
+        m_agent.isStopped = true;
+    }
+
     private void OnDestroy()
     {
         // remove from array if wanted customer
