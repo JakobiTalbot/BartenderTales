@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Potion : MonoBehaviour
 {
-    public List<IngredientType> m_ingredients;
     public PotionName m_potionName;
 
     private Transform m_point;
