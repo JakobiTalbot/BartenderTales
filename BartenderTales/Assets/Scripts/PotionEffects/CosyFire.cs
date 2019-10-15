@@ -12,6 +12,7 @@ public class CosyFire : PotionEffect
         Customer c = GetComponent<Customer>();
         if (c)
         {
+            c.StopMovement();
             c.m_animator.SetTrigger("CosyFireReaction");
             c.m_animator.SetBool("StoppedMoving", false);
             Instantiate(FindObjectOfType<PotionAssets>().m_cosyFireParticles, transform);

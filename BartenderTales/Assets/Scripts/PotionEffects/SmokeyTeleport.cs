@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class SmokeyTeleport : PotionEffect
 {
-    private NavMeshAgent m_navAgent;
     private Customer m_customer;
     private bool m_bDoTeleport = true;
 
@@ -25,17 +24,15 @@ public class SmokeyTeleport : PotionEffect
     private IEnumerator TeleportLoop()
     {
         PotionAssets assets = FindObjectOfType<PotionAssets>();
-        // get references
-        m_navAgent = GetComponent<NavMeshAgent>();
 
         // break out of loop after random time
         Invoke("StopTeleporting", Random.Range(assets.m_randomTimeToDoTeleporting.x, assets.m_randomTimeToDoTeleporting.y));
 
         // go idle
         m_customer.m_animator.SetBool("StoppedMoving", true);
-        
+
         // stop navigating
-        m_navAgent.isStopped = true;
+        m_customer.StopMovement();
         m_customer.m_speechBubbleCanvas.SetActive(false);
 
         // teleport loop
