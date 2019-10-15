@@ -148,7 +148,8 @@
       "/actions/default/in/Teleport": "Teleport",
       "/actions/default/out/Haptic": "Haptic",
       "/actions/platformer/in/Jump": "Jump",
-      "/actions/default/in/TriggerDown": "TriggerDown"
+      "/actions/default/in/TriggerDown": "TriggerDown",
+      "/actions/default/in/Squeeze": "Squeeze"
     }
   ]
 }
