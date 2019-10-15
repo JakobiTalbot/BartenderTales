@@ -20,7 +20,6 @@ public class Customer : MonoBehaviour
     public int m_coinsGivenOnCorrectOrder = 1;
     public Vector2 m_speechBubbleBuffer = new Vector2(1, 1);
     public GameObject m_moneyPrefab;
-    public Camera m_mugshotCamera;
     public Rigidbody m_pickMeUpRigidbody;
 
     [SerializeField]
@@ -37,7 +36,6 @@ public class Customer : MonoBehaviour
     private NavMeshAgent m_agent;
     private Transform m_point;
     private bool m_bWaiting = true;
-    private bool m_bWanted = false;
     private bool m_bExitingBar = false;
     private Vector3 m_v3CoinDropPos;
     private CustomerAnimator m_customerAnimator;
@@ -156,15 +154,8 @@ public class Customer : MonoBehaviour
         }
         else // if wrong potion given
         {
-            if (m_bWanted)
-            {
-                m_repManager.AddToReputation(m_reputationOnCorrectOrder);
-            }
-            else
-            {
-                m_repManager.AddToReputation(-m_reputationOnWrongOrder);
-                // sad reaction
-            }
+            m_repManager.AddToReputation(-m_reputationOnWrongOrder);
+            // sad reaction
         }
 
         if (p.m_potionName == PotionName.Mundane)
@@ -297,18 +288,6 @@ public class Customer : MonoBehaviour
     }
 
     /// <summary>
-    /// Sets the customer's wanted state
-    /// </summary>
-    /// <param name="bIsWanted"> Whether the customer should be wanted or not </param>
-    public void SetIsWanted(bool bIsWanted) => m_bWanted = bIsWanted;
-
-    /// <summary>
-    /// Returns whether the customer is wanted or not
-    /// </summary>
-    /// <returns> Whether the customer is wanted or not </returns>
-    public bool IsWanted() => m_bWanted;
-
-    /// <summary>
     /// Puts the specified hat on the customer's head
     /// </summary>
     /// <param name="hat"> The hat prefab to wear </param>
@@ -325,10 +304,6 @@ public class Customer : MonoBehaviour
 
     private void OnDestroy()
     {
-        // remove from array if wanted customer
-        if (m_bWanted)
-            m_spawner.RemoveWantedCustomer(gameObject);
-        else
-            m_spawner.m_customers.Remove(gameObject);
+        m_spawner.m_customers.Remove(gameObject);
     }
 }

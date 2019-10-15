@@ -3371,7 +3371,6 @@ Transform:
   - {fileID: 1824453803649822646}
   - {fileID: 4815345949070168720}
   - {fileID: 42012697704631301}
-  - {fileID: 1751605811208499128}
   - {fileID: 5802249398311982566}
   - {fileID: 8813355017636535318}
   - {fileID: 4457863550799808969}
@@ -3428,7 +3427,7 @@ MonoBehaviour:
   m_speechBubbleBuffer: {x: 0.01, y: 0.01}
   m_moneyPrefab: {fileID: 6324821836455372774, guid: 376fd99151b508842b77c710c794f5e1,
     type: 3}
-  m_mugshotCamera: {fileID: 6689572326348826472}
+  m_mugshotCamera: {fileID: 0}
   m_pickMeUpRigidbody: {fileID: 735439146}
   m_coughUpSpawnPoint: {fileID: 42012697704631301}
   m_impatienceTimer: 45
@@ -5888,79 +5887,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!1 &3765965527219839277
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1751605811208499128}
-  - component: {fileID: 6689572326348826472}
-  m_Layer: 0
-  m_Name: MugshotCamera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1751605811208499128
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3765965527219839277}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.0659, z: 0.0726}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1824453803649822654}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!20 &6689572326348826472
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3765965527219839277}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 1
-  orthographic size: 0.3
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 3ed9146967008644d9c5bbe162801cc4, type: 2}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
 --- !u!1 &5866054278492529390
 GameObject:
   m_ObjectHideFlags: 0
@@ -5990,7 +5916,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1824453803649822654}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!96 &5234750615823874139
 TrailRenderer:
@@ -6191,7 +6117,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1824453803649822654}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!96 &5063897173459545169
 TrailRenderer:
@@ -6373,7 +6299,7 @@ PrefabInstance:
     - target: {fileID: 5919377285771432799, guid: 35cf30f52f66eff488a467341800d9af,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5919377285771432799, guid: 35cf30f52f66eff488a467341800d9af,
         type: 3}
