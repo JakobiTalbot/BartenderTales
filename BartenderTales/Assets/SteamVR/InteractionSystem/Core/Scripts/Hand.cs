@@ -129,8 +129,6 @@ namespace Valve.VR.InteractionSystem
 
         private Player playerInstance;
 
-        private Renderer m_handRenderer;
-
         private GameObject applicationLostFocusObject;
 
         private SteamVR_Events.Action inputFocusAction;
@@ -352,8 +350,6 @@ namespace Valve.VR.InteractionSystem
             attachedObject.attachmentFlags = flags;
             attachedObject.attachedOffsetTransform = attachmentOffset;
             attachedObject.attachTime = Time.time;
-
-            SetHandVisible(true);
 
             if (flags == 0)
             {
@@ -594,8 +590,6 @@ namespace Valve.VR.InteractionSystem
                     HandDebugLog("DetachObject " + objectToDetach);
 
                 GameObject prevTopObject = currentAttachedObject;
-
-                SetHandVisible(true);
 
                 if (attachedObjects[index].interactable != null)
                 {
@@ -1612,8 +1606,6 @@ namespace Valve.VR.InteractionSystem
             renderModelInstance.transform.localRotation = Quaternion.identity;
             renderModelInstance.transform.localScale = renderModelPrefab.transform.localScale;
 
-            m_handRenderer = renderModelInstance.GetComponentInChildren<Renderer>();
-
             //TriggerHapticPulse(800);  //pulse on controller init
 
             int deviceIndex = trackedObject.GetDeviceIndex();
@@ -1645,11 +1637,6 @@ namespace Valve.VR.InteractionSystem
         public int GetDeviceIndex()
         {
             return trackedObject.GetDeviceIndex();
-        }
-
-        private void SetHandVisible(bool bVisible)
-        {
-            m_handRenderer.enabled = bVisible;
         }
     }
 
