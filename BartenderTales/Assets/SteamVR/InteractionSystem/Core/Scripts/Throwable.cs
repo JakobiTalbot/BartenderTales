@@ -140,6 +140,11 @@ namespace Valve.VR.InteractionSystem
 
 			onPickUp.Invoke();
 
+            foreach (Renderer r in hand.GetComponentsInChildren<Renderer>())
+            {
+                r.enabled = false;
+            }
+
 			hand.HoverLock( null );
             
             rigidbody.interpolation = RigidbodyInterpolation.None;
@@ -159,6 +164,11 @@ namespace Valve.VR.InteractionSystem
             attached = false;
 
             onDetachFromHand.Invoke();
+
+            foreach (Renderer r in hand.GetComponentsInChildren<Renderer>())
+            {
+                r.enabled = true;
+            }
 
             hand.HoverUnlock(null);
             
