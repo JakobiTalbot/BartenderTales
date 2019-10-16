@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a1f95b8fbf1d1a43862bb14cbd8839b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_inputSource: 1
+  m_axisName: LeftTrigger
 --- !u!1 &3568078925642344685
 GameObject:
   m_ObjectHideFlags: 0
