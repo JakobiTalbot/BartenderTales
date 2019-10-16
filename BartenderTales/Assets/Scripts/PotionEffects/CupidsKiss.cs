@@ -19,5 +19,6 @@ public class CupidsKiss : PotionEffect
         // TODO: play animation then fall
         // enable ragdoll
         m_cust.SetRagdoll(true);
+        m_cust.Dissolve();
     }
 }

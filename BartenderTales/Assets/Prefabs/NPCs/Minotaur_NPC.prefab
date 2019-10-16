@@ -3585,6 +3585,7 @@ MonoBehaviour:
   m_moneyPrefab: {fileID: 6324821836455372774, guid: 376fd99151b508842b77c710c794f5e1,
     type: 3}
   m_pickMeUpRigidbody: {fileID: 929550556393462889}
+  m_dissolveMaterial: {fileID: 2100000, guid: b896017b2e6c21044ae6920d4697337e, type: 2}
   m_coughUpSpawnPoint: {fileID: 769570566887840247}
   m_impatienceTimer: 30
   m_ragdollRigidbodies:
