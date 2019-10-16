@@ -1,0 +1,206 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1397496099286711361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1397496099286711363}
+  - component: {fileID: 1397496099286711360}
+  - component: {fileID: 1397496099286711362}
+  - component: {fileID: 1397496099286711365}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1397496099286711363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397496099286711361}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.0438194, y: -1.1615973, z: 4.9672365}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1397496099286711360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397496099286711361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04fd143c99777f3488192103ca1a0af7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_customerPrefabs:
+  - {fileID: 1824453803650315166, guid: 69f10aba53ac611469e54a289182cff3, type: 3}
+  - {fileID: 2794676459062639504, guid: 32344ce6a6839794c8a7e095b25c5087, type: 3}
+  m_spawnPoint: {fileID: 0}
+  m_servingPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_waitingPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_coinDropPoint: {fileID: 0}
+  m_numberOfTutorialCustomers: 3
+  m_hatPrefabs:
+  - {fileID: 6728947689782164422, guid: 3534b833a66e1594c9a3a8024d41801e, type: 3}
+  m_randomRangeBetweenHappyHours: {x: 90, y: 105}
+  m_randomLengthForHappyHour: {x: 30, y: 30}
+  m_randomRangeCustomerSpawnHappyHour: {x: 13, y: 15}
+  m_randomRangeCustomerSpawnNotHappyHour: {x: 30, y: 35}
+  m_startLever: {fileID: 0}
+  m_gameTimeSeconds: 240
+  m_clockHand: {fileID: 0}
+  m_timeOverCanvas: {fileID: 0}
+  m_finalMoneyText: {fileID: 0}
+  m_customers: []
+  m_spawnCustomers: 1
+  mainMenuMusic: {fileID: 1397496099286711365}
+  calmHourMusic: {fileID: 0}
+  fadeTime: 1.5
+--- !u!114 &1397496099286711362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397496099286711361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0260c24198154d3449f84c28cc2504ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_cosyFireParticles: {fileID: 1894577748991764, guid: 18348c20ed4814cb6808b98ca2124563,
+    type: 3}
+  m_mundaneExplosionPrefab: {fileID: 1186716311931378770, guid: 4ac8f483508e83e4fb797273365fd0ec,
+    type: 3}
+  m_coughUpRandomObjectPrefabs:
+  - {fileID: 4554718752582502801, guid: 10baa32807af8c74a9bb4988aed17978, type: 3}
+  - {fileID: 5514788207697548510, guid: 980da04582a0c95448028bc1ae2e9b50, type: 3}
+  - {fileID: 5962952628538493408, guid: f554989b2e2a0564e93e54a19b9b4010, type: 3}
+  - {fileID: 8510448873287620510, guid: a6860761528df2a4a8cb65c484a36ab0, type: 3}
+  - {fileID: 6419887197156103134, guid: 7132a237920890c47a7c5f30e4889971, type: 3}
+  - {fileID: 4788039415919800491, guid: 2a883cbe1b8252744b24142753747be8, type: 3}
+  m_randomRangeBetweenTeleports: {x: 1, y: 2}
+  m_teleportAreaRadius: 8
+  m_randomTimeToDoTeleporting: {x: 5, y: 10}
+  m_smokeyTeleportParticlePrefab: {fileID: 4824537555117915286, guid: ab5a045184031444cae336f3a831cf4e,
+    type: 3}
+--- !u!82 &1397496099286711365
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397496099286711361}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3dbc9fa2d5afcf5428e4154e0c469a09, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.68
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

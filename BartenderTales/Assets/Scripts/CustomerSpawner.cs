@@ -13,8 +13,8 @@ public class CustomerSpawner : MonoBehaviour
     public List<Transform> m_waitingPoints;
     public Transform m_coinDropPoint;
 
-    [SerializeField]
-    private Transform[] m_spawnPoints;
+    
+    public Transform[] m_spawnPoints;
     [SerializeField]
     private int m_numberOfTutorialCustomers = 3;
     [SerializeField]
