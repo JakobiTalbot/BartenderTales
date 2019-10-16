@@ -23,6 +23,8 @@ public class Customer : MonoBehaviour
     public Rigidbody m_pickMeUpRigidbody;
 
     [SerializeField]
+    private Material m_dissolveMaterial;
+    [SerializeField]
     private Transform m_coughUpSpawnPoint;
     [SerializeField]
     private float m_impatienceTimer = 30f;
@@ -40,6 +42,7 @@ public class Customer : MonoBehaviour
     private Vector3 m_v3CoinDropPos;
     private CustomerAnimator m_customerAnimator;
     private ReputationManager m_repManager;
+    private Renderer m_renderer;
     private bool m_bHadPath = false;
     private bool m_bIsRagdolling = false;
     private bool m_bIsTutorialNPC = false;
@@ -52,6 +55,7 @@ public class Customer : MonoBehaviour
     {
         m_point = transform;
         m_repManager = FindObjectOfType<ReputationManager>();
+        m_renderer = GetComponent<Renderer>();
         m_animator = GetComponent<Animator>();
         m_customerAnimator = GetComponent<CustomerAnimator>();
         m_agent = GetComponent<NavMeshAgent>();
@@ -72,7 +76,6 @@ public class Customer : MonoBehaviour
             // if reached the exit point of the bar
             if (m_bExitingBar)
             {
-                m_spawner.m_customers.Remove(gameObject);
                 Destroy(gameObject);
                 return;
             }
@@ -202,6 +205,24 @@ public class Customer : MonoBehaviour
             m_spawner.m_servingPoints.Add(m_point);
     }
 
+    private void Dissolve()
+    {
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
+
+        foreach (Renderer r in renderers)
+        {
+            Texture t = r.material.GetTexture("_MainTex");
+            Color c = r.material.GetColor("_Color");
+
+            r.material = m_dissolveMaterial;
+            if (t)
+                r.material.SetTexture("_MainTex", t);
+            r.material.SetColor("_Color", c);
+
+            r.gameObject.AddComponent<Dissolve>();
+        }
+    }
+
     /// <summary>
     /// Sets the position to spawn a coin when the customer pays
     /// </summary>
@@ -241,7 +262,10 @@ public class Customer : MonoBehaviour
             m_agent.isStopped = m_bIsRagdolling;
 
         if (m_bIsRagdolling)
+        {
             StopCoroutine(m_customerAnimator.IdleLoop());
+            Dissolve();
+        }
 
         // deactivate speech bubble if starting ragdoll
         if (m_speechBubbleCanvas.activeSelf
