@@ -46,7 +46,7 @@ public class Customer : MonoBehaviour
     private bool m_bHadPath = false;
     private bool m_bIsRagdolling = false;
     private bool m_bIsTutorialNPC = false;
-
+    
     public Animator m_animator;
     public GameObject m_sparkleEffect;
     public List<GameObject> m_trailEffects = new List<GameObject>();
