@@ -53,7 +53,6 @@ public class Customer : MonoBehaviour
 
     void Start()
     {
-        m_point = transform;
         m_repManager = FindObjectOfType<ReputationManager>();
         m_renderer = GetComponent<Renderer>();
         m_animator = GetComponent<Animator>();
@@ -190,6 +189,7 @@ public class Customer : MonoBehaviour
         m_bExitingBar = true;
         AddPointToSpawner();
         m_agent.isStopped = false;
+        m_point = m_spawner.m_spawnPoints[Random.Range(0, m_spawner.m_spawnPoints.Length)];
         m_agent.SetDestination(m_point.position);
         m_animator.SetBool("StoppedMoving", false);
     }
