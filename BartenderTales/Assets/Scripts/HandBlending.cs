@@ -17,6 +17,7 @@ public class HandBlending : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(SteamVR_Actions.default_Squeeze.GetAxis(SteamVR_Input_Sources.LeftHand));
         //m_animator.SetFloat("BlendHandFloat", SteamVR_Actions.default_Squeeze.GetAxis(SteamVR_Input_Sources.LeftHand));
         m_animator.SetFloat("BlendHandFloat", Input.GetAxis(m_axisName));
     }
