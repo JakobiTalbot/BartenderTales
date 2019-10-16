@@ -50,7 +50,7 @@ public class Customer : MonoBehaviour
 
     void Start()
     {
-        m_point = transform.position;
+        m_point = transform;
         m_repManager = FindObjectOfType<ReputationManager>();
         m_animator = GetComponent<Animator>();
         m_customerAnimator = GetComponent<CustomerAnimator>();
