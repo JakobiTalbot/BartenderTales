@@ -9,7 +9,7 @@ public class Mundane : PotionEffect
     [SerializeField]
     private float m_reactionRadius = 5f;
     [SerializeField]
-    private int m_reputationOnGoodCustomerExplosion = -1;
+    private int m_reputationChangeOnCustomerExplosion = -1;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +30,7 @@ public class Mundane : PotionEffect
         {
             c.GetComponent<Customer>()?.Shocked();
         }
-        FindObjectOfType<ReputationManager>().AddToReputation(m_reputationOnGoodCustomerExplosion);
+        FindObjectOfType<ReputationManager>().AddToReputation(m_reputationChangeOnCustomerExplosion);
 
         Destroy(Instantiate(FindObjectOfType<PotionAssets>().m_mundaneExplosionPrefab, transform.position, transform.rotation), 5f);
         Destroy(gameObject);

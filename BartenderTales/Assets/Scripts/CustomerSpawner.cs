@@ -9,11 +9,12 @@ public class CustomerSpawner : MonoBehaviour
     // possible refactor: create array of points and sort by distance to bar, spawn customer at lowest distance
 
     public GameObject[] m_customerPrefabs;
-    public Transform m_spawnPoint;
     public List<Transform> m_servingPoints;
     public List<Transform> m_waitingPoints;
     public Transform m_coinDropPoint;
 
+    [SerializeField]
+    private Transform[] m_spawnPoints;
     [SerializeField]
     private int m_numberOfTutorialCustomers = 3;
     [SerializeField]
@@ -142,9 +143,11 @@ public class CustomerSpawner : MonoBehaviour
             m_servingPoints.RemoveAt(m_servingPoints.Count - 1);
         }
 
+        // get random spawn point
+        Transform spawnPoint = m_spawnPoints[Random.Range(0, m_spawnPoints.Length)];
 
         // spawn customer
-        m_customers.Add(Instantiate(m_customerPrefabs[Random.Range(0, m_customerPrefabs.Length)], m_spawnPoint.position, m_spawnPoint.rotation));
+        m_customers.Add(Instantiate(m_customerPrefabs[Random.Range(0, m_customerPrefabs.Length)], spawnPoint.position, spawnPoint.rotation));
 
         Customer cust = m_customers[m_customers.Count - 1].GetComponent<Customer>();
 
