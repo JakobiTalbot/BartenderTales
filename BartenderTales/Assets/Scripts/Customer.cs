@@ -205,7 +205,7 @@ public class Customer : MonoBehaviour
             m_spawner.m_servingPoints.Add(m_point);
     }
 
-    private void Dissolve()
+    public void Dissolve()
     {
         Renderer[] renderers = GetComponentsInChildren<Renderer>();
 
@@ -264,7 +264,6 @@ public class Customer : MonoBehaviour
         if (m_bIsRagdolling)
         {
             StopCoroutine(m_customerAnimator.IdleLoop());
-            Dissolve();
         }
 
         // deactivate speech bubble if starting ragdoll

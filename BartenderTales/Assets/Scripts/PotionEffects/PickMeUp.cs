@@ -66,5 +66,6 @@ public class PickMeUp : PotionEffect
     private void StopLoop()
     {
         m_bDoEffect = false;
+        m_cust.Dissolve();
     }
 }
