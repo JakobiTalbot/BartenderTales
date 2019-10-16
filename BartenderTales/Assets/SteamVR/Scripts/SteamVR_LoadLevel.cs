@@ -327,7 +327,7 @@ namespace Valve.VR
 
             // Keep us from getting destroyed when loading the new level, otherwise this coroutine will get stopped prematurely.
             transform.parent = null;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
 
             if (!string.IsNullOrEmpty(internalProcessPath))
             {
