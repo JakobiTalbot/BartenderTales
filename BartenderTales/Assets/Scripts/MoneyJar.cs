@@ -15,10 +15,16 @@ public class MoneyJar : MonoBehaviour
     public int m_nCurrentMoney = 0;
 
     private AudioSource m_audioSource;
+    private Rigidbody m_rb;
+    private Vector3 m_v3OriginalPos;
+    private Quaternion m_originalRot;
 
     private void Awake()
     {
         m_audioSource = GetComponent<AudioSource>();
+        m_rb = GetComponent<Rigidbody>();
+        m_v3OriginalPos = transform.position;
+        m_originalRot = transform.rotation;
     }
 
     /// <summary>
@@ -32,5 +38,16 @@ public class MoneyJar : MonoBehaviour
         m_moneyCounter.text = m_nCurrentMoney.ToString();
         // play random audio clip
         m_audioSource.PlayOneShot(m_coinDropSounds[Random.Range(0, m_coinDropSounds.Length)]);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Boundary>())
+        {
+            transform.position = m_v3OriginalPos;
+            transform.rotation = m_originalRot;
+            m_rb.velocity = Vector3.zero;
+            m_rb.angularVelocity = Vector3.zero;
+        }
     }
 }
