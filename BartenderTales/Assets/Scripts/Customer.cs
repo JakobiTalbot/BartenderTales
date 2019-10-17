@@ -229,7 +229,7 @@ public class Customer : MonoBehaviour
             r.gameObject.AddComponent<Dissolve>();
         }
 
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(8f);
 
         Destroy(gameObject);
     }
