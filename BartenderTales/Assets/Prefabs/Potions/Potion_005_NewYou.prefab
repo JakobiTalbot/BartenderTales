@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4061472058258259507}
   - component: {fileID: 3918149544643485927}
   - component: {fileID: 4045214516004836858}
+  - component: {fileID: 392997942381800264}
   m_Layer: 0
   m_Name: Potion_005_NewYou
   m_TagString: Untagged
@@ -226,3 +227,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_potionName: 6
+--- !u!114 &392997942381800264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282687843448465895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e68066c08ec6f4ba12520231929e0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_potionName: 0
+  m_secondsToWaitUntilSwitching: 0.2
+  m_secondsForNewCustomerToWaitUntilLeaving: 2

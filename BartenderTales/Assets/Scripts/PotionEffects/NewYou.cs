@@ -13,6 +13,7 @@ public class NewYou : PotionEffect
 
     void Awake()
     {
+        m_potionName = PotionName.NewYou;
         if (m_cust = GetComponent<Customer>())
             StartCoroutine(Effect());
     }
@@ -53,7 +54,5 @@ public class NewYou : PotionEffect
         newCust.Invoke("ExitBar", m_secondsForNewCustomerToWaitUntilLeaving);
 
         Destroy(gameObject);
-
-        yield break;
     }
 }
