@@ -81,6 +81,7 @@ public class Shaker : MonoBehaviour
         m_potionFunc.Add(PotionName.SmokeyTeleport, m_potionPrefabs[3].GetComponent<SmokeyTeleport>());
         m_potionFunc.Add(PotionName.PickMeUp, m_potionPrefabs[4].GetComponent<PickMeUp>());
         m_potionFunc.Add(PotionName.CupidsKiss, m_potionPrefabs[5].GetComponent<CupidsKiss>());
+        m_potionFunc.Add(PotionName.NewYou, m_potionPrefabs[6].GetComponent<NewYou>());
     }
 
     // Update is called once per frame
