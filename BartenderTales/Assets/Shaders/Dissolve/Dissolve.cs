@@ -33,7 +33,5 @@ public class Dissolve : MonoBehaviour
 
         m_renderer.material.SetFloat("_Amount", 1);
         m_renderer.enabled = false;
-
-        Destroy(gameObject, 1f);
     }
 }

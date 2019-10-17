@@ -35,27 +35,36 @@ public class CustomerSpawner : MonoBehaviour
     private float m_gameTimeSeconds = 300f;
     [SerializeField]
     private Transform m_clockHand;
+
+    [Header("Time Over Stuff")]
     [SerializeField]
     private GameObject m_timeOverCanvas;
     [SerializeField]
-    private TextMeshPro m_finalMoneyText;
+    private TextMeshPro m_totalScoreText;
+    [SerializeField]
+    private TextMeshPro m_correctOrdersText;
+    [SerializeField]
+    private TextMeshPro m_incorrectOrdersText;
 
     [HideInInspector]
     public List<GameObject> m_customers;
     [HideInInspector]
     public bool m_spawnCustomers = true;
 
+    private ScoreManager m_scoreManager;
     private float m_fCustomerSpawnTimer = 0f;
     private bool m_bHappyHour = false;
     private float m_fGameTimer = 0f;
 
+    [Header("Music")]
     public AudioSource mainMenuMusic;
     public AudioSource calmHourMusic;
     public float fadeTime;
 
-    void Start()
+    void Awake()
     {
         m_customers = new List<GameObject>();
+        m_scoreManager = FindObjectOfType<ScoreManager>();
     }
 
     public void Fade()
@@ -161,6 +170,7 @@ public class CustomerSpawner : MonoBehaviour
         cust.SetDestination(destPoint, bWait);
         cust.SetCoinDropPos(m_coinDropPoint.position);
         cust.SetTutorialCustomer(bTutorialCustomer);
+        cust.SetScoreManager(m_scoreManager);
 
         return true;
     }
@@ -185,8 +195,13 @@ public class CustomerSpawner : MonoBehaviour
 
         // timer runs out
         m_timeOverCanvas.SetActive(true);
-        m_finalMoneyText.text += FindObjectOfType<MoneyJar>().m_nCurrentMoney.ToString();
 
+        ScoreManager s = FindObjectOfType<ScoreManager>();
+        m_totalScoreText.text += s.GetTotalScore().ToString();
+        m_correctOrdersText.text += s.GetCorrectOrderCount().ToString();
+        m_incorrectOrdersText.text += s.GetIncorrectOrderCount().ToString();
+
+        // TODO: only go after they pull a lever or something
         yield return new WaitForSeconds(10f);
 
         SceneManager.LoadSceneAsync(0);
