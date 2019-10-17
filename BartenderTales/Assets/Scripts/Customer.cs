@@ -169,6 +169,12 @@ public class Customer : MonoBehaviour
 
             if (p.m_potionName == PotionName.Mundane)
                 gameObject.AddComponent<Mundane>();
+            else
+            {
+                // drink potion
+                System.Type type = FindObjectOfType<Shaker>().m_potionFunc[p.m_potionName].GetType();
+                gameObject.AddComponent(type);
+            }
         }
 
         // spawn new tutorial customer if this customer is tutorial customer
