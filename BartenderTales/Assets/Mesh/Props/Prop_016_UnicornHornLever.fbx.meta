@@ -6,9 +6,11 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: lambert1
+    2100002: Txt_Horn
     2300000: //RootNode
     3300000: //RootNode
     4300000: pHelix1
+    4300002: Saloon_Horn
   externalObjects: {}
   materials:
     importMaterials: 1
