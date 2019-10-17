@@ -3601,6 +3601,7 @@ MonoBehaviour:
   - {fileID: 2940329229490685434}
   - {fileID: 7169200284538800051}
   m_hatTransform: {fileID: 5245445042019594740}
+  m_customerType: 1
   m_animator: {fileID: 2794676459053140048}
   m_sparkleEffect: {fileID: 7202339495930749088}
   m_trailEffects: []

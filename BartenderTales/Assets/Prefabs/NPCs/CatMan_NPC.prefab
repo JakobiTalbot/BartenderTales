@@ -491,6 +491,7 @@ MonoBehaviour:
   - {fileID: 914529927786860669}
   - {fileID: 2069480296793684296}
   m_hatTransform: {fileID: 8400663124044902662}
+  m_customerType: 2
   m_animator: {fileID: 8400663124054482666}
   m_sparkleEffect: {fileID: 7459901706813049503, guid: 35cf30f52f66eff488a467341800d9af,
     type: 3}

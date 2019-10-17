@@ -6,14 +6,12 @@ using Valve.VR.InteractionSystem;
 public enum PotionName
 {
     PickMeUp = 0,
-    //AssassinsSpecial,
     SmokeyTeleport,
     PixieDust,
-    //Beer,
     CosyFire,
     CoughUp,
     CupidsKiss,
-    //HonestPolicy,
+    NewYou,
     Count,
     Mundane
 }

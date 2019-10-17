@@ -4,6 +4,13 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+public enum CustomerType
+{
+    Goblin = 0,
+    Minotaur,
+    CatMan
+}
+
 public class CustomerSpawner : MonoBehaviour
 {
     // possible refactor: create array of points and sort by distance to bar, spawn customer at lowest distance
@@ -12,9 +19,9 @@ public class CustomerSpawner : MonoBehaviour
     public List<Transform> m_servingPoints;
     public List<Transform> m_waitingPoints;
     public Transform m_coinDropPoint;
-
     
     public Transform[] m_spawnPoints;
+
     [SerializeField]
     private int m_numberOfTutorialCustomers = 3;
     [SerializeField]
@@ -34,7 +41,7 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeField]
     private float m_gameTimeSeconds = 300f;
     [SerializeField]
-    private Transform m_clockHand;
+    private Transform[] m_clockHands;
 
     [Header("Time Over Stuff")]
     [SerializeField]
@@ -160,12 +167,7 @@ public class CustomerSpawner : MonoBehaviour
 
         Customer cust = m_customers[m_customers.Count - 1].GetComponent<Customer>();
 
-        // decide whether to wear hat or not
-        if (Random.Range(0, m_hatPrefabs.Length + 1) > 0)
-        {
-            // pick hat
-            cust.SetHat(m_hatPrefabs[Random.Range(0, m_hatPrefabs.Length)]);
-        }
+
 
         cust.SetDestination(destPoint, bWait);
         cust.SetCoinDropPos(m_coinDropPoint.position);
@@ -214,8 +216,24 @@ public class CustomerSpawner : MonoBehaviour
     private bool CountDown()
     {
         m_fGameTimer += Time.deltaTime;
+        float fRot = (m_fGameTimer / m_gameTimeSeconds) * 360f;
         // rotate clock hand
-        m_clockHand.localRotation = Quaternion.Euler(m_clockHand.localRotation.x, m_clockHand.localRotation.y, (m_fGameTimer / m_gameTimeSeconds) * 360f);
+        foreach (Transform t in m_clockHands)
+            t.localRotation = Quaternion.Euler(t.localRotation.x, t.localRotation.y, fRot);
         return m_fGameTimer >= m_gameTimeSeconds;
     }
+
+    public GameObject GetRandomHat()
+    {
+        // decide whether to wear hat or not
+        if (Random.Range(0, m_hatPrefabs.Length + 1) > 0)
+        {
+            // pick hat
+            return m_hatPrefabs[Random.Range(0, m_hatPrefabs.Length)];
+        }
+
+        return null;
+    }
+
+    public ScoreManager GetScoreManager() => m_scoreManager;
 }

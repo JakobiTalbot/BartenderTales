@@ -14,7 +14,7 @@ public class ScoreManager : MonoBehaviour
     public void AddCorrectOrder()
     {
         ++m_nCorrectOrders;
-        m_nTotalScore += 1 + m_nConsecutiveCorrectOrders++;
+        m_nTotalScore += ++m_nConsecutiveCorrectOrders;
     }
 
     public void AddIncorrectOrder()
