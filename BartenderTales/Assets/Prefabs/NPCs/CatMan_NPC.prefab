@@ -490,9 +490,10 @@ MonoBehaviour:
   - {fileID: 8651398109071943764}
   - {fileID: 914529927786860669}
   - {fileID: 2069480296793684296}
-  m_hatTransform: {fileID: 0}
+  m_hatTransform: {fileID: 8400663124044902662}
   m_animator: {fileID: 8400663124054482666}
-  m_sparkleEffect: {fileID: 0}
+  m_sparkleEffect: {fileID: 7459901706813049503, guid: 35cf30f52f66eff488a467341800d9af,
+    type: 3}
   m_trailEffects: []
 --- !u!114 &3462099789005171097
 MonoBehaviour:
@@ -1542,7 +1543,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100002, guid: ac025ea4a4ab1ce46ad436044dfebc47, type: 3}
+  - {fileID: 2100000, guid: bb94c6bd866864f4fb0f571b0c2c563d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3516,8 +3517,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ac025ea4a4ab1ce46ad436044dfebc47, type: 3}
-  - {fileID: 2100002, guid: ac025ea4a4ab1ce46ad436044dfebc47, type: 3}
+  - {fileID: 2100000, guid: 14b135c9a09150a4faa36fdd41933971, type: 2}
+  - {fileID: 2100000, guid: 74300f2c6587ce14c8b12973568c55b7, type: 2}
   - {fileID: 2100004, guid: ac025ea4a4ab1ce46ad436044dfebc47, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -3713,7 +3714,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100002, guid: ac025ea4a4ab1ce46ad436044dfebc47, type: 3}
+  - {fileID: 2100000, guid: 482ef14f36a18ff47a5e6d6890c80f6b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
