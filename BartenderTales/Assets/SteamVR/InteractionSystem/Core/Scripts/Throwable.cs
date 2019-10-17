@@ -140,7 +140,9 @@ namespace Valve.VR.InteractionSystem
 
 			onPickUp.Invoke();
 
-            hand.GetComponentInChildren<RenderModel>().GetComponentInChildren<Renderer>().enabled = false;
+            RenderModel r;
+            if (r = hand.GetComponentInChildren<RenderModel>())
+                r.GetComponentInChildren<Renderer>().enabled = false;
 
             hand.HoverLock( null );
             
@@ -162,7 +164,9 @@ namespace Valve.VR.InteractionSystem
 
             onDetachFromHand.Invoke();
 
-            hand.GetComponentInChildren<RenderModel>().GetComponentInChildren<Renderer>().enabled = true;
+            RenderModel r;
+            if (r = hand.GetComponentInChildren<RenderModel>())
+                r.GetComponentInChildren<Renderer>().enabled = true;
 
             hand.HoverUnlock(null);
             
