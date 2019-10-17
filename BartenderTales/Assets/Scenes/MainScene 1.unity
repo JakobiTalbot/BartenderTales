@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.8658503, g: 0.21074587, b: 0.08658223, a: 1}
+  m_IndirectSpecularColor: {r: 0.19235909, g: 0.59280556, b: 0.7769796, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2485,7 +2485,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 0.17915626, g: 0.4640366, b: 0.6226415, a: 1}
+  m_Color: {r: 0.49261305, g: 0.71972764, b: 0.8490566, a: 1}
   m_Intensity: 0.73
   m_Range: 10
   m_SpotAngle: 30
@@ -6622,12 +6622,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.031583, y: 1.3527726, z: 0.32967404}
   m_Center: {x: -9.475147e-21, y: 0.0000008642673, z: 0.00000047683716}
---- !u!1 &505666536 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7202339495930749088, guid: 32344ce6a6839794c8a7e095b25c5087,
-    type: 3}
-  m_PrefabInstance: {fileID: 369711730}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &509846643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10123,10 +10117,20 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6185195466605326617, guid: d31b15408b7ce4841984b97e3e0acc13,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3158325758306207220, guid: d31b15408b7ce4841984b97e3e0acc13,
         type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3158325758305851860, guid: d31b15408b7ce4841984b97e3e0acc13,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d31b15408b7ce4841984b97e3e0acc13, type: 3}
@@ -34497,7 +34501,7 @@ ReflectionProbe:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IntensityMultiplier: 1
+  m_IntensityMultiplier: 0.52
   m_BlendDistance: 1
   m_HDR: 1
   m_BoxProjection: 0
@@ -36070,7 +36074,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_sparkleEffect
       value: 
-      objectReference: {fileID: 505666536}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd5d49a421cd04f48a6ef5fa98636230, type: 3}
 --- !u!4 &8537678081459597514 stripped

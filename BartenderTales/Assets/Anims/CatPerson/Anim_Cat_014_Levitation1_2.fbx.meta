@@ -1,0 +1,1366 @@
+fileFormatVersion: 2
+guid: 28aaa817e068ea9418f383eaa7c70c7a
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Cat_Man_Rig:Cat_Man_Base_Mesh
+    100004: Cat_Man_Rig:Cat_Man_GEO
+    100006: Cat_Man_Rig:Chest_JNT
+    100008: Cat_Man_Rig:Head_CTRL
+    100010: Cat_Man_Rig:Head_CTRL_GRP
+    100012: Cat_Man_Rig:Head_JNT
+    100014: Cat_Man_Rig:Head_Tip_JNT
+    100016: Cat_Man_Rig:Jaw_CTRL
+    100018: Cat_Man_Rig:Jaw_CTRL_GRP
+    100020: Cat_Man_Rig:Jaw_JNT
+    100022: Cat_Man_Rig:L_Ankle_JNT
+    100024: Cat_Man_Rig:L_Clavicle_JNT
+    100026: Cat_Man_Rig:L_Elbow_JNT
+    100028: Cat_Man_Rig:L_Elbow_PV_CTRL
+    100030: Cat_Man_Rig:L_Elbow_PV_CTRL_GRP
+    100032: Cat_Man_Rig:L_Eye
+    100034: Cat_Man_Rig:L_Foot_Arch_CTRL
+    100036: Cat_Man_Rig:L_Foot_Arch_CTRL_GRP
+    100038: Cat_Man_Rig:L_Foot_iK_CTRL
+    100040: Cat_Man_Rig:L_Foot_iK_CTRL_GRP
+    100042: Cat_Man_Rig:L_Foot_Sesamoid_JNT
+    100044: Cat_Man_Rig:L_Hand_iK_CTRL
+    100046: Cat_Man_Rig:L_Hand_iK_CTRL_GRP
+    100048: Cat_Man_Rig:L_Hip_JNT
+    100050: Cat_Man_Rig:L_Index_FInger_01_CTRL
+    100052: Cat_Man_Rig:L_Index_FInger_01_CTRL_GRP
+    100054: Cat_Man_Rig:L_Index_Finger_01_JNT
+    100056: Cat_Man_Rig:L_Index_Finger_02_CTRL
+    100058: Cat_Man_Rig:L_Index_Finger_02_CTRL_GRP
+    100060: Cat_Man_Rig:L_Index_Finger_02_JNT
+    100062: Cat_Man_Rig:L_Index_Finger_03_JNT
+    100064: Cat_Man_Rig:L_Knee_JNT
+    100066: Cat_Man_Rig:L_Knee_PV_CTRL
+    100068: Cat_Man_Rig:L_Knee_PV_CTRL_GRP
+    100070: Cat_Man_Rig:L_Mid_Finger_01_CTRL
+    100072: Cat_Man_Rig:L_Mid_Finger_01_CTRL_GRP
+    100074: Cat_Man_Rig:L_Mid_Finger_01_JNT
+    100076: Cat_Man_Rig:L_Mid_Finger_02_CTRL
+    100078: Cat_Man_Rig:L_Mid_Finger_02_CTRL_GRP
+    100080: Cat_Man_Rig:L_Mid_Finger_02_JNT
+    100082: Cat_Man_Rig:L_Mid_Finger_03_JNT
+    100084: Cat_Man_Rig:L_Pinky_Finger_01_CTRL
+    100086: Cat_Man_Rig:L_Pinky_Finger_01_CTRL_GRP
+    100088: Cat_Man_Rig:L_Pinky_Finger_01_JNT
+    100090: Cat_Man_Rig:L_Pinky_Finger_02_CTRL
+    100092: Cat_Man_Rig:L_Pinky_Finger_02_CTRL_GRP
+    100094: Cat_Man_Rig:L_Pinky_Finger_02_JNT
+    100096: Cat_Man_Rig:L_Pinky_Finger_03_JNT
+    100098: Cat_Man_Rig:L_Shoulder_CTRL
+    100100: Cat_Man_Rig:L_Shoulder_CTRL_GRP
+    100102: Cat_Man_Rig:L_Shoulder_JNT
+    100104: Cat_Man_Rig:L_Thumb_01_CTRL
+    100106: Cat_Man_Rig:L_Thumb_01_CTRL_GRP
+    100108: Cat_Man_Rig:L_Thumb_01_JNT
+    100110: Cat_Man_Rig:L_Thumb_02_CTRL
+    100112: Cat_Man_Rig:L_Thumb_02_CTRL_GRP
+    100114: Cat_Man_Rig:L_Thumb_02_JNT
+    100116: Cat_Man_Rig:L_Thumb_03_JNT
+    100118: Cat_Man_Rig:L_Toe_Tip_JNT
+    100120: Cat_Man_Rig:L_Wrist_JNT
+    100122: Cat_Man_Rig:Neck_CTRL
+    100124: Cat_Man_Rig:Neck_CTRL_GRP
+    100126: Cat_Man_Rig:Neck_JNT
+    100128: Cat_Man_Rig:Pelvis_CTRL
+    100130: Cat_Man_Rig:Pelvis_CTRL_GRP
+    100132: Cat_Man_Rig:Pelvis_JNT
+    100134: Cat_Man_Rig:R_Ankle_JNT
+    100136: Cat_Man_Rig:R_Clavicle_JNT
+    100138: Cat_Man_Rig:R_Elbow_JNT
+    100140: Cat_Man_Rig:R_Elbow_PV_CTRL
+    100142: Cat_Man_Rig:R_Elbow_PV_CTRL_GRP
+    100144: Cat_Man_Rig:R_Eye
+    100146: Cat_Man_Rig:R_Foot_Arch_CTRL
+    100148: Cat_Man_Rig:R_Foot_Arch_CTRL_GRP
+    100150: Cat_Man_Rig:R_Foot_iK_CTRL
+    100152: Cat_Man_Rig:R_Foot_iK_CTRL_GRP
+    100154: Cat_Man_Rig:R_Foot_Sesamoid_JNT
+    100156: Cat_Man_Rig:R_Hand_iK_CTRL
+    100158: Cat_Man_Rig:R_Hand_iK_CTRL_GRP
+    100160: Cat_Man_Rig:R_Hip_JNT
+    100162: Cat_Man_Rig:R_Index_Finger_01_CTRL
+    100164: Cat_Man_Rig:R_Index_Finger_01_CTRL_GRP
+    100166: Cat_Man_Rig:R_Index_Finger_01_JNT
+    100168: Cat_Man_Rig:R_Index_Finger_02_CTRL
+    100170: Cat_Man_Rig:R_Index_Finger_02_CTRL_GRP1
+    100172: Cat_Man_Rig:R_Index_Finger_02_JNT
+    100174: Cat_Man_Rig:R_Index_Finger_03_JNT
+    100176: Cat_Man_Rig:R_Knee_JNT
+    100178: Cat_Man_Rig:R_Knee_PV_CTRL
+    100180: Cat_Man_Rig:R_Knee_PV_CTRL_GRP
+    100182: Cat_Man_Rig:R_Mid_Finger_01_CTRL
+    100184: Cat_Man_Rig:R_Mid_Finger_01_CTRL_GRP
+    100186: Cat_Man_Rig:R_Mid_Finger_01_JNT
+    100188: Cat_Man_Rig:R_Mid_Finger_02_CTRL
+    100190: Cat_Man_Rig:R_Mid_Finger_02_CTRL_GRP
+    100192: Cat_Man_Rig:R_Mid_Finger_02_JNT
+    100194: Cat_Man_Rig:R_Mid_Finger_03_JNT
+    100196: Cat_Man_Rig:R_Pinky_Finger_01_CTRL
+    100198: Cat_Man_Rig:R_Pinky_Finger_01_CTRL_GRP
+    100200: Cat_Man_Rig:R_Pinky_Finger_01_JNT
+    100202: Cat_Man_Rig:R_Pinky_Finger_02_CTRL
+    100204: Cat_Man_Rig:R_Pinky_Finger_02_CTRL_GRP
+    100206: Cat_Man_Rig:R_Pinky_Finger_02_JNT
+    100208: Cat_Man_Rig:R_Pinky_Finger_03_JNT
+    100210: Cat_Man_Rig:R_Shoulder_CTRL
+    100212: Cat_Man_Rig:R_Shoulder_CTRL_GRP
+    100214: Cat_Man_Rig:R_Shoulder_JNT
+    100216: Cat_Man_Rig:R_Thumb_01_CTRL
+    100218: Cat_Man_Rig:R_Thumb_01_CTRL_GRP
+    100220: Cat_Man_Rig:R_Thumb_01_JNT
+    100222: Cat_Man_Rig:R_Thumb_02_CTRL
+    100224: Cat_Man_Rig:R_Thumb_02_CTRL_GRP
+    100226: Cat_Man_Rig:R_Thumb_02_JNT
+    100228: Cat_Man_Rig:R_Thumb_03_JNT
+    100230: Cat_Man_Rig:R_Toe_Tip_JNT
+    100232: Cat_Man_Rig:R_Wrist_JNT
+    100234: Cat_Man_Rig:Spine_01_CTRL
+    100236: Cat_Man_Rig:Spine_01_CTRL_GRP
+    100238: Cat_Man_Rig:Spine_01_JNT
+    100240: Cat_Man_Rig:Spine_02_CTRL
+    100242: Cat_Man_Rig:Spine_02_CTRL_GRP
+    100244: Cat_Man_Rig:Spine_02_JNT
+    100246: Cat_Man_Rig:Spine_03_CTRL
+    100248: Cat_Man_Rig:Spine_03_CTRL_GRP
+    100250: Cat_Man_Rig:Spine_03_JNT
+    400000: //RootNode
+    400002: Cat_Man_Rig:Cat_Man_Base_Mesh
+    400004: Cat_Man_Rig:Cat_Man_GEO
+    400006: Cat_Man_Rig:Chest_JNT
+    400008: Cat_Man_Rig:Head_CTRL
+    400010: Cat_Man_Rig:Head_CTRL_GRP
+    400012: Cat_Man_Rig:Head_JNT
+    400014: Cat_Man_Rig:Head_Tip_JNT
+    400016: Cat_Man_Rig:Jaw_CTRL
+    400018: Cat_Man_Rig:Jaw_CTRL_GRP
+    400020: Cat_Man_Rig:Jaw_JNT
+    400022: Cat_Man_Rig:L_Ankle_JNT
+    400024: Cat_Man_Rig:L_Clavicle_JNT
+    400026: Cat_Man_Rig:L_Elbow_JNT
+    400028: Cat_Man_Rig:L_Elbow_PV_CTRL
+    400030: Cat_Man_Rig:L_Elbow_PV_CTRL_GRP
+    400032: Cat_Man_Rig:L_Eye
+    400034: Cat_Man_Rig:L_Foot_Arch_CTRL
+    400036: Cat_Man_Rig:L_Foot_Arch_CTRL_GRP
+    400038: Cat_Man_Rig:L_Foot_iK_CTRL
+    400040: Cat_Man_Rig:L_Foot_iK_CTRL_GRP
+    400042: Cat_Man_Rig:L_Foot_Sesamoid_JNT
+    400044: Cat_Man_Rig:L_Hand_iK_CTRL
+    400046: Cat_Man_Rig:L_Hand_iK_CTRL_GRP
+    400048: Cat_Man_Rig:L_Hip_JNT
+    400050: Cat_Man_Rig:L_Index_FInger_01_CTRL
+    400052: Cat_Man_Rig:L_Index_FInger_01_CTRL_GRP
+    400054: Cat_Man_Rig:L_Index_Finger_01_JNT
+    400056: Cat_Man_Rig:L_Index_Finger_02_CTRL
+    400058: Cat_Man_Rig:L_Index_Finger_02_CTRL_GRP
+    400060: Cat_Man_Rig:L_Index_Finger_02_JNT
+    400062: Cat_Man_Rig:L_Index_Finger_03_JNT
+    400064: Cat_Man_Rig:L_Knee_JNT
+    400066: Cat_Man_Rig:L_Knee_PV_CTRL
+    400068: Cat_Man_Rig:L_Knee_PV_CTRL_GRP
+    400070: Cat_Man_Rig:L_Mid_Finger_01_CTRL
+    400072: Cat_Man_Rig:L_Mid_Finger_01_CTRL_GRP
+    400074: Cat_Man_Rig:L_Mid_Finger_01_JNT
+    400076: Cat_Man_Rig:L_Mid_Finger_02_CTRL
+    400078: Cat_Man_Rig:L_Mid_Finger_02_CTRL_GRP
+    400080: Cat_Man_Rig:L_Mid_Finger_02_JNT
+    400082: Cat_Man_Rig:L_Mid_Finger_03_JNT
+    400084: Cat_Man_Rig:L_Pinky_Finger_01_CTRL
+    400086: Cat_Man_Rig:L_Pinky_Finger_01_CTRL_GRP
+    400088: Cat_Man_Rig:L_Pinky_Finger_01_JNT
+    400090: Cat_Man_Rig:L_Pinky_Finger_02_CTRL
+    400092: Cat_Man_Rig:L_Pinky_Finger_02_CTRL_GRP
+    400094: Cat_Man_Rig:L_Pinky_Finger_02_JNT
+    400096: Cat_Man_Rig:L_Pinky_Finger_03_JNT
+    400098: Cat_Man_Rig:L_Shoulder_CTRL
+    400100: Cat_Man_Rig:L_Shoulder_CTRL_GRP
+    400102: Cat_Man_Rig:L_Shoulder_JNT
+    400104: Cat_Man_Rig:L_Thumb_01_CTRL
+    400106: Cat_Man_Rig:L_Thumb_01_CTRL_GRP
+    400108: Cat_Man_Rig:L_Thumb_01_JNT
+    400110: Cat_Man_Rig:L_Thumb_02_CTRL
+    400112: Cat_Man_Rig:L_Thumb_02_CTRL_GRP
+    400114: Cat_Man_Rig:L_Thumb_02_JNT
+    400116: Cat_Man_Rig:L_Thumb_03_JNT
+    400118: Cat_Man_Rig:L_Toe_Tip_JNT
+    400120: Cat_Man_Rig:L_Wrist_JNT
+    400122: Cat_Man_Rig:Neck_CTRL
+    400124: Cat_Man_Rig:Neck_CTRL_GRP
+    400126: Cat_Man_Rig:Neck_JNT
+    400128: Cat_Man_Rig:Pelvis_CTRL
+    400130: Cat_Man_Rig:Pelvis_CTRL_GRP
+    400132: Cat_Man_Rig:Pelvis_JNT
+    400134: Cat_Man_Rig:R_Ankle_JNT
+    400136: Cat_Man_Rig:R_Clavicle_JNT
+    400138: Cat_Man_Rig:R_Elbow_JNT
+    400140: Cat_Man_Rig:R_Elbow_PV_CTRL
+    400142: Cat_Man_Rig:R_Elbow_PV_CTRL_GRP
+    400144: Cat_Man_Rig:R_Eye
+    400146: Cat_Man_Rig:R_Foot_Arch_CTRL
+    400148: Cat_Man_Rig:R_Foot_Arch_CTRL_GRP
+    400150: Cat_Man_Rig:R_Foot_iK_CTRL
+    400152: Cat_Man_Rig:R_Foot_iK_CTRL_GRP
+    400154: Cat_Man_Rig:R_Foot_Sesamoid_JNT
+    400156: Cat_Man_Rig:R_Hand_iK_CTRL
+    400158: Cat_Man_Rig:R_Hand_iK_CTRL_GRP
+    400160: Cat_Man_Rig:R_Hip_JNT
+    400162: Cat_Man_Rig:R_Index_Finger_01_CTRL
+    400164: Cat_Man_Rig:R_Index_Finger_01_CTRL_GRP
+    400166: Cat_Man_Rig:R_Index_Finger_01_JNT
+    400168: Cat_Man_Rig:R_Index_Finger_02_CTRL
+    400170: Cat_Man_Rig:R_Index_Finger_02_CTRL_GRP1
+    400172: Cat_Man_Rig:R_Index_Finger_02_JNT
+    400174: Cat_Man_Rig:R_Index_Finger_03_JNT
+    400176: Cat_Man_Rig:R_Knee_JNT
+    400178: Cat_Man_Rig:R_Knee_PV_CTRL
+    400180: Cat_Man_Rig:R_Knee_PV_CTRL_GRP
+    400182: Cat_Man_Rig:R_Mid_Finger_01_CTRL
+    400184: Cat_Man_Rig:R_Mid_Finger_01_CTRL_GRP
+    400186: Cat_Man_Rig:R_Mid_Finger_01_JNT
+    400188: Cat_Man_Rig:R_Mid_Finger_02_CTRL
+    400190: Cat_Man_Rig:R_Mid_Finger_02_CTRL_GRP
+    400192: Cat_Man_Rig:R_Mid_Finger_02_JNT
+    400194: Cat_Man_Rig:R_Mid_Finger_03_JNT
+    400196: Cat_Man_Rig:R_Pinky_Finger_01_CTRL
+    400198: Cat_Man_Rig:R_Pinky_Finger_01_CTRL_GRP
+    400200: Cat_Man_Rig:R_Pinky_Finger_01_JNT
+    400202: Cat_Man_Rig:R_Pinky_Finger_02_CTRL
+    400204: Cat_Man_Rig:R_Pinky_Finger_02_CTRL_GRP
+    400206: Cat_Man_Rig:R_Pinky_Finger_02_JNT
+    400208: Cat_Man_Rig:R_Pinky_Finger_03_JNT
+    400210: Cat_Man_Rig:R_Shoulder_CTRL
+    400212: Cat_Man_Rig:R_Shoulder_CTRL_GRP
+    400214: Cat_Man_Rig:R_Shoulder_JNT
+    400216: Cat_Man_Rig:R_Thumb_01_CTRL
+    400218: Cat_Man_Rig:R_Thumb_01_CTRL_GRP
+    400220: Cat_Man_Rig:R_Thumb_01_JNT
+    400222: Cat_Man_Rig:R_Thumb_02_CTRL
+    400224: Cat_Man_Rig:R_Thumb_02_CTRL_GRP
+    400226: Cat_Man_Rig:R_Thumb_02_JNT
+    400228: Cat_Man_Rig:R_Thumb_03_JNT
+    400230: Cat_Man_Rig:R_Toe_Tip_JNT
+    400232: Cat_Man_Rig:R_Wrist_JNT
+    400234: Cat_Man_Rig:Spine_01_CTRL
+    400236: Cat_Man_Rig:Spine_01_CTRL_GRP
+    400238: Cat_Man_Rig:Spine_01_JNT
+    400240: Cat_Man_Rig:Spine_02_CTRL
+    400242: Cat_Man_Rig:Spine_02_CTRL_GRP
+    400244: Cat_Man_Rig:Spine_02_JNT
+    400246: Cat_Man_Rig:Spine_03_CTRL
+    400248: Cat_Man_Rig:Spine_03_CTRL_GRP
+    400250: Cat_Man_Rig:Spine_03_JNT
+    2100000: Cat_Man_Rig_Cat_Man_Clothing_Mat
+    2100002: Cat_Man_Rig_Cat_Man_Body_Mat
+    2100004: Cat_Man_Rig_Cat_Man_Hat_Mat
+    4300000: Cat_Man_Rig:Cat_Man_Base_Mesh
+    4300002: Cat_Man_Rig:R_Eye
+    4300004: Cat_Man_Rig:L_Eye
+    7400000: Anim_Cat_014_Levitation1_2
+    9500000: //RootNode
+    13700000: Cat_Man_Rig:Cat_Man_Base_Mesh
+    13700002: Cat_Man_Rig:L_Eye
+    13700004: Cat_Man_Rig:R_Eye
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: "Avatar creation failed:\n\tTransform 'Cat_Man_Rig_01:Pelvis_JNT'
+      for human bone 'Hips' not found\n"
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: Cat_Man_Rig:Pelvis_JNT
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:L_Hip_JNT
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:R_Hip_JNT
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:L_Knee_JNT
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:R_Knee_JNT
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:L_Ankle_JNT
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:R_Ankle_JNT
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:Spine_01_JNT
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:Spine_02_JNT
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:Neck_JNT
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:Head_JNT
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:L_Clavicle_JNT
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:R_Clavicle_JNT
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:L_Shoulder_JNT
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:R_Shoulder_JNT
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:L_Elbow_JNT
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:R_Elbow_JNT
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:L_Wrist_JNT
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:R_Wrist_JNT
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:L_Toe_Tip_JNT
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:R_Toe_Tip_JNT
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:Head_Tip_JNT
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:Jaw_JNT
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:L_Thumb_01_JNT
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:L_Thumb_02_JNT
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:L_Thumb_03_JNT
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:L_Index_Finger_01_JNT
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:L_Index_Finger_02_JNT
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:L_Index_Finger_03_JNT
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:L_Mid_Finger_01_JNT
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:L_Mid_Finger_02_JNT
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:L_Mid_Finger_03_JNT
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:L_Pinky_Finger_01_JNT
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:L_Pinky_Finger_02_JNT
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:L_Pinky_Finger_03_JNT
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:R_Thumb_01_JNT
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:R_Thumb_02_JNT
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:R_Thumb_03_JNT
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:R_Index_Finger_01_JNT
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:R_Index_Finger_02_JNT
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:R_Index_Finger_03_JNT
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:R_Mid_Finger_01_JNT
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:R_Mid_Finger_02_JNT
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:R_Mid_Finger_03_JNT
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:R_Pinky_Finger_01_JNT
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:R_Pinky_Finger_02_JNT
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:R_Pinky_Finger_03_JNT
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cat_Man_Rig:Spine_03_JNT
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Cat_BindPose(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:Cat_Man_GEO
+      parentName: Cat_BindPose(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Eye
+      parentName: Cat_Man_Rig:Cat_Man_GEO
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Eye
+      parentName: Cat_Man_Rig:Cat_Man_GEO
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Foot_iK_CTRL_GRP
+      parentName: Cat_BindPose(Clone)
+      position: {x: -0.1857793, y: 0.12825324, z: -0.101153046}
+      rotation: {x: -0.051850826, y: 0.7003762, z: 0.7105924, w: 0.04293238}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Foot_iK_CTRL
+      parentName: Cat_Man_Rig:L_Foot_iK_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Foot_Arch_CTRL_GRP
+      parentName: Cat_Man_Rig:L_Foot_iK_CTRL
+      position: {x: 0.00046307815, y: 0.16820645, z: -0.0851095}
+      rotation: {x: 0.024906814, y: -0.73592633, z: 0.008693765, w: 0.6765476}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Foot_Arch_CTRL
+      parentName: Cat_Man_Rig:L_Foot_Arch_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Hand_iK_CTRL_GRP
+      parentName: Cat_BindPose(Clone)
+      position: {x: -0.42935574, y: 1.0465039, z: 0.06411173}
+      rotation: {x: 0.33342355, y: -0.5528885, z: 0.3538482, w: 0.6767086}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Hand_iK_CTRL
+      parentName: Cat_Man_Rig:L_Hand_iK_CTRL_GRP
+      position: {x: 0.006966429, y: 0.49286708, z: -0.21902516}
+      rotation: {x: -0.5515291, y: 0, z: -0, w: 0.8341556}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Index_FInger_01_CTRL_GRP
+      parentName: Cat_Man_Rig:L_Hand_iK_CTRL
+      position: {x: 0.047031753, y: 0.0025655692, z: 0.16326223}
+      rotation: {x: 0.18038589, y: 0.24343163, z: -0.0478669, w: 0.95179343}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Index_FInger_01_CTRL
+      parentName: Cat_Man_Rig:L_Index_FInger_01_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Index_Finger_02_CTRL_GRP
+      parentName: Cat_Man_Rig:L_Index_FInger_01_CTRL
+      position: {x: -0, y: 0, z: 0.07694689}
+      rotation: {x: 0.1504619, y: 0.05847896, z: -0.034487672, w: 0.98628193}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Index_Finger_02_CTRL
+      parentName: Cat_Man_Rig:L_Index_Finger_02_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Mid_Finger_01_CTRL_GRP
+      parentName: Cat_Man_Rig:L_Hand_iK_CTRL
+      position: {x: -0, y: 0, z: 0.18171102}
+      rotation: {x: 0.24766186, y: 0.09081586, z: -0.023989627, w: 0.96428245}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Mid_Finger_01_CTRL
+      parentName: Cat_Man_Rig:L_Mid_Finger_01_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Mid_Finger_02_CTRL_GRP
+      parentName: Cat_Man_Rig:L_Mid_Finger_01_CTRL
+      position: {x: -0, y: 0, z: 0.090043545}
+      rotation: {x: 0.17708786, y: 0.04047542, z: -0.03326544, w: 0.9827996}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Mid_Finger_02_CTRL
+      parentName: Cat_Man_Rig:L_Mid_Finger_02_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Pinky_Finger_01_CTRL_GRP
+      parentName: Cat_Man_Rig:L_Hand_iK_CTRL
+      position: {x: -0.05442252, y: -0.047261056, z: 0.17746945}
+      rotation: {x: 0.18264046, y: -0.07716683, z: 0.01492908, w: 0.9800331}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Pinky_Finger_01_CTRL
+      parentName: Cat_Man_Rig:L_Pinky_Finger_01_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Pinky_Finger_02_CTRL_GRP
+      parentName: Cat_Man_Rig:L_Pinky_Finger_01_CTRL
+      position: {x: -0, y: 0, z: 0.055521663}
+      rotation: {x: 0.18647319, y: -0.0047026374, z: 0.0029675204, w: 0.98244435}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Pinky_Finger_02_CTRL
+      parentName: Cat_Man_Rig:L_Pinky_Finger_02_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Thumb_01_CTRL_GRP
+      parentName: Cat_Man_Rig:L_Hand_iK_CTRL
+      position: {x: 0.05595788, y: -0.01503598, z: 0.04597927}
+      rotation: {x: 0.6720561, y: 0.46085346, z: 0.5787, w: -0.03257545}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Thumb_01_CTRL
+      parentName: Cat_Man_Rig:L_Thumb_01_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Thumb_02_CTRL_GRP
+      parentName: Cat_Man_Rig:L_Thumb_01_CTRL
+      position: {x: -0, y: 0.09382754, z: 0}
+      rotation: {x: -0.1930503, y: -0.08971189, z: -0.13367149, w: 0.9678922}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Thumb_02_CTRL
+      parentName: Cat_Man_Rig:L_Thumb_02_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Knee_PV_CTRL_GRP
+      parentName: Cat_BindPose(Clone)
+      position: {x: -0.166016, y: 0.50731534, z: 0.72028655}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Knee_PV_CTRL
+      parentName: Cat_Man_Rig:L_Knee_PV_CTRL_GRP
+      position: {x: 3.5527136e-17, y: -7.105427e-17, z: -1.4210854e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:Pelvis_CTRL_GRP
+      parentName: Cat_BindPose(Clone)
+      position: {x: -0, y: 1.0656923, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:Pelvis_CTRL
+      parentName: Cat_Man_Rig:Pelvis_CTRL_GRP
+      position: {x: -0, y: -0.08015738, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Elbow_PV_CTRL_GRP
+      parentName: Cat_Man_Rig:Pelvis_CTRL
+      position: {x: -0.32516983, y: 0.26265356, z: -0.014642564}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Elbow_PV_CTRL
+      parentName: Cat_Man_Rig:L_Elbow_PV_CTRL_GRP
+      position: {x: -0.000000017753349, y: 0.039604485, z: -0.5429965}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Elbow_PV_CTRL_GRP
+      parentName: Cat_Man_Rig:Pelvis_CTRL
+      position: {x: 0.33188358, y: 0.26629266, z: -0.015280192}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Elbow_PV_CTRL
+      parentName: Cat_Man_Rig:R_Elbow_PV_CTRL_GRP
+      position: {x: -0.0067135696, y: 0.035965394, z: -0.5423589}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:Pelvis_JNT
+      parentName: Cat_BindPose(Clone)
+      position: {x: -0, y: 0.98553497, z: 0}
+      rotation: {x: 0, y: -0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Hip_JNT
+      parentName: Cat_Man_Rig:Pelvis_JNT
+      position: {x: -0.0064332327, y: -0.111759745, z: -0.015170144}
+      rotation: {x: -0.018872006, y: -0.1145836, z: -0.73744035, w: 0.66535413}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Knee_JNT
+      parentName: Cat_Man_Rig:L_Hip_JNT
+      position: {x: -0, y: 0.4497248, z: 0}
+      rotation: {x: -0.23636995, y: -0.0042820615, z: 0.04884622, w: 0.9704251}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Ankle_JNT
+      parentName: Cat_Man_Rig:L_Knee_JNT
+      position: {x: -4.4331564e-17, y: 0.44794944, z: -5.55345e-17}
+      rotation: {x: 0.64436406, y: -0.038606986, z: -0.09653156, w: 0.7576187}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Foot_Sesamoid_JNT
+      parentName: Cat_Man_Rig:L_Ankle_JNT
+      position: {x: -3.8352156e-17, y: 0.18851328, z: 1.1860706e-16}
+      rotation: {x: 0.087439485, y: -0.6033637, z: -0.24437374, w: 0.7540479}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Toe_Tip_JNT
+      parentName: Cat_Man_Rig:L_Foot_Sesamoid_JNT
+      position: {x: -0, y: 0.13946468, z: 0}
+      rotation: {x: 0.49690834, y: 0.5030727, z: 0.5030727, w: -0.49690834}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Hip_JNT
+      parentName: Cat_Man_Rig:Pelvis_JNT
+      position: {x: -0.0064343414, y: 0.11175999, z: -0.015170099}
+      rotation: {x: 0.7374409, y: -0.66535395, z: -0.018870017, w: -0.114581786}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Knee_JNT
+      parentName: Cat_Man_Rig:R_Hip_JNT
+      position: {x: 0.00000042450088, y: -0.44972613, z: 0.00000019024564}
+      rotation: {x: -0.23636995, y: -0.004282105, z: 0.0488462, w: 0.9704251}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Ankle_JNT
+      parentName: Cat_Man_Rig:R_Knee_JNT
+      position: {x: 0.00000030659913, y: -0.4479494, z: -0.00000007784986}
+      rotation: {x: 0.6443641, y: -0.038606957, z: -0.09653157, w: 0.75761867}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Foot_Sesamoid_JNT
+      parentName: Cat_Man_Rig:R_Ankle_JNT
+      position: {x: -0.00000063174883, y: -0.18851322, z: -0.00000011462457}
+      rotation: {x: 0.087441504, y: -0.60336417, z: -0.244372, w: 0.75404775}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Toe_Tip_JNT
+      parentName: Cat_Man_Rig:R_Foot_Sesamoid_JNT
+      position: {x: 0.00000005174489, y: -0.13946457, z: -0.00000027190313}
+      rotation: {x: 0.49690834, y: 0.5030727, z: 0.5030727, w: -0.49690834}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:Spine_01_JNT
+      parentName: Cat_Man_Rig:Pelvis_JNT
+      position: {x: -0.11922438, y: 2.4252682e-17, z: 0.021870881}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:Spine_02_JNT
+      parentName: Cat_Man_Rig:Spine_01_JNT
+      position: {x: -0.12915973, y: 3.3120113e-17, z: -0.0031244117}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:Spine_03_JNT
+      parentName: Cat_Man_Rig:Spine_02_JNT
+      position: {x: -0.13710803, y: 3.2664545e-17, z: 0.008017288}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:Chest_JNT
+      parentName: Cat_Man_Rig:Spine_03_JNT
+      position: {x: -0.109289005, y: 0, z: -0.017306982}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Clavicle_JNT
+      parentName: Cat_Man_Rig:Chest_JNT
+      position: {x: -0.002647465, y: -0.09717306, z: -0.009456777}
+      rotation: {x: -1.3249805e-17, y: 1.5599253e-17, z: 0.9926233, w: 0.121239156}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Shoulder_JNT
+      parentName: Cat_Man_Rig:L_Clavicle_JNT
+      position: {x: -0, y: 0.09659485, z: 0}
+      rotation: {x: 0.015274433, y: 0.1829463, z: 0.13501492, w: 0.97368807}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Elbow_JNT
+      parentName: Cat_Man_Rig:L_Shoulder_JNT
+      position: {x: -0, y: 0.29122466, z: 0}
+      rotation: {x: 0.000037029913, y: 2.0798662e-17, z: 3.1442884e-15, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Wrist_JNT
+      parentName: Cat_Man_Rig:L_Elbow_JNT
+      position: {x: 1.5666422e-15, y: 0.24957502, z: 6.323553e-17}
+      rotation: {x: 0.46100315, y: 0.50607187, z: 0.60749394, w: -0.40288755}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Index_Finger_01_JNT
+      parentName: Cat_Man_Rig:L_Wrist_JNT
+      position: {x: 0.047031753, y: 0.0025655692, z: 0.16326223}
+      rotation: {x: 0.04247885, y: 0.057325378, z: -0.050099734, w: 0.99619246}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Index_Finger_02_JNT
+      parentName: Cat_Man_Rig:L_Index_Finger_01_JNT
+      position: {x: 1.1138991e-16, y: 2.155334e-16, z: 0.07694689}
+      rotation: {x: 0.033041336, y: 0.0128424745, z: -0.034924112, w: 0.99876106}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Index_Finger_03_JNT
+      parentName: Cat_Man_Rig:L_Index_Finger_02_JNT
+      position: {x: -0, y: 0, z: 0.07262072}
+      rotation: {x: -0.14243695, y: 0.69261223, z: 0.14243695, w: 0.69261223}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Mid_Finger_01_JNT
+      parentName: Cat_Man_Rig:L_Wrist_JNT
+      position: {x: 3.5527136e-17, y: -1.110223e-16, z: 0.18171102}
+      rotation: {x: 0.06907061, y: 0.025327578, z: -0.024803117, w: 0.9969818}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Mid_Finger_02_JNT
+      parentName: Cat_Man_Rig:L_Mid_Finger_01_JNT
+      position: {x: 2.872984e-17, y: -6.2552526e-16, z: 0.090043545}
+      rotation: {x: 0.0335314, y: 0.007663724, z: -0.033808205, w: 0.99883634}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Mid_Finger_03_JNT
+      parentName: Cat_Man_Rig:L_Mid_Finger_02_JNT
+      position: {x: -0, y: 0, z: 0.058047216}
+      rotation: {x: -0.16845748, y: 0.6867475, z: 0.012718931, w: 0.7069924}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Pinky_Finger_01_JNT
+      parentName: Cat_Man_Rig:L_Wrist_JNT
+      position: {x: -0.05442252, y: -0.047261056, z: 0.17746945}
+      rotation: {x: 0.0710566, y: -0.030021947, z: 0.0151860695, w: 0.9969048}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Pinky_Finger_02_JNT
+      parentName: Cat_Man_Rig:L_Pinky_Finger_01_JNT
+      position: {x: 2.6892103e-17, y: 2.9962136e-16, z: 0.055521663}
+      rotation: {x: 0.03413103, y: -0.00086061255, z: 0.0030188037, w: 0.9994124}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Pinky_Finger_03_JNT
+      parentName: Cat_Man_Rig:L_Pinky_Finger_02_JNT
+      position: {x: -0, y: 0, z: 0.051145338}
+      rotation: {x: -0.05904071, y: 0.70463765, z: -0.0789093, w: 0.70269006}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Thumb_01_JNT
+      parentName: Cat_Man_Rig:L_Wrist_JNT
+      position: {x: 0.05595788, y: -0.01503598, z: 0.04597927}
+      rotation: {x: 0.5839204, y: 0.6251059, z: 0.51387876, w: 0.06487142}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Thumb_02_JNT
+      parentName: Cat_Man_Rig:L_Thumb_01_JNT
+      position: {x: 9.7699626e-17, y: 0.09382754, z: 1.7097434e-16}
+      rotation: {x: 0.0020881959, y: -0.061175197, z: -0.03601234, w: 0.997475}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Thumb_03_JNT
+      parentName: Cat_Man_Rig:L_Thumb_02_JNT
+      position: {x: -0, y: 0.0799588, z: 0}
+      rotation: {x: 0.4013104, y: -0.26708636, z: -0.6219429, w: 0.6170915}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:Neck_JNT
+      parentName: Cat_Man_Rig:Chest_JNT
+      position: {x: -0.076846905, y: 0, z: -0.017367044}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:Head_JNT
+      parentName: Cat_Man_Rig:Neck_JNT
+      position: {x: -0.04910379, y: 1.4545869e-17, z: -0.014953992}
+      rotation: {x: 0.025734138, y: -0.063815504, z: 0.01473604, w: 0.99752104}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:Head_Tip_JNT
+      parentName: Cat_Man_Rig:Head_JNT
+      position: {x: -0.49879128, y: 0, z: -0.001308133}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:Jaw_JNT
+      parentName: Cat_Man_Rig:Head_JNT
+      position: {x: -0.015956558, y: 1.5212136e-18, z: 0.094226934}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Clavicle_JNT
+      parentName: Cat_Man_Rig:Chest_JNT
+      position: {x: -0.0026431973, y: 0.097173095, z: -0.009456777}
+      rotation: {x: 0.9926233, y: 0.121239126, z: 3.123047e-18, w: -6.2068834e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Shoulder_JNT
+      parentName: Cat_Man_Rig:R_Clavicle_JNT
+      position: {x: -0.00000067334133, y: -0.09659474, z: 0}
+      rotation: {x: 0.018094797, y: 0.18729712, z: 0.11874097, w: 0.9749323}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Elbow_JNT
+      parentName: Cat_Man_Rig:R_Shoulder_JNT
+      position: {x: -0.0000013590264, y: -0.291225, z: 0.000000006274675}
+      rotation: {x: 0.000039326886, y: 0.00000092753226, z: 0.0000034894374, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Wrist_JNT
+      parentName: Cat_Man_Rig:R_Elbow_JNT
+      position: {x: -0.0000031317302, y: -0.24957442, z: -0.00000019271624}
+      rotation: {x: -0.39806333, y: 0.6065971, z: -0.510989, w: -0.4609509}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Index_Finger_01_JNT
+      parentName: Cat_Man_Rig:R_Wrist_JNT
+      position: {x: -0.047032125, y: 0.0025731456, z: 0.16326189}
+      rotation: {x: 0.04248171, y: -0.057322256, z: 0.05010924, w: 0.9961921}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Index_Finger_02_JNT
+      parentName: Cat_Man_Rig:R_Index_Finger_01_JNT
+      position: {x: -8.1534816e-17, y: -8.530029e-18, z: 0.07694846}
+      rotation: {x: 0.03304204, y: -0.012847119, z: 0.034927245, w: 0.9987609}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Index_Finger_03_JNT
+      parentName: Cat_Man_Rig:R_Index_Finger_02_JNT
+      position: {x: -0, y: 0, z: 0.07261972}
+      rotation: {x: 0.692614, y: -0.14244533, z: 0.69261044, w: 0.14242876}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Mid_Finger_01_JNT
+      parentName: Cat_Man_Rig:R_Wrist_JNT
+      position: {x: -5.3290704e-17, y: 2.2204459e-17, z: 0.18171148}
+      rotation: {x: 0.069071345, y: -0.025329243, z: 0.024804514, w: 0.9969816}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Mid_Finger_02_JNT
+      parentName: Cat_Man_Rig:R_Mid_Finger_01_JNT
+      position: {x: -6.0700757e-17, y: -1.7895563e-16, z: 0.09004271}
+      rotation: {x: 0.033532288, y: -0.007665511, z: 0.033810776, w: 0.9988361}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Mid_Finger_03_JNT
+      parentName: Cat_Man_Rig:R_Mid_Finger_02_JNT
+      position: {x: -0, y: 0, z: 0.058042664}
+      rotation: {x: 0.7069986, y: -0.012734975, z: 0.6867432, w: 0.16844763}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Pinky_Finger_01_JNT
+      parentName: Cat_Man_Rig:R_Wrist_JNT
+      position: {x: 0.05442247, y: -0.047260292, z: 0.17747048}
+      rotation: {x: 0.07105551, y: 0.030029144, z: -0.015184013, w: 0.9969047}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Pinky_Finger_02_JNT
+      parentName: Cat_Man_Rig:R_Pinky_Finger_01_JNT
+      position: {x: -2.1070656e-17, y: -4.001389e-17, z: 0.0555202}
+      rotation: {x: 0.034127668, y: 0.00086033694, z: -0.0030183215, w: 0.9994126}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Pinky_Finger_03_JNT
+      parentName: Cat_Man_Rig:R_Pinky_Finger_02_JNT
+      position: {x: -0, y: 0, z: 0.051144812}
+      rotation: {x: 0.70269114, y: 0.07889967, z: 0.7046385, w: 0.05903152}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Thumb_01_JNT
+      parentName: Cat_Man_Rig:R_Wrist_JNT
+      position: {x: -0.0559576, y: -0.01503406, z: 0.045979515}
+      rotation: {x: -0.0059975074, y: 0.5296121, z: -0.6233943, w: 0.5751998}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Thumb_02_JNT
+      parentName: Cat_Man_Rig:R_Thumb_01_JNT
+      position: {x: 0.0000013310196, y: -0.09382965, z: 0.000002075602}
+      rotation: {x: -0.025991041, y: -0.09224877, z: -0.017957306, w: 0.9952348}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Thumb_03_JNT
+      parentName: Cat_Man_Rig:R_Thumb_02_JNT
+      position: {x: -0.000003495792, y: -0.07995628, z: -0.0000018599461}
+      rotation: {x: 0.4013104, y: -0.26708636, z: -0.6219429, w: 0.6170915}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Foot_iK_CTRL_GRP
+      parentName: Cat_BindPose(Clone)
+      position: {x: 0.18577899, y: 0.128253, z: -0.101153}
+      rotation: {x: 0.057212956, y: 0.7083963, z: 0.7029313, w: -0.02808833}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Foot_iK_CTRL
+      parentName: Cat_Man_Rig:R_Foot_iK_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Foot_Arch_CTRL_GRP
+      parentName: Cat_Man_Rig:R_Foot_iK_CTRL
+      position: {x: -0.0053601414, y: 0.16641988, z: -0.08839074}
+      rotation: {x: -0.6657313, y: 0.011817183, z: 0.7459864, w: 0.012900068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Foot_Arch_CTRL
+      parentName: Cat_Man_Rig:R_Foot_Arch_CTRL_GRP
+      position: {x: 0.0012601821, y: -0.0014926714, z: 0.017296027}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Hand_iK_CTRL_GRP
+      parentName: Cat_BindPose(Clone)
+      position: {x: 0.44178656, y: 1.052849, z: 0.062960945}
+      rotation: {x: 0.32626817, y: 0.55813974, z: -0.34484988, w: 0.6805202}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Hand_iK_CTRL
+      parentName: Cat_Man_Rig:R_Hand_iK_CTRL_GRP
+      position: {x: -0.008729105, y: 0.49686763, z: -0.23142898}
+      rotation: {x: -0.5905556, y: 0, z: -0, w: 0.80699694}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Index_Finger_01_CTRL_GRP
+      parentName: Cat_Man_Rig:R_Hand_iK_CTRL
+      position: {x: -0.047032125, y: 0.0025731456, z: 0.16326189}
+      rotation: {x: 0.18040265, y: -0.2434252, z: 0.047875836, w: 0.95179147}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Index_Finger_01_CTRL
+      parentName: Cat_Man_Rig:R_Index_Finger_01_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Index_Finger_02_CTRL_GRP1
+      parentName: Cat_Man_Rig:R_Index_Finger_01_CTRL
+      position: {x: -0, y: 0, z: 0.07694846}
+      rotation: {x: 0.15042154, y: -0.058482606, z: 0.034491148, w: 0.9862877}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Index_Finger_02_CTRL
+      parentName: Cat_Man_Rig:R_Index_Finger_02_CTRL_GRP1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Mid_Finger_01_CTRL_GRP
+      parentName: Cat_Man_Rig:R_Hand_iK_CTRL
+      position: {x: -0, y: 0, z: 0.18171148}
+      rotation: {x: 0.2476506, y: -0.090816885, z: 0.023990996, w: 0.9642852}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Mid_Finger_01_CTRL
+      parentName: Cat_Man_Rig:R_Mid_Finger_01_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Mid_Finger_02_CTRL_GRP
+      parentName: Cat_Man_Rig:R_Mid_Finger_01_CTRL
+      position: {x: -0, y: 0, z: 0.09004271}
+      rotation: {x: 0.17706926, y: -0.04048033, z: 0.033268176, w: 0.9828026}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Mid_Finger_02_CTRL
+      parentName: Cat_Man_Rig:R_Mid_Finger_02_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Pinky_Finger_01_CTRL_GRP
+      parentName: Cat_Man_Rig:R_Hand_iK_CTRL
+      position: {x: 0.05442247, y: -0.047260292, z: 0.17747048}
+      rotation: {x: 0.18259405, y: 0.077167146, z: -0.014927186, w: 0.98004174}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Pinky_Finger_01_CTRL
+      parentName: Cat_Man_Rig:R_Pinky_Finger_01_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Pinky_Finger_02_CTRL_GRP
+      parentName: Cat_Man_Rig:R_Pinky_Finger_01_CTRL
+      position: {x: -0, y: 0, z: 0.0555202}
+      rotation: {x: 0.1864953, y: 0.0047024107, z: -0.0029670536, w: 0.9824401}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Pinky_Finger_02_CTRL
+      parentName: Cat_Man_Rig:R_Pinky_Finger_02_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Thumb_01_CTRL_GRP
+      parentName: Cat_Man_Rig:R_Hand_iK_CTRL
+      position: {x: -0.0559576, y: -0.01503406, z: 0.045979515}
+      rotation: {x: 0.03256776, y: 0.57869464, z: -0.46086007, w: 0.67205644}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Thumb_01_CTRL
+      parentName: Cat_Man_Rig:R_Thumb_01_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Thumb_02_CTRL_GRP
+      parentName: Cat_Man_Rig:R_Thumb_01_CTRL
+      position: {x: 0.0000013310196, y: -0.09382965, z: 0.000002075602}
+      rotation: {x: -0.1930503, y: -0.08971189, z: -0.13367149, w: 0.9678922}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Thumb_02_CTRL
+      parentName: Cat_Man_Rig:R_Thumb_02_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Knee_PV_CTRL_GRP
+      parentName: Cat_BindPose(Clone)
+      position: {x: 0.16601999, y: 0.50731534, z: 0.72028655}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Knee_PV_CTRL
+      parentName: Cat_Man_Rig:R_Knee_PV_CTRL_GRP
+      position: {x: -0, y: 2.1316282e-16, z: 1.4210854e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:Spine_01_CTRL_GRP
+      parentName: Cat_BindPose(Clone)
+      position: {x: -0, y: 1.1157501, z: 0.021870881}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:Spine_01_CTRL
+      parentName: Cat_Man_Rig:Spine_01_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:Spine_02_CTRL_GRP
+      parentName: Cat_Man_Rig:Spine_01_CTRL
+      position: {x: -0, y: 0.12915969, z: -0.0031244121}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:Spine_02_CTRL
+      parentName: Cat_Man_Rig:Spine_02_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:Spine_03_CTRL_GRP
+      parentName: Cat_Man_Rig:Spine_02_CTRL
+      position: {x: -0, y: 0.13710807, z: 0.0080172885}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:Spine_03_CTRL
+      parentName: Cat_Man_Rig:Spine_03_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Shoulder_CTRL_GRP
+      parentName: Cat_Man_Rig:Spine_03_CTRL
+      position: {x: -0.19092822, y: 0.13518581, z: -0.026763758}
+      rotation: {x: 0.024717635, y: -0.031921122, z: 0.97076666, w: 0.23660545}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:L_Shoulder_CTRL
+      parentName: Cat_Man_Rig:L_Shoulder_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:Neck_CTRL_GRP
+      parentName: Cat_Man_Rig:Spine_03_CTRL
+      position: {x: -0, y: 0.18613587, z: -0.034674026}
+      rotation: {x: 0, y: -0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:Neck_CTRL
+      parentName: Cat_Man_Rig:Neck_CTRL_GRP
+      position: {x: -0, y: 4.914644e-20, z: 0}
+      rotation: {x: 0.14304842, y: 0.11282262, z: 0.70965683, w: 0.6805846}
+      scale: {x: 13.144737, y: 16.26952, z: 16.26952}
+    - name: Cat_Man_Rig:Head_CTRL_GRP
+      parentName: Cat_Man_Rig:Neck_CTRL
+      position: {x: -0, y: 0.0026497704, z: -0.0017125256}
+      rotation: {x: -0.09802377, y: -0.09802377, z: -0.7002795, w: 0.7002795}
+      scale: {x: 0.06146463, y: 0.076076075, z: 0.06146463}
+    - name: Cat_Man_Rig:Head_CTRL
+      parentName: Cat_Man_Rig:Head_CTRL_GRP
+      position: {x: -0, y: -4.9479144e-18, z: 0}
+      rotation: {x: 0.022800805, y: 0.022800805, z: 0.7067391, w: 0.7067391}
+      scale: {x: 18.536728, y: 22.9433, z: 22.9433}
+    - name: Cat_Man_Rig:Jaw_CTRL_GRP
+      parentName: Cat_Man_Rig:Head_CTRL
+      position: {x: -0, y: 0.0017964172, z: 0.0037581369}
+      rotation: {x: -0.13862656, y: 0, z: -0, w: 0.99034476}
+      scale: {x: 0.053946957, y: 0.04358571, z: 0.04358571}
+    - name: Cat_Man_Rig:Jaw_CTRL
+      parentName: Cat_Man_Rig:Jaw_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Shoulder_CTRL_GRP
+      parentName: Cat_Man_Rig:Spine_03_CTRL
+      position: {x: 0.190928, y: 0.13518217, z: -0.026763758}
+      rotation: {x: -0.24930744, y: 0.9675704, z: 0.033172753, w: 0.023515122}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat_Man_Rig:R_Shoulder_CTRL
+      parentName: Cat_Man_Rig:R_Shoulder_CTRL_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 8619123ffc9efe347a6d4473120ddf73,
+    type: 3}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
