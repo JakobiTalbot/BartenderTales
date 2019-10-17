@@ -42,6 +42,7 @@ public class Customer : MonoBehaviour
     private Vector3 m_v3CoinDropPos;
     private CustomerAnimator m_customerAnimator;
     private ReputationManager m_repManager;
+    private ScoreManager m_scoreManager;
     private Renderer m_renderer;
     private bool m_bHadPath = false;
     private bool m_bIsRagdolling = false;
@@ -151,23 +152,23 @@ public class Customer : MonoBehaviour
         if (m_order == p.m_potionName)
         {
             m_repManager.AddToReputation(m_reputationOnCorrectOrder);
+            m_scoreManager.AddCorrectOrder();
             // give money
             Instantiate(m_moneyPrefab, m_v3CoinDropPos, Quaternion.Euler(Vector3.zero));
             // happy reaction
+
+            // drink potion
+            System.Type type = FindObjectOfType<Shaker>().m_potionFunc[p.m_potionName].GetType();
+            gameObject.AddComponent(type);
         }
         else // if wrong potion given
         {
             m_repManager.AddToReputation(-m_reputationOnWrongOrder);
+            m_scoreManager.AddIncorrectOrder();
             // sad reaction
-        }
 
-        if (p.m_potionName == PotionName.Mundane)
-            gameObject.AddComponent<Mundane>();
-        else
-        {
-            System.Type type = FindObjectOfType<Shaker>().m_potionFunc[p.m_potionName].GetType();
-            // drink potion
-            gameObject.AddComponent(type);
+            if (p.m_potionName == PotionName.Mundane)
+                gameObject.AddComponent<Mundane>();
         }
 
         // spawn new tutorial customer if this customer is tutorial customer
@@ -205,7 +206,7 @@ public class Customer : MonoBehaviour
             m_spawner.m_servingPoints.Add(m_point);
     }
 
-    public void Dissolve()
+    public IEnumerator Dissolve()
     {
         Renderer[] renderers = GetComponentsInChildren<Renderer>();
 
@@ -221,6 +222,10 @@ public class Customer : MonoBehaviour
 
             r.gameObject.AddComponent<Dissolve>();
         }
+
+        yield return new WaitForSeconds(7f);
+
+        Destroy(gameObject);
     }
 
     /// <summary>
@@ -231,6 +236,8 @@ public class Customer : MonoBehaviour
     {
         m_v3CoinDropPos = v3DropPos;
     }
+
+    public void SetScoreManager(ScoreManager scoreManager) => m_scoreManager = scoreManager;
 
     /// <summary>
     /// Activates the customer's speech bubble and displays specified text inside it

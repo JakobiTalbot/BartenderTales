@@ -11,13 +11,13 @@ public class ScoreManager : MonoBehaviour
 
     private int m_nTotalScore = 0;
 
-    private void AddCorrectOrder()
+    public void AddCorrectOrder()
     {
         ++m_nCorrectOrders;
         m_nTotalScore += 1 + m_nConsecutiveCorrectOrders++;
     }
 
-    private void AddIncorrectOrder()
+    public void AddIncorrectOrder()
     {
         ++m_nIncorrectOrders;
         // reset consecutive correct orders

@@ -51,6 +51,7 @@ public class CustomerSpawner : MonoBehaviour
     [HideInInspector]
     public bool m_spawnCustomers = true;
 
+    private ScoreManager m_scoreManager;
     private float m_fCustomerSpawnTimer = 0f;
     private bool m_bHappyHour = false;
     private float m_fGameTimer = 0f;
@@ -60,9 +61,10 @@ public class CustomerSpawner : MonoBehaviour
     public AudioSource calmHourMusic;
     public float fadeTime;
 
-    void Start()
+    void Awake()
     {
         m_customers = new List<GameObject>();
+        m_scoreManager = FindObjectOfType<ScoreManager>();
     }
 
     public void Fade()
@@ -168,6 +170,7 @@ public class CustomerSpawner : MonoBehaviour
         cust.SetDestination(destPoint, bWait);
         cust.SetCoinDropPos(m_coinDropPoint.position);
         cust.SetTutorialCustomer(bTutorialCustomer);
+        cust.SetScoreManager(m_scoreManager);
 
         return true;
     }
