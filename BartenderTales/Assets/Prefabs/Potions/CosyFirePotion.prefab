@@ -36,7 +36,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4554718752582502801}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.0077, y: 1.0258, z: -4.3780575}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -50,7 +50,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4554718752582502801}
-  m_Mesh: {fileID: 4300002, guid: 5bd522d22769017489ee7a43acda186e, type: 3}
+  m_Mesh: {fileID: 4300012, guid: 5bd522d22769017489ee7a43acda186e, type: 3}
 --- !u!23 &4554718752580507473
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -116,7 +116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 271cc34dd7bda22489a7d2eed4888c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ingredients: 0100000004000000
   m_potionName: 3
 --- !u!114 &1500738424914455522
 MonoBehaviour:
@@ -276,8 +275,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.05776304
-  m_Center: {x: 0, y: -0.05637151, z: 0}
+  m_Radius: 0.072728455
+  m_Center: {x: 0, y: -0.071336925, z: 0}
 --- !u!136 &8397126284051768851
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -303,8 +302,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.07040471, y: 0.026346684, z: 0.067676544}
-  m_Center: {x: 0.006185144, y: 0.0989387, z: 0.010262966}
+  m_Size: {x: 0.07040471, y: 0.06229794, z: 0.067676544}
+  m_Center: {x: 0.006185144, y: 0.11691433, z: 0.010262966}
 --- !u!65 &2752994233720359609
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -316,5 +315,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.07040471, y: 0.026346684, z: 0.067676544}
-  m_Center: {x: 0, y: -0.1, z: 0}
+  m_Size: {x: 0.08352733, y: 0.019026399, z: 0.08119106}
+  m_Center: {x: 0.0009571314, y: -0.14938134, z: 0.0010194778}

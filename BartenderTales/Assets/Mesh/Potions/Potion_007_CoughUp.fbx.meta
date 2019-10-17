@@ -12,10 +12,14 @@ ModelImporter:
     2100000: phongE1
     2100002: lambert1
     2100004: Txt_Potion_CoughUp
+    2100006: lambert3
+    2100008: Txt_Potion_006_CoughUp
     2300000: Cough_UP_Bottle
     2300002: Potion_007_CoughUp
+    2300004: //RootNode
     3300000: Cough_UP_Bottle
     3300002: Potion_007_CoughUp
+    3300004: //RootNode
     4300000: Cough_UP_Bottle
     4300002: Potion_007_CoughUp
     2186277476908879412: ImportLogs

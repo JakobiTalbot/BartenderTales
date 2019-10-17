@@ -1,45 +1,14 @@
 fileFormatVersion: 2
-guid: 5bd522d22769017489ee7a43acda186e
+guid: dcaa18273e8af1d43ab946605ebb72fc
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: LP_cosyfire_1:polySurface12
-    100002: LP_cosyfire_1:polySurface13
-    100004: LP_cosyfire_1:polySurface14
-    100006: LP_cosyfire_1:polySurface15
-    100008: LP_cosyfire_1:polySurface16
-    100010: LP_cosyfire_1:polySurface17
-    100012: //RootNode
-    400000: LP_cosyfire_1:polySurface12
-    400002: LP_cosyfire_1:polySurface13
-    400004: LP_cosyfire_1:polySurface14
-    400006: LP_cosyfire_1:polySurface15
-    400008: LP_cosyfire_1:polySurface16
-    400010: LP_cosyfire_1:polySurface17
-    400012: //RootNode
-    2100000: Cosy_Fire_txt
-    2100002: Txt_Potion_001_CosyFire
-    2300000: LP_cosyfire_1:polySurface12
-    2300002: LP_cosyfire_1:polySurface13
-    2300004: LP_cosyfire_1:polySurface14
-    2300006: LP_cosyfire_1:polySurface15
-    2300008: LP_cosyfire_1:polySurface16
-    2300010: LP_cosyfire_1:polySurface17
-    2300012: //RootNode
-    3300000: LP_cosyfire_1:polySurface12
-    3300002: LP_cosyfire_1:polySurface13
-    3300004: LP_cosyfire_1:polySurface14
-    3300006: LP_cosyfire_1:polySurface15
-    3300008: LP_cosyfire_1:polySurface16
-    3300010: LP_cosyfire_1:polySurface17
-    3300012: //RootNode
-    4300000: LP_cosyfire_1:polySurface12
-    4300002: LP_cosyfire_1:polySurface13
-    4300004: LP_cosyfire_1:polySurface14
-    4300006: LP_cosyfire_1:polySurface15
-    4300008: LP_cosyfire_1:polySurface16
-    4300010: LP_cosyfire_1:polySurface17
-    4300012: Potion_001_CosyFire
+    100000: //RootNode
+    400000: //RootNode
+    2100000: lambert1
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pHelix1
   externalObjects: {}
   materials:
     importMaterials: 1
