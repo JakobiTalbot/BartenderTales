@@ -49,7 +49,6 @@ public class Customer : MonoBehaviour
     private bool m_bHadPath = false;
     private bool m_bIsRagdolling = false;
     private bool m_bIsTutorialNPC = false;
-    private bool m_bPointReturnedToSpawner = false;
     
     public Animator m_animator;
     public GameObject m_sparkleEffect;
@@ -213,8 +212,6 @@ public class Customer : MonoBehaviour
             m_spawner.m_waitingPoints.Add(m_point);
         else
             m_spawner.m_servingPoints.Add(m_point);
-
-        m_bPointReturnedToSpawner = true;
     }
 
     public IEnumerator Dissolve()
@@ -346,9 +343,6 @@ public class Customer : MonoBehaviour
     private void OnDestroy()
     {
         m_spawner.m_customers.Remove(gameObject);
-        if (!m_bPointReturnedToSpawner
-            && !m_bExitingBar)
-            AddPointToSpawner();
     }
 
     public CustomerType GetCustomerType() => m_customerType;
