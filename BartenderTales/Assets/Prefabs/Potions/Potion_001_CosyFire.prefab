@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 1901273111447773315}
   - component: {fileID: 2752994233720359609}
   m_Layer: 0
-  m_Name: CosyFirePotion
+  m_Name: Potion_001_CosyFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 816147845c66bfa4d9272d656ed22adb, type: 2}
+  - {fileID: 2100000, guid: bb94c6bd866864f4fb0f571b0c2c563d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

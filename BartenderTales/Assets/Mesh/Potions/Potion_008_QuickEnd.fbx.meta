@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: 45326a2f25dfe1d44bcd5a1515981fb4
+guid: ca80ecab61fa47b4a89eaa8ca5d25b5b
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Potion_008_HonestPolicy1
+    2100000: Txt_Potion_008_QuickEnd
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Potion_008_HonestPolicy
+    4300000: Potion_008_QuickEnd
   externalObjects: {}
   materials:
     importMaterials: 1
