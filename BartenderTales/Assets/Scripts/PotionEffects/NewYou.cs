@@ -45,7 +45,7 @@ public class NewYou : PotionEffect
         Customer newCust = Instantiate(newCustomer, transform.position, transform.rotation).GetComponent<Customer>();
 
         // set values for new customer
-        GameObject hat = GetComponent<CustomerSpawner>().GetRandomHat();
+        GameObject hat = FindObjectOfType<CustomerSpawner>().GetRandomHat();
         if (hat)
             newCust.SetHat(hat);
         newCust.SetCoinDropPos(cs.m_coinDropPoint.position);
