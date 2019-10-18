@@ -51,6 +51,8 @@ public class NewYou : PotionEffect
         newCust.SetCoinDropPos(cs.m_coinDropPoint.position);
         newCust.SetScoreManager(cs.GetScoreManager());
 
+        newCust.GoIdle();
+
         newCust.Invoke("ExitBar", m_secondsForNewCustomerToWaitUntilLeaving);
 
         Destroy(gameObject);

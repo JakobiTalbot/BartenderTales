@@ -114,13 +114,18 @@ public class Customer : MonoBehaviour
             if (!m_agent.isStopped
                 && m_agent.hasPath)
             {
-                m_agent.isStopped = true;
-                m_animator.SetBool("StoppedMoving", true);
-                m_customerAnimator.StartCoroutine("IdleLoop");
+                GoIdle();
             }
         }
         //else if (m_agent.isStopped)
             //SetDestination(m_point, m_bWaiting);
+    }
+
+    public void GoIdle()
+    {
+        m_agent.isStopped = true;
+        m_animator.SetBool("StoppedMoving", true);
+        m_customerAnimator.StartCoroutine("IdleLoop");
     }
 
     public void SetDestination(Transform dest, bool bWait)
