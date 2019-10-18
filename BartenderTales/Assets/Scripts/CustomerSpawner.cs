@@ -149,14 +149,16 @@ public class CustomerSpawner : MonoBehaviour
         // if no free serving points
         if (m_servingPoints.Count <= 0)
         {
-            destPoint = m_waitingPoints[m_waitingPoints.Count - 1];
-            m_waitingPoints.RemoveAt(m_waitingPoints.Count - 1);
+            int point = Random.Range(0, m_waitingPoints.Count);
+            destPoint = m_waitingPoints[point];
+            m_waitingPoints.RemoveAt(point);
             bWait = true;
         }
         else // if there are free serving points
         {
-            destPoint = m_servingPoints[m_servingPoints.Count - 1];
-            m_servingPoints.RemoveAt(m_servingPoints.Count - 1);
+            int point = Random.Range(0, m_servingPoints.Count);
+            destPoint = m_servingPoints[point];
+            m_servingPoints.RemoveAt(point);
         }
 
         // get random spawn point

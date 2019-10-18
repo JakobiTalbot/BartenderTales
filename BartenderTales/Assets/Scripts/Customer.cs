@@ -49,6 +49,7 @@ public class Customer : MonoBehaviour
     private bool m_bHadPath = false;
     private bool m_bIsRagdolling = false;
     private bool m_bIsTutorialNPC = false;
+    private bool m_bPointReturned = false;
     
     public Animator m_animator;
     public GameObject m_sparkleEffect;
@@ -208,10 +209,15 @@ public class Customer : MonoBehaviour
     /// </summary>
     public void AddPointToSpawner()
     {
+        if (m_bPointReturned)
+            return;
+
         if (m_bWaiting)
             m_spawner.m_waitingPoints.Add(m_point);
         else
             m_spawner.m_servingPoints.Add(m_point);
+
+        m_bPointReturned = true;
     }
 
     public IEnumerator Dissolve()
