@@ -6,9 +6,11 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: lambert1
+    2100002: Txt_Potion_002_PixieDust
     2300000: //RootNode
     3300000: //RootNode
     4300000: Potion_001_PixieDust
+    4300002: Potion_002_PixieDust
   externalObjects: {}
   materials:
     importMaterials: 1
