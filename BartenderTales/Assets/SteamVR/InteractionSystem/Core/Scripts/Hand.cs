@@ -591,6 +591,7 @@ namespace Valve.VR.InteractionSystem
 
                 GameObject prevTopObject = currentAttachedObject;
 
+
                 if (attachedObjects[index].interactable != null)
                 {
                     if (attachedObjects[index].interactable.hideHandOnAttach)
@@ -1639,6 +1640,7 @@ namespace Valve.VR.InteractionSystem
             return trackedObject.GetDeviceIndex();
         }
     }
+
 
     [System.Serializable]
     public class HandEvent : UnityEvent<Hand> { }
