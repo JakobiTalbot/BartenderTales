@@ -41,11 +41,6 @@
       "requirement": "optional"
     },
     {
-      "name": "/actions/default/in/TriggerDown",
-      "type": "boolean",
-      "requirement": "mandatory"
-    },
-    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },
@@ -147,9 +142,7 @@
       "/actions/default/in/SkeletonRightHand": "Skeleton (Right)",
       "/actions/default/in/Teleport": "Teleport",
       "/actions/default/out/Haptic": "Haptic",
-      "/actions/platformer/in/Jump": "Jump",
-      "/actions/default/in/TriggerDown": "TriggerDown",
-      "/actions/default/in/Squeeze": "Squeeze"
+      "/actions/platformer/in/Jump": "Jump"
     }
   ]
 }
