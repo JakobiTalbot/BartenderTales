@@ -57,15 +57,20 @@ public class Customer : MonoBehaviour
 
     void Start()
     {
+        GetReferences();
+        // order random potion
+        m_order = (PotionName)Random.Range(0, (int)PotionName.Count);
+        m_spawner = FindObjectOfType<CustomerSpawner>();
+        SetRagdoll(false);
+    }
+
+    public void GetReferences()
+    {
         m_repManager = FindObjectOfType<ReputationManager>();
         m_renderer = GetComponent<Renderer>();
         m_animator = GetComponent<Animator>();
         m_customerAnimator = GetComponent<CustomerAnimator>();
         m_agent = GetComponent<NavMeshAgent>();
-        // order random potion
-        m_order = (PotionName)Random.Range(0, (int)PotionName.Count);
-        m_spawner = FindObjectOfType<CustomerSpawner>();
-        SetRagdoll(false);
     }
 
     void Update()

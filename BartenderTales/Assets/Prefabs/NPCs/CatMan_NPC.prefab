@@ -406,7 +406,7 @@ Transform:
   - {fileID: 8400663124044902608}
   - {fileID: 4301901426905085891}
   - {fileID: 6127824702147679698}
-  - {fileID: 3119511322790411055}
+  - {fileID: 8750319538481343964}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -493,7 +493,7 @@ MonoBehaviour:
   m_hatTransform: {fileID: 8400663124044902662}
   m_customerType: 2
   m_animator: {fileID: 8400663124054482666}
-  m_sparkleEffect: {fileID: 3119511322790411585}
+  m_sparkleEffect: {fileID: 5533901494309827612}
   m_trailEffects: []
 --- !u!114 &3462099789005171097
 MonoBehaviour:
@@ -699,7 +699,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!144 &5586104079399377380
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -1151,7 +1151,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!1 &8400663124044999826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,7 +1642,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!144 &3935354401129586670
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -1935,7 +1935,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!144 &4382554355226787596
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -2260,7 +2260,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!144 &9010305590411735538
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -2921,7 +2921,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!144 &7450386603904349647
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -3279,7 +3279,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!144 &685460225085029825
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -3813,7 +3813,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!144 &4583438523840615886
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -4106,7 +4106,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!144 &5139093554123866603
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -4435,7 +4435,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!144 &1714111946101635743
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -5097,7 +5097,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!144 &4653446149355200186
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -5299,13 +5299,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35cf30f52f66eff488a467341800d9af, type: 3}
---- !u!1 &3119511322790411585 stripped
+--- !u!1 &5533901494309827612 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7459901706813049503, guid: 35cf30f52f66eff488a467341800d9af,
     type: 3}
   m_PrefabInstance: {fileID: 3119511322790411907}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &3119511322790411055 stripped
+--- !u!4 &8750319538481343964 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5919377285771432799, guid: 35cf30f52f66eff488a467341800d9af,
     type: 3}

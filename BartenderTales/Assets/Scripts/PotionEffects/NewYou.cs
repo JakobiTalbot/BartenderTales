@@ -43,6 +43,7 @@ public class NewYou : PotionEffect
 
         // create new customer
         Customer newCust = Instantiate(newCustomer, transform.position, transform.rotation).GetComponent<Customer>();
+        newCust.GetReferences();
 
         // set values for new customer
         GameObject hat = FindObjectOfType<CustomerSpawner>().GetRandomHat();
