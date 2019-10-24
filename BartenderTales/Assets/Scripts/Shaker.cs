@@ -36,6 +36,8 @@ public class Shaker : MonoBehaviour
     private float m_emptyShakerForceThreshold = 1f;
     [SerializeField]
     private Color m_shakenColour = Color.red;
+    [SerializeField]
+    private float m_shakerCapPopForce = 10f;
 
     [HideInInspector]
     public Dictionary<PotionName, PotionEffect> m_potionFunc;
@@ -116,6 +118,7 @@ public class Shaker : MonoBehaviour
                 {
                     CreatePotions();
                     ResetColours();
+                    PopCap();
                 }
             }
             // empty ingredients
@@ -137,6 +140,14 @@ public class Shaker : MonoBehaviour
     {
         m_renderer.material.color = m_startColour;
         m_capClass.ResetColour();
+    }
+
+    private void PopCap()
+    {
+        RemoveCap();
+        Rigidbody rb = m_cap.GetComponent<Rigidbody>();
+        rb.isKinematic = false;
+        rb.velocity += transform.up * m_shakerCapPopForce;
     }
 
     /// <summary>
