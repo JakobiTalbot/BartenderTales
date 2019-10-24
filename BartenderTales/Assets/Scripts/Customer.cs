@@ -135,8 +135,6 @@ public class Customer : MonoBehaviour
 
     public void SetDestination(Transform dest, bool bWait)
     {
-        if (!m_agent)
-            m_agent = GetComponent<NavMeshAgent>();
         m_bWaiting = bWait;
         m_agent.isStopped = false;
         m_bHadPath = true;
