@@ -19,7 +19,10 @@ public class CupidsKiss : PotionEffect
         // enable ragdoll
         m_cust.SetRagdoll(true);
         // particles
-        Destroy(Instantiate(FindObjectOfType<PotionAssets>().m_cupidsKissParticlePrefab, transform), 5f);
+        GameObject p = Instantiate(FindObjectOfType<PotionAssets>().m_cupidsKissParticlePrefab, transform);
+        p.transform.position = transform.position;
+        p.transform.rotation = transform.rotation;
+        Destroy(p, 5f);
 
         StartCoroutine(m_cust.Dissolve());
     }
