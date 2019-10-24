@@ -145,6 +145,7 @@ public class Shaker : MonoBehaviour
     private void PopCap()
     {
         RemoveCap();
+        m_cap.transform.parent = null;
         Rigidbody rb = m_cap.GetComponent<Rigidbody>();
         rb.isKinematic = false;
         rb.velocity += transform.up * m_shakerCapPopForce;
