@@ -13984,7 +13984,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1183509668841747536
 Transform:
   m_ObjectHideFlags: 0
@@ -37244,7 +37244,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 1.5
-      minScalar: 0.3
+      minScalar: 0.64
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -37549,13 +37549,13 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 1821
     size3D: 0
     rotation3D: 1
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.53
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -40532,7 +40532,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.58
+      scalar: 0.21
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -40787,7 +40787,7 @@ ParticleSystem:
   TrailModule:
     enabled: 1
     mode: 0
-    ratio: 0.25
+    ratio: 0.43
     lifetime:
       serializedVersion: 2
       minMaxState: 0
@@ -41810,8 +41810,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.3
-      minScalar: 0.01
+      scalar: 0.8
+      minScalar: 0.32
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -42170,13 +42170,13 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 2000
+    maxNumParticles: 38
     size3D: 0
     rotation3D: 0
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.27
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -44200,7 +44200,7 @@ ParticleSystem:
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.54
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -46343,7 +46343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1185103032696522698
 Transform:
   m_ObjectHideFlags: 0
