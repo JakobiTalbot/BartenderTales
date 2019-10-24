@@ -26,7 +26,8 @@ public class ShakerCap : MonoBehaviour
 
     public void EnableHeld()
     {
-        m_shaker.RemoveCap();
+        if (m_shaker.IsCapOn())
+            m_shaker.RemoveCap();
     }
     public void DisableHeld()
     {
