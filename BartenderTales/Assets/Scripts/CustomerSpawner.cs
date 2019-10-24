@@ -170,8 +170,6 @@ public class CustomerSpawner : MonoBehaviour
         Customer cust = m_customers[m_customers.Count - 1].GetComponent<Customer>();
         cust.GetReferences();
 
-
-
         cust.SetDestination(destPoint, bWait);
         cust.SetCoinDropPos(m_coinDropPoint.position);
         cust.SetTutorialCustomer(bTutorialCustomer);

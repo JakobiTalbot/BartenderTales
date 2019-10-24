@@ -17,4 +17,6 @@ public class PotionAssets : MonoBehaviour
     [Header("New You")]
     public GameObject m_newYouParticlePrefab;
     public GameObject[] m_customerPrefabs;
+    [Header("Cupid's Kiss")]
+    public GameObject m_cupidsKissParticlePrefab;
 }

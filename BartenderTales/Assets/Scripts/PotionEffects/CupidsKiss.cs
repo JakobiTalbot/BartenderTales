@@ -16,9 +16,11 @@ public class CupidsKiss : PotionEffect
 
     private void ActivateEffect()
     {
-        // TODO: play animation then fall
         // enable ragdoll
         m_cust.SetRagdoll(true);
+        // particles
+        Destroy(Instantiate(FindObjectOfType<PotionAssets>().m_cupidsKissParticlePrefab, transform), 5f);
+
         StartCoroutine(m_cust.Dissolve());
     }
 }
