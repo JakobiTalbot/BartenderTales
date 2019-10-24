@@ -34,6 +34,8 @@ public class Shaker : MonoBehaviour
     private AudioClip[] m_shakerCapPlaceAudio;
     [SerializeField]
     private float m_emptyShakerForceThreshold = 1f;
+    [SerializeField]
+    private Color m_shakenColour = Color.red;
 
     [HideInInspector]
     public Dictionary<PotionName, PotionEffect> m_potionFunc;
@@ -50,6 +52,9 @@ public class Shaker : MonoBehaviour
     private IngredientManager m_manager;
     private Transform m_startTransform;
     private AudioSource m_audioSource;
+    private Renderer m_renderer;
+    private Color m_startColour;
+    private ShakerCap m_capClass;
 
     public AudioSource ingredientsInSound;
 
@@ -62,13 +67,16 @@ public class Shaker : MonoBehaviour
         m_startTransform.rotation = transform.rotation;
 
         m_manager = FindObjectOfType<IngredientManager>();
+        m_renderer = GetComponent<Renderer>();
+        m_startColour = m_renderer.material.color;
         m_audioSource = GetComponent<AudioSource>();
         m_collider = GetComponent<Collider>();
         m_contents = new List<Ingredient>();
         m_rb = GetComponent<Rigidbody>();
         m_particleSystem = GetComponent<ParticleSystem>();
         m_v3LastPos = transform.position;
-        m_cap = FindObjectOfType<ShakerCap>().gameObject;
+        m_capClass = FindObjectOfType<ShakerCap>();
+        m_cap = m_capClass.gameObject;
         CreatePotionDictionary();
     }
 
@@ -99,10 +107,15 @@ public class Shaker : MonoBehaviour
             {
                 m_fCurrentShakeTime += Time.deltaTime;
 
+                float fColourLerp = m_fCurrentShakeTime / m_shakeTime;
+                m_renderer.material.color = Color.Lerp(m_startColour, m_shakenColour, fColourLerp);
+                m_capClass.LerpShakeColour(m_shakenColour, fColourLerp);
+
                 // if drink shaken
                 if (m_fCurrentShakeTime > m_shakeTime)
                 {
                     CreatePotions();
+                    ResetColours();
                 }
             }
             // empty ingredients
@@ -112,11 +125,18 @@ public class Shaker : MonoBehaviour
                      && force.magnitude > m_emptyShakerForceThreshold)
             {
                 EmptyShaker();
+                ResetColours();
             }
         }
 
         m_v3LastDeltaPos = (transform.position - m_v3LastPos);
         m_v3LastPos = transform.position;
+    }
+
+    private void ResetColours()
+    {
+        m_renderer.material.color = m_startColour;
+        m_capClass.ResetColour();
     }
 
     /// <summary>
