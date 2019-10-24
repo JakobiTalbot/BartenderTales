@@ -36,7 +36,7 @@ namespace Valve.VR.InteractionSystem
 		[Tooltip( "When detaching the object, should it return to its original parent?" )]
 		public bool restoreOriginalParent = false;
 
-        
+        Hand m_lastHand;
 
 		protected VelocityEstimator velocityEstimator;
         protected bool attached = false;
@@ -133,6 +133,7 @@ namespace Valve.VR.InteractionSystem
         protected virtual void OnAttachedToHand( Hand hand )
 		{
             //Debug.Log("<b>[SteamVR Interaction]</b> Pickup: " + hand.GetGrabStarting().ToString());
+            m_lastHand = hand;
 
             hadInterpolation = this.rigidbody.interpolation;
 
@@ -258,7 +259,19 @@ namespace Valve.VR.InteractionSystem
 			gameObject.SetActive( false );
 			velocityEstimator.FinishEstimatingVelocity();
 		}
-	}
+
+        private void OnDisable()
+        {
+            if (attached)
+            {
+                RenderModel r;
+                if (r = m_lastHand.GetComponentInChildren<RenderModel>())
+                    r.GetComponentInChildren<Renderer>().enabled = true;
+            }
+        }
+    }
+
+    
 
     public enum ReleaseStyle
     {
