@@ -168,6 +168,7 @@ public class CustomerSpawner : MonoBehaviour
         m_customers.Add(Instantiate(m_customerPrefabs[Random.Range(0, m_customerPrefabs.Length)], spawnPoint.position, spawnPoint.rotation));
 
         Customer cust = m_customers[m_customers.Count - 1].GetComponent<Customer>();
+        cust.GetReferences();
 
 
 
