@@ -21,7 +21,7 @@ public class CupidsKiss : PotionEffect
         // particles
         GameObject p = Instantiate(FindObjectOfType<PotionAssets>().m_cupidsKissParticlePrefab, transform);
         p.transform.position = transform.position;
-        p.transform.rotation = transform.rotation;
+        //p.transform.rotation = transform.rotation;
         Destroy(p, 5f);
 
         StartCoroutine(m_cust.Dissolve());
