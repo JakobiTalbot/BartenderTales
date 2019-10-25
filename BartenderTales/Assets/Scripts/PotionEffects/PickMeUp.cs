@@ -14,6 +14,9 @@ public class PickMeUp : PotionEffect
     private Rigidbody m_rb;
     private Customer m_cust;
     private Vector3 m_v3ForceDirection = Vector3.up;
+    private AudioSource m_audioSource;
+    private Vector3 m_v3LastVelocity;
+    private PotionAssets m_pa;
     private bool m_bDoEffect = false;
 
     void Start()
@@ -31,6 +34,9 @@ public class PickMeUp : PotionEffect
         // ragdoll
         m_cust.SetRagdoll(true);
 
+        m_pa = FindObjectOfType<PotionAssets>();
+        m_audioSource = GetComponent<AudioSource>();
+
         foreach (GameObject trails in m_cust.GetComponent<Customer>().m_trailEffects)
         {
             trails.SetActive(true);
@@ -42,6 +48,7 @@ public class PickMeUp : PotionEffect
 
         // enable effect
         m_bDoEffect = true;
+        m_v3LastVelocity = m_rb.velocity;
 
         // loop
         while (m_bDoEffect)
@@ -61,6 +68,11 @@ public class PickMeUp : PotionEffect
 
         // add force
         m_rb.AddForce(m_v3ForceDirection * m_movementForce * Time.fixedDeltaTime);
+
+        if (Vector3.Distance(m_rb.velocity, m_v3LastVelocity) > 5)
+            m_audioSource.PlayOneShot(m_pa.m_bonesBreakingAudioClips[Random.Range(0, m_pa.m_bonesBreakingAudioClips.Length)]);
+
+        m_v3LastVelocity = m_rb.velocity;
     }
 
     private void StopLoop()

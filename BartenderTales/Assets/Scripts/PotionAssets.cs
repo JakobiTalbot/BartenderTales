@@ -19,4 +19,6 @@ public class PotionAssets : MonoBehaviour
     public GameObject[] m_customerPrefabs;
     [Header("Cupid's Kiss")]
     public GameObject m_cupidsKissParticlePrefab;
+    [Header("Pick Me Up")]
+    public AudioClip[] m_bonesBreakingAudioClips;
 }

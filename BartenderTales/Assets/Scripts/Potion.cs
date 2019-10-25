@@ -35,7 +35,6 @@ public class Potion : MonoBehaviour
         }
         else
         {
-            Debug.Log(collision.impulse.magnitude);
             if (collision.impulse.magnitude > m_impulseThresholdToPlayAudio)
             {
                 m_audioSource.volume = collision.impulse.magnitude / 5f;
