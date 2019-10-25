@@ -7,7 +7,7 @@ public class NewYou : PotionEffect
     [SerializeField]
     private float m_secondsToWaitUntilSwitching = 0.2f;
     [SerializeField]
-    private float m_secondsForNewCustomerToWaitUntilLeaving = 2f;
+    private float m_secondsForNewCustomerToWaitUntilLeaving = 4f;
 
     private Customer m_cust;
 
