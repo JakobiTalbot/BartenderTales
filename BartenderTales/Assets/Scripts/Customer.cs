@@ -162,7 +162,7 @@ public class Customer : MonoBehaviour
         AddPointToSpawner();
 
         PotionEffect p = potion.GetComponent<PotionEffect>();
-        // TODO: reactions to potions
+
         // if correct potion given
         if (m_order == p.m_potionName)
         {
@@ -171,7 +171,7 @@ public class Customer : MonoBehaviour
             // give money
             Instantiate(m_moneyPrefab, m_v3CoinDropPos, Quaternion.Euler(Vector3.zero));
             // happy reaction
-
+            m_customerVoice.HappySound();
             // drink potion
             System.Type type = FindObjectOfType<Shaker>().m_potionFunc[p.m_potionName].GetType();
             gameObject.AddComponent(type);
@@ -180,8 +180,8 @@ public class Customer : MonoBehaviour
         {
             m_repManager.AddToReputation(-m_reputationOnWrongOrder);
             m_scoreManager.AddIncorrectOrder();
-            // sad reaction
-
+            // angery reac
+            m_customerVoice.AngrySound();
             if (p.m_potionName == PotionName.Mundane)
                 gameObject.AddComponent<Mundane>();
             else
