@@ -13,14 +13,15 @@ public static class AudioController
         }
         audioSource.Stop();
     }
-    public static IEnumerator FadeIn(AudioSource audioSource, float FadeTime)
+    public static IEnumerator FadeIn(AudioSource audioSource, float FadeTime, float targetVolume)
     {
         audioSource.Play();
         audioSource.volume = 0f;
-        while (audioSource.volume < 1)
+        while (audioSource.volume < targetVolume)
         {
             audioSource.volume += Time.deltaTime / FadeTime;
             yield return null;
         }
+        audioSource.volume = targetVolume;
     }
 }

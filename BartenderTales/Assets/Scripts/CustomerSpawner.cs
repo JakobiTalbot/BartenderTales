@@ -67,6 +67,7 @@ public class CustomerSpawner : MonoBehaviour
     public AudioSource mainMenuMusic;
     public AudioSource calmHourMusic;
     public float fadeTime;
+    public float m_gameMusicVolume = 0.5f;
 
     void Awake()
     {
@@ -77,7 +78,7 @@ public class CustomerSpawner : MonoBehaviour
     public void Fade()
     {
         StartCoroutine(AudioController.FadeOut(mainMenuMusic, fadeTime));
-        StartCoroutine(AudioController.FadeIn(calmHourMusic, fadeTime));
+        StartCoroutine(AudioController.FadeIn(calmHourMusic, fadeTime, m_gameMusicVolume));
     }
 
     /// <summary>
