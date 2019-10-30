@@ -40,10 +40,13 @@ abstract public class CustomerVoice : MonoBehaviour
     {
         m_audioSource = GetComponent<AudioSource>();
         m_animator = GetComponent<Animator>();
+        GenerateDictionary();
     }
 
     private void GenerateDictionary()
     {
+        m_potionOrderAudio = new Dictionary<PotionName, AudioClip[]>();
+
         m_potionOrderAudio.Add(PotionName.PickMeUp, m_pickMeUpAudioClips);
         m_potionOrderAudio.Add(PotionName.SmokeyTeleport, m_smokeyTeleportAudioClips);
         m_potionOrderAudio.Add(PotionName.PixieDust, m_pixieDustAudioClips);

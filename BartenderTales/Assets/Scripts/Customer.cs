@@ -45,6 +45,7 @@ public class Customer : MonoBehaviour
     private CustomerAnimator m_customerAnimator;
     private ReputationManager m_repManager;
     private ScoreManager m_scoreManager;
+    private CustomerVoice m_customerVoice;
     private Renderer m_renderer;
     private bool m_bHadPath = false;
     private bool m_bIsRagdolling = false;
@@ -66,6 +67,7 @@ public class Customer : MonoBehaviour
 
     public void GetReferences()
     {
+        m_customerVoice = GetComponent<CustomerVoice>();
         m_repManager = FindObjectOfType<ReputationManager>();
         m_renderer = GetComponent<Renderer>();
         m_animator = GetComponent<Animator>();
@@ -103,6 +105,7 @@ public class Customer : MonoBehaviour
             else if (!m_agent.isStopped
                 && !m_bWaiting)
             {
+                m_customerVoice.OrderSound(m_order);
                 Speak(Regex.Replace(m_order.ToString(), "([A-Z])", " $1").Trim() + " please!");
                 m_customerAnimator.Order();
             }
@@ -130,7 +133,8 @@ public class Customer : MonoBehaviour
     {
         m_agent.isStopped = true;
         m_animator.SetBool("StoppedMoving", true);
-        m_customerAnimator.StartCoroutine("IdleLoop");
+        StartCoroutine(m_customerAnimator.IdleLoop());
+        StartCoroutine(m_customerVoice.RandomSoundLoop());
     }
 
     public void SetDestination(Transform dest, bool bWait)
