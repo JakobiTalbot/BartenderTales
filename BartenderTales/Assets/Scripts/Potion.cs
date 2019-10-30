@@ -5,9 +5,14 @@ public class Potion : MonoBehaviour
 {
     public PotionName m_potionName;
     [SerializeField]
-    private float m_impulseThresholdToPlayAudio = 0.5f;
+    private float m_impulseThresholdToPlayCollisionAudio = 0.5f;
     [SerializeField]
     private AudioClip[] m_collisionAudioClips;
+    [SerializeField]
+    private float m_impulseThresholdToShatterPotion = 2f;
+    [SerializeField]
+    private GameObject m_shatterPrefab;
+    
 
     private Transform m_point;
     private AudioSource m_audioSource;
@@ -35,7 +40,14 @@ public class Potion : MonoBehaviour
         }
         else
         {
-            if (collision.impulse.magnitude > m_impulseThresholdToPlayAudio)
+            if (collision.impulse.magnitude > m_impulseThresholdToShatterPotion)
+            {
+                // create shatter effect
+                Instantiate(m_shatterPrefab, transform.position, Quaternion.identity);
+                // destroy potion
+                Destroy(gameObject);
+            }
+            else if (collision.impulse.magnitude > m_impulseThresholdToPlayCollisionAudio)
             {
                 m_audioSource.volume = collision.impulse.magnitude / 5f;
                 m_audioSource.PlayOneShot(m_collisionAudioClips[Random.Range(0, m_collisionAudioClips.Length)]);

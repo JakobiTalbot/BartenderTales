@@ -118,11 +118,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_potionName: 3
-  m_impulseThresholdToPlayAudio: 0.5
+  m_impulseThresholdToPlayCollisionAudio: 0.5
   m_collisionAudioClips:
   - {fileID: 8300000, guid: 2bfdaf2fab0576a40be80967b1a663a8, type: 3}
   - {fileID: 8300000, guid: 968cf0fe27324ad44b071757e7011587, type: 3}
   - {fileID: 8300000, guid: f620ed221bf806e4c92fde586b22465b, type: 3}
+  m_impulseThresholdToShatterPotion: 2
+  m_shatterPrefab: {fileID: 7013117095294058621, guid: 14b722f63fade014989b814e252c7a91,
+    type: 3}
 --- !u!114 &1500738424914455522
 MonoBehaviour:
   m_ObjectHideFlags: 0

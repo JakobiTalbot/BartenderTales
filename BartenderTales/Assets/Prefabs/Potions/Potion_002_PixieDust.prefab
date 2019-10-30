@@ -241,6 +241,12 @@ PrefabInstance:
       propertyPath: m_collisionAudioClips.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: f620ed221bf806e4c92fde586b22465b, type: 3}
+    - target: {fileID: 73856103415350005, guid: 6bf262d78d51d79489f6ce81c5345b4f,
+        type: 3}
+      propertyPath: m_shatterPrefab
+      value: 
+      objectReference: {fileID: 7013117095294058621, guid: 14b722f63fade014989b814e252c7a91,
+        type: 3}
     - target: {fileID: 778915008722935532, guid: 6bf262d78d51d79489f6ce81c5345b4f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
