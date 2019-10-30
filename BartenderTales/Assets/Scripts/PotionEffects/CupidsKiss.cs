@@ -16,10 +16,13 @@ public class CupidsKiss : PotionEffect
 
     private void ActivateEffect()
     {
+        PotionAssets pa = FindObjectOfType<PotionAssets>();
         // enable ragdoll
         m_cust.SetRagdoll(true);
         // particles
-        GameObject p = Instantiate(FindObjectOfType<PotionAssets>().m_cupidsKissParticlePrefab, transform);
+        GameObject p = Instantiate(pa.m_cupidsKissParticlePrefab, transform);
+        // play audio
+        GetComponent<AudioSource>().PlayOneShot(pa.m_cupidsKissActivationAudio);
         p.transform.position = transform.position;
         //p.transform.rotation = transform.rotation;
         Destroy(p, 5f);

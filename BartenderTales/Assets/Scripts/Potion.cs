@@ -35,19 +35,14 @@ public class Potion : MonoBehaviour
         Customer cust;
         if (cust = collision.gameObject.GetComponentInParent<Customer>())
         {
+            // create shatter effect
+            Destroy(Instantiate(m_shatterPrefab, transform.position, Quaternion.identity), 5f);
             m_bDrank = true;
             cust.DrinkPotion(this);
         }
         else
         {
-            if (collision.impulse.magnitude > m_impulseThresholdToShatterPotion)
-            {
-                // create shatter effect
-                Instantiate(m_shatterPrefab, transform.position, Quaternion.identity);
-                // destroy potion
-                Destroy(gameObject);
-            }
-            else if (collision.impulse.magnitude > m_impulseThresholdToPlayCollisionAudio)
+            if (collision.impulse.magnitude > m_impulseThresholdToPlayCollisionAudio)
             {
                 m_audioSource.volume = collision.impulse.magnitude / 5f;
                 m_audioSource.PlayOneShot(m_collisionAudioClips[Random.Range(0, m_collisionAudioClips.Length)]);
