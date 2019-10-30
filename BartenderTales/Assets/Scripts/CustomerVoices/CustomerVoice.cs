@@ -32,13 +32,14 @@ abstract public class CustomerVoice : MonoBehaviour
     [SerializeField]
     protected AudioClip[] m_smokeyTeleportAudioClips;
 
-    protected AudioSource m_audioSource;
+    [SerializeField]
+    protected AudioSource m_voiceAudioSource;
+
     protected Animator m_animator;
     protected Dictionary<PotionName, AudioClip[]> m_potionOrderAudio;
 
     private void Awake()
     {
-        m_audioSource = GetComponent<AudioSource>();
         m_animator = GetComponent<Animator>();
         GenerateDictionary();
     }

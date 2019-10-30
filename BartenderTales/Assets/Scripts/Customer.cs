@@ -248,6 +248,7 @@ public class Customer : MonoBehaviour
 
             r.gameObject.AddComponent<Dissolve>();
         }
+        
 
         yield return new WaitForSeconds(8f);
 
