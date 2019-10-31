@@ -375,4 +375,6 @@ public class Customer : MonoBehaviour
     }
 
     public CustomerType GetCustomerType() => m_customerType;
+
+    public void SetOrder(PotionName order) => m_order = order;
 }

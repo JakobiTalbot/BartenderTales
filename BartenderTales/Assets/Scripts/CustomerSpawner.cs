@@ -185,6 +185,7 @@ public class CustomerSpawner : MonoBehaviour
     public void StartSpawning()
     {
         SpawnTutorialCustomer();
+        m_customers[0].GetComponent<Customer>().SetOrder(PotionName.CosyFire);
         StartCoroutine(HappyHourTimer());
         StartCoroutine(GameTimer());
         Destroy(m_startLever);
@@ -205,7 +206,7 @@ public class CustomerSpawner : MonoBehaviour
         m_correctOrdersText.text += s.GetCorrectOrderCount().ToString();
         m_incorrectOrdersText.text += s.GetIncorrectOrderCount().ToString();
 
-        // TODO: only go after they pull a lever or something
+        // TODO: highscore system
         yield return new WaitForSeconds(10f);
 
         SceneManager.LoadSceneAsync(0);
