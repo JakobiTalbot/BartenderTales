@@ -56,7 +56,7 @@ public class Customer : MonoBehaviour
     public GameObject m_sparkleEffect;
     public List<GameObject> m_trailEffects = new List<GameObject>();
 
-    void Start()
+    void Awake()
     {
         GetReferences();
         // order random potion
