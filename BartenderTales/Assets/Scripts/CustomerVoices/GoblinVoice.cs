@@ -22,11 +22,13 @@ public class GoblinVoice : CustomerVoice
 
     public override void AngrySound()
     {
+        m_voiceAudioSource.Stop();
         m_voiceAudioSource.PlayOneShot(m_angryAudioClips[Random.Range(0, m_angryAudioClips.Length)]);
     }
 
     public override void HappySound()
     {
+        m_voiceAudioSource.Stop();
         m_voiceAudioSource.PlayOneShot(m_happyAudioClips[Random.Range(0, m_happyAudioClips.Length)]);
     }
 
@@ -34,6 +36,7 @@ public class GoblinVoice : CustomerVoice
     {
         // get array of order audio clips
         AudioClip[] orderAudio = m_potionOrderAudio[potion];
+        m_voiceAudioSource.Stop();
         // play random clip from array
         m_voiceAudioSource.PlayOneShot(orderAudio[Random.Range(0, orderAudio.Length)]);
     }

@@ -365,5 +365,10 @@ public class Customer : MonoBehaviour
         m_spawner.m_customers.Remove(gameObject);
     }
 
+    public void CosyFireReact()
+    {
+        m_animator.SetTrigger("CosyFireReaction");
+    }
+
     public CustomerType GetCustomerType() => m_customerType;
 }

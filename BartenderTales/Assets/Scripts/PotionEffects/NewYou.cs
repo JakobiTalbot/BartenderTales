@@ -54,8 +54,13 @@ public class NewYou : PotionEffect
 
         newCust.GoIdle();
 
+        // wait until smoke clears before reacting
+        newCust.Invoke("CosyFireReact", 1.5f);
+
+        // exit bar after a few seconds
         newCust.Invoke("ExitBar", m_secondsForNewCustomerToWaitUntilLeaving);
 
+        // destroy old customer
         Destroy(gameObject);
     }
 }
