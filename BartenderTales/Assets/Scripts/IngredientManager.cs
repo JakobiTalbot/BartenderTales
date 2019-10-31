@@ -178,12 +178,14 @@ public class IngredientManager : MonoBehaviour
                 Transform point = m_ingredientAreas[i].m_points[j];
                 GameObject ingredient = m_ingredientAreas[i].m_spawnedIngredientPoints[point];
 
-                // don't reset if still active
-                if (ingredient.activeSelf)
-                    continue;
+                // reset velocities
+                Rigidbody rb = ingredient.GetComponent<Rigidbody>();
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
 
-                // move back to point then enable
+                // move back to spawn point
                 ingredient.transform.SetPositionAndRotation(point.position, point.rotation);
+                // enable gameobjects
                 ingredient.SetActive(true);
             }
         }
