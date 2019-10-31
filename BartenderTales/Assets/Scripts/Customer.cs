@@ -323,6 +323,7 @@ public class Customer : MonoBehaviour
     /// <param name="timeUntilSpawnObject"> Time between starting the cough up animation and spawning the cough up GameObject </param>
     public IEnumerator CoughUp(GameObject coughup, float timeUntilSpawnObject)
     {
+        StopMovement();
         m_customerAnimator.CoughUp();
         yield return new WaitForSeconds(timeUntilSpawnObject);
         // wait before spawning

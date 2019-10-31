@@ -49,6 +49,7 @@ public class PixieDust : PotionEffect
         m_customer.m_animator.SetTrigger("Levitate");
         // activate particles
         m_customer.m_sparkleEffect.SetActive(true);
+        m_customer.m_speechBubbleCanvas.SetActive(false);
 
         // hover to starting height
         while (m_fHoverLerpTime < 1f)

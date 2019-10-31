@@ -24,6 +24,7 @@ public class SmokeyTeleport : PotionEffect
     private IEnumerator TeleportLoop()
     {
         PotionAssets assets = FindObjectOfType<PotionAssets>();
+        AudioSource audioSource = GetComponent<AudioSource>();
 
         // break out of loop after random time
         Invoke("StopTeleporting", Random.Range(assets.m_randomTimeToDoTeleporting.x, assets.m_randomTimeToDoTeleporting.y));
@@ -52,6 +53,8 @@ public class SmokeyTeleport : PotionEffect
                 Destroy(Instantiate(assets.m_smokeyTeleportParticlePrefab, transform.position, Quaternion.identity), 5f);
                 // teleport
                 transform.position = hit.position;
+                // play teleport sound
+                audioSource.PlayOneShot(assets.m_teleportAudioClips[Random.Range(0, assets.m_teleportAudioClips.Length)]);
             }
         }
 

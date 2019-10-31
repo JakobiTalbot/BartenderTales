@@ -14,6 +14,7 @@ public class PotionAssets : MonoBehaviour
     public float m_teleportAreaRadius = 8f;
     public Vector2 m_randomTimeToDoTeleporting;
     public GameObject m_smokeyTeleportParticlePrefab;
+    public AudioClip[] m_teleportAudioClips;
     [Header("New You")]
     public GameObject m_newYouParticlePrefab;
     public GameObject[] m_customerPrefabs;
