@@ -13,7 +13,7 @@ public class GoblinVoice : CustomerVoice
         while (m_animator.GetBool("StoppedMoving"))
         {
             if (!m_voiceAudioSource.isPlaying)
-                m_voiceAudioSource.PlayOneShot(m_angryAudioClips[Random.Range(0, m_randomAudioClips.Length)]);
+                m_voiceAudioSource.PlayOneShot(m_randomAudioClips[Random.Range(0, m_randomAudioClips.Length)]);
 
             // wait before playing another audio clip
             yield return new WaitForSeconds(Random.Range(m_randomRangeBetweenRandomAudioClips.x, m_randomRangeBetweenRandomAudioClips.y));
@@ -27,7 +27,7 @@ public class GoblinVoice : CustomerVoice
 
     public override void HappySound()
     {
-        m_voiceAudioSource.PlayOneShot(m_angryAudioClips[Random.Range(0, m_happyAudioClips.Length)]);
+        m_voiceAudioSource.PlayOneShot(m_happyAudioClips[Random.Range(0, m_happyAudioClips.Length)]);
     }
 
     public override void OrderSound(PotionName potion)
