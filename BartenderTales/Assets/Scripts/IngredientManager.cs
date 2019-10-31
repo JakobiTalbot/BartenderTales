@@ -34,6 +34,13 @@ public struct PotionImages
 }
 
 [System.Serializable]
+public struct FirstIngredient
+{
+    public PotionName m_potionName;
+    public IngredientType m_firstIngredient;
+}
+
+[System.Serializable]
 public struct IngredientArea
 {
     public Transform[] m_points;
@@ -67,6 +74,10 @@ public class IngredientManager : MonoBehaviour
     private Dictionary<int, Texture> m_ingredientTextureDictionary;
     private MoneyJar m_moneyJar;
 
+    [SerializeField]
+    private FirstIngredient[] m_firstIngredients;
+    private Dictionary<PotionName, IngredientType> m_firstIngredientDic;
+
     private void Awake()
     {
         m_moneyJar = FindObjectOfType<MoneyJar>();
@@ -76,9 +87,19 @@ public class IngredientManager : MonoBehaviour
     void Start()
     {
         CreateImageDictionaries();
+        CreateFirstIngredientDictionary();
         // TODO: only generate recipes on new game
         GenerateRecipes();
         CreateIngredients();
+    }
+
+    private void CreateFirstIngredientDictionary()
+    {
+        m_firstIngredientDic = new Dictionary<PotionName, IngredientType>();
+        foreach (FirstIngredient i in m_firstIngredients)
+        {
+            m_firstIngredientDic.Add(i.m_potionName, i.m_firstIngredient);
+        }
     }
 
     private void CreateImageDictionaries()
@@ -102,7 +123,8 @@ public class IngredientManager : MonoBehaviour
         for (int i = 0; i < m_potionPrefabs.Length; ++i)
         {
             // get 2 random recipes
-            int ingredient1 = 1 << Random.Range(0, (int)IngredientType.Count);
+            //int ingredient1 = 1 << Random.Range(0, (int)IngredientType.Count);
+            int ingredient1 = (int)m_firstIngredientDic[m_potionPrefabs[i].GetComponent<Potion>().m_potionName];
             int ingredient2 = 1 << Random.Range(0, (int)IngredientType.Count);
 
             // check if ingredient 1 is the same as ingredient 2
