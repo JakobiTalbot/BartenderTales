@@ -98,6 +98,7 @@ public class Customer : MonoBehaviour
                 SetDestination(m_spawner.m_servingPoints[i], false);
                 m_spawner.m_servingPoints.RemoveAt(i);
                 m_bWaiting = false;
+                return;
                 //m_Animator.SetBool("WalkAgain", true);
             }
 
@@ -143,6 +144,8 @@ public class Customer : MonoBehaviour
         m_agent.isStopped = false;
         m_bHadPath = true;
         m_point = dest;
+
+        m_animator.SetBool("StoppedMoving", false);
 
         m_agent.SetDestination(dest.position);
     }
