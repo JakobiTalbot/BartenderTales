@@ -12,6 +12,7 @@ public class CosyFire : PotionEffect
         Customer c = GetComponent<Customer>();
         if (c)
         {
+            c.m_speechBubbleCanvas.SetActive(false);
             c.StopMovement();
             c.m_animator.SetTrigger("CosyFireReaction");
             c.m_animator.SetBool("StoppedMoving", false);
