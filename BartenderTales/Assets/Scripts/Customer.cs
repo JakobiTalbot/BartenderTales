@@ -328,6 +328,7 @@ public class Customer : MonoBehaviour
         yield return new WaitForSeconds(timeUntilSpawnObject);
         // wait before spawning
         GameObject vomit = Instantiate(coughup, m_coughUpSpawnPoint.position, m_coughUpSpawnPoint.rotation);
+        vomit.GetComponent<Rigidbody>().angularVelocity = new Vector3(Random.Range(-45, 45), Random.Range(-45, 45), Random.Range(-45, 45));
         DisableCollision(vomit.GetComponent<Collider>());
         yield return new WaitForSeconds(2f);
         ExitBar();
