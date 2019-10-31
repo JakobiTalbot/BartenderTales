@@ -18757,8 +18757,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2.5
-      minScalar: 1.5
+      scalar: 2.25
+      minScalar: 1.25
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -27687,7 +27687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8102485075138444667
 Transform:
   m_ObjectHideFlags: 0
@@ -37004,8 +37004,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 086e75894c94ae441921b73f05b0c7c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 100
-  explosionRange: 10
+  explosionForce: 50
+  explosionRange: 5
   Looping: 0
   destroyOnEnd: 0
 --- !u!82 &4771479891798620470
