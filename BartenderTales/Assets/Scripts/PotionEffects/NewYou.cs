@@ -42,7 +42,8 @@ public class NewYou : PotionEffect
         yield return new WaitForSeconds(m_secondsToWaitUntilSwitching);
 
         // create new customer
-        Customer newCust = Instantiate(newCustomer, transform.position, transform.rotation).GetComponent<Customer>();
+        GameObject newCustObj = Instantiate(newCustomer, transform.position, transform.rotation);
+        Customer newCust = newCustObj.GetComponent<Customer>();
         newCust.GetReferences();
 
         // set values for new customer
@@ -51,6 +52,7 @@ public class NewYou : PotionEffect
             newCust.SetHat(hat);
         newCust.SetCoinDropPos(cs.m_coinDropPoint.position);
         newCust.SetScoreManager(cs.GetScoreManager());
+        
 
         newCust.GoIdle();
 

@@ -77,9 +77,6 @@ public class Customer : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            SetRagdoll(!m_bIsRagdolling);
-
         if (m_bHadPath
             && m_agent.remainingDistance < 0.6f)
         {
@@ -213,10 +210,7 @@ public class Customer : MonoBehaviour
     {
         m_bExitingBar = true;
         AddPointToSpawner();
-        m_agent.isStopped = false;
-        m_point = m_spawner.m_spawnPoints[Random.Range(0, m_spawner.m_spawnPoints.Length)];
-        m_agent.SetDestination(m_point.position);
-        m_animator.SetBool("StoppedMoving", false);
+        SetDestination(m_spawner.m_spawnPoints[Random.Range(0, m_spawner.m_spawnPoints.Length)], false);
     }
 
     /// <summary>
