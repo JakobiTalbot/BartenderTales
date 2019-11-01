@@ -1,16 +1,14 @@
 fileFormatVersion: 2
-guid: cb928365bfa9c684387d0e4795dacc23
+guid: fe8d16e707e166340a1c8ce1a84ff8ad
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert1
-    2100002: Saloon_015_SecondFloor1
+    2100000: txt_Saloon_009_Window
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pCube1
-    4300002: Saloon_015_SecondFloor
+    4300000: Saloon_009_Window
   externalObjects: {}
   materials:
     importMaterials: 1
