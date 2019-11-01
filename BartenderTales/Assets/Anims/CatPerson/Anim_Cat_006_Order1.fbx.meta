@@ -78,6 +78,57 @@ ModelImporter:
     100144: Cat_Man_Rig:Cat_Man_GEO
     100146: Cat_Man_Rig:L_Eye
     100148: Cat_Man_Rig:R_Eye
+    100150: Cat_Man_Rig:Chest_JNT
+    100152: Cat_Man_Rig:Head_JNT
+    100154: Cat_Man_Rig:Head_Tip_JNT
+    100156: Cat_Man_Rig:Jaw_JNT
+    100158: Cat_Man_Rig:L_Ankle_JNT
+    100160: Cat_Man_Rig:L_Clavicle_JNT
+    100162: Cat_Man_Rig:L_Elbow_JNT
+    100164: Cat_Man_Rig:L_Foot_Sesamoid_JNT
+    100166: Cat_Man_Rig:L_Hip_JNT
+    100168: Cat_Man_Rig:L_Index_Finger_01_JNT
+    100170: Cat_Man_Rig:L_Index_Finger_02_JNT
+    100172: Cat_Man_Rig:L_Index_Finger_03_JNT
+    100174: Cat_Man_Rig:L_Knee_JNT
+    100176: Cat_Man_Rig:L_Mid_Finger_01_JNT
+    100178: Cat_Man_Rig:L_Mid_Finger_02_JNT
+    100180: Cat_Man_Rig:L_Mid_Finger_03_JNT
+    100182: Cat_Man_Rig:L_Pinky_Finger_01_JNT
+    100184: Cat_Man_Rig:L_Pinky_Finger_02_JNT
+    100186: Cat_Man_Rig:L_Pinky_Finger_03_JNT
+    100188: Cat_Man_Rig:L_Shoulder_JNT
+    100190: Cat_Man_Rig:L_Thumb_01_JNT
+    100192: Cat_Man_Rig:L_Thumb_02_JNT
+    100194: Cat_Man_Rig:L_Thumb_03_JNT
+    100196: Cat_Man_Rig:L_Toe_Tip_JNT
+    100198: Cat_Man_Rig:L_Wrist_JNT
+    100200: Cat_Man_Rig:Neck_JNT
+    100202: Cat_Man_Rig:Pelvis_JNT
+    100204: Cat_Man_Rig:R_Ankle_JNT
+    100206: Cat_Man_Rig:R_Clavicle_JNT
+    100208: Cat_Man_Rig:R_Elbow_JNT
+    100210: Cat_Man_Rig:R_Foot_Sesamoid_JNT
+    100212: Cat_Man_Rig:R_Hip_JNT
+    100214: Cat_Man_Rig:R_Index_Finger_01_JNT
+    100216: Cat_Man_Rig:R_Index_Finger_02_JNT
+    100218: Cat_Man_Rig:R_Index_Finger_03_JNT
+    100220: Cat_Man_Rig:R_Knee_JNT
+    100222: Cat_Man_Rig:R_Mid_Finger_01_JNT
+    100224: Cat_Man_Rig:R_Mid_Finger_02_JNT
+    100226: Cat_Man_Rig:R_Mid_Finger_03_JNT
+    100228: Cat_Man_Rig:R_Pinky_Finger_01_JNT
+    100230: Cat_Man_Rig:R_Pinky_Finger_02_JNT
+    100232: Cat_Man_Rig:R_Pinky_Finger_03_JNT
+    100234: Cat_Man_Rig:R_Shoulder_JNT
+    100236: Cat_Man_Rig:R_Thumb_01_JNT
+    100238: Cat_Man_Rig:R_Thumb_02_JNT
+    100240: Cat_Man_Rig:R_Thumb_03_JNT
+    100242: Cat_Man_Rig:R_Toe_Tip_JNT
+    100244: Cat_Man_Rig:R_Wrist_JNT
+    100246: Cat_Man_Rig:Spine_01_JNT
+    100248: Cat_Man_Rig:Spine_02_JNT
+    100250: Cat_Man_Rig:Spine_03_JNT
     400000: //RootNode
     400002: Cat_Man_Rig:Head_CTRL
     400004: Cat_Man_Rig:Head_CTRL_GRP
@@ -153,6 +204,57 @@ ModelImporter:
     400144: Cat_Man_Rig:Cat_Man_GEO
     400146: Cat_Man_Rig:L_Eye
     400148: Cat_Man_Rig:R_Eye
+    400150: Cat_Man_Rig:Chest_JNT
+    400152: Cat_Man_Rig:Head_JNT
+    400154: Cat_Man_Rig:Head_Tip_JNT
+    400156: Cat_Man_Rig:Jaw_JNT
+    400158: Cat_Man_Rig:L_Ankle_JNT
+    400160: Cat_Man_Rig:L_Clavicle_JNT
+    400162: Cat_Man_Rig:L_Elbow_JNT
+    400164: Cat_Man_Rig:L_Foot_Sesamoid_JNT
+    400166: Cat_Man_Rig:L_Hip_JNT
+    400168: Cat_Man_Rig:L_Index_Finger_01_JNT
+    400170: Cat_Man_Rig:L_Index_Finger_02_JNT
+    400172: Cat_Man_Rig:L_Index_Finger_03_JNT
+    400174: Cat_Man_Rig:L_Knee_JNT
+    400176: Cat_Man_Rig:L_Mid_Finger_01_JNT
+    400178: Cat_Man_Rig:L_Mid_Finger_02_JNT
+    400180: Cat_Man_Rig:L_Mid_Finger_03_JNT
+    400182: Cat_Man_Rig:L_Pinky_Finger_01_JNT
+    400184: Cat_Man_Rig:L_Pinky_Finger_02_JNT
+    400186: Cat_Man_Rig:L_Pinky_Finger_03_JNT
+    400188: Cat_Man_Rig:L_Shoulder_JNT
+    400190: Cat_Man_Rig:L_Thumb_01_JNT
+    400192: Cat_Man_Rig:L_Thumb_02_JNT
+    400194: Cat_Man_Rig:L_Thumb_03_JNT
+    400196: Cat_Man_Rig:L_Toe_Tip_JNT
+    400198: Cat_Man_Rig:L_Wrist_JNT
+    400200: Cat_Man_Rig:Neck_JNT
+    400202: Cat_Man_Rig:Pelvis_JNT
+    400204: Cat_Man_Rig:R_Ankle_JNT
+    400206: Cat_Man_Rig:R_Clavicle_JNT
+    400208: Cat_Man_Rig:R_Elbow_JNT
+    400210: Cat_Man_Rig:R_Foot_Sesamoid_JNT
+    400212: Cat_Man_Rig:R_Hip_JNT
+    400214: Cat_Man_Rig:R_Index_Finger_01_JNT
+    400216: Cat_Man_Rig:R_Index_Finger_02_JNT
+    400218: Cat_Man_Rig:R_Index_Finger_03_JNT
+    400220: Cat_Man_Rig:R_Knee_JNT
+    400222: Cat_Man_Rig:R_Mid_Finger_01_JNT
+    400224: Cat_Man_Rig:R_Mid_Finger_02_JNT
+    400226: Cat_Man_Rig:R_Mid_Finger_03_JNT
+    400228: Cat_Man_Rig:R_Pinky_Finger_01_JNT
+    400230: Cat_Man_Rig:R_Pinky_Finger_02_JNT
+    400232: Cat_Man_Rig:R_Pinky_Finger_03_JNT
+    400234: Cat_Man_Rig:R_Shoulder_JNT
+    400236: Cat_Man_Rig:R_Thumb_01_JNT
+    400238: Cat_Man_Rig:R_Thumb_02_JNT
+    400240: Cat_Man_Rig:R_Thumb_03_JNT
+    400242: Cat_Man_Rig:R_Toe_Tip_JNT
+    400244: Cat_Man_Rig:R_Wrist_JNT
+    400246: Cat_Man_Rig:Spine_01_JNT
+    400248: Cat_Man_Rig:Spine_02_JNT
+    400250: Cat_Man_Rig:Spine_03_JNT
     2100000: Cat_Man_Rig_Cat_Man_Clothing_Mat
     2100002: Cat_Man_Rig_Cat_Man_Body_Mat
     2100004: Cat_Man_Rig_Cat_Man_Hat_Mat

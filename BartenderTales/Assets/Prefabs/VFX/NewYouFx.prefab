@@ -37004,8 +37004,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 086e75894c94ae441921b73f05b0c7c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 50
-  explosionRange: 5
+  explosionForce: 0
+  explosionRange: 0
   Looping: 0
   destroyOnEnd: 0
 --- !u!82 &4771479891798620470
