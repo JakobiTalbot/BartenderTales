@@ -80,7 +80,7 @@ public class HighScoreManager : MonoBehaviour
             SteamVR.instance.overlay.GetKeyboardText(stringBuilder, 3);
 
             // add to highscores
-            Score newHighScore = new Score(stringBuilder.ToString(), score);
+            m_scores[m_scores.Length - 1] = new Score(stringBuilder.ToString(), score);
             SortHighScores();
             DisplayHighScores();
             SaveHighScores();
