@@ -206,10 +206,13 @@ public class CustomerSpawner : MonoBehaviour
         m_correctOrdersText.text += s.GetCorrectOrderCount().ToString();
         m_incorrectOrdersText.text += s.GetIncorrectOrderCount().ToString();
 
-        // TODO: highscore system
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(5f);
 
-        SceneManager.LoadSceneAsync(0);
+        m_timeOverCanvas.SetActive(false);
+
+        // display high scores
+        HighScoreManager highScoreManager = FindObjectOfType<HighScoreManager>();
+        highScoreManager.CheckHighScore(s.GetTotalScore());
     }
 
     /// <summary>

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Valve.VR;
+using System.Text;
 
 public struct Score
 {
@@ -12,6 +14,11 @@ public struct Score
     {
         name = score.name;
         value = score.value;
+    }
+    public Score (string name, int value)
+    {
+        this.name = name;
+        this.value = value;
     }
 }
 
@@ -34,6 +41,17 @@ public class HighScoreManager : MonoBehaviour
 
     public void LoadHighScores()
     {
+        // if first time playing
+        if (PlayerPrefs.GetString("ScoreName0", "null") == "null")
+        {
+            for (int i = 0; i < m_scoresCount; ++i)
+            {
+                m_scores[i].name = "AAA";
+                m_scores[i].value = (i + 1) * 10;
+            }
+            return;
+        }
+
         for (int i = 0; i < m_scoresCount; ++i)
         {
             m_scores[i].name = PlayerPrefs.GetString("ScoreName" + i.ToString());
@@ -43,14 +61,29 @@ public class HighScoreManager : MonoBehaviour
 
     public void DisplayHighScores()
     {
+        m_highScoreCanvas.SetActive(true);
 
+        for (int i = 0; i < m_scoresCount; ++i)
+        {
+            // set high scores
+            m_highScoreTexts[i].text = i.ToString() + ".   " + m_scores[i].name + "   " + m_scores[i].value.ToString();
+        }
     }
 
     public void CheckHighScore(int score)
     {
         if (score > m_scores[m_scoresCount - 1].value)
         {
-            // get players initials
+            // get player's initials
+            StringBuilder stringBuilder = new StringBuilder(3);
+            SteamVR.instance.overlay.ShowKeyboard(0, 0, "Enter your initials", 3, "", true, 0);
+            SteamVR.instance.overlay.GetKeyboardText(stringBuilder, 3);
+
+            // add to highscores
+            Score newHighScore = new Score(stringBuilder.ToString(), score);
+            SortHighScores();
+            DisplayHighScores();
+            SaveHighScores();
         }
     }
 
