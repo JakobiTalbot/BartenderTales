@@ -10,7 +10,11 @@ public class ScoreManager : MonoBehaviour
     private int m_nConsecutiveCorrectOrders = 0;
 
     private int m_nTotalScore = 0;
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+            m_nTotalScore += 100;
+    }
     public void AddCorrectOrder()
     {
         ++m_nCorrectOrders;
