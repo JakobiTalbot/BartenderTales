@@ -33,6 +33,8 @@ public class HighScoreManager : MonoBehaviour
     [SerializeField]
     private TextMeshPro[] m_highScoreTexts;
     [SerializeField]
+    private Transform m_keyboardTransform;
+    [SerializeField]
     private int m_scoresCount = 7;
 
     private Score[] m_scores;
@@ -90,6 +92,10 @@ public class HighScoreManager : MonoBehaviour
 
             // display new high score text
             m_newHighScoreCanvas.SetActive(true);
+
+            // set keyboard position
+            HmdMatrix34_t mat = new SteamVR_Utils.RigidTransform(m_keyboardTransform).ToHmdMatrix34();
+            SteamVR.instance.overlay.SetKeyboardTransformAbsolute(ETrackingUniverseOrigin.TrackingUniverseStanding, ref mat);
         }
         else
         {
@@ -121,7 +127,6 @@ public class HighScoreManager : MonoBehaviour
             m_currentInitials += input;
 
         m_initialsText.text = FormatInitials(m_currentInitials);
-
     }
 
     private string FormatInitials(string input)
