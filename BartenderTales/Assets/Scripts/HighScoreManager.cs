@@ -27,11 +27,14 @@ public class HighScoreManager : MonoBehaviour
     [SerializeField]
     private GameObject m_highScoreCanvas;
     [SerializeField]
+    private GameObject m_newHighScoreCanvas;
+    [SerializeField]
     private TextMeshPro[] m_highScoreTexts;
     [SerializeField]
     private int m_scoresCount = 7;
 
     private Score[] m_scores;
+    private int m_currentGameScore;
 
     private void Awake()
     {
@@ -74,21 +77,32 @@ public class HighScoreManager : MonoBehaviour
     {
         if (score > m_scores[m_scoresCount - 1].value)
         {
+            m_currentGameScore = score;
             // get player's initials
-            StringBuilder stringBuilder = new StringBuilder(3);
             SteamVR.instance.overlay.ShowKeyboard(0, 0, "Enter your initials", 3, "", true, 0);
-            SteamVR.instance.overlay.GetKeyboardText(stringBuilder, 3);
 
-            // add to highscores
-            m_scores[m_scores.Length - 1] = new Score(stringBuilder.ToString(), score);
-            SortHighScores();
-            DisplayHighScores();
-            SaveHighScores();
+            // keyboard close listener
+            SteamVR_Events.System(EVREventType.VREvent_KeyboardClosed).Listen(OnKeyboardClosed);
+
+            // display new high score text
+            m_newHighScoreCanvas.SetActive(true);
         }
         else
         {
             DisplayHighScores();
         }
+    }
+
+    private void OnKeyboardClosed(VREvent_t args)
+    {
+        StringBuilder stringBuilder = new StringBuilder(3);
+        SteamVR.instance.overlay.GetKeyboardText(stringBuilder, 3);
+
+        // add to highscores
+        m_scores[m_scores.Length - 1] = new Score(stringBuilder.ToString(), m_currentGameScore);
+        SortHighScores();
+        DisplayHighScores();
+        SaveHighScores();
     }
 
     public void SaveHighScores()
