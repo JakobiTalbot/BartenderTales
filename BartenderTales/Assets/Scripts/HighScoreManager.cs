@@ -43,6 +43,7 @@ public class HighScoreManager : MonoBehaviour
 
     private void Awake()
     {
+        m_currentInitials = string.Empty;
         m_scores = new Score[m_scoresCount];
         LoadHighScores();
     }
