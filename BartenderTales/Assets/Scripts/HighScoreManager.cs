@@ -47,7 +47,7 @@ public class HighScoreManager : MonoBehaviour
             for (int i = 0; i < m_scoresCount; ++i)
             {
                 m_scores[i].name = "AAA";
-                m_scores[i].value = (i + 1) * 10;
+                m_scores[i].value = (m_scoresCount - i) * 10;
             }
             return;
         }
@@ -66,7 +66,7 @@ public class HighScoreManager : MonoBehaviour
         for (int i = 0; i < m_scoresCount; ++i)
         {
             // set high scores
-            m_highScoreTexts[i].text = i.ToString() + ".   " + m_scores[i].name + "   " + m_scores[i].value.ToString();
+            m_highScoreTexts[i].text = (i + 1).ToString() + ".   " + m_scores[i].name + "   " + m_scores[i].value.ToString();
         }
     }
 
