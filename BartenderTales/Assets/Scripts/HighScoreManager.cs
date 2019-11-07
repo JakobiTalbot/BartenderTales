@@ -84,7 +84,8 @@ public class HighScoreManager : MonoBehaviour
         if (score > m_scores[m_scoresCount - 1].value)
         {
             m_currentGameScore = score;
-            // get player's initials
+
+            // display keyboard
             SteamVR.instance.overlay.ShowKeyboard(0, 0, "Enter your initials", 3, "", true, 0);
 
             // keyboard close listener
@@ -96,6 +97,8 @@ public class HighScoreManager : MonoBehaviour
 
             // set keyboard position
             HmdMatrix34_t mat = new SteamVR_Utils.RigidTransform(m_keyboardTransform).ToHmdMatrix34();
+            // inverse because Z goes negative for some reason
+            mat.m11 *= -1;
             SteamVR.instance.overlay.SetKeyboardTransformAbsolute(ETrackingUniverseOrigin.TrackingUniverseStanding, ref mat);
         }
         else
