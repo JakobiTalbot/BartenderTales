@@ -130,11 +130,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: dbaf9e4a67b435a4fb39ecb55085d8c8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: dbaf9e4a67b435a4fb39ecb55085d8c8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: dbaf9e4a67b435a4fb39ecb55085d8c8, type: 3}
       propertyPath: m_RootOrder
@@ -150,6 +150,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: dbaf9e4a67b435a4fb39ecb55085d8c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dbaf9e4a67b435a4fb39ecb55085d8c8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dbaf9e4a67b435a4fb39ecb55085d8c8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dbaf9e4a67b435a4fb39ecb55085d8c8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dbaf9e4a67b435a4fb39ecb55085d8c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dbaf9e4a67b435a4fb39ecb55085d8c8, type: 3}
+      propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: dbaf9e4a67b435a4fb39ecb55085d8c8, type: 3}
@@ -164,6 +184,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: dbaf9e4a67b435a4fb39ecb55085d8c8, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: dbaf9e4a67b435a4fb39ecb55085d8c8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbaf9e4a67b435a4fb39ecb55085d8c8, type: 3}
 --- !u!1 &1966021065303240151 stripped
