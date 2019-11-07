@@ -47,11 +47,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prop_007_Table
       objectReference: {fileID: 0}
-    - target: {fileID: 7439857285200584411, guid: 354e2b6ed87e0ba418e736609bdf15a6,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 7439857285200610043, guid: 354e2b6ed87e0ba418e736609bdf15a6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -286,11 +281,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Prop_009_Chair
-      objectReference: {fileID: 0}
-    - target: {fileID: 5172697180225077008, guid: 68ef56479e51d6e44a0f6998de39dc84,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5172697180225233712, guid: 68ef56479e51d6e44a0f6998de39dc84,
         type: 3}

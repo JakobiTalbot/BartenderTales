@@ -1,15 +1,14 @@
 fileFormatVersion: 2
-guid: 42540b9a32f744543b9a3099f44d8dfb
+guid: 90576c14258000f41af90a61fa515d0e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Txt_Prop_009_Chair
-    2100002: lambert1
+    2100000: Saloon_015_SecondFloor1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Prop_009_Chair
+    4300000: Saloon_003_Ceiling
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -50,7 +49,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
