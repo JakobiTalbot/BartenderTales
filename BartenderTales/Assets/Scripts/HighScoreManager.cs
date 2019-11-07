@@ -37,11 +37,10 @@ public class HighScoreManager : MonoBehaviour
 
     private Score[] m_scores;
     private int m_currentGameScore;
-    private StringBuilder m_currentInitials;
+    private string m_currentInitials;
 
     private void Awake()
     {
-        m_currentInitials = new StringBuilder(3);
         m_scores = new Score[m_scoresCount];
         LoadHighScores();
     }
@@ -101,7 +100,7 @@ public class HighScoreManager : MonoBehaviour
     private void OnKeyboardDone(VREvent_t args)
     {
         m_newHighScoreCanvas.SetActive(false);
-        m_scores[m_scores.Length - 1] = new Score(m_currentInitials.ToString(), m_currentGameScore);
+        m_scores[m_scores.Length - 1] = new Score(FormatInitials(m_currentInitials), m_currentGameScore);
         SortHighScores();
         SaveHighScores();
         DisplayHighScores();
@@ -109,8 +108,29 @@ public class HighScoreManager : MonoBehaviour
 
     private void OnKeyboardInput(VREvent_t args)
     {
-        SteamVR.instance.overlay.GetKeyboardText(m_currentInitials, 3);
-        m_initialsText.text = m_currentInitials.ToString();
+        VREvent_Keyboard_t keyboard = args.data.keyboard;
+        byte[] inputBytes = new byte[] { keyboard.cNewInput0, keyboard.cNewInput1, keyboard.cNewInput2, keyboard.cNewInput3, keyboard.cNewInput4, keyboard.cNewInput5, keyboard.cNewInput6, keyboard.cNewInput7 };
+        int len = 0;
+        for (; inputBytes[len] != 0 && len < 7; len++) ;
+        string input = Encoding.UTF8.GetString(inputBytes, 0, len);
+
+        if (input == "\b"
+            && m_currentInitials.Length > 0)
+            m_currentInitials.Remove(m_currentInitials.Length - 1);
+        else
+            m_currentInitials += input;
+
+        m_initialsText.text = FormatInitials(m_currentInitials);
+
+    }
+
+    private string FormatInitials(string input)
+    {
+        while (input.Length < 3)
+        {
+            input += "A";
+        }
+        return input;
     }
 
     public void SaveHighScores()
