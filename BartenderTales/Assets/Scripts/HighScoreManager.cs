@@ -100,6 +100,7 @@ public class HighScoreManager : MonoBehaviour
 
     private void OnKeyboardDone(VREvent_t args)
     {
+        m_newHighScoreCanvas.SetActive(false);
         m_scores[m_scores.Length - 1] = new Score(m_currentInitials.ToString(), m_currentGameScore);
         SortHighScores();
         SaveHighScores();
@@ -108,7 +109,6 @@ public class HighScoreManager : MonoBehaviour
 
     private void OnKeyboardInput(VREvent_t args)
     {
-        m_newHighScoreCanvas.SetActive(false);
         SteamVR.instance.overlay.GetKeyboardText(m_currentInitials, 3);
         m_initialsText.text = m_currentInitials.ToString();
     }
