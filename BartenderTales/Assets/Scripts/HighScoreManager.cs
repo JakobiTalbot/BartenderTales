@@ -29,15 +29,19 @@ public class HighScoreManager : MonoBehaviour
     [SerializeField]
     private GameObject m_newHighScoreCanvas;
     [SerializeField]
+    private TextMeshPro m_initialsText;
+    [SerializeField]
     private TextMeshPro[] m_highScoreTexts;
     [SerializeField]
     private int m_scoresCount = 7;
 
     private Score[] m_scores;
     private int m_currentGameScore;
+    private StringBuilder m_currentInitials;
 
     private void Awake()
     {
+        m_currentInitials = new StringBuilder(3);
         m_scores = new Score[m_scoresCount];
         LoadHighScores();
     }
@@ -82,7 +86,8 @@ public class HighScoreManager : MonoBehaviour
             SteamVR.instance.overlay.ShowKeyboard(0, 0, "Enter your initials", 3, "", true, 0);
 
             // keyboard close listener
-            SteamVR_Events.System(EVREventType.VREvent_KeyboardClosed).Listen(OnKeyboardClosed);
+            SteamVR_Events.System(EVREventType.VREvent_KeyboardCharInput).Listen(OnKeyboardInput);
+            SteamVR_Events.System(EVREventType.VREvent_KeyboardDone).Listen(OnKeyboardDone);
 
             // display new high score text
             m_newHighScoreCanvas.SetActive(true);
@@ -93,16 +98,19 @@ public class HighScoreManager : MonoBehaviour
         }
     }
 
-    private void OnKeyboardClosed(VREvent_t args)
+    private void OnKeyboardDone(VREvent_t args)
     {
-        StringBuilder stringBuilder = new StringBuilder(3);
-        SteamVR.instance.overlay.GetKeyboardText(stringBuilder, 3);
-
-        // add to highscores
-        m_scores[m_scores.Length - 1] = new Score(stringBuilder.ToString(), m_currentGameScore);
+        m_scores[m_scores.Length - 1] = new Score(m_currentInitials.ToString(), m_currentGameScore);
         SortHighScores();
-        DisplayHighScores();
         SaveHighScores();
+        DisplayHighScores();
+    }
+
+    private void OnKeyboardInput(VREvent_t args)
+    {
+        m_newHighScoreCanvas.SetActive(false);
+        SteamVR.instance.overlay.GetKeyboardText(m_currentInitials, 3);
+        m_initialsText.text = m_currentInitials.ToString();
     }
 
     public void SaveHighScores()
