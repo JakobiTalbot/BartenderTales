@@ -117,7 +117,7 @@ public class HighScoreManager : MonoBehaviour
         if (input == "\b"
             && m_currentInitials.Length > 0)
             m_currentInitials.Remove(m_currentInitials.Length - 1);
-        else
+        else if (m_currentInitials.Length < 3)
             m_currentInitials += input;
 
         m_initialsText.text = FormatInitials(m_currentInitials);
