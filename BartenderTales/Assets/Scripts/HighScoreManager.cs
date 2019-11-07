@@ -85,6 +85,10 @@ public class HighScoreManager : MonoBehaviour
             DisplayHighScores();
             SaveHighScores();
         }
+        else
+        {
+            DisplayHighScores();
+        }
     }
 
     public void SaveHighScores()
