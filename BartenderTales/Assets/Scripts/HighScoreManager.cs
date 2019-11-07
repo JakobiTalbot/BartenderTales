@@ -97,8 +97,6 @@ public class HighScoreManager : MonoBehaviour
 
             // set keyboard position
             HmdMatrix34_t mat = new SteamVR_Utils.RigidTransform(m_keyboardTransform).ToHmdMatrix34();
-            // inverse because Z goes negative for some reason
-            //mat.m11 *= -1;
             SteamVR.instance.overlay.SetKeyboardTransformAbsolute(ETrackingUniverseOrigin.TrackingUniverseStanding, ref mat);
         }
         else
