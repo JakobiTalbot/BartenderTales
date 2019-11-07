@@ -149,6 +149,7 @@ public class Shaker : MonoBehaviour
         Rigidbody rb = m_cap.GetComponent<Rigidbody>();
         rb.isKinematic = false;
         rb.velocity += transform.up * m_shakerCapPopForce;
+        m_capClass.ToggleTrail(true);
     }
 
     /// <summary>
