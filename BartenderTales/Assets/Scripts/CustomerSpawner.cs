@@ -22,6 +22,10 @@ public class CustomerSpawner : MonoBehaviour
     
     public Transform[] m_spawnPoints;
 
+    [HideInInspector]
+    public static List<CustomerVoice> m_activeCustomerVoices;
+    public const int MaxAmountOfCustomersToSpeakAtOnce = 3;
+
     [SerializeField]
     private int m_numberOfTutorialCustomers = 3;
     [SerializeField]
@@ -67,7 +71,7 @@ public class CustomerSpawner : MonoBehaviour
     public AudioSource mainMenuMusic;
     public AudioSource calmHourMusic;
     public float fadeTime;
-    public float m_gameMusicVolume = 0.5f;
+    public float m_gameMusicVolume = 0.2f;
 
     void Awake()
     {
