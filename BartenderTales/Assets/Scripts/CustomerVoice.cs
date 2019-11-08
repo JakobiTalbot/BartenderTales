@@ -38,6 +38,7 @@ public class CustomerVoice : MonoBehaviour
 
     private void Awake()
     {
+        m_audioSource = GetComponent<AudioSource>();
         m_animator = GetComponent<Animator>();
         GenerateDictionary();
     }
