@@ -26,7 +26,6 @@ public class Shaker : MonoBehaviour
     public Transform m_capPlacedTransform;
     public int m_potionsToSpawn = 3;
 
-
     [SerializeField]
     private AudioClip[] m_audioClipsOnPotionCreation;
     [SerializeField]
@@ -43,6 +42,8 @@ public class Shaker : MonoBehaviour
     private float m_emptyShakerForceThreshold = 1f;
     [SerializeField]
     private Color m_shakenColour = Color.red;
+    [SerializeField]
+    private ParticleSystem m_popCapParticleSystem;
     [SerializeField]
     private float m_shakerCapPopForce = 10f;
 
@@ -163,6 +164,7 @@ public class Shaker : MonoBehaviour
 
     private void PopCap()
     {
+        m_popCapParticleSystem.Play(true);
         RemoveCap();
         m_cap.transform.parent = null;
         Rigidbody rb = m_cap.GetComponent<Rigidbody>();
