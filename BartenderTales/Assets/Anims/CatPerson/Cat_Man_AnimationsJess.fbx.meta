@@ -397,7 +397,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Anim_Cat_Man_002_Idle1
       takeName: Anim_Cat_Man_002_Idle1
-      firstFrame: 57
+      firstFrame: 52
       lastFrame: 72
       wrapMode: 0
       orientationOffsetY: 0
