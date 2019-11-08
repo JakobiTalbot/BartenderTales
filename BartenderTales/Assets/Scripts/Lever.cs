@@ -52,7 +52,6 @@ public class Lever : MonoBehaviour
         // while lever is not at start position
         while (transform.localRotation.eulerAngles.x > 5f)
         {
-            Debug.Log(transform.localRotation.eulerAngles.x);
             // move towards start position
             m_rb.velocity = moveDir * m_leverReturnSpeed;
             yield return null;

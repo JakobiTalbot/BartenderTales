@@ -34,6 +34,8 @@ public class Customer : MonoBehaviour
     private Transform m_hatTransform;
     [SerializeField]
     private CustomerType m_customerType;
+    [SerializeField]
+    private float m_coughUpForce = 10f;
 
     private PotionName m_order;
     private CustomerSpawner m_spawner;
@@ -51,7 +53,7 @@ public class Customer : MonoBehaviour
     private bool m_bIsRagdolling = false;
     private bool m_bIsTutorialNPC = false;
     private bool m_bPointReturned = false;
-    
+
     public Animator m_animator;
     public GameObject m_sparkleEffect;
     public List<GameObject> m_trailEffects = new List<GameObject>();
@@ -123,8 +125,6 @@ public class Customer : MonoBehaviour
                 GoIdle();
             }
         }
-        //else if (m_agent.isStopped)
-            //SetDestination(m_point, m_bWaiting);
     }
 
     public void GoIdle()
@@ -245,7 +245,7 @@ public class Customer : MonoBehaviour
 
             r.gameObject.AddComponent<Dissolve>();
         }
-        
+
 
         yield return new WaitForSeconds(8f);
 
@@ -324,9 +324,10 @@ public class Customer : MonoBehaviour
         m_customerAnimator.CoughUp();
         yield return new WaitForSeconds(timeUntilSpawnObject);
         // wait before spawning
-        GameObject vomit = Instantiate(coughup, m_coughUpSpawnPoint.position, m_coughUpSpawnPoint.rotation);
-        vomit.GetComponent<Rigidbody>().angularVelocity = new Vector3(Random.Range(-45, 45), Random.Range(-45, 45), Random.Range(-45, 45));
-        DisableCollision(vomit.GetComponent<Collider>());
+        Rigidbody vomitRb = Instantiate(coughup, m_coughUpSpawnPoint.position, m_coughUpSpawnPoint.rotation).GetComponent<Rigidbody>();
+        vomitRb.angularVelocity = new Vector3(Random.Range(-45, 45), Random.Range(-45, 45), Random.Range(-45, 45));
+        vomitRb.velocity = new Vector3(transform.forward.x, -1, transform.forward.z) * m_coughUpForce;
+        DisableCollision(vomitRb.GetComponent<Collider>());
         yield return new WaitForSeconds(2f);
         ExitBar();
     }
