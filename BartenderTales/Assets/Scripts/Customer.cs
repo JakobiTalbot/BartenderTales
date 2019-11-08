@@ -36,6 +36,8 @@ public class Customer : MonoBehaviour
     private CustomerType m_customerType;
     [SerializeField]
     private float m_coughUpForce = 10f;
+    [SerializeField]
+    private float m_timeIntoCoughUpToSpawnVomit = 1.7f;
 
     private PotionName m_order;
     private CustomerSpawner m_spawner;
@@ -318,16 +320,16 @@ public class Customer : MonoBehaviour
     /// </summary>
     /// <param name="coughup"> The prefab of the GameObject to cough up </param>
     /// <param name="timeUntilSpawnObject"> Time between starting the cough up animation and spawning the cough up GameObject </param>
-    public IEnumerator CoughUp(GameObject coughup, float timeUntilSpawnObject)
+    public IEnumerator CoughUp(GameObject coughup)
     {
         StopMovement();
         m_customerAnimator.CoughUp();
-        yield return new WaitForSeconds(timeUntilSpawnObject);
+        yield return new WaitForSeconds(m_timeIntoCoughUpToSpawnVomit);
         // wait before spawning
         Rigidbody vomitRb = Instantiate(coughup, m_coughUpSpawnPoint.position, m_coughUpSpawnPoint.rotation).GetComponent<Rigidbody>();
+        DisableCollision(vomitRb.GetComponent<Collider>());
         vomitRb.angularVelocity = new Vector3(Random.Range(-45, 45), Random.Range(-45, 45), Random.Range(-45, 45));
         vomitRb.velocity = new Vector3(transform.forward.x, -1, transform.forward.z) * m_coughUpForce;
-        DisableCollision(vomitRb.GetComponent<Collider>());
         yield return new WaitForSeconds(2f);
         ExitBar();
     }
