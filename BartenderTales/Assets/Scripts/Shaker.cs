@@ -26,12 +26,19 @@ public class Shaker : MonoBehaviour
     public Transform m_capPlacedTransform;
     public int m_potionsToSpawn = 3;
 
+
     [SerializeField]
     private AudioClip[] m_audioClipsOnPotionCreation;
     [SerializeField]
     private AudioClip[] m_shakerCapRemoveAudio;
     [SerializeField]
     private AudioClip[] m_shakerCapPlaceAudio;
+    [SerializeField]
+    private AudioClip m_ingredientInAudio;
+    [SerializeField]
+    private AudioClip[] m_shakeAudio;
+    [SerializeField]
+    private AudioSource m_shakeAudioSource;
     [SerializeField]
     private float m_emptyShakerForceThreshold = 1f;
     [SerializeField]
@@ -58,7 +65,7 @@ public class Shaker : MonoBehaviour
     private Color m_startColour;
     private ShakerCap m_capClass;
 
-    public AudioSource ingredientsInSound;
+    private AudioClip m_currentShakeAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +74,9 @@ public class Shaker : MonoBehaviour
         m_startTransform = new GameObject().transform;
         m_startTransform.position = transform.position;
         m_startTransform.rotation = transform.rotation;
+        m_shakeAudioSource.clip = m_shakeAudio[Random.Range(0, m_shakeAudio.Length)];
+        m_shakeAudioSource.Play();
+        m_shakeAudioSource.Pause();
 
         m_manager = FindObjectOfType<IngredientManager>();
         m_renderer = GetComponent<Renderer>();
@@ -108,6 +118,8 @@ public class Shaker : MonoBehaviour
                 && m_bCapOn)
             {
                 m_fCurrentShakeTime += Time.deltaTime;
+                    
+                m_shakeAudioSource.UnPause();
 
                 float fColourLerp = m_fCurrentShakeTime / m_shakeTime;
                 m_renderer.material.color = Color.Lerp(m_startColour, m_shakenColour, fColourLerp);
@@ -119,6 +131,9 @@ public class Shaker : MonoBehaviour
                     CreatePotions();
                     ResetColours();
                     PopCap();
+                    m_shakeAudioSource.clip = m_shakeAudio[Random.Range(0, m_shakeAudio.Length)];
+                    m_shakeAudioSource.Play();
+                    m_shakeAudioSource.Pause();
                 }
             }
             // empty ingredients
@@ -130,6 +145,10 @@ public class Shaker : MonoBehaviour
                 EmptyShaker();
                 ResetColours();
             }
+        }
+        else
+        {
+            m_shakeAudioSource.Pause();
         }
 
         m_v3LastDeltaPos = (transform.position - m_v3LastPos);
@@ -225,10 +244,7 @@ public class Shaker : MonoBehaviour
     public void AddIngredient(Ingredient ingredient)
     {
         m_contents.Add(ingredient);
-        if (ingredientsInSound != null)
-        {
-            ingredientsInSound.Play();
-        }
+        m_audioSource.PlayOneShot(m_ingredientInAudio);
     }
 
     /// <summary>
