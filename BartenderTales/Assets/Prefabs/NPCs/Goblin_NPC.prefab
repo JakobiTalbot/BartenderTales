@@ -4285,11 +4285,11 @@ GameObject:
   - component: {fileID: 1010692757477667919}
   - component: {fileID: 8912418464959583520}
   - component: {fileID: 1057434689719609577}
-  - component: {fileID: 7813074336715104334}
   - component: {fileID: 5999490943421263192}
+  - component: {fileID: 7813074336715104334}
   - component: {fileID: 8308189937372859661}
   m_Layer: 0
-  m_Name: Goblin_NPCScale
+  m_Name: Goblin_NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4419,6 +4419,64 @@ MonoBehaviour:
   m_minMaxSecondsForRandomIdleAnimation: {x: 4, y: 8}
   m_idleAnimationsCount: 3
   m_shockedReactionTriggerCount: 3
+--- !u!114 &5999490943421263192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7931532528878808962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4317caa6c2f9f4043ab8aa5bee7398b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_randomAudioClips:
+  - {fileID: 8300000, guid: a01a47cef12ca354180721ac32037dfe, type: 3}
+  - {fileID: 8300000, guid: e7159e25a4341384d9a836f2603ae686, type: 3}
+  - {fileID: 8300000, guid: 2e475dd4097337740b447f5943790822, type: 3}
+  - {fileID: 8300000, guid: f35bf5173f9b01f48865dccc3b3dc2c7, type: 3}
+  - {fileID: 8300000, guid: 3898ec4cbcd7d0646aa3db25ab6732f9, type: 3}
+  - {fileID: 8300000, guid: ccf477172ed0b6c4fa60f26bd050d52a, type: 3}
+  - {fileID: 8300000, guid: d8b875e2d49c93b4cb6fe18b5df5c215, type: 3}
+  - {fileID: 8300000, guid: 316521cc2f4005742a21fbe0c153895d, type: 3}
+  - {fileID: 8300000, guid: 677529310d7d10c4bb9605ed2d10f5aa, type: 3}
+  - {fileID: 8300000, guid: c8e3745ae6d7557479453bcc8a282c91, type: 3}
+  - {fileID: 8300000, guid: cc840a835441eb144bba7bb16195a098, type: 3}
+  - {fileID: 8300000, guid: 1eb168b8aa158d64fa45cf4e2ca3742a, type: 3}
+  - {fileID: 8300000, guid: f462ccbb74353ca41a8aac9ef722c440, type: 3}
+  m_randomRangeBetweenRandomAudioClips: {x: 5, y: 10}
+  m_angryAudioClips:
+  - {fileID: 8300000, guid: 5df6b1112dd3b8c498e203264d6d7ae3, type: 3}
+  - {fileID: 8300000, guid: a7b7468d785ec354b8bb41c4d8bfc201, type: 3}
+  - {fileID: 8300000, guid: b3bdcae446f84b84795771b53c1e1906, type: 3}
+  - {fileID: 8300000, guid: a55dfe988878d5a40a3c0375568c94af, type: 3}
+  m_happyAudioClips:
+  - {fileID: 8300000, guid: 207051b380db23c4382572783da4d6ea, type: 3}
+  - {fileID: 8300000, guid: 70eb7dc7418329e4796cff40db711847, type: 3}
+  - {fileID: 8300000, guid: ed59798b58e44f241a06543ecc356568, type: 3}
+  m_cosyFireClips:
+  - {fileID: 8300000, guid: 51cbcfa3008ce874994f3e9a02c7b0fe, type: 3}
+  - {fileID: 8300000, guid: 096bc578cac36d64db86ea0e39eb3953, type: 3}
+  m_coughUpClips:
+  - {fileID: 8300000, guid: 9edc1ecd335bd9843a1420b5aeaace96, type: 3}
+  - {fileID: 8300000, guid: 65675c017f25a3c47b8706a849a7c1b1, type: 3}
+  - {fileID: 8300000, guid: 829e3bc5576a91644b9d646af226b986, type: 3}
+  m_cupidsKissClips:
+  - {fileID: 8300000, guid: 5d08d9ee036cb944b99fd3d1fda52e2e, type: 3}
+  - {fileID: 8300000, guid: 6b707b886b06e554ea60361643404ba5, type: 3}
+  m_newYouAudioClips:
+  - {fileID: 8300000, guid: e94d35743f0423b4a8b50eab43d0d6ce, type: 3}
+  - {fileID: 8300000, guid: ec5b03b78525d934b8884ed28f25bbee, type: 3}
+  m_pickMeUpAudioClips:
+  - {fileID: 8300000, guid: 74d85e43f5a6eae4e8f8c05ada6ff5b0, type: 3}
+  - {fileID: 8300000, guid: e3c146b5b58b783469172bec9ec4ed24, type: 3}
+  m_pixieDustAudioClips:
+  - {fileID: 8300000, guid: 1c03ca308b950744d818512b0988b9a7, type: 3}
+  - {fileID: 8300000, guid: 2ad110b9003be994a87fa61a2d3f3869, type: 3}
+  m_smokeyTeleportAudioClips:
+  - {fileID: 8300000, guid: ab76ce12e1c01d847a6905c462f18e0e, type: 3}
+  - {fileID: 8300000, guid: 544c5e4ba9cebff4b903a39da9c67c67, type: 3}
 --- !u!82 &7813074336715104334
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4515,65 +4573,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5999490943421263192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7931532528878808962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17144f6d86cd828488871eafb3ec3317, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_randomAudioClips:
-  - {fileID: 8300000, guid: a01a47cef12ca354180721ac32037dfe, type: 3}
-  - {fileID: 8300000, guid: e7159e25a4341384d9a836f2603ae686, type: 3}
-  - {fileID: 8300000, guid: 2e475dd4097337740b447f5943790822, type: 3}
-  - {fileID: 8300000, guid: f35bf5173f9b01f48865dccc3b3dc2c7, type: 3}
-  - {fileID: 8300000, guid: 3898ec4cbcd7d0646aa3db25ab6732f9, type: 3}
-  - {fileID: 8300000, guid: ccf477172ed0b6c4fa60f26bd050d52a, type: 3}
-  - {fileID: 8300000, guid: d8b875e2d49c93b4cb6fe18b5df5c215, type: 3}
-  - {fileID: 8300000, guid: 316521cc2f4005742a21fbe0c153895d, type: 3}
-  - {fileID: 8300000, guid: 677529310d7d10c4bb9605ed2d10f5aa, type: 3}
-  - {fileID: 8300000, guid: c8e3745ae6d7557479453bcc8a282c91, type: 3}
-  - {fileID: 8300000, guid: cc840a835441eb144bba7bb16195a098, type: 3}
-  - {fileID: 8300000, guid: 1eb168b8aa158d64fa45cf4e2ca3742a, type: 3}
-  - {fileID: 8300000, guid: f462ccbb74353ca41a8aac9ef722c440, type: 3}
-  m_randomRangeBetweenRandomAudioClips: {x: 5, y: 10}
-  m_angryAudioClips:
-  - {fileID: 8300000, guid: 5df6b1112dd3b8c498e203264d6d7ae3, type: 3}
-  - {fileID: 8300000, guid: a7b7468d785ec354b8bb41c4d8bfc201, type: 3}
-  - {fileID: 8300000, guid: b3bdcae446f84b84795771b53c1e1906, type: 3}
-  - {fileID: 8300000, guid: a55dfe988878d5a40a3c0375568c94af, type: 3}
-  m_happyAudioClips:
-  - {fileID: 8300000, guid: 207051b380db23c4382572783da4d6ea, type: 3}
-  - {fileID: 8300000, guid: 70eb7dc7418329e4796cff40db711847, type: 3}
-  - {fileID: 8300000, guid: ed59798b58e44f241a06543ecc356568, type: 3}
-  m_cosyFireClips:
-  - {fileID: 8300000, guid: 51cbcfa3008ce874994f3e9a02c7b0fe, type: 3}
-  - {fileID: 8300000, guid: 096bc578cac36d64db86ea0e39eb3953, type: 3}
-  m_coughUpClips:
-  - {fileID: 8300000, guid: 9edc1ecd335bd9843a1420b5aeaace96, type: 3}
-  - {fileID: 8300000, guid: 65675c017f25a3c47b8706a849a7c1b1, type: 3}
-  - {fileID: 8300000, guid: 829e3bc5576a91644b9d646af226b986, type: 3}
-  m_cupidsKissClips:
-  - {fileID: 8300000, guid: 5d08d9ee036cb944b99fd3d1fda52e2e, type: 3}
-  - {fileID: 8300000, guid: 6b707b886b06e554ea60361643404ba5, type: 3}
-  m_newYouAudioClips:
-  - {fileID: 8300000, guid: e94d35743f0423b4a8b50eab43d0d6ce, type: 3}
-  - {fileID: 8300000, guid: ec5b03b78525d934b8884ed28f25bbee, type: 3}
-  m_pickMeUpAudioClips:
-  - {fileID: 8300000, guid: 74d85e43f5a6eae4e8f8c05ada6ff5b0, type: 3}
-  - {fileID: 8300000, guid: e3c146b5b58b783469172bec9ec4ed24, type: 3}
-  m_pixieDustAudioClips:
-  - {fileID: 8300000, guid: 1c03ca308b950744d818512b0988b9a7, type: 3}
-  - {fileID: 8300000, guid: 2ad110b9003be994a87fa61a2d3f3869, type: 3}
-  m_smokeyTeleportAudioClips:
-  - {fileID: 8300000, guid: ab76ce12e1c01d847a6905c462f18e0e, type: 3}
-  - {fileID: 8300000, guid: 544c5e4ba9cebff4b903a39da9c67c67, type: 3}
-  m_voiceAudioSource: {fileID: 8308189937372859661}
 --- !u!82 &8308189937372859661
 AudioSource:
   m_ObjectHideFlags: 0

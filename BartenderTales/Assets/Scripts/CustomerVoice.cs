@@ -6,37 +6,35 @@ public class CustomerVoice : MonoBehaviour
 {
     [Header("Random Audio")]
     [SerializeField]
-    protected AudioClip[] m_randomAudioClips;
+    private AudioClip[] m_randomAudioClips;
     [SerializeField]
-    protected Vector2 m_randomRangeBetweenRandomAudioClips = new Vector2(5f, 10f);
+    private Vector2 m_randomRangeBetweenRandomAudioClips = new Vector2(5f, 10f);
 
     [Header("Reaction Audio")]
     [SerializeField]
-    protected AudioClip[] m_angryAudioClips;
+    private AudioClip[] m_angryAudioClips;
     [SerializeField]
-    protected AudioClip[] m_happyAudioClips;
+    private AudioClip[] m_happyAudioClips;
 
     [Header("Potion Ordering Audio")]
     [SerializeField]
-    protected AudioClip[] m_cosyFireClips;
+    private AudioClip[] m_cosyFireClips;
     [SerializeField]
-    protected AudioClip[] m_coughUpClips;
+    private AudioClip[] m_coughUpClips;
     [SerializeField]
-    protected AudioClip[] m_cupidsKissClips;
+    private AudioClip[] m_cupidsKissClips;
     [SerializeField]
-    protected AudioClip[] m_newYouAudioClips;
+    private AudioClip[] m_newYouAudioClips;
     [SerializeField]
-    protected AudioClip[] m_pickMeUpAudioClips;
+    private AudioClip[] m_pickMeUpAudioClips;
     [SerializeField]
-    protected AudioClip[] m_pixieDustAudioClips;
+    private AudioClip[] m_pixieDustAudioClips;
     [SerializeField]
-    protected AudioClip[] m_smokeyTeleportAudioClips;
+    private AudioClip[] m_smokeyTeleportAudioClips;
 
-    [SerializeField]
-    protected AudioSource m_voiceAudioSource;
-
-    protected Animator m_animator;
-    protected Dictionary<PotionName, AudioClip[]> m_potionOrderAudio;
+    private AudioSource m_audioSource;
+    private Animator m_animator;
+    private Dictionary<PotionName, AudioClip[]> m_potionOrderAudio;
 
     private void Awake()
     {
@@ -65,13 +63,13 @@ public class CustomerVoice : MonoBehaviour
         // end loop when customer exits idle state
         while (m_animator.GetBool("StoppedMoving"))
         {
-            if (!m_voiceAudioSource.isPlaying
+            if (!m_audioSource.isPlaying
                 && CustomerSpawner.m_activeCustomerVoices.Count < CustomerSpawner.MaxAmountOfCustomersToSpeakAtOnce)
             {
-                m_voiceAudioSource.clip = m_randomAudioClips[Random.Range(0, m_randomAudioClips.Length)];
-                m_voiceAudioSource.Play();
+                m_audioSource.clip = m_randomAudioClips[Random.Range(0, m_randomAudioClips.Length)];
+                m_audioSource.Play();
                 CustomerSpawner.m_activeCustomerVoices.Add(this);
-                Invoke("RemoveFromList", m_voiceAudioSource.clip.length);
+                Invoke("RemoveFromList", m_audioSource.clip.length);
             }
 
             // wait before playing another audio clip
@@ -81,35 +79,30 @@ public class CustomerVoice : MonoBehaviour
 
     public void AngrySound()
     {
-        m_voiceAudioSource.Stop();
-        m_voiceAudioSource.clip = m_angryAudioClips[Random.Range(0, m_angryAudioClips.Length)];
+        m_audioSource.Stop();
+        m_audioSource.clip = m_angryAudioClips[Random.Range(0, m_angryAudioClips.Length)];
         CustomerSpawner.m_activeCustomerVoices.Add(this);
-        Invoke("RemoveFromList", m_voiceAudioSource.clip.length);
-        m_voiceAudioSource.Play();
+        Invoke("RemoveFromList", m_audioSource.clip.length);
+        m_audioSource.Play();
     }
 
     public void HappySound()
     {
-        m_voiceAudioSource.Stop();
-        m_voiceAudioSource.clip = m_happyAudioClips[Random.Range(0, m_happyAudioClips.Length)];
+        m_audioSource.Stop();
+        m_audioSource.clip = m_happyAudioClips[Random.Range(0, m_happyAudioClips.Length)];
         CustomerSpawner.m_activeCustomerVoices.Add(this);
-        Invoke("RemoveFromList", m_voiceAudioSource.clip.length);
-        m_voiceAudioSource.Play();
+        Invoke("RemoveFromList", m_audioSource.clip.length);
+        m_audioSource.Play();
     }
 
     public void OrderSound(PotionName potion)
     {
         // get array of order audio clips
         AudioClip[] orderAudio = m_potionOrderAudio[potion];
-        m_voiceAudioSource.Stop();
-        m_voiceAudioSource.clip = orderAudio[Random.Range(0, orderAudio.Length)];
-        Invoke("RemoveFromList", m_voiceAudioSource.clip.length);
-        m_voiceAudioSource.Play();
-    }
-
-    public void StopTalking()
-    {
-        m_voiceAudioSource.Stop();
+        m_audioSource.Stop();
+        m_audioSource.clip = orderAudio[Random.Range(0, orderAudio.Length)];
+        Invoke("RemoveFromList", m_audioSource.clip.length);
+        m_audioSource.Play();
     }
 
     private void RemoveFromList()

@@ -3495,7 +3495,6 @@ GameObject:
   - component: {fileID: 1710234446403981412}
   - component: {fileID: 1302803155641763066}
   - component: {fileID: 870059934112113754}
-  - component: {fileID: 263000013773217944}
   m_Layer: 0
   m_Name: Minotaur_NPC
   m_TagString: Untagged
@@ -3657,18 +3656,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4317caa6c2f9f4043ab8aa5bee7398b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_randomAudioClips: []
+  m_randomAudioClips:
+  - {fileID: 8300000, guid: 52bbb75da8581914bb0464bfd22b31db, type: 3}
+  - {fileID: 8300000, guid: 2556fe0ef55198147b36168fa40dd4f9, type: 3}
+  - {fileID: 8300000, guid: 1108b786cfcb5eb4a87d38acadf2004b, type: 3}
+  - {fileID: 8300000, guid: b373610fd0b88724a93031f80ebff203, type: 3}
+  - {fileID: 8300000, guid: 842d42e77af6f6e4ab83e3895f3f3102, type: 3}
+  - {fileID: 8300000, guid: a379c053cb4b492449cfdfb75e4fbdb1, type: 3}
+  - {fileID: 8300000, guid: f25181edeb99f3a44a4aaeac70b6eed4, type: 3}
+  - {fileID: 8300000, guid: 629b523b68651ff4eaea1f9039f88d72, type: 3}
+  - {fileID: 8300000, guid: 786584092e4bd3244bac40cddc1dd0be, type: 3}
+  - {fileID: 8300000, guid: 16bb57da0341d934aab2943743953e72, type: 3}
+  - {fileID: 8300000, guid: 500e397618965714d9ca54bfcf2fc291, type: 3}
+  - {fileID: 8300000, guid: 7562ff2ee14cb0e45acf38a39c5b871b, type: 3}
+  - {fileID: 8300000, guid: 3d3c680d43439584b8ca76894ac5ba6f, type: 3}
+  - {fileID: 8300000, guid: 6e319f783e95c6244a4a93377d1053f3, type: 3}
+  - {fileID: 8300000, guid: 8770e9d541ebbdd41b30ee02659decee, type: 3}
+  - {fileID: 8300000, guid: 179fde00ef3822f48aca294f76cca2fa, type: 3}
+  - {fileID: 8300000, guid: dd671a78dc420e142b976da5a369d6d0, type: 3}
+  - {fileID: 8300000, guid: 80d81002931c8a94bab78412812d59ff, type: 3}
+  - {fileID: 8300000, guid: 97be7d83f9fc9b24b853aa0d04fe3a39, type: 3}
+  - {fileID: 8300000, guid: 723b581aeea94fe49a91a8e9bd2720bf, type: 3}
+  - {fileID: 8300000, guid: 1f009a6d04e16c84d9ca6ed1c8c440aa, type: 3}
+  - {fileID: 8300000, guid: b676751e06f67a44ba83472da2afd771, type: 3}
   m_randomRangeBetweenRandomAudioClips: {x: 5, y: 10}
-  m_angryAudioClips: []
-  m_happyAudioClips: []
-  m_cosyFireClips: []
-  m_coughUpClips: []
-  m_cupidsKissClips: []
-  m_newYouAudioClips: []
-  m_pickMeUpAudioClips: []
-  m_pixieDustAudioClips: []
-  m_smokeyTeleportAudioClips: []
-  m_voiceAudioSource: {fileID: 0}
+  m_angryAudioClips:
+  - {fileID: 8300000, guid: 5bf7b422d6dbc69498c255fe93dbd939, type: 3}
+  - {fileID: 8300000, guid: 97a22b0ece7f2c54c8c777004c7d5f06, type: 3}
+  - {fileID: 8300000, guid: ac852a2de63ff004a96eae1f5bad8106, type: 3}
+  - {fileID: 8300000, guid: 1d27dd3ea97f7a74d9fbc472ed484eb9, type: 3}
+  m_happyAudioClips:
+  - {fileID: 8300000, guid: cd6aca6e445d0f04f8446121a4672c7d, type: 3}
+  - {fileID: 8300000, guid: a1263f5dd6b652248940734c3988ac42, type: 3}
+  - {fileID: 8300000, guid: 1b3d68aa07fc37449822b45a236909d3, type: 3}
+  m_cosyFireClips:
+  - {fileID: 8300000, guid: 92a85d1160abb854090ce98636515984, type: 3}
+  - {fileID: 8300000, guid: 570027992037214468b886d4c17953e3, type: 3}
+  m_coughUpClips:
+  - {fileID: 8300000, guid: faf53429f980ae74a94ef12c1d74b1d8, type: 3}
+  - {fileID: 8300000, guid: 6439fd41b6b216948a0a9f31c0b640bf, type: 3}
+  m_cupidsKissClips:
+  - {fileID: 8300000, guid: e64df0632fa57ae4781dc0cb5474f42a, type: 3}
+  - {fileID: 8300000, guid: 51fe4b7d221cdaf4c8297f714fa1978e, type: 3}
+  m_newYouAudioClips:
+  - {fileID: 8300000, guid: 3d39981a45b8ebb4c8d98b71e6fe2e0f, type: 3}
+  - {fileID: 8300000, guid: 25b4073f21584d14bb886cff4e9dc708, type: 3}
+  m_pickMeUpAudioClips:
+  - {fileID: 8300000, guid: de1ef45c64332384bbf9aa9023e13704, type: 3}
+  - {fileID: 8300000, guid: 10e18033cf2778a4bb2f9a1d2f1a6302, type: 3}
+  m_pixieDustAudioClips:
+  - {fileID: 8300000, guid: 7b0edda240d0051429c5f1ff15835e09, type: 3}
+  - {fileID: 8300000, guid: 9bccd2f54f1fd174898f3fed3525bfc8, type: 3}
+  m_smokeyTeleportAudioClips:
+  - {fileID: 8300000, guid: dc89ecc1969a8c849ae5f4d11c101d59, type: 3}
+  - {fileID: 8300000, guid: 63a7c0934dd1602408898cba65ac534e, type: 3}
 --- !u!82 &870059934112113754
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3680,103 +3721,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!82 &263000013773217944
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2794676459062639504}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
