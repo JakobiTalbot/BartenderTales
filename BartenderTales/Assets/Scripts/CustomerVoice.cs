@@ -64,7 +64,6 @@ public class CustomerVoice : MonoBehaviour
         // end loop when customer exits idle state
         while (m_animator.GetBool("StoppedMoving"))
         {
-            Debug.Log(CustomerSpawner.MaxAmountOfCustomersToSpeakAtOnce);
             if (!m_audioSource.isPlaying
                 && CustomerSpawner.instance.m_activeCustomerVoices.Count < CustomerSpawner.MaxAmountOfCustomersToSpeakAtOnce)
             {
