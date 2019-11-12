@@ -64,12 +64,13 @@ public class CustomerVoice : MonoBehaviour
         // end loop when customer exits idle state
         while (m_animator.GetBool("StoppedMoving"))
         {
+            Debug.Log(CustomerSpawner.MaxAmountOfCustomersToSpeakAtOnce);
             if (!m_audioSource.isPlaying
-                && CustomerSpawner.m_activeCustomerVoices.Count < CustomerSpawner.MaxAmountOfCustomersToSpeakAtOnce)
+                && CustomerSpawner.instance.m_activeCustomerVoices.Count < CustomerSpawner.MaxAmountOfCustomersToSpeakAtOnce)
             {
                 m_audioSource.clip = m_randomAudioClips[Random.Range(0, m_randomAudioClips.Length)];
                 m_audioSource.Play();
-                CustomerSpawner.m_activeCustomerVoices.Add(this);
+                CustomerSpawner.instance.m_activeCustomerVoices.Add(this);
                 Invoke("RemoveFromList", m_audioSource.clip.length);
             }
 
@@ -82,7 +83,7 @@ public class CustomerVoice : MonoBehaviour
     {
         m_audioSource.Stop();
         m_audioSource.clip = m_angryAudioClips[Random.Range(0, m_angryAudioClips.Length)];
-        CustomerSpawner.m_activeCustomerVoices.Add(this);
+        CustomerSpawner.instance.m_activeCustomerVoices.Add(this);
         Invoke("RemoveFromList", m_audioSource.clip.length);
         m_audioSource.Play();
     }
@@ -91,7 +92,7 @@ public class CustomerVoice : MonoBehaviour
     {
         m_audioSource.Stop();
         m_audioSource.clip = m_happyAudioClips[Random.Range(0, m_happyAudioClips.Length)];
-        CustomerSpawner.m_activeCustomerVoices.Add(this);
+        CustomerSpawner.instance.m_activeCustomerVoices.Add(this);
         Invoke("RemoveFromList", m_audioSource.clip.length);
         m_audioSource.Play();
     }
@@ -108,6 +109,6 @@ public class CustomerVoice : MonoBehaviour
 
     private void RemoveFromList()
     {
-        CustomerSpawner.m_activeCustomerVoices.Remove(this);
+        CustomerSpawner.instance.m_activeCustomerVoices.Remove(this);
     }
 }
