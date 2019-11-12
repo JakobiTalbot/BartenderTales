@@ -24,7 +24,7 @@ public class CustomerSpawner : MonoBehaviour
 
     [HideInInspector]
     public List<CustomerVoice> m_activeCustomerVoices;
-    public const int MaxAmountOfCustomersToSpeakAtOnce = 2;
+    public const int MaxAmountOfCustomersToSpeakAtOnce = 1;
 
     [SerializeField]
     private int m_numberOfTutorialCustomers = 3;
