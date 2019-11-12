@@ -206,6 +206,8 @@ public class CustomerSpawner : MonoBehaviour
     {
         yield return new WaitUntil(CountDown);
 
+        StopCoroutine(CustomerSpawnLoop());
+
         // timer runs out
         m_timeOverCanvas.SetActive(true);
 

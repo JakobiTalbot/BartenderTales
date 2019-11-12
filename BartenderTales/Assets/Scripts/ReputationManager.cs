@@ -53,13 +53,6 @@ public class ReputationManager : MonoBehaviour
         // set colour (multiply by 2 to colourise)
         Color targetColour = Color.Lerp(m_minRepColour, m_maxRepColour, ((float)m_nCurrentRep / m_maxReputation)) * 2;
         StartCoroutine(LerpColour(m_renderer.material.color, targetColour));
-
-        // check for game over
-        if (m_nCurrentRep <= 0)
-        {
-            // end game
-            StartCoroutine(GameOver());
-        }
     }
 
     /// <summary>
@@ -83,41 +76,5 @@ public class ReputationManager : MonoBehaviour
         // set colour to target colour
         m_renderer.material.color = targetColour;
         m_fLerpTimer = 0f;
-    }
-
-    /// <summary>
-    /// Coroutine to be activated when player loses
-    /// </summary>
-    private IEnumerator GameOver()
-    {
-        // stop spawning customers
-        FindObjectOfType<CustomerSpawner>().m_spawnCustomers = false;
-
-        // get reference to all customers in scene
-        List<GameObject> customers = FindObjectOfType<CustomerSpawner>().m_customers;
-        // loop through customers
-        foreach (GameObject c in customers)
-        {
-            if (!c)
-                continue;
-
-            // get reference to customer component
-            Customer cust = c.GetComponent<Customer>();
-            // speak before leaving
-            cust.Speak("this bar sucks!");
-            // leave bar after random time
-            cust.Invoke("ExitBar", Random.Range(0.5f, 3f));
-        }
-
-        // activate game over canvas
-        m_gameOverCanvas.SetActive(true);
-        // put money amount on canvas
-        m_finalMoneyText.text += FindObjectOfType<MoneyJar>().m_nCurrentMoney;
-
-        // wait before reloading scene
-        yield return new WaitForSeconds(m_timeToWaitAfterGameOverUntilRestarting);
-
-        // reload scene
-        SceneManager.LoadSceneAsync(0);
     }
 }
