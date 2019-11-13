@@ -206,7 +206,10 @@ public class CustomerSpawner : MonoBehaviour
     {
         yield return new WaitUntil(CountDown);
 
+        // stop spawning customers and make all current customers leave the bar
         StopCoroutine(CustomerSpawnLoop());
+        foreach (GameObject g in m_customers)
+            g.GetComponent<Customer>().ExitBar();
 
         // timer runs out
         m_timeOverCanvas.SetActive(true);
