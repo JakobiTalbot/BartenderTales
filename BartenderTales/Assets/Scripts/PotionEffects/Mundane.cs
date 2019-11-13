@@ -30,7 +30,6 @@ public class Mundane : PotionEffect
         {
             c.GetComponent<Customer>()?.Shocked();
         }
-        FindObjectOfType<ReputationManager>().AddToReputation(m_reputationChangeOnCustomerExplosion);
 
         Destroy(Instantiate(FindObjectOfType<PotionAssets>().m_mundaneExplosionPrefab, transform.position, transform.rotation), 5f);
         Destroy(gameObject);

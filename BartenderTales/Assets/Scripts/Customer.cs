@@ -47,7 +47,6 @@ public class Customer : MonoBehaviour
     private bool m_bExitingBar = false;
     private Vector3 m_v3CoinDropPos;
     private CustomerAnimator m_customerAnimator;
-    private ReputationManager m_repManager;
     private ScoreManager m_scoreManager;
     private CustomerVoice m_customerVoice;
     private Renderer m_renderer;
@@ -72,7 +71,6 @@ public class Customer : MonoBehaviour
     public void GetReferences()
     {
         m_customerVoice = GetComponent<CustomerVoice>();
-        m_repManager = FindObjectOfType<ReputationManager>();
         m_renderer = GetComponent<Renderer>();
         m_animator = GetComponent<Animator>();
         m_customerAnimator = GetComponent<CustomerAnimator>();
@@ -168,7 +166,6 @@ public class Customer : MonoBehaviour
         // if correct potion given
         if (m_order == p.m_potionName)
         {
-            m_repManager.AddToReputation(m_reputationOnCorrectOrder);
             m_scoreManager.AddCorrectOrder();
             // give money
             Instantiate(m_moneyPrefab, m_v3CoinDropPos, Quaternion.Euler(Vector3.zero));
@@ -180,7 +177,6 @@ public class Customer : MonoBehaviour
         }
         else // if wrong potion given
         {
-            m_repManager.AddToReputation(-m_reputationOnWrongOrder);
             m_scoreManager.AddIncorrectOrder();
             // angery reac
             m_customerVoice.AngrySound();
