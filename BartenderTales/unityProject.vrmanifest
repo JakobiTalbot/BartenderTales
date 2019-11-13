@@ -2,13 +2,13 @@
   "source": "Unity",
   "applications": [
     {
-      "app_key": "application.generated.unity.bartendertales.exe",
+      "app_key": "application.generated.unity.elixirmixer.exe",
       "launch_type": "url",
       "url": "steam://launch/",
       "action_manifest_path": "C:\\Users\\s181299\\Desktop\\BartenderTales\\BartenderTales\\actions.json",
       "strings": {
         "en_us": {
-          "name": "BartenderTales [Testing]"
+          "name": "Elixir Mixer [Testing]"
         }
       }
     }
