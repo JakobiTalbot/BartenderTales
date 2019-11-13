@@ -35,7 +35,7 @@ namespace Valve.VR.InteractionSystem
 					_instance.playAreaSizeZ = 1.0f;
 					_instance.roomscale = false;
 
-					//DontDestroyOnLoad( _instance.gameObject );
+					DontDestroyOnLoad( _instance.gameObject );
 				}
 				return _instance;
 			}
