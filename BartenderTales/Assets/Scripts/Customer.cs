@@ -15,8 +15,6 @@ public class Customer : MonoBehaviour
     public float m_rotationSpeed = 0.02f;
     [Tooltip("The time to wait after drinking until the customer leaves the bar")]
     public float m_timeUntilExitingBarAfterDrinking = 2f;
-    public int m_reputationOnCorrectOrder = 1;
-    public int m_reputationOnWrongOrder = -1;
     public int m_coinsGivenOnCorrectOrder = 1;
     public Vector2 m_speechBubbleBuffer = new Vector2(1, 1);
     public GameObject m_moneyPrefab;

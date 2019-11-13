@@ -8,8 +8,6 @@ public class Mundane : PotionEffect
     private float m_timeToWaitBeforeExploding = 2f;
     [SerializeField]
     private float m_reactionRadius = 5f;
-    [SerializeField]
-    private int m_reputationChangeOnCustomerExplosion = -1;
     // Start is called before the first frame update
     void Start()
     {
