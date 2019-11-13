@@ -5,9 +5,7 @@ using UnityEngine;
 public class BackgroundNPCAnimator : MonoBehaviour
 {
     [SerializeField]
-    private string[] m_randomTriggerNames;
-    [SerializeField]
-    private Vector2 m_randomRangeBetweenTriggering;
+    private int m_idleStatesCount;
 
     private Animator m_animator;
 
@@ -15,19 +13,10 @@ public class BackgroundNPCAnimator : MonoBehaviour
     {
         // get reference to animator
         m_animator = GetComponent<Animator>();
-        // start loop
-        StartCoroutine(IdleLoop());
-    }
 
-    private IEnumerator IdleLoop()
-    {
-        while (true)
-        {
-            // wait for random seconds before triggering
-            yield return new WaitForSeconds(Random.Range(m_randomRangeBetweenTriggering.x, m_randomRangeBetweenTriggering.y));
-
-            // trigger random animation
-            m_animator.SetTrigger(m_randomTriggerNames[Random.Range(0, m_randomTriggerNames.Length)]);
-        }
+        // random animation
+        int i = Random.Range(0, m_idleStatesCount + 1);
+        if (i < m_idleStatesCount)
+            m_animator.SetBool("Idle" + i, true);
     }
 }
