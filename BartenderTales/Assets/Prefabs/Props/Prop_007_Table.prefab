@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7439857285200610043}
   - component: {fileID: 7439857285197218523}
   - component: {fileID: 7439857285198315547}
+  - component: {fileID: 155724933106309228}
   m_Layer: 0
   m_Name: Prop_007_Table
   m_TagString: Untagged
@@ -77,3 +78,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &155724933106309228
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7439857285200584411}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1588085, y: 0.89200896, z: 1.1791089}
+  m_Center: {x: 0, y: 0, z: 0}

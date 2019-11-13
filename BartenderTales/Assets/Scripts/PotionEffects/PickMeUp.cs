@@ -7,7 +7,7 @@ public class PickMeUp : PotionEffect
     [SerializeField]
     private float m_timeBeforeChangingDirection = 1f;
     [SerializeField]
-    private float m_movementForce = 30000f;
+    private float m_movementForce = 400f;
     [SerializeField]
     private float m_timeForEffectToBeActive = 10f;
 
@@ -67,7 +67,7 @@ public class PickMeUp : PotionEffect
             return;
 
         // add force
-        m_rb.AddForce(m_v3ForceDirection * m_movementForce * Time.fixedDeltaTime);
+        m_rb.velocity += (m_v3ForceDirection * m_movementForce * Time.fixedDeltaTime);
 
         if (Vector3.Distance(m_rb.velocity, m_v3LastVelocity) > 5)
             m_audioSource.PlayOneShot(m_pa.m_bonesBreakingAudioClips[Random.Range(0, m_pa.m_bonesBreakingAudioClips.Length)]);

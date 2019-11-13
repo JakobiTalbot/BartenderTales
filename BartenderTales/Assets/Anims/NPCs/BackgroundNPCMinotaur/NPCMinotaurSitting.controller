@@ -8,7 +8,13 @@ AnimatorController:
   m_PrefabAsset: {fileID: 0}
   m_Name: NPCMinotaurSitting
   serializedVersion: 5
-  m_AnimatorParameters: []
+  m_AnimatorParameters:
+  - m_Name: RandomIdle0
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -51,7 +57,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: RandomIdle0
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102786123998957330}
   m_Solo: 0
@@ -61,7 +70,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.42647052
   m_TransitionOffset: 0
   m_ExitTime: 0.8500002
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -134,7 +143,7 @@ AnimatorStateMachine:
     m_Position: {x: 300, y: 36, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102786123998957330}
-    m_Position: {x: 324, y: 120, z: 0}
+    m_Position: {x: 300, y: 144, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
