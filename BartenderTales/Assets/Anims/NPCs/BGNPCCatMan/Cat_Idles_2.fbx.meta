@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f653426368ada0e49b03dba6a05cd8b4
+guid: 8b706364774623b459c112eb107c4a18
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -108,6 +108,8 @@ ModelImporter:
     400100: Spine_02_JNT
     400102: Spine_03_JNT
     7400000: Cat_Standing_Idle_1_New
+    7400002: Cat_Standing_Idle_2_New
+    7400004: Cat_Standing_Idle_3_New
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -561,20 +563,20 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Cat_Standing_Idle_1_New(Clone)
+    - name: Cat_Idles_2(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Pelvis_JNT
-      parentName: Cat_Standing_Idle_1_New(Clone)
+      parentName: Cat_Idles_2(Clone)
       position: {x: -0, y: 0.9624191, z: 0}
       rotation: {x: 0, y: -0, z: -0.7071068, w: 0.7071068}
       scale: {x: 1, y: 1, z: 1}
     - name: L_Hip_JNT
       parentName: Pelvis_JNT
       position: {x: -0.0064332327, y: -0.111759745, z: -0.015170144}
-      rotation: {x: -0.0418196, y: -0.14782058, z: -0.7697021, w: 0.6196442}
+      rotation: {x: 0.062504485, y: -0.04615068, z: -0.7858387, w: 0.61353153}
       scale: {x: 1, y: 1, z: 1}
     - name: L_Knee_JNT
       parentName: L_Hip_JNT
@@ -584,7 +586,7 @@ ModelImporter:
     - name: L_Ankle_JNT
       parentName: L_Knee_JNT
       position: {x: -4.4331564e-17, y: 0.44794944, z: -5.55345e-17}
-      rotation: {x: 0.66791403, y: 0.013995533, z: -0.059916373, w: 0.7416907}
+      rotation: {x: 0.6696113, y: -0.12238845, z: -0.0067130295, w: 0.73252773}
       scale: {x: 1, y: 1, z: 1}
     - name: L_Foot_Sesamoid_JNT
       parentName: L_Ankle_JNT
@@ -599,7 +601,7 @@ ModelImporter:
     - name: R_Hip_JNT
       parentName: Pelvis_JNT
       position: {x: -0.0064343414, y: 0.11175999, z: -0.015170099}
-      rotation: {x: 0.7704831, y: -0.61864287, z: -0.04342018, w: -0.14748403}
+      rotation: {x: 0.786369, y: -0.6130437, z: 0.058656782, w: -0.048585206}
       scale: {x: 1, y: 1, z: 1}
     - name: R_Knee_JNT
       parentName: R_Hip_JNT
@@ -609,7 +611,7 @@ ModelImporter:
     - name: R_Ankle_JNT
       parentName: R_Knee_JNT
       position: {x: 0.00000030659913, y: -0.4479494, z: -0.00000007784986}
-      rotation: {x: 0.6673442, y: 0.0153573165, z: -0.058707364, w: 0.7422731}
+      rotation: {x: 0.6690183, y: -0.11769254, z: -0.006667114, w: 0.73383826}
       scale: {x: 1, y: 1, z: 1}
     - name: R_Foot_Sesamoid_JNT
       parentName: R_Ankle_JNT
