@@ -440,7 +440,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 14b135c9a09150a4faa36fdd41933971, type: 2}
-  - {fileID: 2100002, guid: 7db846b403b9cc94b82216d7d33d9568, type: 3}
+  - {fileID: 2100000, guid: 1bee919b0e0c4d34bbcd53e715e11a4a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5837,10 +5837,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6118405906245511967}
     m_Modifications:
-    - target: {fileID: 100004, guid: b559504f378751444bf13dca03d7d55b, type: 3}
-      propertyPath: m_Name
-      value: SpeechBubble_square
-      objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b559504f378751444bf13dca03d7d55b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.17397
@@ -5892,6 +5888,10 @@ PrefabInstance:
     - target: {fileID: 400004, guid: b559504f378751444bf13dca03d7d55b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.80957484
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: b559504f378751444bf13dca03d7d55b, type: 3}
+      propertyPath: m_Name
+      value: SpeechBubble_square
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b559504f378751444bf13dca03d7d55b, type: 3}
