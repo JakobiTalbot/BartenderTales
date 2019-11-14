@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f653426368ada0e49b03dba6a05cd8b4
+guid: cd9e4251bea19f1488a5379a5be82b94
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -107,7 +107,7 @@ ModelImporter:
     400098: Spine_01_JNT
     400100: Spine_02_JNT
     400102: Spine_03_JNT
-    7400000: Cat_Standing_Idle_1_New
+    7400000: Cat_Standing_Idle_4_New
     9500000: //RootNode
   externalObjects: {}
   materials:
