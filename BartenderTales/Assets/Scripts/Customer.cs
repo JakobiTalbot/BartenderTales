@@ -343,8 +343,11 @@ public class Customer : MonoBehaviour
     /// <param name="hat"> The hat prefab to wear </param>
     public void SetHat(GameObject hat)
     {
-        GameObject newHat = Instantiate(hat, m_hatTransform.position, m_hatTransform.rotation);
-        newHat.transform.parent = m_hatTransform;
+        if (hat)
+        {
+            GameObject newHat = Instantiate(hat, m_hatTransform.position, m_hatTransform.rotation);
+            newHat.transform.parent = m_hatTransform;
+        }
     }
 
     public void StopMovement()
