@@ -24091,24 +24091,40 @@ PrefabInstance:
     - target: {fileID: 6147544779583073444, guid: 46d98bbc5c907f742a41f6b8fef89c9c,
         type: 3}
       propertyPath: m_text
-      value: "Lead Designer: Tory Kruger\nLead Producer: Tyler Ratcliffe\nLead Programmer:
-        Jakobi Talbot\nLead Artist: Jessika Craig\nArtist: Katie Mutton\nArtist: Tahnee
-        D'Cruz\nArtist: Callum McKeown\nAudio: Harvey \nAudio: Alex\nAudio: Peter"
+      value: 'Lead Designer: Tory Kruger
+
+        Lead Producer: Tyler Ratcliffe
+
+        Lead Programmer: Jakobi Talbot
+
+        Lead Artist: Jessika Craig
+
+        Artist: Katie Mutton
+
+        Artist: Tahnee D''Cruz
+
+        Artist: Callum McKeown
+
+        Audio: Harvey Feruson Watts
+
+        Audio: Alex Centofanti
+
+        Audio: Peter Phan'
       objectReference: {fileID: 0}
     - target: {fileID: 6147544779583073444, guid: 46d98bbc5c907f742a41f6b8fef89c9c,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 221
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 6147544779583073444, guid: 46d98bbc5c907f742a41f6b8fef89c9c,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 31
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 6147544779583073444, guid: 46d98bbc5c907f742a41f6b8fef89c9c,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 31
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 6147544779583073444, guid: 46d98bbc5c907f742a41f6b8fef89c9c,
         type: 3}
@@ -24138,7 +24154,7 @@ PrefabInstance:
     - target: {fileID: 6147544779583073444, guid: 46d98bbc5c907f742a41f6b8fef89c9c,
         type: 3}
       propertyPath: m_firstOverflowCharacterIndex
-      value: 209
+      value: 233
       objectReference: {fileID: 0}
     - target: {fileID: 6147544779583073444, guid: 46d98bbc5c907f742a41f6b8fef89c9c,
         type: 3}
