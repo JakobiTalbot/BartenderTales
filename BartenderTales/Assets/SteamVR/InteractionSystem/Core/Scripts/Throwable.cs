@@ -166,7 +166,7 @@ namespace Valve.VR.InteractionSystem
 
             RenderModel r;
             if (r = hand.GetComponentInChildren<RenderModel>())
-                r.GetComponentInChildren<Renderer>().enabled = false;
+                r.GetComponentInChildren<Renderer>().enabled = true;
 
             hand.HoverUnlock(null);
 
