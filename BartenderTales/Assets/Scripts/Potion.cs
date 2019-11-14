@@ -12,8 +12,8 @@ public class Potion : MonoBehaviour
     private float m_impulseThresholdToShatterPotion = 2f;
     [SerializeField]
     private GameObject m_shatterPrefab;
-    
 
+    private bool m_bDrank = false;
     private Transform m_point;
     private AudioSource m_audioSource;
 
@@ -29,9 +29,12 @@ public class Potion : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (m_bDrank)
+            return;
         Customer cust;
         if (cust = collision.gameObject.GetComponentInParent<Customer>())
         {
+            m_bDrank = true;
             // create shatter effect
             Destroy(Instantiate(m_shatterPrefab, transform.position, Quaternion.identity), 5f);
             cust.DrinkPotion(this);
