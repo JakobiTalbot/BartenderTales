@@ -10,6 +10,15 @@ public class ScoreManager : MonoBehaviour
     private int m_nConsecutiveCorrectOrders = 0;
 
     private int m_nTotalScore = 0;
+
+    public static ScoreManager instance;
+
+    private void Awake()
+    {
+        if (!instance)
+            instance = this;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))

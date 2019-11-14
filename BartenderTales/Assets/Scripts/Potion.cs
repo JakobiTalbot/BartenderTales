@@ -16,7 +16,6 @@ public class Potion : MonoBehaviour
 
     private Transform m_point;
     private AudioSource m_audioSource;
-    private bool m_bDrank = false;
 
     private void Awake()
     {
@@ -30,14 +29,11 @@ public class Potion : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (m_bDrank)
-            return;
         Customer cust;
         if (cust = collision.gameObject.GetComponentInParent<Customer>())
         {
             // create shatter effect
             Destroy(Instantiate(m_shatterPrefab, transform.position, Quaternion.identity), 5f);
-            m_bDrank = true;
             cust.DrinkPotion(this);
         }
         else

@@ -184,7 +184,6 @@ public class CustomerSpawner : MonoBehaviour
             cust.SetHat(GetRandomHat());
         cust.SetCoinDropPos(m_coinDropPoint.position);
         cust.SetTutorialCustomer(bTutorialCustomer);
-        cust.SetScoreManager(m_scoreManager);
 
         return true;
     }

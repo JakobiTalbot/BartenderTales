@@ -45,7 +45,6 @@ public class Customer : MonoBehaviour
     private bool m_bExitingBar = false;
     private Vector3 m_v3CoinDropPos;
     private CustomerAnimator m_customerAnimator;
-    private ScoreManager m_scoreManager;
     private CustomerVoice m_customerVoice;
     private Renderer m_renderer;
     private bool m_bHadPath = false;
@@ -164,7 +163,7 @@ public class Customer : MonoBehaviour
         // if correct potion given
         if (m_order == p.m_potionName)
         {
-            m_scoreManager.AddCorrectOrder();
+            ScoreManager.instance.AddCorrectOrder();
             // give money
             Instantiate(m_moneyPrefab, m_v3CoinDropPos, Quaternion.Euler(Vector3.zero));
             // happy reaction
@@ -175,7 +174,7 @@ public class Customer : MonoBehaviour
         }
         else // if wrong potion given
         {
-            m_scoreManager.AddIncorrectOrder();
+            ScoreManager.instance.AddIncorrectOrder();
             // angery reac
             m_customerVoice.AngrySound();
             if (p.m_potionName == PotionName.Mundane)
@@ -256,8 +255,6 @@ public class Customer : MonoBehaviour
     {
         m_v3CoinDropPos = v3DropPos;
     }
-
-    public void SetScoreManager(ScoreManager scoreManager) => m_scoreManager = scoreManager;
 
     /// <summary>
     /// Activates the customer's speech bubble and displays specified text inside it

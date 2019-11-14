@@ -54,9 +54,7 @@ public class NewYou : PotionEffect
                 newCust.SetHat(hat);
         }
 
-        newCust.SetCoinDropPos(cs.m_coinDropPoint.position);
-        newCust.SetScoreManager(cs.GetScoreManager());
-        
+        newCust.SetCoinDropPos(cs.m_coinDropPoint.position);        
 
         newCust.GoIdle();
 
