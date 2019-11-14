@@ -180,6 +180,8 @@ public class CustomerSpawner : MonoBehaviour
         cust.GetReferences();
 
         cust.SetDestination(destPoint, bWait);
+        if (cust.GetCustomerType() != CustomerType.CatMan)
+            cust.SetHat(GetRandomHat());
         cust.SetCoinDropPos(m_coinDropPoint.position);
         cust.SetTutorialCustomer(bTutorialCustomer);
         cust.SetScoreManager(m_scoreManager);

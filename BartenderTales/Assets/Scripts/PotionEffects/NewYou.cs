@@ -47,9 +47,13 @@ public class NewYou : PotionEffect
         newCust.GetReferences();
 
         // set values for new customer
-        GameObject hat = FindObjectOfType<CustomerSpawner>().GetRandomHat();
-        if (hat)
-            newCust.SetHat(hat);
+        if (newCust.GetCustomerType() != CustomerType.CatMan)
+        {
+            GameObject hat = FindObjectOfType<CustomerSpawner>().GetRandomHat();
+            if (hat)
+                newCust.SetHat(hat);
+        }
+
         newCust.SetCoinDropPos(cs.m_coinDropPoint.position);
         newCust.SetScoreManager(cs.GetScoreManager());
         
