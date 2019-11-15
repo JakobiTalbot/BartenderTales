@@ -19,6 +19,8 @@ public class PickMeUp : PotionEffect
     private PotionAssets m_pa;
     private bool m_bDoEffect = false;
 
+    private bool m_bPlaySound = true;
+
     void Start()
     {
         // set potion enum name
@@ -37,7 +39,7 @@ public class PickMeUp : PotionEffect
         m_pa = FindObjectOfType<PotionAssets>();
         m_audioSource = GetComponent<AudioSource>();
 
-        foreach (GameObject trails in m_cust.GetComponent<Customer>().m_trailEffects)
+        foreach (GameObject trails in m_cust.m_trailEffects)
         {
             trails.SetActive(true);
         }
@@ -69,8 +71,12 @@ public class PickMeUp : PotionEffect
         // add force
         m_rb.velocity += (m_v3ForceDirection * m_movementForce * Time.fixedDeltaTime);
 
-        if (Vector3.Distance(m_rb.velocity, m_v3LastVelocity) > 5)
+        if (Vector3.Distance(m_rb.velocity, m_v3LastVelocity) > 5 && m_bPlaySound)
+        {
             m_audioSource.PlayOneShot(m_pa.m_bonesBreakingAudioClips[Random.Range(0, m_pa.m_bonesBreakingAudioClips.Length)]);
+            m_bPlaySound = false;
+            Invoke("EnableSound", 0.7f);
+        }
 
         m_v3LastVelocity = m_rb.velocity;
     }
@@ -79,5 +85,10 @@ public class PickMeUp : PotionEffect
     {
         m_bDoEffect = false;
         StartCoroutine(m_cust.Dissolve());
+    }
+
+    private void EnableSound()
+    {
+        m_bPlaySound = true;
     }
 }
