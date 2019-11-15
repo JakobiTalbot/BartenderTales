@@ -6,9 +6,11 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: Txt_Potion_008_QuickEnd
+    2100002: Txt_Potion_008_Mundane
     2300000: //RootNode
     3300000: //RootNode
     4300000: Potion_008_QuickEnd
+    4300002: Potion_008_Mundane
   externalObjects: {}
   materials:
     importMaterials: 1

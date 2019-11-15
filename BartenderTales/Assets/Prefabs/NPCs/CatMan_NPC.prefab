@@ -535,7 +535,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 11a9fb966aa74a84db71de50f0fffa83, type: 3}
   - {fileID: 8300000, guid: e4ddd6c1bbe38ac4b9803f0cc8528c3b, type: 3}
   - {fileID: 8300000, guid: bc8191c99efd7c64cb9e75ae5d3f9b11, type: 3}
-  m_randomRangeBetweenRandomAudioClips: {x: 3, y: 35}
+  m_randomRangeBetweenRandomAudioClips: {x: 5, y: 35}
   m_angryAudioClips:
   - {fileID: 8300000, guid: debe2a7497f63184db77b442d9327502, type: 3}
   - {fileID: 8300000, guid: 43fec0ecab0d7624694e86d386155400, type: 3}

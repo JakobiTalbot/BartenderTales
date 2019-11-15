@@ -13880,7 +13880,7 @@ MonoBehaviour:
     type: 3}
   m_customerPrefabs:
   - {fileID: 8400663124044999680, guid: bd5d49a421cd04f48a6ef5fa98636230, type: 3}
-  - {fileID: 1824453803650315166, guid: 69f10aba53ac611469e54a289182cff3, type: 3}
+  - {fileID: 7931532528878808962, guid: 9baed79dd6ddbd24d95f952a9d2d5766, type: 3}
   - {fileID: 2794676459062639504, guid: 32344ce6a6839794c8a7e095b25c5087, type: 3}
   m_cupidsKissParticlePrefab: {fileID: 1829449578999914768, guid: bb241a8255f031e4f978fe50fc79f2eb,
     type: 3}
@@ -24945,7 +24945,7 @@ PrefabInstance:
     - target: {fileID: 1178597318887594714, guid: f4a1e4b21fea73f47b71f1c8d71fb48a,
         type: 3}
       propertyPath: m_accelShakeThreshold
-      value: 0.015
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 1178597318887594714, guid: f4a1e4b21fea73f47b71f1c8d71fb48a,
         type: 3}
@@ -25158,7 +25158,7 @@ PrefabInstance:
     - target: {fileID: 1178597318887594714, guid: f4a1e4b21fea73f47b71f1c8d71fb48a,
         type: 3}
       propertyPath: m_shakerCapPopForce
-      value: 5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 1178597318887594714, guid: f4a1e4b21fea73f47b71f1c8d71fb48a,
         type: 3}
@@ -29712,7 +29712,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8316c81f1c75f544ab49e06499e505c0, type: 2}
+  - {fileID: 2100000, guid: 25f3e0d0fa5da944d9e61fdde3463cea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -29732,7 +29732,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 2
+  m_Time: 5
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
