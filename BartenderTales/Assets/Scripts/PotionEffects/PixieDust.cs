@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Valve.VR.InteractionSystem;
 
 public class PixieDust : PotionEffect
 {
@@ -12,12 +13,17 @@ public class PixieDust : PotionEffect
     public float m_timeToHoverBeforeLeaving = 2f;
 
     [SerializeField]
+    private float m_lowHoverHeight = 0f;
+
+    [SerializeField]
     AudioClip m_activationSound;
 
     private Rigidbody m_rb;
     private Vector3 m_v3StartPos;
     private Vector3 m_v3StartHoverPos;
     private float m_fHoverLerpTime = 0f;
+    private bool m_bLoweringStarted = false;
+    private bool m_bLeavingBar = false;
     private Customer m_customer;
     
     // Start is called before the first frame update
@@ -71,6 +77,9 @@ public class PixieDust : PotionEffect
         // bob up and down for the rest of eternity
         while (true)
         {
+            if (Vector3.Distance(transform.position, Player.instance.transform.position) > 5f && !m_bLoweringStarted && m_bLeavingBar)
+                StartCoroutine(ReduceHoverHeight());
+
             Vector3 newPos = transform.position;
             newPos.y = m_v3StartHoverPos.y + (Mathf.Sin((Time.time - fTimeReachedBaseHoverHeight) * m_bobSpeed) * m_hoverHeightVariance);
             transform.position = newPos;
@@ -82,6 +91,28 @@ public class PixieDust : PotionEffect
     private void Leave()
     {
         // customer starts leaving bar
+        m_bLeavingBar = true;
         m_customer.ExitBar();
+    }
+
+    private IEnumerator ReduceHoverHeight()
+    {
+        Debug.Log("lower");
+
+        m_bLoweringStarted = true;
+        float startVariance = m_hoverHeightVariance;
+        float fLerpVal = 0f;
+
+        while (m_v3StartHoverPos.y > m_lowHoverHeight)
+        {
+            m_v3StartHoverPos.y = Mathf.Lerp(m_hoverHeight, m_lowHoverHeight, fLerpVal);
+            m_hoverHeightVariance = Mathf.Lerp(startVariance, 0.2f, fLerpVal);
+            fLerpVal += (Time.deltaTime / 2);
+
+            yield return null;
+        }
+
+        m_v3StartHoverPos.y = m_lowHoverHeight;
+        m_hoverHeightVariance = 0.2f;
     }
 }
