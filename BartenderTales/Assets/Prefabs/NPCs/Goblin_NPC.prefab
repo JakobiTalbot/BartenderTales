@@ -4289,6 +4289,8 @@ GameObject:
   - component: {fileID: 1057434689719609577}
   - component: {fileID: 5999490943421263192}
   - component: {fileID: 7813074336715104334}
+  - component: {fileID: 6980595769916766376}
+  - component: {fileID: 355124562804515530}
   m_Layer: 0
   m_Name: Goblin_NPC
   m_TagString: Untagged
@@ -4572,6 +4574,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &6980595769916766376
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7931532528878808962}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 0.01, z: 0.3}
+  m_Center: {x: 0.16, y: 0.01, z: 0.1}
+--- !u!65 &355124562804515530
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7931532528878808962}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 0.01, z: 0.3}
+  m_Center: {x: -0.17, y: 0.01, z: 0.1}
 --- !u!1 &7931532528878808964
 GameObject:
   m_ObjectHideFlags: 0

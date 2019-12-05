@@ -382,6 +382,8 @@ GameObject:
   - component: {fileID: 6254976490368851587}
   - component: {fileID: 989155919685299359}
   - component: {fileID: 6297819486677928614}
+  - component: {fileID: 9200196572261047677}
+  - component: {fileID: 3604813934961098335}
   m_Layer: 0
   m_Name: CatMan_NPC
   m_TagString: Untagged
@@ -792,6 +794,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &9200196572261047677
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8400663124044999680}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.18, y: 0.01, z: 0.39}
+  m_Center: {x: 0.18, y: 0.01, z: 0.03}
+--- !u!65 &3604813934961098335
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8400663124044999680}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.18, y: 0.01, z: 0.39}
+  m_Center: {x: -0.18, y: 0.01, z: 0.03}
 --- !u!1 &8400663124044999682
 GameObject:
   m_ObjectHideFlags: 0
