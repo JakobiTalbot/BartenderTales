@@ -57,6 +57,7 @@ namespace Valve.VR.InteractionSystem
         [HideInInspector]
         public Interactable interactable;
 
+        private Renderer m_lastHandRenderer;
 
         //-------------------------------------------------
         protected virtual void Awake()
@@ -140,9 +141,7 @@ namespace Valve.VR.InteractionSystem
 
             onPickUp.Invoke();
 
-            RenderModel r;
-            if (r = hand.GetComponentInChildren<RenderModel>())
-                r.GetComponentInChildren<Renderer>().enabled = false;
+            m_lastHandRenderer = hand.GetComponentInChildren<RenderModel>().GetComponentInChildren<Renderer>();
 
             hand.HoverLock(null);
 
@@ -164,9 +163,8 @@ namespace Valve.VR.InteractionSystem
 
             onDetachFromHand.Invoke();
 
-            RenderModel r;
-            if (r = hand.GetComponentInChildren<RenderModel>())
-                r.GetComponentInChildren<Renderer>().enabled = true;
+            m_lastHandRenderer.enabled = true;
+            m_lastHandRenderer = null;
 
             hand.HoverUnlock(null);
 
@@ -257,6 +255,12 @@ namespace Valve.VR.InteractionSystem
         {
             gameObject.SetActive(false);
             velocityEstimator.FinishEstimatingVelocity();
+        }
+
+        private void OnDestroy()
+        {
+            if (m_lastHandRenderer)
+                m_lastHandRenderer.enabled = true;
         }
     }
 

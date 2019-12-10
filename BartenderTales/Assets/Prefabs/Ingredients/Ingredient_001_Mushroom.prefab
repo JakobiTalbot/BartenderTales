@@ -11,13 +11,12 @@ GameObject:
   - component: {fileID: 2576281481048711065}
   - component: {fileID: 2576281481050005433}
   - component: {fileID: 2576281481051004281}
-  - component: {fileID: 867766208933986675}
-  - component: {fileID: 8160287139702250852}
   - component: {fileID: 2038177965620036296}
   - component: {fileID: 5113891776823108172}
   - component: {fileID: 3263029461568750242}
   - component: {fileID: 5405464885785202114}
   - component: {fileID: 8273713079598959455}
+  - component: {fileID: 5994002133030128081}
   m_Layer: 0
   m_Name: Ingredient_001_Mushroom
   m_TagString: Untagged
@@ -84,32 +83,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &867766208933986675
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2576281481048802233}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.12963144, y: 0.038726136, z: 0.1291813}
-  m_Center: {x: -0.00077753514, y: 0.029618047, z: 0.0024447292}
---- !u!65 &8160287139702250852
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2576281481048802233}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.05, y: 0.11108693, z: 0.06}
-  m_Center: {x: -0.00077753514, y: -0.006562352, z: 0.0024447255}
 --- !u!54 &2038177965620036296
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -240,3 +213,16 @@ MonoBehaviour:
     m_TypeName: Valve.VR.InteractionSystem.HandEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   interactable: {fileID: 0}
+--- !u!65 &5994002133030128081
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2576281481048802233}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15808639, y: 0.13547122, z: 0.15753742}
+  m_Center: {x: 0, y: 0, z: 0}
